@@ -203,6 +203,10 @@ import { MbpaymenttransacioneditComponent } from './views/materialview/mbpayment
 import { MbpaymenttransaciondetailComponent } from './views/materialview/mbpaymenttransaction/mbpaymenttransaciondetail/mbpaymenttransaciondetail.component';
 import { MbpaymenttransacionlistComponent } from './views/materialview/mbpaymenttransaction/mbpaymenttransacionlist/mbpaymenttransacionlist.component';
 import { PebpaymenttransctioncreateComponent } from './views/personalequipmentview/pebpaymenttransction/pebpaymenttransctioncreate/pebpaymenttransctioncreate.component';
+import { AdminComponent } from './views/admin/admin.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavComponent } from './components/nav/nav.component';
+import { AsideComponent } from './components/aside/aside.component';
 
 @NgModule({
   declarations: [
@@ -407,6 +411,10 @@ import { PebpaymenttransctioncreateComponent } from './views/personalequipmentvi
     RvrpaymenttransctioneditComponent,
     RvrpaymenttransctiondetailComponent,
     RvrpaymenttransctionlistComponent,
+    AdminComponent,
+    FooterComponent,
+    NavComponent,
+    AsideComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
