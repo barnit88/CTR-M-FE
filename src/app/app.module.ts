@@ -71,10 +71,6 @@ import { MaterialusedcreateComponent } from './views/materialview/materialused/m
 import { MaterialusededitComponent } from './views/materialview/materialused/materialusededit/materialusededit.component';
 import { MaterialuseddetailComponent } from './views/materialview/materialused/materialuseddetail/materialuseddetail.component';
 import { MaterialusedlistComponent } from './views/materialview/materialused/materialusedlist/materialusedlist.component';
-import { MbpaymenttransacioncreateComponent } from './views/materialview/materialused/mbpaymenttransacioncreate/mbpaymenttransacioncreate.component';
-import { MbpaymenttransacioneditComponent } from './views/materialview/materialused/mbpaymenttransacionedit/mbpaymenttransacionedit.component';
-import { MbpaymenttransaciondetailComponent } from './views/materialview/materialused/mbpaymenttransaciondetail/mbpaymenttransaciondetail.component';
-import { MbpaymenttransacionlistComponent } from './views/materialview/materialused/mbpaymenttransacionlist/mbpaymenttransacionlist.component';
 import { MspaymenttransactioncreateComponent } from './views/materialview/mspaymenttransaction/mspaymenttransactioncreate/mspaymenttransactioncreate.component';
 import { MspaymenttransactioneditComponent } from './views/materialview/mspaymenttransaction/mspaymenttransactionedit/mspaymenttransactionedit.component';
 import { MspaymenttransactiondetailComponent } from './views/materialview/mspaymenttransaction/mspaymenttransactiondetail/mspaymenttransactiondetail.component';
@@ -83,7 +79,6 @@ import { PeboughtcreateComponent } from './views/personalequipmentview/pebought/
 import { PeboughteditComponent } from './views/personalequipmentview/pebought/peboughtedit/peboughtedit.component';
 import { PeboughtdetailComponent } from './views/personalequipmentview/pebought/peboughtdetail/peboughtdetail.component';
 import { PeboughtlistComponent } from './views/personalequipmentview/pebought/peboughtlist/peboughtlist.component';
-import { PebpaymenttransctioncreateComponent } from './views/personalequipmentview/pebpaymenttransctioncreate/pebpaymenttransctioncreate.component';
 import { PebpaymenttransctioneditComponent } from './views/personalequipmentview/pebpaymenttransction/pebpaymenttransctionedit/pebpaymenttransctionedit.component';
 import { PebpaymenttransctiondetailComponent } from './views/personalequipmentview/pebpaymenttransction/pebpaymenttransctiondetail/pebpaymenttransctiondetail.component';
 import { PebpaymenttransctionlistComponent } from './views/personalequipmentview/pebpaymenttransction/pebpaymenttransctionlist/pebpaymenttransctionlist.component';
@@ -123,7 +118,6 @@ import { PersonalvehiclecreateComponent } from './views/personalvehicleview/pers
 import { PersonalvehicleeditComponent } from './views/personalvehicleview/personalvehicle/personalvehicleedit/personalvehicleedit.component';
 import { PersonalvehicledetailComponent } from './views/personalvehicleview/personalvehicle/personalvehicledetail/personalvehicledetail.component';
 import { PersonalvehiclelistComponent } from './views/personalvehicleview/personalvehicle/personalvehiclelist/personalvehiclelist.component';
-import { PvboughtComponent } from './views/personalvehicleview/pvbought/pvbought/pvbought.component';
 import { PvboughtcreateComponent } from './views/personalvehicleview/pvbought/pvboughtcreate/pvboughtcreate.component';
 import { PvboughteditComponent } from './views/personalvehicleview/pvbought/pvboughtedit/pvboughtedit.component';
 import { PvboughtdetailComponent } from './views/personalvehicleview/pvbought/pvboughtdetail/pvboughtdetail.component';
@@ -166,7 +160,6 @@ import { ReipaymenttransctiondetailComponent } from './views/rentedequipmentview
 import { ReipaymenttransctionlistComponent } from './views/rentedequipmentview/reipaymenttransction/reipaymenttransctionlist/reipaymenttransctionlist.component';
 import { RentedequipmentcreateComponent } from './views/rentedequipmentview/rentedequipment/rentedequipmentcreate/rentedequipmentcreate.component';
 import { RentedequipmentdetailComponent } from './views/rentedequipmentview/rentedequipment/rentedequipmentdetail/rentedequipmentdetail.component';
-import { RentedequipmentdeleteComponent } from './views/rentedequipmentview/rentedequipment/rentedequipmentdelete/rentedequipmentdelete.component';
 import { RentedequipmenteditComponent } from './views/rentedequipmentview/rentedequipment/rentedequipmentedit/rentedequipmentedit.component';
 import { RentedequipmentlistComponent } from './views/rentedequipmentview/rentedequipment/rentedequipmentlist/rentedequipmentlist.component';
 import { RerentcreateComponent } from './views/rentedequipmentview/rerent/rerentcreate/rerentcreate.component';
@@ -205,6 +198,11 @@ import { RvrpaymenttransctioncreateComponent } from './views/rentedvehicleview/r
 import { RvrpaymenttransctioneditComponent } from './views/rentedvehicleview/rvrpaymenttransction/rvrpaymenttransctionedit/rvrpaymenttransctionedit.component';
 import { RvrpaymenttransctiondetailComponent } from './views/rentedvehicleview/rvrpaymenttransction/rvrpaymenttransctiondetail/rvrpaymenttransctiondetail.component';
 import { RvrpaymenttransctionlistComponent } from './views/rentedvehicleview/rvrpaymenttransction/rvrpaymenttransctionlist/rvrpaymenttransctionlist.component';
+import { MbpaymenttransacioncreateComponent } from './views/materialview/mbpaymenttransaction/mbpaymenttransacioncreate/mbpaymenttransacioncreate.component';
+import { MbpaymenttransacioneditComponent } from './views/materialview/mbpaymenttransaction/mbpaymenttransacionedit/mbpaymenttransacionedit.component';
+import { MbpaymenttransaciondetailComponent } from './views/materialview/mbpaymenttransaction/mbpaymenttransaciondetail/mbpaymenttransaciondetail.component';
+import { MbpaymenttransacionlistComponent } from './views/materialview/mbpaymenttransaction/mbpaymenttransacionlist/mbpaymenttransacionlist.component';
+import { PebpaymenttransctioncreateComponent } from './views/personalequipmentview/pebpaymenttransction/pebpaymenttransctioncreate/pebpaymenttransctioncreate.component';
 
 @NgModule({
   declarations: [
@@ -329,7 +327,6 @@ import { RvrpaymenttransctionlistComponent } from './views/rentedvehicleview/rvr
     PersonalvehicleeditComponent,
     PersonalvehicledetailComponent,
     PersonalvehiclelistComponent,
-    PvboughtComponent,
     PvboughtcreateComponent,
     PvboughteditComponent,
     PvboughtdetailComponent,
@@ -372,7 +369,6 @@ import { RvrpaymenttransctionlistComponent } from './views/rentedvehicleview/rvr
     ReipaymenttransctionlistComponent,
     RentedequipmentcreateComponent,
     RentedequipmentdetailComponent,
-    RentedequipmentdeleteComponent,
     RentedequipmenteditComponent,
     RentedequipmentlistComponent,
     RerentcreateComponent,
@@ -410,13 +406,10 @@ import { RvrpaymenttransctionlistComponent } from './views/rentedvehicleview/rvr
     RvrpaymenttransctioncreateComponent,
     RvrpaymenttransctioneditComponent,
     RvrpaymenttransctiondetailComponent,
-    RvrpaymenttransctionlistComponent
+    RvrpaymenttransctionlistComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
