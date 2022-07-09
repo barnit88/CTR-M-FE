@@ -1,165 +1,166 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PEBPaymentTransaction } from './entity/models/PersonalEquipment/pebpayment-transaction';
-import { PEEPaymentTransaction } from './entity/models/PersonalEquipment/peepayment-transaction';
-import { PEIPaymentTransaction } from './entity/models/PersonalEquipment/peipayment-transaction';
-import { PVBPaymentTransaction } from './entity/models/PersonalVehicle/pvbpayment-transaction';
-import { PVEPaymentTransaction } from './entity/models/PersonalVehicle/pvepayment-transaction';
-import { PVExpenses } from './entity/models/PersonalVehicle/pvexpenses';
 import { PVIPaymentTransaction } from './entity/models/PersonalVehicle/pvipayment-transaction';
-import { REIPaymentTransaction } from './entity/models/RentedEquipment/reipayment-transaction';
 import { RVRent } from './entity/models/RentedVehicle/rvrent';
 import { AdminComponent } from './views/admin/admin.component';
-import { ClientcreateComponent } from './views/clientview/clientcreate/clientcreate.component';
-import { ExtendgivecontractcreateComponent } from './views/contractview/extendgivecontract/extendgivecontractcreate/extendgivecontractcreate.component';
-import { ExtendtakecontractcreateComponent } from './views/contractview/extendtakecontract/extendtakecontractcreate/extendtakecontractcreate.component';
-import { GcppaymenttransactioncreateComponent } from './views/contractview/gcppaymenttransaction/gcppaymenttransactioncreate/gcppaymenttransactioncreate.component';
-import { GivecontractcreateComponent } from './views/contractview/givecontract/givecontractcreate/givecontractcreate.component';
-import { TakecontractcreateComponent } from './views/contractview/takecontract/takecontractcreate/takecontractcreate.component';
-import { TcppaymenttransactioncreateComponent } from './views/contractview/tcppaymenttransaction/tcppaymenttransactioncreate/tcppaymenttransactioncreate.component';
-import { EmployeecreateComponent } from './views/employeeview/employee/employeecreate/employeecreate.component';
-import { EmployeepaymentcreateComponent } from './views/employeeview/employeepayment/employeepaymentcreate/employeepaymentcreate.component';
-import { LabourcreateComponent } from './views/labourview/labour/labourcreate/labourcreate.component';
-import { LabourpaymentcreateComponent } from './views/labourview/labourpayment/labourpaymentcreate/labourpaymentcreate.component';
-import { LaboursitecreateComponent } from './views/labourview/laboursite/laboursitecreate/laboursitecreate.component';
-import { MaterialcreateComponent } from './views/materialview/material/materialcreate/materialcreate.component';
-import { MaterialboughtcreateComponent } from './views/materialview/materialbought/materialboughtcreate/materialboughtcreate.component';
-import { MaterialsoldcreateComponent } from './views/materialview/materialsold/materialsoldcreate/materialsoldcreate.component';
-import { MaterialstockcreateComponent } from './views/materialview/materialstock/materialstockcreate/materialstockcreate.component';
-import { MaterialusedcreateComponent } from './views/materialview/materialused/materialusedcreate/materialusedcreate.component';
-import { MbpaymenttransacioncreateComponent } from './views/materialview/mbpaymenttransaction/mbpaymenttransacioncreate/mbpaymenttransacioncreate.component';
-import { MspaymenttransactioncreateComponent } from './views/materialview/mspaymenttransaction/mspaymenttransactioncreate/mspaymenttransactioncreate.component';
-import { PeboughtcreateComponent } from './views/personalequipmentview/pebought/peboughtcreate/peboughtcreate.component';
-import { PeexpensescreateComponent } from './views/personalequipmentview/peexpenses/peexpensescreate/peexpensescreate.component';
-import { PeincomecreateComponent } from './views/personalequipmentview/peincome/peincomecreate/peincomecreate.component';
-import { PeipaymenttransactioncreateComponent } from './views/personalequipmentview/peipaymenttransaction/peipaymenttransactioncreate/peipaymenttransactioncreate.component';
-import { PersonalequipmentcreateComponent } from './views/personalequipmentview/personalequipment/personalequipmentcreate/personalequipmentcreate.component';
-import { PersonalvehiclecreateComponent } from './views/personalvehicleview/personalvehicle/personalvehiclecreate/personalvehiclecreate.component';
-import { PvboughtcreateComponent } from './views/personalvehicleview/pvbought/pvboughtcreate/pvboughtcreate.component';
-import { PvbpaymenttransactioncreateComponent } from './views/personalvehicleview/pvbpaymenttransaction/pvbpaymenttransactioncreate/pvbpaymenttransactioncreate.component';
-import { PvepaymenttransactioncreateComponent } from './views/personalvehicleview/pvepaymenttransaction/pvepaymenttransactioncreate/pvepaymenttransactioncreate.component';
-import { PvepensescreateComponent } from './views/personalvehicleview/pvepenses/pvepensescreate/pvepensescreate.component';
-import { PvincomecreateComponent } from './views/personalvehicleview/pvincome/pvincomecreate/pvincomecreate.component';
-import { ReepaymenttransactioncreateComponent } from './views/rentedequipmentview/reepaymenttransaction/reepaymenttransactioncreate/reepaymenttransactioncreate.component';
-import { ReexpensescreateComponent } from './views/rentedequipmentview/reexpenses/reexpensescreate/reexpensescreate.component';
-import { ReincomecreateComponent } from './views/rentedequipmentview/reincome/reincomecreate/reincomecreate.component';
-import { ReipaymenttransctioncreateComponent } from './views/rentedequipmentview/reipaymenttransction/reipaymenttransctioncreate/reipaymenttransctioncreate.component';
-import { RerentcreateComponent } from './views/rentedequipmentview/rerent/rerentcreate/rerentcreate.component';
-import { RerpaymenttransactioncreateComponent } from './views/rentedequipmentview/rerpaymenttransaction/rerpaymenttransactioncreate/rerpaymenttransactioncreate.component';
-import { RentedvehiclecreateComponent } from './views/rentedvehicleview/rentedvehicle/rentedvehiclecreate/rentedvehiclecreate.component';
-import { RvepaymenttransctioncreateComponent } from './views/rentedvehicleview/rvepaymenttransction/rvepaymenttransctioncreate/rvepaymenttransctioncreate.component';
-import { RvexpensescreateComponent } from './views/rentedvehicleview/rvexpenses/rvexpensescreate/rvexpensescreate.component';
-import { RvincomecreateComponent } from './views/rentedvehicleview/rvincome/rvincomecreate/rvincomecreate.component';
-import { RvipaymenttransctioncreateComponent } from './views/rentedvehicleview/rvipaymenttransction/rvipaymenttransctioncreate/rvipaymenttransctioncreate.component';
-import { RvrpaymenttransctioncreateComponent } from './views/rentedvehicleview/rvrpaymenttransction/rvrpaymenttransctioncreate/rvrpaymenttransctioncreate.component';
-import { SitecreateComponent } from './views/siteview/sitecreate/sitecreate.component';
-import { UsercreateComponent } from './views/userview/usercreate/usercreate.component';
-import { VendorcreateComponent } from './views/vendorview/vendorcreate/vendorcreate.component';
+import { ClientlistComponent } from './views/clientview/clientlist/clientlist.component';
+import { ExtendgivecontractlistComponent } from './views/contractview/extendgivecontract/extendgivecontractlist/extendgivecontractlist.component';
+import { ExtendtakecontractlistComponent } from './views/contractview/extendtakecontract/extendtakecontractlist/extendtakecontractlist.component';
+import { GcppaymenttransactionlistComponent } from './views/contractview/gcppaymenttransaction/gcppaymenttransactionlist/gcppaymenttransactionlist.component';
+import { GivecontractlistComponent } from './views/contractview/givecontract/givecontractlist/givecontractlist.component';
+import { TakecontractlistComponent } from './views/contractview/takecontract/takecontractlist/takecontractlist.component';
+import { TcppaymenttransactionlistComponent } from './views/contractview/tcppaymenttransaction/tcppaymenttransactionlist/tcppaymenttransactionlist.component';
+import { EmployeelistComponent } from './views/employeeview/employee/employeelist/employeelist.component';
+import { EmployeepaymentlistComponent } from './views/employeeview/employeepayment/employeepaymentlist/employeepaymentlist.component';
+import { LabourlistComponent } from './views/labourview/labour/labourlist/labourlist.component';
+import { LabourpaymentlistComponent } from './views/labourview/labourpayment/labourpaymentlist/labourpaymentlist.component';
+import { LaboursitelistComponent } from './views/labourview/laboursite/laboursitelist/laboursitelist.component';
+import { MateriallistComponent } from './views/materialview/material/materiallist/materiallist.component';
+import { MaterialboughtlistComponent } from './views/materialview/materialbought/materialboughtlist/materialboughtlist.component';
+import { MaterialsoldlistComponent } from './views/materialview/materialsold/materialsoldlist/materialsoldlist.component';
+import { MaterialstocklistComponent } from './views/materialview/materialstock/materialstocklist/materialstocklist.component';
+import { MaterialusedlistComponent } from './views/materialview/materialused/materialusedlist/materialusedlist.component';
+import { MbpaymenttransacionlistComponent } from './views/materialview/mbpaymenttransaction/mbpaymenttransacionlist/mbpaymenttransacionlist.component';
+import { MspaymenttransactionlistComponent } from './views/materialview/mspaymenttransaction/mspaymenttransactionlist/mspaymenttransactionlist.component';
+import { PeboughtlistComponent } from './views/personalequipmentview/pebought/peboughtlist/peboughtlist.component';
+import { PebpaymenttransctionlistComponent } from './views/personalequipmentview/pebpaymenttransction/pebpaymenttransctionlist/pebpaymenttransctionlist.component';
+import { PeepaymenttransctionlistComponent } from './views/personalequipmentview/peepaymenttransction/peepaymenttransctionlist/peepaymenttransctionlist.component';
+import { PeexpenseslistComponent } from './views/personalequipmentview/peexpenses/peexpenseslist/peexpenseslist.component';
+import { PeincomelistComponent } from './views/personalequipmentview/peincome/peincomelist/peincomelist.component';
+import { PeipaymenttransactionlistComponent } from './views/personalequipmentview/peipaymenttransaction/peipaymenttransactionlist/peipaymenttransactionlist.component';
+import { PersonalequipmentlistComponent } from './views/personalequipmentview/personalequipment/personalequipmentlist/personalequipmentlist.component';
+import { PersonalvehiclelistComponent } from './views/personalvehicleview/personalvehicle/personalvehiclelist/personalvehiclelist.component';
+import { PvboughtlistComponent } from './views/personalvehicleview/pvbought/pvboughtlist/pvboughtlist.component';
+import { PvbpaymenttransactionlistComponent } from './views/personalvehicleview/pvbpaymenttransaction/pvbpaymenttransactionlist/pvbpaymenttransactionlist.component';
+import { PvepaymenttransactionlistComponent } from './views/personalvehicleview/pvepaymenttransaction/pvepaymenttransactionlist/pvepaymenttransactionlist.component';
+import { PvepenseslistComponent } from './views/personalvehicleview/pvepenses/pvepenseslist/pvepenseslist.component';
+import { PvincomelistComponent } from './views/personalvehicleview/pvincome/pvincomelist/pvincomelist.component';
+import { ReepaymenttransactionlistComponent } from './views/rentedequipmentview/reepaymenttransaction/reepaymenttransactionlist/reepaymenttransactionlist.component';
+import { ReexpenseslistComponent } from './views/rentedequipmentview/reexpenses/reexpenseslist/reexpenseslist.component';
+import { ReincomelistComponent } from './views/rentedequipmentview/reincome/reincomelist/reincomelist.component';
+import { ReipaymenttransctionlistComponent } from './views/rentedequipmentview/reipaymenttransction/reipaymenttransctionlist/reipaymenttransctionlist.component';
+import { RentedequipmentlistComponent } from './views/rentedequipmentview/rentedequipment/rentedequipmentlist/rentedequipmentlist.component';
+import { RerentlistComponent } from './views/rentedequipmentview/rerent/rerentlist/rerentlist.component';
+import { RerpaymenttransactionlistComponent } from './views/rentedequipmentview/rerpaymenttransaction/rerpaymenttransactionlist/rerpaymenttransactionlist.component';
+import { RentedvehiclelistComponent } from './views/rentedvehicleview/rentedvehicle/rentedvehiclelist/rentedvehiclelist.component';
+import { RvepaymenttransctionlistComponent } from './views/rentedvehicleview/rvepaymenttransction/rvepaymenttransctionlist/rvepaymenttransctionlist.component';
+import { RvexpenseslistComponent } from './views/rentedvehicleview/rvexpenses/rvexpenseslist/rvexpenseslist.component';
+import { RvincomelistComponent } from './views/rentedvehicleview/rvincome/rvincomelist/rvincomelist.component';
+import { RvipaymenttransctionlistComponent } from './views/rentedvehicleview/rvipaymenttransction/rvipaymenttransctionlist/rvipaymenttransctionlist.component';
+import { RvrpaymenttransctionlistComponent } from './views/rentedvehicleview/rvrpaymenttransction/rvrpaymenttransctionlist/rvrpaymenttransctionlist.component';
+import { SitelistComponent } from './views/siteview/sitelist/sitelist.component';
+import { UserlistComponent } from './views/userview/userlist/userlist.component';
+import { VendorlistComponent } from './views/vendorview/vendorlist/vendorlist.component';
 
 const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
     children: [
-      { path: 'client', component: ClientcreateComponent },
+      { path: 'client', component: ClientlistComponent },
       {
         path: 'extend-give-contract',
-        component: ExtendgivecontractcreateComponent,
+        component: ExtendgivecontractlistComponent,
       },
       {
         path: 'extend-take-contract',
-        component: ExtendtakecontractcreateComponent,
+        component: ExtendtakecontractlistComponent,
       },
       {
         path: 'gcp-payment-transaction',
-        component: GcppaymenttransactioncreateComponent,
+        component: GcppaymenttransactionlistComponent,
       },
-      { path: 'give-contract', component: GivecontractcreateComponent },
+      { path: 'give-contract', component: GivecontractlistComponent },
       {
         path: 'take-contract',
-        component: TakecontractcreateComponent,
+        component: TakecontractlistComponent,
       },
       {
         path: 'tcp-payment-transaction',
-        component: TcppaymenttransactioncreateComponent,
+        component: TcppaymenttransactionlistComponent,
       },
-      { path: 'employee-payment', component: EmployeepaymentcreateComponent },
-      { path: 'labour', component: LabourcreateComponent },
-      { path: 'labour-payment', component: LabourpaymentcreateComponent },
-      { path: 'labour-site', component: LaboursitecreateComponent },
-      { path: 'material', component: MaterialcreateComponent },
-      { path: 'material-bought', component: MaterialboughtcreateComponent },
-      { path: 'material-sold', component: MaterialsoldcreateComponent },
-      { path: 'material-stock', component: MaterialstockcreateComponent },
-      { path: 'material-used', component: MaterialusedcreateComponent },
+      { path: 'employee', component: EmployeelistComponent },
+      { path: 'employee-payment', component: EmployeepaymentlistComponent },
+      { path: 'labour', component: LabourlistComponent },
+      { path: 'labour-payment', component: LabourpaymentlistComponent },
+      { path: 'labour-site', component: LaboursitelistComponent },
+      { path: 'material', component: MateriallistComponent },
+      { path: 'material-bought', component: MaterialboughtlistComponent },
+      { path: 'material-sold', component: MaterialsoldlistComponent },
+      { path: 'material-stock', component: MaterialstocklistComponent },
+      { path: 'material-used', component: MaterialusedlistComponent },
       {
         path: 'mb-payment-transaction',
-        component: MbpaymenttransacioncreateComponent,
+        component: MbpaymenttransacionlistComponent,
       },
       {
         path: 'ms-payment-transaction',
-        component: MspaymenttransactioncreateComponent,
+        component: MspaymenttransactionlistComponent,
       },
-      { path: 'pe-bought', component: PeboughtcreateComponent },
-      { path: 'peb-payment-transaction', component: PEBPaymentTransaction },
-      { path: 'pee-payment-transaction', component: PEEPaymentTransaction },
-      { path: 'pee-expenses', component: PeexpensescreateComponent },
-      { path: 'pe-income', component: PeincomecreateComponent },
+      { path: 'pe-bought', component: PeboughtlistComponent },
+      { path: 'peb-payment-transaction', component: PebpaymenttransctionlistComponent },
+      { path: 'pee-payment-transaction', component: PeepaymenttransctionlistComponent },
+      { path: 'pe-expenses', component: PeexpenseslistComponent },
+      { path: 'pe-income', component: PeincomelistComponent },
       {
         path: 'pei-payment-transaction',
-        component: PeipaymenttransactioncreateComponent,
+        component: PeipaymenttransactionlistComponent,
       },
       {
         path: 'personal-equipment',
-        component: PersonalequipmentcreateComponent,
+        component: PersonalequipmentlistComponent,
       },
-      { path: 'personal-vehicle', component: PersonalvehiclecreateComponent },
-      { path: 'pv-bought', component: PvboughtcreateComponent },
+      { path: 'personal-vehicle', component: PersonalvehiclelistComponent },
+      { path: 'pv-bought', component: PvboughtlistComponent },
       {
         path: 'pvb-payment-transaction',
-        component: PvbpaymenttransactioncreateComponent,
+        component: PvbpaymenttransactionlistComponent,
       },
       {
         path: 'pve-payment-transaction',
-        component: PvepaymenttransactioncreateComponent,
+        component: PvepaymenttransactionlistComponent,
       },
-      { path: 'pv-expenses', component: PvepensescreateComponent },
-      { path: 'pv-income', component: PvincomecreateComponent },
+      { path: 'pv-expenses', component: PvepenseslistComponent },
+      { path: 'pv-income', component: PvincomelistComponent },
       { path: 'pvi-payment-transaction', component: PVIPaymentTransaction },
       {
         path: 'ree-payment-transaction',
-        component: ReepaymenttransactioncreateComponent,
+        component: ReepaymenttransactionlistComponent,
       },
-      { path: 'ree-expenses', component: ReexpensescreateComponent },
-      { path: 're-income', component: ReincomecreateComponent },
+      { path: 'ree-expenses', component: ReexpenseslistComponent },
+      { path: 're-income', component: ReincomelistComponent },
       {
         path: 'rei-payment-transaction',
-        component: ReipaymenttransctioncreateComponent,
+        component: ReipaymenttransctionlistComponent,
       },
-      { path: 're-rent', component: RerentcreateComponent },
+      { path: 're-rent', component: RerentlistComponent },
       {
         path: 'rer-payment-transaction',
-        component: RerpaymenttransactioncreateComponent,
+        component: RerpaymenttransactionlistComponent,
       },
-      { path: 'rented-vehicle', component: RentedvehiclecreateComponent },
+      {
+        path: 'rented-equipment',
+        component: RentedequipmentlistComponent,
+      },
+      { path: 'rented-vehicle', component: RentedvehiclelistComponent },
       {
         path: 'rve-payment-transaction',
-        component: RvepaymenttransctioncreateComponent,
+        component: RvepaymenttransctionlistComponent,
       },
-      { path: 'rv-expenses', component: RvexpensescreateComponent },
-      { path: 'rv-income', component: RvincomecreateComponent },
+      { path: 'rv-expenses', component: RvexpenseslistComponent },
+      { path: 'rv-income', component: RvincomelistComponent },
       {
         path: 'rvi-payment-transaction',
-        component: RvipaymenttransctioncreateComponent,
+        component: RvipaymenttransctionlistComponent,
       },
       { path: 'rv-rent', component: RVRent },
       {
         path: 'rvr-payment-transaction',
-        component: RvrpaymenttransctioncreateComponent,
+        component: RvrpaymenttransctionlistComponent,
       },
-      { path: 'site', component: SitecreateComponent },
-      { path: 'user', component: UsercreateComponent },
-      { path: 'vendor', component: VendorcreateComponent },
+      { path: 'site', component: SitelistComponent },
+      { path: 'user', component: UserlistComponent },
+      { path: 'vendor', component: VendorlistComponent },
     ],
   },
 ]
