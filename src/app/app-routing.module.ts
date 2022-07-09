@@ -162,11 +162,7 @@ const routes: Routes = [
       { path: 'vendor', component: VendorcreateComponent },
     ],
   },
-
-  // { path: '', redirectTo: '', pathMatch: 'full' },
-  // { path: '**', component: PageNotFoundComponent },
-];
-
+]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
