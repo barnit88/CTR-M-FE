@@ -15,7 +15,7 @@ export class RerentlistComponent implements OnInit {
 
   OpenModalPopUp() {
     this.genericModalPopUpService.openDetailModal(RerentcreateComponent, {
-      title: 'Create New PV Bought',
+      title: 'Rented Equipment Create',
     });
   }
 
