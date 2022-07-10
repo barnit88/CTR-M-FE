@@ -1,1 +1,28 @@
-<p>pvipaymenttransctionlist works!</p>
+<app-card [title]="title" (popUp)="OpenModalPopUp()">
+<h3> Payment vehicle income payment transaction list Information </h3>
+
+<div class="container-fluid">
+    <table class="table table-hover table-bordered border-dark bg-white">
+      <thead>
+        <tr>
+          <th>PV Income ID:</th>
+          <th>PV Income</th>
+          <th>Payment Type</th>
+          <th>Payment Method</th>
+          <th>Payment</th>
+          <th>Payment Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>NIX  HOUSE SITE</td>
+          <td>3</td>
+          <td>BAgmati</td>
+          <td>Construction</td>
+          <td> MAnagemt</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</app-card>
