@@ -11,5 +11,6 @@ export class PeboughtdetailComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="PE Bought Detail"
 
 }
