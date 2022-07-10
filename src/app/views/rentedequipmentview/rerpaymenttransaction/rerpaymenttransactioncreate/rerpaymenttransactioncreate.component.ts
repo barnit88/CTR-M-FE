@@ -11,5 +11,6 @@ export class RerpaymenttransactioncreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Craete New RERP"
 
 }

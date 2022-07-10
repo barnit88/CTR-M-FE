@@ -11,5 +11,6 @@ export class MaterialboughtcreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New MB"
 
 }

@@ -11,5 +11,6 @@ export class MaterialusedcreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New MU"
 
 }

@@ -11,5 +11,7 @@ export class PeepaymenttransctioncreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New PEEP"
+
 
 }

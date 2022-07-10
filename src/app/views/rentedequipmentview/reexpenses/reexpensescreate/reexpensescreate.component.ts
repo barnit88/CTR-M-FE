@@ -11,5 +11,6 @@ export class ReexpensescreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Craete New RE"
 
 }

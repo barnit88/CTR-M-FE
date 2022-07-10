@@ -11,5 +11,7 @@ export class MspaymenttransactioncreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New MSP"
+
 
 }

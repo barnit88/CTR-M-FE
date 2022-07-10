@@ -11,5 +11,6 @@ export class UsercreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New User"
 
 }

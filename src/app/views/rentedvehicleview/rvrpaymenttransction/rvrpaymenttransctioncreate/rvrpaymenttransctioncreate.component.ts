@@ -11,5 +11,6 @@ export class RvrpaymenttransctioncreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New RVR"
 
 }

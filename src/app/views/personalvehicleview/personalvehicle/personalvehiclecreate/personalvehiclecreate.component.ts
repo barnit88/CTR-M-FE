@@ -10,12 +10,7 @@ export class PersonalvehiclecreateComponent implements OnInit {
   constructor(private genericModalPopUpService: GenericModalPopUpService) {}
 
   ngOnInit(): void {}
-  title: string = 'Persoanl Vechicle List';
+  title: string = "Create New PV"
 
-  OpenModalPopUp() {
-    this.genericModalPopUpService.openDetailModal(PersonalvehiclecreateComponent, {
-      title: 'Create New Personal Vehicle',
-    });
+ 
   }
-
-}

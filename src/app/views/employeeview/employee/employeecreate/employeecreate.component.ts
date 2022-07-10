@@ -11,5 +11,6 @@ export class EmployeecreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New Employee"
 
 }

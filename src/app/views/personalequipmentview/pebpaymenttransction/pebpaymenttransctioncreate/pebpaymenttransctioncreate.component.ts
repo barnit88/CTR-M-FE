@@ -11,5 +11,6 @@ export class PebpaymenttransctioncreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New PEBP"
 
 }

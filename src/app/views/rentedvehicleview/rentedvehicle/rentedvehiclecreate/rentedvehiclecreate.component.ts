@@ -11,5 +11,6 @@ export class RentedvehiclecreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Craete New RV"
 
 }

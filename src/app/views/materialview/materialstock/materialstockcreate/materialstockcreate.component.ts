@@ -11,5 +11,6 @@ export class MaterialstockcreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New M.STOCK"
 
 }

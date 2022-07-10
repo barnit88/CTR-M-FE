@@ -11,5 +11,6 @@ export class VendorcreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string=" Vendor Create"
 
 }

@@ -11,5 +11,7 @@ export class MaterialcreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New MC"
+
 
 }

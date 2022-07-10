@@ -11,5 +11,7 @@ export class PeboughtcreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New PEB"
+
 
 }

@@ -11,5 +11,5 @@ export class RentedequipmentcreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  title:string="Craete New RE"
 }

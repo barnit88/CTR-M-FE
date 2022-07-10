@@ -12,12 +12,7 @@ export class LabourpaymentcreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  title:"Labour Payment List";
+  title:string="Create New LSP"
 
-  OpenModelPopUp(){
-    this.genericModalPopUpService.openDetailModal(LabourpaymentcreateComponent,{
-      title:"Create Labour Payment"
-    })
-  }
 
 }

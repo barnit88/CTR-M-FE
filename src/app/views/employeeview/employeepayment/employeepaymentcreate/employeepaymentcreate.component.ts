@@ -11,5 +11,6 @@ export class EmployeepaymentcreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New EC"
 
 }

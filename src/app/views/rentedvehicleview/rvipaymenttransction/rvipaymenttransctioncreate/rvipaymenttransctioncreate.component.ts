@@ -11,5 +11,5 @@ export class RvipaymenttransctioncreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+title:string="Craete New RVIP"
 }

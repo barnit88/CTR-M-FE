@@ -11,5 +11,6 @@ export class RvrentcreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New RVR"
 
 }

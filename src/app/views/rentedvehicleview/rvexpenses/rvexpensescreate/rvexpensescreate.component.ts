@@ -11,5 +11,6 @@ export class RvexpensescreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Craete New RVE"
 
 }

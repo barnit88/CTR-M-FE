@@ -11,5 +11,6 @@ export class GcppaymenttransactioncreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string=" Give Contract Payment"
 
 }

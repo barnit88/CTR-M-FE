@@ -11,5 +11,6 @@ export class PvincomecreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Craete New PVI"
 
 }

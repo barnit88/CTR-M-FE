@@ -11,5 +11,5 @@ export class PvepaymenttransactioncreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  title:string="Craete New PVEP"
 }

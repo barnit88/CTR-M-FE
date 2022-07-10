@@ -11,5 +11,7 @@ export class PeipaymenttransactioncreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New PEIP"
+
 
 }

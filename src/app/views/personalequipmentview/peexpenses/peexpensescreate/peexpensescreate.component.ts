@@ -11,5 +11,6 @@ export class PeexpensescreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New PEE"
 
 }

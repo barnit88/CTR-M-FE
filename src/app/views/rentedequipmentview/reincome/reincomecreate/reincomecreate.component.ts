@@ -11,5 +11,5 @@ export class ReincomecreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  title:string="Craete New REI"
 }

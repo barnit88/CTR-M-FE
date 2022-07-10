@@ -11,5 +11,6 @@ export class PersonalequipmentcreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New PE"
 
 }

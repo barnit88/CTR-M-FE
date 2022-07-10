@@ -11,5 +11,5 @@ export class ReipaymenttransctioncreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  title:string="Craete New REIP"
 }

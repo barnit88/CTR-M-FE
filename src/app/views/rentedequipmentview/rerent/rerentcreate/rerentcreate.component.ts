@@ -11,5 +11,6 @@ export class RerentcreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Craete New RER"
 
 }

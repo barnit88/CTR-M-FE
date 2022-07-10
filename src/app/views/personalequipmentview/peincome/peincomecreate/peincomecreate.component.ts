@@ -11,5 +11,7 @@ export class PeincomecreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New PEI"
+
 
 }

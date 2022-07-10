@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
+import { GcppaymenttransactioncreateComponent } from './../gcppaymenttransactioncreate/gcppaymenttransactioncreate.component';
 @Component({
   selector: 'app-gcppaymenttransactionlist',
   templateUrl: './gcppaymenttransactionlist.component.html',
@@ -13,7 +14,7 @@ export class GcppaymenttransactionlistComponent implements OnInit {
   title: string = 'Give Contract Transactions Payments';
 
   OpenModalPopUp() {
-    this.genericModalPopUpService.openDetailModal(GcppaymenttransactionlistComponent, {
+    this.genericModalPopUpService.openDetailModal(GcppaymenttransactioncreateComponent, {
       title: 'Create Client',
     });
   }

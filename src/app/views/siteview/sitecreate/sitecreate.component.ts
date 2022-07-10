@@ -11,5 +11,6 @@ export class SitecreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New Site"
 
 }

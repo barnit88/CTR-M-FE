@@ -11,5 +11,6 @@ export class PvbpaymenttransactioncreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Craete New PVBP"
 
 }

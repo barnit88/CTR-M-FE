@@ -11,5 +11,7 @@ export class LaboursitecreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title:string="Create New LS"
+
 
 }
