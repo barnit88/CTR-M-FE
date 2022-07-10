@@ -13,7 +13,7 @@ export class LabourpaymentlistComponent implements OnInit {
   ngOnInit(): void {
   }
   title: string='Labour Payment'
-  OpenModelPopUp(){
+  OpenModalPopUp(){
     this.genericModalPopUpService.openDetailModal(LabourpaymentlistComponent, {
       title:" Create Labour Payment"
     })

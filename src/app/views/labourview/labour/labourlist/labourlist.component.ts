@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 import { LabourcreateComponent } from './../labourcreate/labourcreate.component';
 
 @Component({

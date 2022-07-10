@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
+import { MaterialusedcreateComponent } from './../materialusedcreate/materialusedcreate.component';
 
 @Component({
   selector: 'app-materialusedlist',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaterialusedlistComponent implements OnInit {
 
-  constructor() { }
+  constructor(private genericModalPopUpService:GenericModalPopUpService) { }
 
   ngOnInit(): void {
   }
-
+  title:string="create New Material Used"
+  OpenModalPopUp(){
+  this.genericModalPopUpService.openDetailModal(MaterialusedcreateComponent,{
+    title:"Create New Material Used"
+  });
+}
 }
