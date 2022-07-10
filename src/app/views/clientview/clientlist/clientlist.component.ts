@@ -13,7 +13,7 @@ export class ClientlistComponent implements OnInit {
   ngOnInit(): void {}
   title: string = 'Client List';
 
-  CreateClient() {
+  OpenModalPopUp() {
     this.genericModalPopUpService.openDetailModal(ClientcreateComponent, {
       title: 'Create Client',
     });
