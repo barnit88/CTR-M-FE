@@ -11,5 +11,5 @@ export class PvboughtcreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  title:string="Craete New PVB"
+  title:string="Create New PVB"
 }
