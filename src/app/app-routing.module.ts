@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PVIPaymentTransaction } from './entity/models/PersonalVehicle/pvipayment-transaction';
 import { AdminComponent } from './views/admin/admin.component';
 import { ClientlistComponent } from './views/clientview/clientlist/clientlist.component';
 import { ExtendgivecontractlistComponent } from './views/contractview/extendgivecontract/extendgivecontractlist/extendgivecontractlist.component';
@@ -34,6 +33,7 @@ import { PvbpaymenttransactionlistComponent } from './views/personalvehicleview/
 import { PvepaymenttransactionlistComponent } from './views/personalvehicleview/pvepaymenttransaction/pvepaymenttransactionlist/pvepaymenttransactionlist.component';
 import { PvepenseslistComponent } from './views/personalvehicleview/pvepenses/pvepenseslist/pvepenseslist.component';
 import { PvincomelistComponent } from './views/personalvehicleview/pvincome/pvincomelist/pvincomelist.component';
+import { PvipaymenttransctionlistComponent } from './views/personalvehicleview/pvipaymenttransction/pvipaymenttransctionlist/pvipaymenttransctionlist.component';
 import { ReepaymenttransactionlistComponent } from './views/rentedequipmentview/reepaymenttransaction/reepaymenttransactionlist/reepaymenttransactionlist.component';
 import { ReexpenseslistComponent } from './views/rentedequipmentview/reexpenses/reexpenseslist/reexpenseslist.component';
 import { ReincomelistComponent } from './views/rentedequipmentview/reincome/reincomelist/reincomelist.component';
@@ -122,7 +122,7 @@ const routes: Routes = [
       },
       { path: 'pv-expenses', component: PvepenseslistComponent },
       { path: 'pv-income', component: PvincomelistComponent },
-      { path: 'pvi-payment-transaction', component: PVIPaymentTransaction },
+      { path: 'pvi-payment-transaction', component: PvipaymenttransctionlistComponent },
       {
         path: 'ree-payment-transaction',
         component: ReepaymenttransactionlistComponent,
