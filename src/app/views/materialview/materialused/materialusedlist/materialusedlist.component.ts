@@ -11,7 +11,10 @@ export class MaterialusedlistComponent implements OnInit {
 
   constructor(private genericModalPopUpService:GenericModalPopUpService) { }
 
-  ngOnInit(): void {
+  OpenModalPopUp() {
+    this.genericModalPopUpService.openDetailModal(MaterialusedcreateComponent, {
+      title: 'Create New Material USed List',
+    });
   }
   title:string="create New Material Used"
   OpenModalPopUp(){

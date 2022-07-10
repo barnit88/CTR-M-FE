@@ -7,7 +7,6 @@ import { GenericModalPopUpService } from 'src/app/services/common-service/generi
   styleUrls: ['./extendtakecontractlist.component.css']
 })
 export class ExtendtakecontractlistComponent implements OnInit {
-
   constructor(private genericModalPopUpService: GenericModalPopUpService) {}
 
   ngOnInit(): void {}
@@ -18,4 +17,5 @@ export class ExtendtakecontractlistComponent implements OnInit {
       title: 'Create Extend Take Contract',
     });
   }
+
 }

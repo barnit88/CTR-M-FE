@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { PersonalvehiclecreateComponent } from './../personalvehiclecreate/personalvehiclecreate.component';
+import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 @Component({
   selector: 'app-personalvehiclelist',
   templateUrl: './personalvehiclelist.component.html',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalvehiclelistComponent implements OnInit {
 
-  constructor() { }
+  constructor(private genericModalPopUpService: GenericModalPopUpService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  title: string = 'Personal Vehicle List';
+
+  OpenModalPopUp() {
+    this.genericModalPopUpService.openDetailModal(PersonalvehiclecreateComponent, {
+      title: 'Create New Persoanl Vehicle',
+    });
   }
-
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { RvincomecreateComponent } from './../rvincomecreate/rvincomecreate.component';
+import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 @Component({
   selector: 'app-rvincomelist',
   templateUrl: './rvincomelist.component.html',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RvincomelistComponent implements OnInit {
 
-  constructor() { }
+  constructor(private genericModalPopUpService: GenericModalPopUpService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  title: string = 'Rented vehicle Income List';
+
+  OpenModalPopUp() {
+    this.genericModalPopUpService.openDetailModal(RvincomecreateComponent, {
+      title: 'Create New RVI',
+    });
   }
-
 }

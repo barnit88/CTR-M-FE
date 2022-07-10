@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { PebpaymenttransctioncreateComponent } from './../pebpaymenttransctioncreate/pebpaymenttransctioncreate.component';
+import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 @Component({
   selector: 'app-pebpaymenttransctionlist',
   templateUrl: './pebpaymenttransctionlist.component.html',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PebpaymenttransctionlistComponent implements OnInit {
 
-  constructor() { }
+  constructor(private genericModalPopUpService: GenericModalPopUpService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  title: string = 'Material List';
+
+  OpenModalPopUp() {
+    this.genericModalPopUpService.openDetailModal(PebpaymenttransctioncreateComponent, {
+      title: 'Create New PEB Payment',
+    });
   }
-
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { RvepaymenttransctioncreateComponent } from './../rvepaymenttransctioncreate/rvepaymenttransctioncreate.component';
+import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 @Component({
   selector: 'app-rvepaymenttransctionlist',
   templateUrl: './rvepaymenttransctionlist.component.html',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RvepaymenttransctionlistComponent implements OnInit {
 
-  constructor() { }
+  constructor(private genericModalPopUpService: GenericModalPopUpService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  title: string = 'Rented Vehicle Expense List';
+
+  OpenModalPopUp() {
+    this.genericModalPopUpService.openDetailModal(RvepaymenttransctioncreateComponent, {
+      title: 'Create New RVE',
+    });
   }
-
 }

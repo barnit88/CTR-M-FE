@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ReexpensescreateComponent } from './../reexpensescreate/reexpensescreate.component';
+import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 @Component({
   selector: 'app-reexpenseslist',
   templateUrl: './reexpenseslist.component.html',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReexpenseslistComponent implements OnInit {
 
-  constructor() { }
+  constructor(private genericModalPopUpService: GenericModalPopUpService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  title: string = 'RE Expense List';
+
+  OpenModalPopUp() {
+    this.genericModalPopUpService.openDetailModal(ReexpensescreateComponent, {
+      title: 'Create New RE Expense',
+    });
   }
 
 }

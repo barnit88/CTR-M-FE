@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { PvboughtcreateComponent } from './../pvboughtcreate/pvboughtcreate.component';
+import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 @Component({
   selector: 'app-pvboughtlist',
   templateUrl: './pvboughtlist.component.html',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PvboughtlistComponent implements OnInit {
 
-  constructor() { }
+  constructor(private genericModalPopUpService: GenericModalPopUpService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  title: string = 'Persoanl Vehicle Bought List';
+
+  OpenModalPopUp() {
+    this.genericModalPopUpService.openDetailModal(PvboughtcreateComponent, {
+      title: 'Create New PV Bought',
+    });
   }
-
 }

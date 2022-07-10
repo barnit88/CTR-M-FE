@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { RentedvehiclecreateComponent } from './../rentedvehiclecreate/rentedvehiclecreate.component';
+import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 @Component({
   selector: 'app-rentedvehiclelist',
   templateUrl: './rentedvehiclelist.component.html',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RentedvehiclelistComponent implements OnInit {
 
-  constructor() { }
+  constructor(private genericModalPopUpService: GenericModalPopUpService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  title: string = 'Rented Vehicle List';
+
+  OpenModalPopUp() {
+    this.genericModalPopUpService.openDetailModal(RentedvehiclecreateComponent, {
+      title: 'Create New RV',
+    });
   }
-
 }

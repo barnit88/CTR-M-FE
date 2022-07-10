@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { RerentcreateComponent } from './../rerentcreate/rerentcreate.component';
+import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 @Component({
   selector: 'app-rerentlist',
   templateUrl: './rerentlist.component.html',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RerentlistComponent implements OnInit {
 
-  constructor() { }
+  constructor(private genericModalPopUpService: GenericModalPopUpService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  title: string = 'Rented Equipment Rent List';
+
+  OpenModalPopUp() {
+    this.genericModalPopUpService.openDetailModal(RerentcreateComponent, {
+      title: 'Create New PV Bought',
+    });
   }
 
 }

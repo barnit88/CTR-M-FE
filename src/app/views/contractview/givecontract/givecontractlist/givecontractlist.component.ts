@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
-import { GiveContract } from './../../../../entity/models/Contract/give-contract';
 import { GivecontractcreateComponent } from './../givecontractcreate/givecontractcreate.component';
 
 @Component({
@@ -20,4 +19,5 @@ export class GivecontractlistComponent implements OnInit {
       title: 'Create Give Contract',
     });
   }
+
 }
