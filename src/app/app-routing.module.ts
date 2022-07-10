@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PVIPaymentTransaction } from './entity/models/PersonalVehicle/pvipayment-transaction';
-import { RVRent } from './entity/models/RentedVehicle/rvrent';
 import { AdminComponent } from './views/admin/admin.component';
 import { ClientlistComponent } from './views/clientview/clientlist/clientlist.component';
 import { ExtendgivecontractlistComponent } from './views/contractview/extendgivecontract/extendgivecontractlist/extendgivecontractlist.component';
@@ -47,6 +46,7 @@ import { RvepaymenttransctionlistComponent } from './views/rentedvehicleview/rve
 import { RvexpenseslistComponent } from './views/rentedvehicleview/rvexpenses/rvexpenseslist/rvexpenseslist.component';
 import { RvincomelistComponent } from './views/rentedvehicleview/rvincome/rvincomelist/rvincomelist.component';
 import { RvipaymenttransctionlistComponent } from './views/rentedvehicleview/rvipaymenttransction/rvipaymenttransctionlist/rvipaymenttransctionlist.component';
+import { RvrentlistComponent } from './views/rentedvehicleview/rvrent/rvrentlist/rvrentlist.component';
 import { RvrpaymenttransctionlistComponent } from './views/rentedvehicleview/rvrpaymenttransction/rvrpaymenttransctionlist/rvrpaymenttransctionlist.component';
 import { SitelistComponent } from './views/siteview/sitelist/sitelist.component';
 import { UserlistComponent } from './views/userview/userlist/userlist.component';
@@ -127,7 +127,7 @@ const routes: Routes = [
         path: 'ree-payment-transaction',
         component: ReepaymenttransactionlistComponent,
       },
-      { path: 'ree-expenses', component: ReexpenseslistComponent },
+      { path: 're-expenses', component: ReexpenseslistComponent },
       { path: 're-income', component: ReincomelistComponent },
       {
         path: 'rei-payment-transaction',
@@ -153,7 +153,7 @@ const routes: Routes = [
         path: 'rvi-payment-transaction',
         component: RvipaymenttransctionlistComponent,
       },
-      { path: 'rv-rent', component: RVRent },
+      { path: 'rv-rent', component: RvrentlistComponent },
       {
         path: 'rvr-payment-transaction',
         component: RvrpaymenttransctionlistComponent,
