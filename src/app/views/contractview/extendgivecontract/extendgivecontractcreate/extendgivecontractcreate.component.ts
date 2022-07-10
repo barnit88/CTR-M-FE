@@ -11,5 +11,11 @@ export class ExtendgivecontractcreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  OpenModalPopUp() {
+    this.genericModalPopUpService.openDetailModal(ClientcreateComponent, {
+      title: 'Create Client',
+    });
+  }
 
 }

@@ -12,8 +12,5 @@ export class ClientcreateComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  check(event: any) {
-    console.log('ello Mcasdad');
-    alert('ello Mcasdad');
-  }
+ 
 }

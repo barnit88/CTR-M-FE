@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LabourcreateComponent } from './../labourcreate/labourcreate.component';
 
 @Component({
   selector: 'app-labourlist',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LabourlistComponent implements OnInit {
 
-  constructor() { }
+  constructor(private genericModalPopUpService: GenericModalPopUpService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  title: string = 'Labour List';
+
+  OpenModalPopUp() {
+    this.genericModalPopUpService.openDetailModal(LabourcreateComponent, {
+      title: 'Create Labour',
+    });
   }
-
 }
