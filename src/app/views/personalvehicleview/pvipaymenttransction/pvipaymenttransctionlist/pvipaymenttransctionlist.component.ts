@@ -10,8 +10,8 @@ export class PvipaymenttransctionlistComponent implements OnInit {
   constructor(private genericModalPopUpService: GenericModalPopUpService) {}
 
   ngOnInit(): void {}
-  title: string = 'Persoanl Vehicle Income transaction List';
-
+  title: string = 'Persoanl Vehicle Income Transaction List';
+  
   OpenModalPopUp() {
     this.genericModalPopUpService.openDetailModal(PvipaymenttransctioncreateComponent, {
       title: 'Create New PVI Transaction',

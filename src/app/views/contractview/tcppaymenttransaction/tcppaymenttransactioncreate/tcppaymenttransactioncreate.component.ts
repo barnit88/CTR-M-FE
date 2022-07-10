@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tcppaymenttransactioncreate.component.css']
 })
 export class TcppaymenttransactioncreateComponent implements OnInit {
-
+  title: any = 'Take Contract Payment Transaction Create';
+  data: any;
   constructor() { }
 
   ngOnInit(): void {

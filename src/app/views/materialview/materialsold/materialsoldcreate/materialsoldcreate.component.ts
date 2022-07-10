@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./materialsoldcreate.component.css']
 })
 export class MaterialsoldcreateComponent implements OnInit {
-
+  title: any = 'Material Sold Create';
+  data: any;
   constructor() { }
 
   ngOnInit(): void {
