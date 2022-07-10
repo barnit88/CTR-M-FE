@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rvincomecreate.component.css']
 })
 export class RvincomecreateComponent implements OnInit {
-  title: any = 'Rented Vehicle Income Create';
-  data: any;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+  title:string="Craete New RVI"
 
 }
