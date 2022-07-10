@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClientcreateComponent } from './views/clientview/clientcreate/clientcreate.component';
@@ -207,6 +210,11 @@ import { AdminComponent } from './views/admin/admin.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavComponent } from './components/nav/nav.component';
 import { AsideComponent } from './components/aside/aside.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { CardComponent } from './components/card/card.component';
+import { CardCreateComponent } from './components/card-create/card-create.component';
 
 @NgModule({
   declarations: [
@@ -415,8 +423,20 @@ import { AsideComponent } from './components/aside/aside.component';
     FooterComponent,
     NavComponent,
     AsideComponent,
+    CardComponent,
+    CardCreateComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    NgxSpinnerModule,
+    ModalModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

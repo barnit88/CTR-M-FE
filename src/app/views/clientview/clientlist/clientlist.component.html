@@ -1,7 +1,6 @@
-
-<h2> CLIENT LIST TABLE INFORMATION</h2>
-
-<div class="container-fluid">
+<app-card [title]="title" (popUp)="OpenModalPopUp()">  
+  <div>
+    <div class="container-fluid">      
     <table class="table table-bordered border-dark bg-white">
       <thead>
         <tr>
@@ -38,7 +37,9 @@
           <td>working</td>
           <td>working</td>
 
-        </tr>
-      </tbody>
-    </table>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+</app-card>
