@@ -11,11 +11,11 @@ export class ExtendtakecontractlistComponent implements OnInit {
   constructor(private genericModalPopUpService: GenericModalPopUpService) {}
 
   ngOnInit(): void {}
-  title: string = 'Client List';
+  title: string = 'ExtendTake Contract List';
 
   OpenModalPopUp() {
     this.genericModalPopUpService.openDetailModal(ExtendtakecontractcreateComponent, {
-      title: 'Create Client',
+      title: 'Create Extend Take Contract',
     });
   }
 }
