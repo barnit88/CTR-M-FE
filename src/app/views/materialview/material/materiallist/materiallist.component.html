@@ -5,6 +5,7 @@
           <th>ID</th>
           <th>MATERIAL NAME</th>
           <th> MEASUREMENT TYPE</th>
+          <th>DETAIL</th>
          </tr>
       </thead>
       <tbody>
@@ -12,6 +13,11 @@
           <td>1</td>
           <td>NIX  HOUSE SITE</td>
           <td>3</td>
+          <td>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button>
+          </td>
         </tr>
       </tbody>
     </table>
