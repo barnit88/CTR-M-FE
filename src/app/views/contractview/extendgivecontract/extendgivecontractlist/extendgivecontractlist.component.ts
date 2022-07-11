@@ -3,6 +3,7 @@ import { GenericModalPopUpService } from 'src/app/services/common-service/generi
 import { ClientdetailComponent } from 'src/app/views/clientview/clientdetail/clientdetail.component';
 import { ExtendgivecontractcreateComponent } from './../extendgivecontractcreate/extendgivecontractcreate.component';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
+import { ExtendgivecontractdetailComponent } from './../extendgivecontractdetail/extendgivecontractdetail.component';
 
 
 @Component({
@@ -23,8 +24,8 @@ export class ExtendgivecontractlistComponent implements OnInit {
     });
   }
   OpenDetailPopUp() {
-    this.genericModalPopUpService.openDetailModal(ClientdetailComponent,{
-      title:"Client details"
+    this.genericDetailPopUpService.openDetailModal(ExtendgivecontractdetailComponent,{
+      title:"Extend Give Contract Details"
     });
   }
 }

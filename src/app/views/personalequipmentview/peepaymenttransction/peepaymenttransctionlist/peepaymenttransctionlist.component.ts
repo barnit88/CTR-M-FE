@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { PeepaymenttransctioncreateComponent } from './../peepaymenttransctioncreate/peepaymenttransctioncreate.component';
 import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
+import { PeepaymenttransctiondetailComponent } from './../peepaymenttransctiondetail/peepaymenttransctiondetail.component';
+import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 @Component({
   selector: 'app-peepaymenttransctionlist',
   templateUrl: './peepaymenttransctionlist.component.html',
   styleUrls: ['./peepaymenttransctionlist.component.css']
 })
 export class PeepaymenttransctionlistComponent implements OnInit {
-  constructor(private genericModalPopUpService: GenericModalPopUpService) {}
+  constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService:GenericDetailPopUpService) {}
 
   ngOnInit(): void {}
   title: string = 'PEE Payemnt Transction List';
@@ -15,6 +17,11 @@ export class PeepaymenttransctionlistComponent implements OnInit {
   OpenModalPopUp() {
     this.genericModalPopUpService.openDetailModal(PeepaymenttransctioncreateComponent, {
       title: 'Create New PEE Payment',
+    });
+  }
+  OpenDetailPopUp() {
+    this.genericDetailPopUpService.openDetailModal(PeepaymenttransctiondetailComponent,{
+      title:" Personal Equipment Expense Payment Details"
     });
   }
 }

@@ -23,7 +23,7 @@ export class ClientlistComponent implements OnInit {
   
   OpenModalPopUp() {
     this.genericModalPopUpService.openDetailModal(ClientcreateComponent, {
-      title: 'Clent Create',
+      title: 'Client Create',
     });
   }
 }

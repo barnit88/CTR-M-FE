@@ -3,6 +3,7 @@ import { GenericModalPopUpService } from 'src/app/services/common-service/generi
 import { ClientdetailComponent } from '../../clientview/clientdetail/clientdetail.component';
 import { UsercreateComponent } from './../usercreate/usercreate.component';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
+import { UserdetailComponent } from './../userdetail/userdetail.component';
 
 @Component({
   selector: 'app-userlist',
@@ -23,9 +24,10 @@ export class UserlistComponent implements OnInit {
     });
   }
   OpenDetailPopUp() {
-    this.genericDetailPopUpService.openDetailModal(ClientdetailComponent,{
+    this.genericDetailPopUpService.openDetailModal(UserdetailComponent,{
       title:"User Details"
     });
   }
   
 }
+

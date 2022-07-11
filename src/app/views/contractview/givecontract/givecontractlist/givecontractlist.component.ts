@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 import { GivecontractcreateComponent } from './../givecontractcreate/givecontractcreate.component';
+import { GivecontractdetailComponent } from './../givecontractdetail/givecontractdetail.component';
+import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 
 @Component({
   selector: 'app-givecontractlist',
@@ -9,7 +11,7 @@ import { GivecontractcreateComponent } from './../givecontractcreate/givecontrac
 })
 export class GivecontractlistComponent implements OnInit {
 
-  constructor(private genericModalPopUpService: GenericModalPopUpService) {}
+  constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService: GenericDetailPopUpService) {}
 
   ngOnInit(): void {}
   title: string = 'Give Contract Lists';
@@ -17,6 +19,11 @@ export class GivecontractlistComponent implements OnInit {
   OpenModalPopUp() {
     this.genericModalPopUpService.openDetailModal(GivecontractcreateComponent, {
       title: 'Create Give Contract',
+    });
+  }
+  OpenDetailPopUp() {
+    this.genericModalPopUpService.openDetailModal(GivecontractdetailComponent,{
+      title:"Give Contract Details"
     });
   }
 

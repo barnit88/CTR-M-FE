@@ -3,6 +3,7 @@ import { VendorcreateComponent } from './../vendorcreate/vendorcreate.component'
 import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 import { ClientdetailComponent } from '../../clientview/clientdetail/clientdetail.component';
+import { VendordetailComponent } from './../vendordetail/vendordetail.component';
 @Component({
   selector: 'app-vendorlist',
   templateUrl: './vendorlist.component.html',
@@ -21,7 +22,7 @@ export class VendorlistComponent implements OnInit {
     });
   }
   OpenDetailPopUp() {
-    this.genericDetailPopUpService.openDetailModal(ClientdetailComponent,{
+    this.genericDetailPopUpService.openDetailModal(VendordetailComponent,{
       title:"Vendor Details"
     });
   }

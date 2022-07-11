@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 import { LabourpaymentcreateComponent } from './../labourpaymentcreate/labourpaymentcreate.component';
+import { LabourpaymentdetailComponent } from './../labourpaymentdetail/labourpaymentdetail.component';
+import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 
 @Component({
   selector: 'app-labourpaymentlist',
@@ -9,7 +11,7 @@ import { LabourpaymentcreateComponent } from './../labourpaymentcreate/labourpay
 })
 export class LabourpaymentlistComponent implements OnInit {
 
-  constructor(private genericModalPopUpService: GenericModalPopUpService) { }
+  constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService: GenericDetailPopUpService) { }
 
   ngOnInit(): void {
   }
@@ -18,5 +20,10 @@ export class LabourpaymentlistComponent implements OnInit {
     this.genericModalPopUpService.openDetailModal(LabourpaymentcreateComponent, {
       title:" Create Labour Payment"
     })
+  }
+  OpenDetailPopUp() {
+    this.genericDetailPopUpService.openDetailModal(LabourpaymentdetailComponent,{
+      title:" Labour Payement Details"
+    });
   }
 }
