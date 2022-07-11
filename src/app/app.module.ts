@@ -215,6 +215,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CardComponent } from './components/card/card.component';
 import { CardCreateComponent } from './components/card-create/card-create.component';
+import { ListDetailCardComponent } from './components/list-detail-card/list-detail-card.component';
+import { DetailButtonComponent } from './components/detail-button/detail-button.component';
 
 @NgModule({
   declarations: [
@@ -425,6 +427,8 @@ import { CardCreateComponent } from './components/card-create/card-create.compon
     AsideComponent,
     CardComponent,
     CardCreateComponent,
+    ListDetailCardComponent,
+    DetailButtonComponent,
   ],
   imports: [
     BrowserModule,

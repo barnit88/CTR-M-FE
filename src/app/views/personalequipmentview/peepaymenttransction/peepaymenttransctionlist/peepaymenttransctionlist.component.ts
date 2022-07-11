@@ -7,7 +7,6 @@ import { GenericModalPopUpService } from 'src/app/services/common-service/generi
   styleUrls: ['./peepaymenttransctionlist.component.css']
 })
 export class PeepaymenttransctionlistComponent implements OnInit {
-
   constructor(private genericModalPopUpService: GenericModalPopUpService) {}
 
   ngOnInit(): void {}

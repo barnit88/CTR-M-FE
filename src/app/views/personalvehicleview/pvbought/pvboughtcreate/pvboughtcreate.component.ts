@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 
 @Component({
   selector: 'app-pvboughtcreate',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PvboughtcreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private genericModalPopUpService: GenericModalPopUpService) {}
+
 
   ngOnInit(): void {
   }

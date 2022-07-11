@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GenericDetailPopUpService } from './../../../../services/common-service/generic.detail.popup.service';
 
 @Component({
   selector: 'app-tcppaymenttransactioncreate',

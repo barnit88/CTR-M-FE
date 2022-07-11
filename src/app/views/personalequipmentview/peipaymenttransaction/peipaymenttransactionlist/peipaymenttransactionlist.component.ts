@@ -11,7 +11,7 @@ export class PeipaymenttransactionlistComponent implements OnInit {
   constructor(private genericModalPopUpService: GenericModalPopUpService) {}
 
   ngOnInit(): void {}
-  title: string = 'Give Contract Transactions Payments';
+  title: string = 'Personal Equipment Income Payments Transactions';
 
   OpenModalPopUp() {
     this.genericModalPopUpService.openDetailModal(PeipaymenttransactioncreateComponent, {
