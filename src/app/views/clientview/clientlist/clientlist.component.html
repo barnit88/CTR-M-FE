@@ -1,40 +1,46 @@
-<app-card [title]="title" (popUp)="OpenModalPopUp()">  
-    <table class="table table-bordered border-dark bg-white">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Full Name</th>
-          <th>Address</th>
-          <th>Contract No</th>
-          <th>Email</th>
-          <th>Identity Type</th>
-          <th>Identity Number</th>
-          <th>Client Type</th>
-          <th>Client Company Name</th>
-          <th>Client Company Contact Number</th>
-          <th>Client Company Identity Type</th>
-          <th>Client Company Identity Number</th>
-          <th>Details</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>NIX  HOUSE SITE</td>
-          <td>3</td>
-          <td>BAgmati</td>
-          <td>Construction</td>
-          <td> MAnagemt</td>
-          <td> Work on progress</td>
-          <td>working</td>
-          <td>working</td>
-          <td>working</td>
-          <td>working</td>
-          <td> work</td>
-          <td> <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
-            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
-            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button></td>
+
+<div class="position-absolute">
+  <app-card [title]="title" (popUp)="OpenModalPopUp()">  
+    <div class=".d-print-table">
+      <table class="table-bordered border-dark bg-white">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Address</th>
+            <th>Contract No</th>
+            <th>Email</th>
+            <th>Identity Type</th>
+            <th>Identity Number</th>
+            <th>Client Type</th>
+            <th>Client Company Name</th>
+            <th>Client Company Contact Number</th>
+            <th>Client Company Identity Type</th>
+            <th>Client Company Identity Number</th>
+            <th>Details</th>
           </tr>
-        </tbody>
-      </table>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>NIX  HOUSE SITE</td>
+            <td>3</td>
+            <td>BAgmati</td>
+            <td>Construction</td>
+            <td> MAnagemt</td>
+            <td> Work on progress</td>
+            <td>working</td>
+            <td>working</td>
+            <td>working</td>
+            <td>working</td>
+            <td> work</td>
+            <td> <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    
 </app-card>
+</div>
