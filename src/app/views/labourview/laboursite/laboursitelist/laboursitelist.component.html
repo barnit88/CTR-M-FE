@@ -1,25 +1,33 @@
 <app-card [title]="title" (popUp)="OpenModalPopUp()">
-    <table class="table table-hover table-bordered border-dark bg-white">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>LABOUR ID</th>
-          <th> LABOUR TYPE</th>
-          <th>LABOUR PAYEMENT TYPE</th>
-          <th>SITE ID</th>
-          <th> SITE</th>
-          <th>IDENITYT NUMBER </th>
-         </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>NIX  HOUSE SITE</td>
-          <td>3</td>
-          <td>BAgmati</td>
-          <td>Construction</td>
-          <td> MAnagemt</td>
-        </tr>
-      </tbody>
-    </table>
+  <table class="table table-hover table-bordered border-dark bg-white">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>LABOUR ID</th>
+        <th> LABOUR TYPE</th>
+        <th>LABOUR PAYEMENT TYPE</th>
+        <th>SITE ID</th>
+        <th> SITE</th>
+        <th>IDENITYT NUMBER </th>
+        <th>DETAIL </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>NIX HOUSE SITE</td>
+        <td>3</td>
+        <td>BAgmati</td>
+        <td>Construction</td>
+        <td> MAnagemt</td>
+        <td> MAnagemt</td>
+
+        <td>
+          <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
+          <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
+          <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </app-card>

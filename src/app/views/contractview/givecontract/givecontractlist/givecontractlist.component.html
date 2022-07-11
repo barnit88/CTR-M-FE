@@ -10,6 +10,7 @@
           <th> CONTRACT START DATE</th>
           <th>CONTRACT FINISHED DATE</th>
           <th> CONTRACT AMOUNT</th>
+          <th> DETAIL</th>
 
          </tr>
       </thead>
@@ -23,6 +24,10 @@
           <td> MAnagemt</td>
           <td> Work on progress</td>
           <td>3</td>
+          
+          <td> <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button></td>
         </tr>
       </tbody>
     </table>

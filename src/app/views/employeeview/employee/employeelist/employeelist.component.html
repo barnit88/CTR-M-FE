@@ -14,6 +14,7 @@
           <th> EMPLOYEE PAYMENT TYPE</th>
           <th> IS ACTIVE</th>
           <th> DATE OF BIRTH</th>
+          <th> DETAIL</th>
          </tr>
       </thead>
       <tbody>
@@ -28,7 +29,10 @@
           <td>3</td>
           <td>10</td>
           <td>11</td>
-          <td>12</td>
+          <td>12</td>         
+          <td> <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button></td>
         </tr>
       </tbody>
     </table>
