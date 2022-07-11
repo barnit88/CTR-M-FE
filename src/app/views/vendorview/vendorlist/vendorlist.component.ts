@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { VendorcreateComponent } from './../vendorcreate/vendorcreate.component';
 import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
+import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
+import { ClientdetailComponent } from '../../clientview/clientdetail/clientdetail.component';
 @Component({
   selector: 'app-vendorlist',
   templateUrl: './vendorlist.component.html',
@@ -8,7 +10,7 @@ import { GenericModalPopUpService } from 'src/app/services/common-service/generi
 })
 export class VendorlistComponent implements OnInit {
 
-  constructor(private genericModalPopUpService: GenericModalPopUpService) {}
+  constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService: GenericDetailPopUpService) {}
 
   ngOnInit(): void {}
   title: string = 'Vendors List';
@@ -16,6 +18,11 @@ export class VendorlistComponent implements OnInit {
   OpenModalPopUp() {
     this.genericModalPopUpService.openDetailModal(VendorcreateComponent, {
       title: 'Create New Vendor',
+    });
+  }
+  OpenDetailPopUp() {
+    this.genericDetailPopUpService.openDetailModal(ClientdetailComponent,{
+      title:"Vendor Details"
     });
   }
 }

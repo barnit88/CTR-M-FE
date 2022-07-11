@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./userdetail.component.css']
 })
 export class UserdetailComponent implements OnInit {
+  title:string=" User Details"
 
   constructor() { }
 

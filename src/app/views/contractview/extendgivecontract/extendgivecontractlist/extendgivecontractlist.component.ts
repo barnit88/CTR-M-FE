@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
+import { ClientdetailComponent } from 'src/app/views/clientview/clientdetail/clientdetail.component';
 import { ExtendgivecontractcreateComponent } from './../extendgivecontractcreate/extendgivecontractcreate.component';
+import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 
 
 @Component({
@@ -10,7 +12,7 @@ import { ExtendgivecontractcreateComponent } from './../extendgivecontractcreate
 })
 export class ExtendgivecontractlistComponent implements OnInit {
 
-  constructor(private genericModalPopUpService: GenericModalPopUpService) {}
+  constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService: GenericDetailPopUpService) {}
 
   ngOnInit(): void {}
   title: string = 'EGC List';
@@ -18,6 +20,11 @@ export class ExtendgivecontractlistComponent implements OnInit {
   OpenModalPopUp() {
     this.genericModalPopUpService.openDetailModal(ExtendgivecontractcreateComponent, {
       title: 'Create EGC',
+    });
+  }
+  OpenDetailPopUp() {
+    this.genericModalPopUpService.openDetailModal(ClientdetailComponent,{
+      title:"Client details"
     });
   }
 }
