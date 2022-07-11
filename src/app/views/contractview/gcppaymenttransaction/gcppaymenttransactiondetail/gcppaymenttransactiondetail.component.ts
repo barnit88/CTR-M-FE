@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gcppaymenttransactiondetail.component.css']
 })
 export class GcppaymenttransactiondetailComponent implements OnInit {
-
+  title="Give Contract Payment Transaction"
   constructor() { }
 
   ngOnInit(): void {
