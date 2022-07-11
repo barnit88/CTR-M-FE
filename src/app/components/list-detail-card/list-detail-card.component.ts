@@ -4,16 +4,16 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-list-detail-card',
   templateUrl: './list-detail-card.component.html',
-  styleUrls: ['./list-detail-card.component.css']
+  styleUrls: ['./list-detail-card.component.css'],
 })
 export class ListDetailCardComponent implements OnInit {
-  @Output()  detailPopUp = new EventEmitter();
+  @Output() detailPopUp = new EventEmitter();
+  @Input() title = '';
+
   constructor(public modalRef: BsModalRef) {}
 
-  ngOnInit(): void {
-    
-  }
-  
+  ngOnInit(): void {}
+
   emitEventForDetailPopUp(event: any) {
     this.detailPopUp.emit(event);
   }
