@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pvepaymenttransactioncreate.component.css']
 })
 export class PvepaymenttransactioncreateComponent implements OnInit {
-
+  title:string="Craete New PVEP";
   constructor() { }
 
   ngOnInit(): void {
   }
-  title:string="Craete New PVEP"
+  
 }

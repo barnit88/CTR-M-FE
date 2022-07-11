@@ -1,0 +1,9 @@
+.overflow-y{
+    overflow-y : scroll;
+}
+a:hover{
+    color : white!important;
+}
+.customwidth{
+    width: 60px!important;
+}

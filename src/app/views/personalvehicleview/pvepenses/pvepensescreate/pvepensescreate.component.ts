@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 
 @Component({
   selector: 'app-pvepensescreate',
@@ -6,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pvepensescreate.component.css']
 })
 export class PvepensescreateComponent implements OnInit {
-
-  constructor() { }
+  title:string="Craete New PVE";
+  constructor() {}
 
   ngOnInit(): void {
   }
-  title:string="Craete New PVE"
+
 
 }

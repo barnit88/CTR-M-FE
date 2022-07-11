@@ -1,21 +1,21 @@
-<app-card [title]="title" (popUp)="OpenModalPopUp()">  
-    <table class="table table-bordered border-dark bg-white">
+<app-card [title]="title" (popUp)="OpenModalPopUp()">    
+  <div class="row">
+    <table class="table table-bordered border-dark bg-white overflow-hidden">
       <thead>
         <tr>
           <th>ID</th>
-          <th>FULL Name</th>
-          <th>STATE</th>
-          <th>DISTRICT</th>
-          <th>VDC/MUNCIPALITY</th>
-          <th>CONTRACT NO</th>
-          <th>EMAIL</th>
-          <th>IDENTITY TYPE</th>
-          <th>IDENTITY NUMBER</th>
-          <th>CLIENT TYPE</th>
-          <th>CLIENT COMPANY NAME</th>
-          <th>CLIENT COMPANY CONTACT NUMBER</th>
-          <th>CLIENT COMPANY IDENTITY TYPE</th>
-          <th>CLIENT COMPANY IDENTITY NUMBER</th>
+          <th>Full Name</th>
+          <th>Address</th>
+          <th>Contract No</th>
+          <th>Email</th>
+          <th>Identity Type</th>
+          <th>Identity Number</th>
+          <th>Client Type</th>
+          <th>Client Company Name</th>
+          <th>Client Company Contact Number</th>
+          <th>Client Company Identity Type</th>
+          <th>Client Company Identity Number</th>
+          <th>Details</th>
         </tr>
       </thead>
       <tbody>
@@ -31,11 +31,12 @@
           <td>working</td>
           <td>working</td>
           <td>working</td>
-          <td>working</td>
-          <td>working</td>
-          <td>working</td>
-
+          <td> work</td>
+          <td> <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button></td>
           </tr>
         </tbody>
       </table>
+  </div>
 </app-card>

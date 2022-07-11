@@ -16,7 +16,7 @@ export class MaterialusedlistComponent implements OnInit {
   title:string="create New Material Used"
   OpenModalPopUp() {
     this.genericModalPopUpService.openDetailModal(MaterialusedcreateComponent, {
-      title: 'Create New Material USed List',
+      title: 'Create New Material Used ',
     });
   }
 

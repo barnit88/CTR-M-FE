@@ -15,7 +15,7 @@ export class LabourpaymentlistComponent implements OnInit {
   }
   title: string='Labour Payment'
   OpenModalPopUp(){
-    this.genericModalPopUpService.openDetailModal(LabourpaymentlistComponent, {
+    this.genericModalPopUpService.openDetailModal(LabourpaymentcreateComponent, {
       title:" Create Labour Payment"
     })
   }

@@ -15,7 +15,7 @@ export class PvbpaymenttransactionlistComponent implements OnInit {
 
   OpenModalPopUp() {
     this.genericModalPopUpService.openDetailModal(PvbpaymenttransactioncreateComponent, {
-      title: 'Create New PEV Transaction ',
+      title: 'Create New PVB Payment ',
     });
   }
 }
