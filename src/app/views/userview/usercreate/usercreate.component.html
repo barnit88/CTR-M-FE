@@ -1,82 +1,36 @@
-<app-card-create [title]="title" >
-<div class="container-fluid">
-  <div class="card-body">
-    <div class="form-group">
-      <div class="row mt-3 md-3">
-        <div class="col-sm-4"><label for="usr"> Lockout End:</label>
-          <input type="text" class="form-control" id="usr">
-        </div>
-        <div class="col-sm-4"><label for="usr"> Two Factor Enabled:</label>
-          <input type="text" class="form-control" id="usr">
-        </div>
-        <div class="col-sm-4"><label for="usr"> Phone Number Confirmed:</label>
-          <input type="text" class="form-control" id="usr">
-        </div>
-      </div>
-      <div class="row mt-3 md-3">
-        <div class="col-sm-4"><label for="usr">Phone Number:</label>
-          <input type="text" class="form-control" id="usr">
-        </div>
-        <div class="col-sm-4"><label for="usr">Concurrency Stamp:</label>
-          <input type="text" class="form-control" id="usr">
-        </div>
-        <div class="col-sm-4"><label for="usr">Security Stamp:</label>
-          <input type="text" class="form-control" id="usr">
-        </div>
-      </div>
-      <div class="row mt-3 md-3">
-  
-        <div class="col-sm-4"><label for="usr">Password Hash:</label>
-          <input type="text" class="form-control" id="usr">
-        </div>
-        <div class="col-sm-4"><label for="usr">Email Confirmed:</label>
-          <input type="text" class="form-control" id="usr">
-        </div>
-        <div class="col-sm-4">
-          <label for="exampleInputEmail1">Normalized Email:</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Enter email">
-        </div>
+<app-card-create [title]="title">
+  <div class="container-fluid">
+    <div class="card-body">
+      <div class="form-group">
         <div class="row mt-3 md-3">
-          <div class="col-sm-6"><label for="usr">Email:</label>
+          <div class="col-sm-4"><label for="usr">Phone Number:</label>
             <input type="text" class="form-control" id="usr">
           </div>
-          <div class="col-sm-6"><label for="usr">Normalized User Name:</label>
+          <div class="col-sm-4"><label for="usr">Password:</label>
+            <input type="text" class="form-control" id="usr">
+          </div>
+          <div class="col-sm-4"><label for="usr">Password Confirmed:</label>
             <input type="text" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
-          <div class="col-sm-6"><label for="usr">User Name:</label>
+          <div class="col-sm-4"><label for="usr">Email:</label>
             <input type="text" class="form-control" id="usr">
           </div>
-          <div class="col-sm-6"><label for="usr">Id:</label>
+          <div class="col-sm-4"><label for="usr">User Name:</label>
             <input type="text" class="form-control" id="usr">
           </div>
-        </div>
-        <div class="row mt-3 md-3">
-          <div class="col-sm-6"><label for="usr">Lockout Enabled:</label>
-            <input type="text" class="form-control" id="usr">
-          </div>
-          <div class="col-sm-6"><label for="usr">Access Failed Count:</label>
+          <div class="col-sm-4"><label for="usr">Employee Id:</label>
             <input type="text" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
-          <div class="col-sm-6"><label for="usr">Employee Id:</label>
-            <input type="text" class="form-control" id="usr">
-          </div>
-          <div class="col-sm-6"><label for="usr">Employee:</label>
-            <input type="text" class="form-control" id="usr">
-          </div>
-        </div>
-        <div class="row mt-3 md-3">
-  
+
           <div class="col-sm-6">
-            <button type="button" class="btn btn-primary btn-lg mx-2">Submit</button>
+            <button type="button" class="btn btn-outline-success btn-lg mx-2">Submit</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </app-card-create>
