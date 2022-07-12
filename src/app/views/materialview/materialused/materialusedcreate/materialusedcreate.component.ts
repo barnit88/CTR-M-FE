@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./materialusedcreate.component.css']
 })
 export class MaterialusedcreateComponent implements OnInit {
+  title:string="Create New MU";
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  title:string="Create New MU"
 
 }

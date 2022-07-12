@@ -12,7 +12,5 @@ export class PeepaymenttransctioncreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
- 
-
 
 }
