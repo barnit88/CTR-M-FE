@@ -11,6 +11,7 @@
           <th>RATE</th>
           <th>TOTAL PRICE</th>
           <TH>BOUGHT PRICE</TH>
+          <TH>DETAIL</TH>
          </tr>
       </thead>
       <tbody>
@@ -24,6 +25,11 @@
           <td> Work on progress</td>
           <td>3</td>
           <td>3</td>
+          <td>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button>
+          </td>
         </tr>
       </tbody>
     </table>
