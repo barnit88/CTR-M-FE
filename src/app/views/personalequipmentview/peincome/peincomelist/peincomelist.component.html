@@ -13,6 +13,7 @@
           <TH>RATE</TH>
           <TH>PERIOD</TH>
           <TH>INCOME</TH>
+          <th>DETAILS</th>
          </tr>
       </thead>
       <tbody>
@@ -27,7 +28,11 @@
           <TD>TO DTAE </TD>
           <TD>12000</TD>
           <TD>ONE</TD>
-          <TH>TWO</TH>
+          <td>two</td>
+          <td> <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button></td>
+
         </tr>
       </tbody>
     </table>

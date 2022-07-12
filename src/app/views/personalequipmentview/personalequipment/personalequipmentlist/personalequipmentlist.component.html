@@ -8,6 +8,7 @@
             <th>MODEL NAME</th>
             <th>BOUGHT DATE</th>
             <th>EQUIPMENT TYPE</th>
+            <th>DETAILS</th>
           </tr>
         </thead>
         <tbody>
@@ -18,6 +19,9 @@
             <td>Bagmati</td>
             <td>Construction</td>
             <td>Managemt</td>
+            <td> <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button></td>
           </tr>
         </tbody>
       </table>

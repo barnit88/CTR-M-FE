@@ -8,6 +8,7 @@
           <th>Vendor</th>
           <th>Bought Price</th>
           <th>Bought Date</th>
+          <th>Details</th>
         </tr>
       </thead>
       <tbody>
@@ -18,6 +19,9 @@
           <td>BAgmati</td>
           <td>Construction</td>
           <td>..</td>
+          <td> <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button></td>
         </tr>
       </tbody>
     </table>

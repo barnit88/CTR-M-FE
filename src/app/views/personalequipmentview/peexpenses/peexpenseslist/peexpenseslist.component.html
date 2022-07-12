@@ -11,6 +11,7 @@
           <th>FROM DATE</th>
           <TH>TO DATE</TH>
           <TH>EXPENSE</TH>
+          <th>DETAILS</th>
          </tr>
       </thead>
       <tbody>
@@ -24,6 +25,9 @@
           <td> Work on progress</td>
           <TD>TO DTAE </TD>
           <TD>12000</TD>
+          <td> <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button></td>
         </tr>
       </tbody>
     </table>

@@ -10,6 +10,7 @@
           <th>From Date</th>
           <th>To Date</th>
           <th>Expenses</th>
+          <th>Details</th>
         </tr>
       </thead>
       <tbody>
@@ -19,6 +20,9 @@
           <td>3</td>
           <td>BAgmati</td>
           <td>Construction</td>
+          <td> <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button></td>
         </tr>
       </tbody>
     </table>
