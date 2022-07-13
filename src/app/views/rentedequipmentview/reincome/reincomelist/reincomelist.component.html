@@ -1,6 +1,8 @@
+<div class="g-row">
 <app-card [title]="title" (popUp)="OpenModalPopUp()">
-    <table class="table table-hover table-bordered border-dark bg-white">
-      <thead>
+  <div class="card-body">
+  <table class="table table-hover table-responsive table-bordered bg-white">
+    <thead>
         <tr>
           <th>Rented Equipment Id</th>
           <th>Rented Equipment</th> 
@@ -22,10 +24,17 @@
           <td>3</td>
           <td>BAgmati</td>
           <td>Construction</td>
+          <td>1</td>
+          <td>NIX  HOUSE SITE</td>
+          <td>3</td>
+          <td>BAgmati</td>
+          <td>Construction</td>
           <td> <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
             <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
             <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button></td>
         </tr>
       </tbody>
     </table>
+  </div>
 </app-card>
+</div>

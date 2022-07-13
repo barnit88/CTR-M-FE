@@ -1,39 +1,123 @@
+<app-list-detail-card [title]="title">
 
-<app-list-detail-card [title]="title"  >
+  <ng-content>
+  </ng-content>
+  <div class="row">
+    <div class="row">
+        <div class="col">
             <div class="row">
-                <div class="col">
-                    <h2 class="card-title">{{title}}</h2>
-                </div>
-                <div class="col" style="float:right">
-                    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+                <div class="col"><label>First Name:</label></div>
+                <div class="col">1</div>
             </div>
+        </div>
+        <div class="col">
             <div class="row">
-                <ng-content>
-                </ng-content>
-                <div class="card">
-                    <div class="card-body">
-                        <label for="text1">Client Name </label>
-                      <p class="card-text" name="text1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    <div class="card-body">
-                        <label for="text1">Client Name </label>
-                      <p class="card-text" name="text1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    <div class="card-body">
-                        <label for="text1">Client Name </label>
-                      <p class="card-text" name="text1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    <div class="card-body">
-                        <label for="text1">Client Name </label>
-                      <p class="card-text" name="text1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    <div class="card-body">
-                        <label for="text1">Client Name </label>
-                      <p class="card-text" name="text1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                  </div>
+                <div class="col"><label>Middle Name:</label></div>
+                <div class="col">Give Contract Name</div>
             </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col"><label>Last Name:</label></div>
+                <div class="col">2</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col"><label>State:</label></div>
+                <div class="col">2020-01-01</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col"><label>District:</label></div>
+                <div class="col">2020-02-02</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col"><label>Muncipility:</label></div>
+                <div class="col">2,00,00</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col"><label>Contact Number:</label></div>
+                <div class="col">Some Unknown Values</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col"><label>Email:</label></div>
+                <div class="col">Some Unknown Values</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col"><label>Identity Type:</label></div>
+                <div class="col">Some Unknown Values</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col"><label>Identity Number:</label></div>
+                <div class="col">Some Unknown Values</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col"><label>Client Type:</label></div>
+                <div class="col">Some Unknown Values</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col"><label>Client Company Name:</label></div>
+                <div class="col">Some Unknown Values</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col"><label>Client Company Contact Number:</label></div>
+                <div class="col">Some Unknown Values</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col"><label>Client Company Identity Type:</label></div>
+                <div class="col">Some Unknown Values</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col"><label>Client Company Identity Number:</label></div>
+                <div class="col">Some Unknown Values</div>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+      <div class="col">
+          <div class="row">
+              <div class="col"><label>UDF1:</label></div>
+              <div class="col">Some Unknown Values</div>
+          </div>
+      </div>
+      <div class="col">
+          <div class="row">
+              <div class="col"><label>UDF2:</label></div>
+              <div class="col">Some Unknown Values</div>
+          </div>
+      </div>      
+    </div>
+</div>
 </app-list-detail-card>

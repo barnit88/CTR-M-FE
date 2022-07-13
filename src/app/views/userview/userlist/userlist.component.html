@@ -1,5 +1,6 @@
+<div class="g-row">
 <app-card [title]="title" (popUp)="OpenModalPopUp()">
-  <div>
+  <div class="card-body">
     <table class="table table-hover table-bordered border-dark bg-white">
       <thead>
         <tr>
@@ -26,6 +27,10 @@
           <td>Construction</td>
           <td> MAnagemt</td>
           <td>2</td>
+          <td>BAgmati</td>
+          <td>Construction</td>
+          <td> MAnagemt</td>
+          <td>2</td>
           <td></td>
           <td>  <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
             <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
@@ -35,3 +40,4 @@
     </table>
   </div>
 </app-card>
+</div>

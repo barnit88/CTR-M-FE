@@ -1,34 +1,40 @@
-<app-card [title]="title" (popUp)="OpenModalPopUp()">
-    <table class="table table-hover table-bordered border-dark bg-white">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th> PERSONAL EQUIPMENT ID</th>
-          <th>PERSONAL EQUPMENT</th>
-          <th>VENDOR ID</th>
-          <th>VENDOR</th>
-          <th>EXPENSE TYPE</th>
-          <th>FROM DATE</th>
-          <TH>TO DATE</TH>
-          <TH>EXPENSE</TH>
-          <th>DETAILS</th>
-         </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>NIX  HOUSE SITE</td>
-          <td>3</td>
-          <td>BAgmati</td>
-          <td>Construction</td>
-          <td> MAnagemt</td>
-          <td> Work on progress</td>
-          <TD>TO DTAE </TD>
-          <TD>12000</TD>
-          <td> <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
-            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
-            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button></td>
-        </tr>
-      </tbody>
-    </table>
-</app-card>
+<div class="g-row">
+  <app-card [title]="title" (popUp)="OpenModalPopUp()">
+    <div class="card-body">
+      <table class="table table-hover table-responsive table-bordered bg-white">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th> PERSONAL EQUIPMENT ID</th>
+            <th>PERSONAL EQUPMENT</th>
+            <th>VENDOR ID</th>
+            <th>VENDOR</th>
+            <th>EXPENSE TYPE</th>
+            <th>FROM DATE</th>
+            <TH>TO DATE</TH>
+            <TH>EXPENSE</TH>
+            <th>DETAILS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>NIX HOUSE SITE</td>
+            <td>3</td>
+            <td>BAgmati</td>
+            <td>Construction</td>
+            <td> MAnagemt</td>
+            <td> Work on progress</td>
+            <TD>TO DTAE </TD>
+            <TD>12000</TD>
+            <td>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </app-card>
+</div>

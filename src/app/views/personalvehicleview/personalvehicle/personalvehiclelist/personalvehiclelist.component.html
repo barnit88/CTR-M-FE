@@ -1,27 +1,33 @@
-<app-card [title]="title" (popUp)="OpenModalPopUp()">
-  <table class="table table-hover table-bordered border-dark bg-light">
-      <thead>
-        <tr>
-          <th>Vehicle Name</th>
-          <th>Brand Name</th> 
-          <th>Model Name</th>
-          <th>Number Plate</th>
-          <th>Vehicle Type</th>
-          <th>Details</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>NIX  HOUSE SITE</td>
-          <td>3</td>
-          <td>BAgmati</td>
-          <td>Construction</td>
-          <td> <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
-            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
-            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button></td>
+<div class="g-row">
+  <app-card [title]="title" (popUp)="OpenModalPopUp()">
+    <div class="card-body">
+      <table class="table table-hover table-responsive table-bordered bg-white">
+        <thead>
+          <tr>
+            <th>Vehicle Name</th>
+            <th>Brand Name</th>
+            <th>Model Name</th>
+            <th>Number Plate</th>
+            <th>Vehicle Type</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>NIX HOUSE SITE</td>
+            <td>3</td>
+            <td>BAgmati</td>
+            <td>Construction</td>
+            <td>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button>
+            </td>
 
-        </tr>
-      </tbody>
-    </table>
-</app-card>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </app-card>
+</div>

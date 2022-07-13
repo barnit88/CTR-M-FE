@@ -1,6 +1,8 @@
+<div class="g-row">
 <app-card [title]="title" (popUp)="OpenModalPopUp()">
-  <table class="table table-hover table-bordered border-dark bg-light">
-        <thead>
+  <div class="card-body">
+  <table class="table table-hover table-responsive table-bordered bg-white">
+    <thead>
           <tr>
             <th>Full Name</th>
             <th>State</th>
@@ -38,4 +40,6 @@
           </tr>
         </tbody>
       </table>
+  </div>
 </app-card>
+</div>
