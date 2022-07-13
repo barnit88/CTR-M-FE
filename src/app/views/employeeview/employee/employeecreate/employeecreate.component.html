@@ -1,80 +1,107 @@
 <app-card-create [title]="title" >
   <div class="container-fluid">
     <div class="card-body">
+      <form #myForm="ngForm" (ngSubmit)="onSubmitTemplateBased(myForm.value)">
+
       <div class="form-group">
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr"> First Name:</label>
-            <input type="text" class="form-control" id="usr">
+            <input [(ngModel)]="employee.FirstName" name="firstName" type="text" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> Midddle Name:</label>
-            <input type="text" class="form-control" id="usr">
+            <input type="text" [(ngModel)]="employee.MiddleName" name="middleName" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> Last Name:</label>
-            <input type="text" class="form-control" id="usr">
+            <input [(ngModel)]="employee.LastName" type="text" 
+            name="lastName"
+            class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr">State:</label>
-            <input type="text" class="form-control" id="usr">
+            <input [(ngModel)]="employee.State" 
+            name="state"
+            type="text" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">District:</label>
-            <input type="text" class="form-control" id="usr">
+            <input [(ngModel)]="employee.District"
+            name="district"
+            type="text" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">VDC/Municipality:</label>
-            <input type="text" class="form-control" id="usr">
+            <input [(ngModel)]="employee.Muncipality" 
+            name="muncipality"
+            type="text" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
-          <div class="col-sm-4"><label for="usr">Name:</label>
-            <input type="text" class="form-control" id="usr">
-          </div>
           <div class="col-sm-4"><label for="usr">Contact Number:</label>
-            <input type="text" class="form-control" id="usr">
+            <input [(ngModel)]="employee.ContactNo"
+            name="contactNo"
+            type="text" class="form-control" id="usr">
           </div>
           <div class="col-sm-4">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            <input [(ngModel)]="employee.Email"
+            name="email"
+            type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
               placeholder="Enter email">
           </div>
           </div>
           <div class="row mt-3 md-3">
             <div class="col-sm-6"><label for="usr">Identity Number:</label>
-              <input type="text" class="form-control" id="usr">
+              <input [(ngModel)]="employee.IdentityNo"
+              name="IdentityNo"
+              type="text" class="form-control" id="usr">
             </div>
             <div class="col-sm-6"><label for="usr">Identity Type:</label>
-              <input type="text" class="form-control" id="usr">
+              <input [(ngModel)]="employee.IdentityType" 
+              name="identityType"
+              class="form-control" id="usr">
             </div>
           </div>
           <div class="row mt-3 md-3">
             <div class="col-sm-6"><label for="usr">EMPLOYEE TYPE:</label>
-              <input type="text" class="form-control" id="usr">
+              <input [(ngModel)]="employee.EmployeeType" 
+              name="employeeType"
+              class="form-control" id="usr">
             </div>
             <div class="col-sm-6"><label for="usr">EMPLOYMENT PAYMENT Type:</label>
-              <input type="text" class="form-control" id="usr">
+              <input [(ngModel)]="employee.EmployeePaymentType" 
+              name="employeePayment"
+              type="text" class="form-control" id="usr">
             </div>
           </div>
           <div class="row mt-3 md-3">
             <div class="col-sm-6"><label for="usr">IS ACTIVE:</label>
-              <input type="text" class="form-control" id="usr">
+              <input [(ngModel)]="employee.isActive" 
+              name="isActive"
+              type="text" class="form-control" id="usr">
             </div>
-            <div class="col-sm-6"><label for="usr">DOB:</label>
-              <input type="text" class="form-control" id="usr">
-            </div>
-          </div>
-          <div class="row mt-3 md-3">
-            <div class="col-sm-6"><label for="usr">UDT 1:</label>
-              <input type="text" class="form-control" id="usr">
-            </div>
-            <div class="col-sm-6"><label for="usr">UDT 2:</label>
-              <input type="text" class="form-control" id="usr">
+            <div class="col-sm-6"><label for="usr">Date of Birth:</label>
+              <input [(ngModel)]="employee.DateofBirth" 
+              name="dateOfBirth"
+              type="text" class="form-control" id="usr">
             </div>
           </div>
           <div class="row mt-3 md-3">
-            <div class="col-sm-6"><label for="usr">Sumbit:</label>
-              <button type="button" class="btn btn-outline-primary btn-lg mx-2">Submit</button>
+            <div class="col-sm-6"><label for="usr">UDF 1:</label>
+              <input [(ngModel)]="employee.UDF1" 
+              name="udf1"
+              type="text" class="form-control" id="usr">
+            </div>
+            <div class="col-sm-6"><label for="usr">UDF 2:</label>
+              <input [(ngModel)]="employee.UDF2" type="text" class="form-control" id="usr" name="udf2">
+            </div>
+          </div>
+          <div class="row mt-3 md-3">
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-outline-primary btn-lg mx-2" type="submit" [disabled]="!myForm.valid">Submit</button>
             </div>
           </div>
       </div>
+  </form>
+
     </div>
 </div>
 </app-card-create>
