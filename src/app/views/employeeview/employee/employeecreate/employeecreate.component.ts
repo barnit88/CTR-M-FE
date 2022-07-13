@@ -11,7 +11,7 @@ export class EmployeecreateComponent implements OnInit {
   disabled: false;
     constructor(private formBuilder:FormBuilder) { }
  
-    form = this.formBuilder.nonNullable.group({
+    employeeForm = this.formBuilder.nonNullable.group({
     "firstName": ["", Validators.required],
     "middlename": ["", Validators.required],
     "lastname": ["", Validators.required],
