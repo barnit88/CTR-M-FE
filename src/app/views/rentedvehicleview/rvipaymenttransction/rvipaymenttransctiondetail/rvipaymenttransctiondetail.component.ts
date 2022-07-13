@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rvipaymenttransctiondetail.component.css']
 })
 export class RvipaymenttransctiondetailComponent implements OnInit {
-
+  title ='Rented Vehicle Income Payment Transaction Detail '
   constructor() { }
 
   ngOnInit(): void {
