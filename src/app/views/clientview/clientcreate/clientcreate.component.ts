@@ -12,6 +12,8 @@ export class ClientcreateComponent implements OnInit {
   data: any;
   client: Client= new Client()
   constructor() {}
-
+  onSubmitTemplateBased(){
+    
+  }
   ngOnInit(): void {} 
 }
