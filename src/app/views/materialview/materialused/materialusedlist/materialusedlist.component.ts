@@ -10,12 +10,11 @@ import { GenericDetailPopUpService } from 'src/app/services/common-service/gener
   styleUrls: ['./materialusedlist.component.css']
 })
 export class MaterialusedlistComponent implements OnInit {
+    title:string="create New Material Used"
 
   constructor(private genericModalPopUpService:GenericModalPopUpService, private genericDetailPopUpService: GenericDetailPopUpService) { }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
-  title:string="create New Material Used"
   OpenModalPopUp() {
     this.genericModalPopUpService.openDetailModal(MaterialusedcreateComponent, {
       title: 'Create New Material Used  ',
