@@ -1,45 +1,48 @@
 <app-card-create [title]="title">
   <div class="container-fluid">
     <div class="card-body">
+      <form action="" #reipaymenttransactionform="ngForm" (ngSubmit)="reiPaymentTransactionSubmit(reipaymenttransactionform.value)" >
+
       <div class="form-group">
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr">RE Income Id:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="reiPaymentTransaction.REIncomeId" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> RE Income:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="reiPaymentTransaction.REIncome" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> Payment Method:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="reiPaymentTransaction.PaymentMethod" name="name" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr">Payment Type:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="reiPaymentTransaction.PaymentType" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">Payment:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="reiPaymentTransaction.Payment" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">Payment Date:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="reiPaymentTransaction.PaymentDate" name="name" class="form-control" id="usr">
           </div>
         </div>
 
         <div class="row mt-3 md-3">
           <div class="col-sm-6"><label for="usr">UDF1:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="reiPaymentTransaction.UDF1" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-6"><label for="usr">UDF2:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="reiPaymentTransaction.UDF2" name="name" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
 
           <div class="col-sm-6">
-            <button type="submit" [disabled]="" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+            <button type="submit" [disabled]="!reipaymenttransactionform.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
           </div>
         </div>
       </div>
+    </form>
     </div>
   </div>
 </app-card-create>
