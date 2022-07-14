@@ -1,96 +1,96 @@
 <app-card-create [title]="title">
     <div class="container-fluid">
         <div class="card-body">
-            <form #myForm="ngForm" (ngSubmit)="onSubmitTemplateBased(myForm.value)">
+            <form #myform="ngForm" (ngSubmit)="onSubmitTemplateBased(myform.value)">
                 <div class="form-group">
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4">
                             <label for="usr">
                                 First Name:</label>
                             <input type="text" class="form-control" [(ngModel)]="client.FirstName" name="firstname" id="usr" required="required"></div>
-                            <div class="col-sm-4">
-                                <label for="usr">
-                                    Midddle Name:</label>
-                                <input type="text" class="form-control" [(ngModel)]="client.MiddleName" name="middlename" id="usr" required="required"></div>
-                                <div class="col-sm-4">
-                                    <label for="usr">
-                                        Last Name:</label>
-                                    <input type="text" class="form-control" [(ngModel)]="client.LastName" name="lastname" id="usr"></div>
-                                </div>
-                                <div class="row mt-3 md-3">
-                                    <div class="col-sm-4">
-                                        <label for="usr">
-                                            State:</label>
-                                        <input type="text" class="form-control" [(ngModel)]="client.State" id="usr" name="state" required="required"></div>
-                                        <div class="col-sm-4">
-                                            <label for="usr">
-                                                District:</label>
-                                            <input type="text" class="form-control" [(ngModel)]="client.District" id="usr" name="district" required="required"></div>
-                                            <div class="col-sm-4">
-                                                <label for="usr">
-                                                    VDC/Municipality:</label>
-                                                <input type="text" class="form-control" [(ngModel)]="client.Muncipality" id="usr" name="muncipality" required="required"></div>
-                                            </div>
-                                            <div class="row mt-3 md-3">
-                                                <div class="col-sm-4">
-                                                    <label for="usr">
-                                                        Client Contact Number:</label>
-                                                    <input type="text" class="form-control" [(ngModel)]="client.ClientCompanyContactNumber" id="usr" name="clientCompanyContactNumber" equired="equired"></div>
-                                                    <div class="col-sm-4">
-                                                        <label for="usr">
-                                                            Identity Number:</label>
-                                                        <input type="text" class="form-control" [(ngModel)]="client.IdentityNo" id="usr" name="identityNo" required="required"></div>
-                                                        <div class="col-sm-4">
-                                                            <label for="usr">
-                                                                Identity Type:</label>
-                                                            <input type="text" class="form-control" [(ngModel)]="client.IdentityType" id="usr" name="identityType" required="required"></div>
-                                                        </div>
-                                                        <div class="row mt-3 md-3">
-                                                            <div class="col-sm-4">
-                                                                <label for="exampleInputEmail1">
-                                                                    Email address</label>
-                                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="client.Email" name="email"></div>
-                                                                <div class="col-sm-4">
-                                                                    <label for="usr">
-                                                                        CCC Number:</label>
-                                                                    <input type="text" class="form-control" [(ngModel)]="client.ClientCompanyContactNumber" id="usr" name="contactNo" required="required"></div>
-                                                                    <div class="col-sm-4">
-                                                                        <label for="usr">
-                                                                            C.C Name:</label>
-                                                                        <input type="text" class="form-control" [(ngModel)]="client.ClientCompanyName" id="usr" name="clientCompanyName" required="required"></div>
-                                                                    </div>
-                                                                    <div class="row mt-3 md-3">
-                                                                        <div class="col-sm-4">
-                                                                            <label for="usr">
-                                                                                C.C Type:</label>
-                                                                            <input type="text" class="form-control" [(ngModel)]="client.ClientType" id="usr" name="clientCompanyType" required="required"></div>
-                                                                            <div class="col-sm-4">
-                                                                                <label for="usr">
-                                                                                    C.C Idenity Number:</label>
-                                                                                <input type="text" class="form-control" [(ngModel)]="client.ClientCompanyIdentityNumber" id="usr" name="clientCompanyIdentityNumber" quired="quired"></div>
-                                                                                <div class="col-sm-4">
-                                                                                    <label for="usr">
-                                                                                      C.C Identity Type:</label>
-                                                                                    <input type="text" class="form-control" [(ngModel)]="client.ClientCompanyIdentityType" id="usr" name="clientType" required="required"></div>
-                                                                                </div>
-                                                                                <div class="row mt-3 md-3">
-                                                                                    <div class="col-sm-6">
-                                                                                        <label for="usr">
-                                                                                            UDT 1:</label>
-                                                                                        <input type="text" class="form-control" [(ngModel)]="client.UDF1" id="usr" name="udf1" required="required"></div>
-                                                                                        <div class="col-sm-6">
-                                                                                            <label for="usr">
-                                                                                                UDT 2:</label>
-                                                                                            <input type="text" class="form-control" [(ngModel)]="client.UDF2" id="usr" name="udf2" required="required"></div>
-                                                                                        </div>
-                                                                                        <div class="row mt-3 md-3">
-                                                                                            <div class="col-sm-6">
-                                                                                                <button type="submit" class="btn btn-outline-success btn-lg mx-2" [disabled]="!myForm.valid">Submit</button>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </form>
-                                                                            </div>
-                                                                        </div>
-                                                                    </app-card-create>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Midddle Name:</label>
+                            <input type="text" class="form-control" [(ngModel)]="client.MiddleName" name="middlename" id="usr" required="required"></div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Last Name:</label>
+                            <input type="text" class="form-control" [(ngModel)]="client.LastName" name="lastname" id="usr"></div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                State:</label>
+                            <input type="text" class="form-control" [(ngModel)]="client.State" id="usr" name="state" required="required"></div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                District:</label>
+                            <input type="text" class="form-control" [(ngModel)]="client.District" id="usr" name="district" required="required"></div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                VDC/Municipality:</label>
+                            <input type="text" class="form-control" [(ngModel)]="client.Muncipality" id="usr" name="muncipality" required="required"></div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Client Contact Number:</label>
+                            <input type="text" class="form-control" [(ngModel)]="client.ClientCompanyContactNumber" id="usr" name="clientCompanyContactNumber" equired="equired"></div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Identity Number:</label>
+                            <input type="text" class="form-control" [(ngModel)]="client.IdentityNo" id="usr" name="identityNo" required="required"></div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Identity Type:</label>
+                            <input type="text" class="form-control" [(ngModel)]="client.IdentityType" id="usr" name="identityType" required="required"></div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="exampleInputEmail1">
+                                Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="client.Email" name="email"></div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                CCC Number:</label>
+                            <input type="text" class="form-control" [(ngModel)]="client.ClientCompanyContactNumber" id="usr" name="contactNo" required="required"></div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                C.C Name:</label>
+                            <input type="text" class="form-control" [(ngModel)]="client.ClientCompanyName" id="usr" name="clientCompanyName" required="required"></div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                C.C Type:</label>
+                            <input type="text" class="form-control" [(ngModel)]="client.ClientType" id="usr" name="clientCompanyType" required="required"></div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                C.C Idenity Number:</label>
+                            <input type="text" class="form-control" [(ngModel)]="client.ClientCompanyIdentityNumber" id="usr" name="clientCompanyIdentityNumber" quired="quired"></div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                C.C Identity Type:</label>
+                            <input type="text" class="form-control" [(ngModel)]="client.ClientCompanyIdentityType" id="usr" name="clientType" required="required"></div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <label for="usr">
+                                UDT 1:</label>
+                            <input type="text" class="form-control" [(ngModel)]="client.UDF1" id="usr" name="udf1" required="required"></div>
+                        <div class="col-sm-6">
+                            <label for="usr">
+                                UDT 2:</label>
+                            <input type="text" class="form-control" [(ngModel)]="client.UDF2" id="usr" name="udf2" required="required"></div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <button type="submit" class="btn btn-outline-success btn-lg mx-2" [disabled]="!myform.valid">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</app-card-create>
 
