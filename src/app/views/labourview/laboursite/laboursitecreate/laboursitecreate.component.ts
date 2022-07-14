@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class LaboursitecreateComponent implements OnInit {
   labourSite: LabourSite=new LabourSite();
-
+   
   constructor() { }
 
   ngOnInit(): void {
