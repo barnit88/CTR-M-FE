@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { REEPaymentTransaction } from './../../../../entity/models/RentedEquipment/reepayment-transaction';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-reepaymenttransactioncreate',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reepaymenttransactioncreate.component.css']
 })
 export class ReepaymenttransactioncreateComponent implements OnInit {
-
+  reePayment: REEPaymentTransaction= new REEPaymentTransaction();
   constructor() { }
 
   ngOnInit(): void {
   }
-  title:string="Craete New REEP"
+  title:string="Craete New REEP";
+  reepaymentSubmit(form:NgForm){
+    console.log(form);
+    
+  }
 }

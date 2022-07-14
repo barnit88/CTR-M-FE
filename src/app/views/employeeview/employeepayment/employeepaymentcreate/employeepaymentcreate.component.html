@@ -1,48 +1,48 @@
 <app-card-create [title]="title">
     <div class="container-fluid">
         <div class="card-body">
-            <div class="form-group">
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-4"><label for="usr"> Employee ID:</label>
-                        <input type="text" class="form-control" id="usr">
+            <form #employeePaymentForm="ngForm" (ngSubmit)="submitEmployeePaymentForm(employeePaymentForm.value)">
+                <div class="form-group">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4"><label for="usr"> Employee ID:</label>
+                            <input type="text" class="form-control"  [(ngModel)]="employeePayment.EmployeeId" name="employeeId"="usr">
+                        </div>
+                        <div class="col-sm-4"><label for="usr"> Employee :</label>
+                            <input type="text" class="form-control"  [(ngModel)]="employeePayment.Employee" name="employee"  id="usr">
+                        </div>
+                        <div class="col-sm-4"><label for="usr"> From Date:</label>
+                            <input type="text" class="form-control"  [(ngModel)]="employeePayment.FromDate" name="fromDate"  id="usr">
+                        </div>
                     </div>
-                    <div class="col-sm-4"><label for="usr"> Employee :</label>
-                        <input type="text" class="form-control" id="usr">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4"><label for="usr">To Date:</label>
+                            <input type="text" class="form-control"  [(ngModel)]="employeePayment.ToDate" name="toDate"  id="usr">
+                        </div>
+                        <div class="col-sm-4"><label for="usr">Payment Rate:</label>
+                            <input type="text" class="form-control"  [(ngModel)]="employeePayment.PaymentRate" name="payemntrate"  id="usr">
+                        </div>
+                        <div class="col-sm-4"><label for="usr">Perid:</label>
+                            <input type="text" class="form-control"  [(ngModel)]="employeePayment.Period" name="period"  id="usr">
+                        </div>
                     </div>
-                    <div class="col-sm-4"><label for="usr"> From Date:</label>
-                        <input type="text" class="form-control" id="usr">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4"><label for="usr">Payment:</label>
+                            <input type="text" class="form-control"  [(ngModel)]="employeePayment.Payment" name="payment"  id="usr">
+                        </div>
+                        <div class="col-sm-4"><label for="usr">UDF 1:</label>
+                            <input type="text" class="form-control"  [(ngModel)]="employeePayment.UDF1" name="udf1"  id="usr">
+                        </div>
+                        <div class="col-sm-4"><label for="usr">UDF 2:</label>
+                            <input type="text" class="form-control"  [(ngModel)]="employeePayment.UDF2" name="udf2"  id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <button type="submit" class="btn btn-outline-success btn-lg mx-2"[disabled]="!employeePaymentForm.valid">Submit</button>
+                        </div>
                     </div>
                 </div>
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-4"><label for="usr">To Date:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                    <div class="col-sm-4"><label for="usr">Payment Rate:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                    <div class="col-sm-4"><label for="usr">Perid:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                    
-                </div>
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-4"><label for="usr">Payment:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                    <div class="col-sm-4"><label for="usr">UDF 1:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                    <div class="col-sm-4"><label for="usr">UDF 2:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                </div>
-                <div class="row mt-3 md-3">
-
-                    <div class="col-sm-6">
-                        <button type="button" class="btn btn-outline-success btn-lg mx-2">Submit</button>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </app-card-create>

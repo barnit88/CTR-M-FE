@@ -1,52 +1,54 @@
 <app-card-create [title]="title">
     <div class="container-fluid">
         <div class="card-body">
-            <div class="form-group">
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-4">
-                        <label for="usr">Personal Equipment ID:</label>
-                        <input type="text" class="form-control" id="usr">
+            <form action="" #peBoughtForm="ngForm" (ngSubmit)="peBoughtSubmit(peBoughtForm.value)">
+                <div class="form-group">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">Personal Equipment ID:</label>
+                            <input type="text" class="form-control" [(ngModel)]="peBought.Vendor" name="name" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Personal Equipment</label>
+                            <input type="text" class="form-control" [(ngModel)]="peBought.Vendor" name="name" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Vendor ID:</label>
+                            <input type="text" class="form-control" [(ngModel)]="peBought.Vendor" name="name" id="usr">
+                        </div>
                     </div>
-                    <div class="col-sm-4">
-                        <label for="usr">Personal Equipment</label>
-                        <input type="text" class="form-control" id="usr">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">Vendor:</label>
+                            <input type="text" class="form-control" [(ngModel)]="peBought.Vendor" name="name" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Bought Price:</label>
+                            <input type="text" class="form-control" [(ngModel)]="peBought.Vendor" name="name" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Bought Date:</label>
+                            <input type="text" class="form-control" [(ngModel)]="peBought.Vendor" name="name" id="usr">
+                        </div>
                     </div>
-                    <div class="col-sm-4">
-                        <label for="usr">Vendor ID:</label>
-                        <input type="text" class="form-control" id="usr">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">UDF1:</label>
+                            <input type="text" class="form-control" [(ngModel)]="peBought.Vendor" name="name" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">UDF2:</label>
+                            <input type="text" class="form-control" [(ngModel)]="peBought.Vendor" name="name" id="usr">
+                        </div>
                     </div>
-                </div>
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-4">
-                        <label for="usr">Vendor:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                    <div class="col-sm-4">
-                        <label for="usr">Bought Price:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                    <div class="col-sm-4">
-                        <label for="usr">Bought Date:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                </div>
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-4">
-                        <label for="usr">UDF1:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                    <div class="col-sm-4">
-                        <label for="usr">UDF2:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                </div>
 
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-6">
-                        <button type="button" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <button type="submit" class="btn btn-outline-success btn-lg mx-2" [disabled]="!peBoughtForm.valid">Submit</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </app-card-create>

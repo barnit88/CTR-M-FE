@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Client } from 'src/app/entity/models/Client/client';
 
 @Component({
@@ -14,5 +15,9 @@ export class ClientcreateComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  onSubmitTemplateBased(form:NgForm){
+    console.log("reactive form submitted");
+    console.log(form);
+  }
  
 }

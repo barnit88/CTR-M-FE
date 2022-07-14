@@ -1,61 +1,63 @@
 <app-card-create [title]="title">
     <div class="container-fluid">
         <div class="card-body">
-            <div class="form-group">
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-4">
-                        <label for="usr">Personal Vehicle ID:</label>
-                        <input type="text" class="form-control" id="usr">
+            <form action="" #pvexpenseform="ngForm" (ngSubmit)="pvExpenseSubmit(pvexpenseform.value)" >
+                <div class="form-group">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">Personal Vehicle ID:</label>
+                            <input type="text"[(ngModel)]="pvExpense.PersonalVehicleId" name="name" class="form-control" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Personal Vehicle:</label>
+                            <input type="text"[(ngModel)]="pvExpense.PersonalVehicle" name="name" class="form-control" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Vendor:</label>
+                            <input type="text"[(ngModel)]="pvExpense.Vendor" name="name" class="form-control" id="usr">
+                        </div>
                     </div>
-                    <div class="col-sm-4">
-                        <label for="usr">Personal Vehicle:</label>
-                        <input type="text" class="form-control" id="usr">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">Vendor ID:</label>
+                            <input type="text"[(ngModel)]="pvExpense.VendorId" name="name" class="form-control" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Expenses Type:</label>
+                            <input type="text"[(ngModel)]="pvExpense.ExpensesType" name="name" class="form-control" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">From Date:</label>
+                            <input type="text"[(ngModel)]="pvExpense.FromDate" name="name" class="form-control" id="usr">
+                        </div>
                     </div>
-                    <div class="col-sm-4">
-                        <label for="usr">Vendor:</label>
-                        <input type="text" class="form-control" id="usr">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">To Date:</label>
+                            <input type="text"[(ngModel)]="pvExpense.ToDate" name="name" class="form-control" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Expenses:</label>
+                            <input type="text"[(ngModel)]="pvExpense.Expenses" name="name" class="form-control" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">UDF1:</label>
+                            <input type="text"[(ngModel)]="pvExpense.UDF1" name="name" class="form-control" id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <label for="usr">UDF2:</label>
+                            <input type="text"[(ngModel)]="pvExpense.UDF2" name="name" class="form-control" id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <button type="submit" [disabled]="!pvexpenseform.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+                        </div>
                     </div>
                 </div>
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-4">
-                        <label for="usr">Vendor ID:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                    <div class="col-sm-4">
-                        <label for="usr">Expenses Type:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                    <div class="col-sm-4">
-                        <label for="usr">From Date:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                </div>
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-4">
-                        <label for="usr">To Date:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                    <div class="col-sm-4">
-                        <label for="usr">Expenses:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                    <div class="col-sm-4">
-                        <label for="usr">UDF1:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                </div>
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-6">
-                        <label for="usr">UDF2:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                </div>
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-6">
-                        <button type="button" class="btn btn-outline-success btn-lg mx-2">Submit</button>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </app-card-create>

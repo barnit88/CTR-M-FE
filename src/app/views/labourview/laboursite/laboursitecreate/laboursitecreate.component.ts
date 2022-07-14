@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LabourSite } from './../../../../entity/models/Labour/labour-site';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-laboursitecreate',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./laboursitecreate.component.css']
 })
 export class LaboursitecreateComponent implements OnInit {
+  labourSite: LabourSite=new LabourSite();
 
   constructor() { }
 
@@ -13,5 +16,8 @@ export class LaboursitecreateComponent implements OnInit {
   }
   title:string="Create New LS"
 
+  labourSiteSubmit(form:NgForm){
+    console.log(form);
+  }
 
 }

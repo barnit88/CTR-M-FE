@@ -31,10 +31,13 @@ export class EmployeecreateComponent implements OnInit {
 });
   ngOnInit(): void {
   }
+  // js varibale 
   title:string="Create New Employee"
   onSubmitTemplateBased(form:any){
     console.log("reactive form submitted");
     console.log(form);
+    
+    console.log(form.firstName);
   }
 
 }

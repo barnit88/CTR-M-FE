@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PEIncome } from './../../../../entity/models/PersonalEquipment/peincome';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-peincomecreate',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./peincomecreate.component.css']
 })
 export class PeincomecreateComponent implements OnInit {
+  peIncome:PEIncome= new PEIncome();
+
 
   constructor() { }
 
@@ -13,5 +17,8 @@ export class PeincomecreateComponent implements OnInit {
   }
   title:string="Create New PEI"
 
+  peIncomeSubmit(form:NgForm){
+    console.log(form);
+  }
 
 }

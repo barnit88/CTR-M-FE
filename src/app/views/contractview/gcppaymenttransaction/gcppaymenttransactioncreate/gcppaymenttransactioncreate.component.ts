@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GCPaymentTransaction } from './../../../../entity/models/Contract/gcpayment-transaction';
 
 @Component({
   selector: 'app-gcppaymenttransactioncreate',
@@ -6,11 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gcppaymenttransactioncreate.component.css']
 })
 export class GcppaymenttransactioncreateComponent implements OnInit {
-
+  title:string=" Give Contract Payment"
+  gcPayment: GCPaymentTransaction= new GCPaymentTransaction();
   constructor() { }
 
   ngOnInit(): void {
   }
-  title:string=" Give Contract Payment"
+
+  gcPaymentSubmit(){
+    
+  }
+
 
 }

@@ -1,48 +1,59 @@
 <app-card-create [title]="title">
-
     <div class="container-fluid">
         <div class="card-body">
-            <div class="form-group">
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-4"><label for="usr">Give Contract ID:</label>
-                        <input type="text" class="form-control" id="usr">
+            <form action="" #gcPaymentForm="ngForm" (ngSubmit)="gcPaymentSubmit()">
+                <div class="form-group">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">Give Contract ID:</label>
+                            <input type="text" class="form-control"  [(ngModel)]="gcPayment.Payment" name="name"  id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Give Contract:</label>
+                            <input type="text" class="form-control"  [(ngModel)]="gcPayment.Payment" name="name"  id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Additional Budget:</label>
+                            <input type="text" class="form-control"  [(ngModel)]="gcPayment.Payment" name="name"  id="usr">
+                        </div>
                     </div>
-                    <div class="col-sm-4"><label for="usr"> Give Contract:</label>
-                        <input type="text" class="form-control" id="usr">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">Payment Type:</label>
+                            <input type="text" class="form-control"  [(ngModel)]="gcPayment.Payment" name="name"  id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Payment Method:</label>
+                            <input type="text" class="form-control"  [(ngModel)]="gcPayment.Payment" name="name"  id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Payment:</label>
+                            <input type="text" class="form-control"  [(ngModel)]="gcPayment.Payment" name="name"  id="usr">
+                        </div>
                     </div>
-                    <div class="col-sm-4"><label for="usr"> Additional Budget:</label>
-                        <input type="text" class="form-control" id="usr">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">Payment date:</label>
+                            <input type="text" class="form-control"  [(ngModel)]="gcPayment.Payment" name="name"  id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">UDT 1:</label>
+                            <input type="text" class="form-control"  [(ngModel)]="gcPayment.Payment" name="name"  id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">UDT 2:</label>
+                            <input type="text" class="form-control"  [(ngModel)]="gcPayment.Payment" name="name"  id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <button type="submit" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+                        </div>
                     </div>
                 </div>
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-4"><label for="usr">Payment Type:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                    <div class="col-sm-4"><label for="usr">Payment Method:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                    <div class="col-sm-4"><label for="usr">Payment:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                </div>
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-4"><label for="usr">Payment date:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                    <div class="col-sm-4"><label for="usr">UDT 1:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                    <div class="col-sm-4"><label for="usr">UDT 2:</label>
-                        <input type="text" class="form-control" id="usr">
-                    </div>
-                </div>
-                <div class="row mt-3 md-3">
-
-                    <div class="col-sm-6">
-                        <button type="button" class="btn btn-outline-success btn-lg mx-2">Submit</button>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </app-card-create>
