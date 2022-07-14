@@ -1,42 +1,43 @@
 <app-card-create [title]="title">
     <div class="container-fluid">
-
         <div class="card-body">
-            <div class="form-group">
+            <form action="" #mspaymentform="ngForm" (ngSubmit)="msPaymentSubmit(mspaymentform.value)" >
+                <div class="form-group">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4"><label for="usr"> Material Sold ID:</label>
+                            <input type="text"[(ngModel)]="msPayment.MaterialSoldId" name="name" class="form-control" id="usr">
+                        </div>
+                        <div class="col-sm-4"><label for="usr"> Material Sold:</label>
+                            <input type="text"[(ngModel)]="msPayment.MaterialSold" name="name" class="form-control" id="usr">
+                        </div>
+                        <div class="col-sm-4"><label for="usr"> Payment:</label>
+                            <input type="text"[(ngModel)]="msPayment.Payment" name="name" class="form-control" id="usr">
+                        </div>
+                    </div>
+                </div>
                 <div class="row mt-3 md-3">
-                    <div class="col-sm-4"><label for="usr"> Material Sold ID:</label>
-                        <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+                    <div class="col-sm-4"><label for="usr"> Payment Method:</label>
+                        <input type="text"[(ngModel)]="msPayment.PaymentMethod" name="name" class="form-control" id="usr">
                     </div>
-                    <div class="col-sm-4"><label for="usr"> Material Sold:</label>
-                        <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+                    <div class="col-sm-4"><label for="usr"> Payment Type:</label>
+                        <input type="text"[(ngModel)]="msPayment.PaymentType" name="name" class="form-control" id="usr">
                     </div>
-                    <div class="col-sm-4"><label for="usr"> Payment:</label>
-                        <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+                    <div class="col-sm-4"><label for="usr"> Payment Date:</label>
+                        <input type="text"[(ngModel)]="msPayment.PaymentDate" name="name" class="form-control" id="usr">
                     </div>
                 </div>
-            </div>
-            <div class="row mt-3 md-3">
-                <div class="col-sm-4"><label for="usr"> Payment Method:</label>
-                    <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+                <div class="row mt-3 md-3">
+                    <div class="col-sm-6"><label for="usr"> UDF1:</label>
+                        <input type="text"[(ngModel)]="msPayment.UDF1" name="name" class="form-control" id="usr">
+                    </div>
+                    <div class="col-sm-6"><label for="usr"> UDF2:</label>
+                        <input type="text"[(ngModel)]="msPayment.UDF2" name="name" class="form-control" id="usr">
+                    </div>
                 </div>
-                <div class="col-sm-4"><label for="usr"> Payment Type:</label>
-                    <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+                <div class="col-sm-6">
+                    <button type="submit" [disabled]="!mspaymentform.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
                 </div>
-                <div class="col-sm-4"><label for="usr"> Payment Date:</label>
-                    <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
-                </div>
-            </div>
-            <div class="row mt-3 md-3">
-                <div class="col-sm-6"><label for="usr"> UDF1:</label>
-                    <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
-                </div>
-                <div class="col-sm-6"><label for="usr"> UDF2:</label>
-                    <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <button type="submit" [disabled]="" class="btn btn-outline-success btn-lg mx-2">Submit</button>
-            </div>
+            </form>
         </div>
     </div>
 </app-card-create>
