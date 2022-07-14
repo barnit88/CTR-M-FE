@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./peboughtdetail.component.css']
 })
 export class PeboughtdetailComponent implements OnInit {
-
+  title="Personal Equipment Bought"
   constructor() { }
 
   ngOnInit(): void {
   }
-  title:string="PE Bought Detail"
+  // title:string="PE Bought Detail"
 
 }
