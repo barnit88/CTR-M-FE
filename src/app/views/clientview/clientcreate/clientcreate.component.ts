@@ -12,8 +12,12 @@ export class ClientcreateComponent implements OnInit {
   data: any;
   client: Client= new Client()
   constructor() {}
-  onSubmitTemplateBased(){
-    
+
+  ngOnInit(): void {}
+
+  onSubmitTemplateBased(form:NgForm){
+    console.log("reactive form submitted");
+    console.log(form);
   }
-  ngOnInit(): void {} 
+ 
 }
