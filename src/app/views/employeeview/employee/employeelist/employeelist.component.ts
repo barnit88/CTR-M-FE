@@ -14,13 +14,13 @@ import { Employee } from 'src/app/entity/models/Employees/employee';
 })
 export class EmployeelistComponent implements OnInit {
   title: string = 'Employee Lists';
-  employees: any;
+  emp: any;
   constructor(private employeeService:EmployeeService , private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService: GenericDetailPopUpService) {}
 
   ngOnInit(): void { 
     const employeesObservable = this.employeeService.getEmployee();
     employeesObservable.subscribe((employeeData: Employee) => {
-      this.employees = employeeData;
+      this.emp = employeeData;
   });
 }
  
