@@ -7,12 +7,8 @@ import { MaterialUsed } from 'src/app/entity/models/Material/material-used';
   styleUrls: ['./materialuseddetail.component.css']
 })
 export class MaterialuseddetailComponent implements OnInit {
-<<<<<<< Updated upstream
-  title='Material Used Detail'
-=======
   title:string="Material Used List"
 materialused:MaterialUsed= new MaterialUsed();
->>>>>>> Stashed changes
   constructor() { }
 
   ngOnInit(): void {
