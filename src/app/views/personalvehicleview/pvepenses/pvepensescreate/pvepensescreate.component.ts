@@ -9,13 +9,13 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./pvepensescreate.component.css']
 })
 export class PvepensescreateComponent implements OnInit {
-  pvExpense: PVExpenses= new PVExpenses();
+  pvExpenses: PVExpenses= new PVExpenses();
   title:string="Craete New PVE";
   constructor() {}
 
   ngOnInit(): void {
   }
-  pvExpenseSubmit(form:NgForm){
+  pvExpensesSubmit(form:NgForm){
     console.log(form);
     
   }

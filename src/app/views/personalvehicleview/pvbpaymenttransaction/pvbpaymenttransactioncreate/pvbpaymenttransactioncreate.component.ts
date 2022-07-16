@@ -12,10 +12,10 @@ export class PvbpaymenttransactioncreateComponent implements OnInit {
   pvbPayment: PVBPaymentTransaction= new PVBPaymentTransaction();
   title:string="Craete New PVBP"
   constructor(private genericModalPopUpService: GenericModalPopUpService) {}
-
+  pvbPaymentTransaction : PVBPaymentTransaction = new PVBPaymentTransaction();
   ngOnInit(): void {
   }
-  pvbPaymentSubmit(form:NgForm){
+  pvbPaymentTransactionSubmit(form:NgForm){
     console.log(form);
   }
   

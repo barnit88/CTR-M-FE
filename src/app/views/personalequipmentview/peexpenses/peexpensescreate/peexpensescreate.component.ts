@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./peexpensescreate.component.css']
 })
 export class PeexpensescreateComponent implements OnInit {
-  peExpense: PEExpenses= new PEExpenses();
+  peExpenses: PEExpenses= new PEExpenses();
 
   constructor() { }
 
@@ -16,7 +16,7 @@ export class PeexpensescreateComponent implements OnInit {
   }
   title:string="Create New PEE"
 
-  peExpenseSubmit(form:NgForm){
+  peExpensesSubmit(form:NgForm){
     console.log(form);
   }
 

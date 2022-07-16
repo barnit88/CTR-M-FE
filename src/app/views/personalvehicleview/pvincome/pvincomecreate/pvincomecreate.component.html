@@ -1,69 +1,71 @@
 <app-card-create [title]="title">
     <div class="container-fluid">
         <div class="card-body">
+            <form action="" #pvIncomeForm="ngForm" (ngSubmit)="pvIncomeSubmit(pvIncomeForm.value)" >
             <div class="form-group">
                 <div class="row mt-3 md-3">
                     <div class="col-sm-4">
                         <label for="usr">Personal Vehicle ID</label>
-                        <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="pvIncome.PvId" name="name" class="form-control" id="usr">
                     </div>
                     <div class="col-sm-4">
                         <label for="usr">Personal Vehicle:</label>
-                        <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="pvIncome.PersonalVehicle" name="name" class="form-control" id="usr">
                     </div>
                     <div class="col-sm-4">
                         <label for="usr">Client ID:</label>
-                        <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="pvIncome.ClientId" name="name" class="form-control" id="usr">
                     </div>
                 </div>
                 <div class="row mt-3 md-3">
                     <div class="col-sm-4">
                         <label for="usr">Client:</label>
-                        <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="pvIncome.Client" name="name" class="form-control" id="usr">
                     </div>
                     <div class="col-sm-4">
                         <label for="usr">Rate Type:</label>
-                        <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="pvIncome.RateType" name="name" class="form-control" id="usr">
                     </div>
                     <div class="col-sm-4">
                         <label for="usr">From Date:</label>
-                        <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="pvIncome.FromDate" name="name" class="form-control" id="usr">
                     </div>
                 </div>
                 <div class="row mt-3 md-3">
                     <div class="col-sm-4">
                         <label for="usr">To Date:</label>
-                        <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="pvIncome.ToDate" name="name" class="form-control" id="usr">
                     </div>
                     <div class="col-sm-4">
                         <label for="usr">Rate:</label>
-                        <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="pvIncome.Rate" name="name" class="form-control" id="usr">
                     </div>
                     <div class="col-sm-4">
                         <label for="usr">Period</label>
-                        <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="pvIncome.Period" name="name" class="form-control" id="usr">
                     </div>
                 </div>
                 <div class="row mt-3 md-3">
                     <div class="col-sm-4">
                         <label for="usr">Income:</label>
-                        <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="pvIncome.Income" name="name" class="form-control" id="usr">
                     </div>
                     <div class="col-sm-4">
                         <label for="usr">UDF1:</label>
-                        <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="pvIncome.UDF1" name="name" class="form-control" id="usr">
                     </div>
                     <div class="col-sm-4">
                         <label for="usr">UDF2:</label>
-                        <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="pvIncome.UDF2" name="name" class="form-control" id="usr">
                     </div>
                 </div>
                 <div class="row mt-3 md-3">
                     <div class="col-sm-6">
-                        <button type="submit" [disabled]="" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+                        <button type="submit" [disabled]="!pvIncomeForm.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
                     </div>
                 </div>
             </div>
+            </form>
         </div>
     </div>
 </app-card-create>
