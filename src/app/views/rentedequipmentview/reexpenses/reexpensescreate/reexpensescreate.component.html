@@ -1,7 +1,7 @@
 <app-card-create [title]="title">
   <div class="container-fluid">
     <div class="card-body">
-      <form action="" #reexpensesform="ngForm" (ngSubmit)="reexpenseSubmit(reexpensesform.value)" >
+      <form action="" #reExpensesForm="ngForm" (ngSubmit)="reExpenseSubmit(reExpensesForm.value)">
       <div class="form-group">
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr">Rented Equipment Id:</label>
@@ -44,7 +44,7 @@
         <div class="row mt-3 md-3">
 
           <div class="col-sm-6">
-            <button type="submit" [disabled]="!reexpensesform.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+            <button type="submit" [disabled]="!reExpensesForm.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
           </div>
         </div>
       </div>

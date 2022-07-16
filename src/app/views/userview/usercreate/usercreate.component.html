@@ -1,36 +1,39 @@
 <app-card-create [title]="title">
   <div class="container-fluid">
     <div class="card-body">
+      <form action="" #userForm="ngForm" (ngSubmit)="userSubmit(userForm.value)" >
+
       <div class="form-group">
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr">Phone Number:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="user.PhoneNumber" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">Password:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="user.PasswordHash" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">Password Confirmed:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="user.PasswordHash" name="name" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr">Email:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="user.Email" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">User Name:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="user.UserName" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">Employee Id:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="user.EmployeeId" name="name" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
 
           <div class="col-sm-6">
-            <button type="submit" [disabled]="" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+            <button type="submit" [disabled]="!userForm.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
           </div>
         </div>
       </div>
+      </form>
     </div>
   </div>
 </app-card-create>

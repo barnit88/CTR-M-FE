@@ -1,41 +1,44 @@
 <app-card-create [title]="title">
   <div class="container-fluid">
     <div class="card-body">
+      <form action="" #rentedVehicleForm="ngForm" (ngSubmit)="rentedVehicleSubmit(rentedVehicleForm.value)" >
+
       <div class="form-group">
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr"> Vehicle Name:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rentedVehicle.VehicleName" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> Brand Name:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rentedVehicle.BrandName" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> Model Name:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rentedVehicle.ModelName" name="name" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr">Number Plate:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rentedVehicle.NumberPlate" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">Type:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rentedVehicle.Type" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">UDF1:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rentedVehicle.UDF1" name="name" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
           <div class="col-sm-6"><label for="usr">UDF2:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rentedVehicle.UDF2" name="name" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
 
           <div class="col-sm-6">
-            <button type="submit" [disabled]="" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+            <button type="submit" [disabled]="!rentedVehicleForm.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
           </div>
         </div>
       </div>
+      </form>
     </div>
   </div>
 </app-card-create>

@@ -14,6 +14,6 @@ export class ReexpensescreateComponent implements OnInit {
   ngOnInit(): void {
   }
   title:string="Craete New RE"
-  reexpenseSubmit(form:NgForm){}
+  reExpenseSubmit(form:NgForm){}
 
 }

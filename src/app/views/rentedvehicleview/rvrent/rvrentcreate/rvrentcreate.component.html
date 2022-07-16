@@ -1,59 +1,59 @@
 <app-card-create [title]="title">
   <div class="container-fluid">
     <div class="card-body">
+      <form action="" #rvRentForm="ngForm" (ngSubmit)="rvRentSubmit(rvRentForm.value)" > 
+
       <div class="form-group">
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr"> Rented Vehicle Id:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvRent.RentedVehicleId" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> Rented Vehicle:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvRent.RentedVehicle" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> Vendor Id:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvRent.VendorId" name="name" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr">Vendor:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvRent.Vendor" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">Site Id:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvRent.SiteId" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">Site:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvRent.Site" name="name" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
 
           <div class="col-sm-4"><label for="usr">Rent Amount:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvRent.RentAmount" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">From Date:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvRent.FromDate" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">To Date:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvRent.ToDate" name="name" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
-          <div class="col-sm-4"><label for="usr">Email:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+          <div class="col-sm-6"><label for="usr">UDF1:</label>
+            <input type="text"[(ngModel)]="rvRent.UDF1" name="name" class="form-control" id="usr">
           </div>
-          <div class="col-sm-4"><label for="usr">UDF1:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
-          </div>
-          <div class="col-sm-4"><label for="usr">UDF2:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+          <div class="col-sm-6"><label for="usr">UDF2:</label>
+            <input type="text"[(ngModel)]="rvRent.UDF2" name="name" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
 
           <div class="col-sm-6">
-            <button type="submit" [disabled]="" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+            <button type="submit" [disabled]="!rvRentForm.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
           </div>
         </div>
       </div>
+      </form>
     </div>
   </div>
 </app-card-create>

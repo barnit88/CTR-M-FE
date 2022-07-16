@@ -14,7 +14,7 @@ export class ReepaymenttransactioncreateComponent implements OnInit {
   ngOnInit(): void {
   }
   title:string="Craete New REEP";
-  reepaymentSubmit(form:NgForm){
+  reePaymentSubmit(form:NgForm){
     console.log(form);
     
   }

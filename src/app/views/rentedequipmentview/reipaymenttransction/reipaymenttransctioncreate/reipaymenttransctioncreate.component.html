@@ -1,7 +1,7 @@
 <app-card-create [title]="title">
   <div class="container-fluid">
     <div class="card-body">
-      <form action="" #reipaymenttransactionform="ngForm" (ngSubmit)="reiPaymentTransactionSubmit(reipaymenttransactionform.value)" >
+      <form action="" #reiPaymentTransactionForm="ngForm" (ngSubmit)="reiPaymentTransactionSubmit(reiPaymentTransactionForm.value)" >
 
       <div class="form-group">
         <div class="row mt-3 md-3">
@@ -38,7 +38,7 @@
         <div class="row mt-3 md-3">
 
           <div class="col-sm-6">
-            <button type="submit" [disabled]="!reipaymenttransactionform.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+            <button type="submit" [disabled]="!reiPaymentTransactionForm.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
           </div>
         </div>
       </div>

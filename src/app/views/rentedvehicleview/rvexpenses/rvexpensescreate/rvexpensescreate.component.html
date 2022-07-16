@@ -1,53 +1,56 @@
 <app-card-create [title]="title">
   <div class="container-fluid">
     <div class="card-body">
+      <form action="" #rvExpensesForm="ngForm" (ngSubmit)="rvExpensesSubmit(rvExpensesForm.value)" >
+
       <div class="form-group">
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr"> Rented Vehicle Id:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvExpenses.RentedVehicleId" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> Rented Vehicle:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvExpenses.RentedVehicle" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> Vendor Id:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvExpenses.VendorId" name="name" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr">Vendor:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvExpenses.Vendor" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">Expenses Type:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvExpenses.ExpensesType" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">From Date:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvExpenses.FromDate" name="name" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
 
           <div class="col-sm-4"><label for="usr">To Date:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvExpenses.ToDate" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">Expenses:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvExpenses.Expenses" name="name" class="form-control" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">UDF1:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvExpenses.UDF1" name="name" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
           <div class="col-sm-6"><label for="usr">UDF2:</label>
-            <input type="text"[(ngModel)]="" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="rvExpenses.UDF2" name="name" class="form-control" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
 
           <div class="col-sm-6">
-            <button type="submit" [disabled]="" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+            <button type="submit" [disabled]="!rvExpensesForm.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
           </div>
         </div>
       </div>
+      </form>
     </div>
   </div>
 </app-card-create>

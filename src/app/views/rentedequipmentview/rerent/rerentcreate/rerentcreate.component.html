@@ -1,7 +1,7 @@
 <app-card-create [title]="title">
   <div class="container-fluid">
     <div class="card-body">
-      <form action="" #rentedequipmentform="ngForm" (ngSubmit)="reRentSubmit(rentedequipmentform.value)" >
+      <form action="" #reRentform="ngForm" (ngSubmit)="reRentSubmit(reRentform.value)" >
 
       <div class="form-group">
         <div class="row mt-3 md-3">
@@ -49,7 +49,7 @@
         <div class="row mt-3 md-3">
 
           <div class="col-sm-6">
-            <button type="submit" [disabled]="!rentedequipmentform.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+            <button type="submit" [disabled]="!reRentform.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
           </div>
         </div>
       </div>

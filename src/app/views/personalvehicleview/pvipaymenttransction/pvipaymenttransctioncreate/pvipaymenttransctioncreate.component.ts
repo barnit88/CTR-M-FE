@@ -9,13 +9,13 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./pvipaymenttransctioncreate.component.css']
 })
 export class PvipaymenttransctioncreateComponent implements OnInit {
-  pviPayment:PVIPaymentTransaction = new PVIPaymentTransaction();
+  pviPaymentTransaction:PVIPaymentTransaction = new PVIPaymentTransaction();
   constructor() {}
 
   ngOnInit(): void {
   }
   title:string="Craete New PVIP"
-  pviPaymentSubmit(form:NgForm){
+  pviPaymentTransactionSubmit(form:NgForm){
     console.log(form);
   }
 }
