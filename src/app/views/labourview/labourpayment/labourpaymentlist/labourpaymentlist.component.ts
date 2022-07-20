@@ -3,6 +3,9 @@ import { GenericModalPopUpService } from 'src/app/services/common-service/generi
 import { LabourpaymentcreateComponent } from './../labourpaymentcreate/labourpaymentcreate.component';
 import { LabourpaymentdetailComponent } from './../labourpaymentdetail/labourpaymentdetail.component';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
+import { LabourService } from './../../../../services/api-service/LabourService/labour.service';
+import { LabourPayment } from './../../../../entity/models/Labour/labour-payment';
+import { pipe } from 'rxjs';
 
 @Component({
   selector: 'app-labourpaymentlist',
@@ -10,12 +13,17 @@ import { GenericDetailPopUpService } from 'src/app/services/common-service/gener
   styleUrls: ['./labourpaymentlist.component.css']
 })
 export class LabourpaymentlistComponent implements OnInit {
-
-  constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService: GenericDetailPopUpService) { }
-
+  labourPayment: LabourPayment[]=[];
+  title: string='Labour Payment'
+  constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService: GenericDetailPopUpService, private labourService:LabourService ){ }
   ngOnInit(): void {
   }
-  title: string='Labour Payment'
+  onGetLabourPayment(): any{
+    this.labourService.getLabours().subscribe(
+      (response)=> response.map((res, index )=> {return console.log(res)}),
+      (error:any)=> console.log(error)
+    );
+  } 
   OpenModalPopUp(){
     this.genericModalPopUpService.openDetailModal(LabourpaymentcreateComponent, {
       title:" Create Labour Payment"
@@ -26,4 +34,7 @@ export class LabourpaymentlistComponent implements OnInit {
       title:" Labour Payement Details"
     });
   }
+
 }
+
+

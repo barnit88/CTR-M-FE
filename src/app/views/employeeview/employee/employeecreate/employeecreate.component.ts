@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators ,FormGroup, FormControl} from '@angular/forms';
 import { Employee } from './../../../../entity/models/Employees/employee';
+import { EmployeeService } from 'src/app/services/api-service/EmployeeService/employee.service';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-employeecreate',
   templateUrl: './employeecreate.component.html',
@@ -9,35 +11,40 @@ import { Employee } from './../../../../entity/models/Employees/employee';
 export class EmployeecreateComponent implements OnInit {
   employee : Employee=new Employee();
   disabled: false;
-    constructor(private formBuilder:FormBuilder) { }
+    constructor(private formBuilder:FormBuilder, private employeeService:EmployeeService,public modalRef: BsModalRef, private changeDetectorRef:ChangeDetectorRef) { }
  
     employeeForm = this.formBuilder.nonNullable.group({
-    "firstName": ["", Validators.required],
-    "middlename": ["", Validators.required],
-    "lastname": ["", Validators.required],
-    "state": ["", Validators.required],
-    "district": ["", Validators.required],
-    "munipality": ["", Validators.required],
-    "contactNo": ["", Validators.required],
-    "email": ["", Validators.required],
+      "id":0,
+    "FirstName": ["", Validators.required],
+    "Middlename": ["", Validators.required],
+    "Lastname": ["", Validators.required],
+    "State": ["", Validators.required],
+    "District": ["", Validators.required],
+    "Munipality": ["", Validators.required],
+    "ContactNo": ["", Validators.required],
+    "Email": ["", Validators.required],
     "IdentityNo": ["", Validators.required],
-    "identityType": ["", Validators.required],
-    "employeeType": ["", Validators.required],
-    "employeePayment": ["", Validators.required],
-    "isActive": ["", Validators.required],
-    "dateOfBirth": ["", Validators.required],
-    "udf1":["", Validators.required],
-    "udf2":["", Validators.required]
+    "IdentityType": ["", Validators.required],
+    "EmployeeType": ["", Validators.required],
+    "EmployeePayment": ["", Validators.required],
+    "IsActive": ["", Validators.required],
+    "DateOfBirth": ["", Validators.required],
+    "UDF1":["", Validators.required],
+    "UDF2":["", Validators.required]
 });
   ngOnInit(): void {
   }
   // js varibale 
   title:string="Create New Employee"
   onSubmitTemplateBased(form:any){
-    console.log("reactive form submitted");
-    console.log(form);
-    
-    console.log(form.firstName);
+  this.employee = form
+    this.employeeService.addEmployees(this.employee).subscribe((data)=>
+    console.log('done creating new employee'),
+    (error: any)=> console.log(error)
+    );
+    this.changeDetectorRef.detectChanges();
+    this.modalRef.hide();
+    return;
   }
 
 }

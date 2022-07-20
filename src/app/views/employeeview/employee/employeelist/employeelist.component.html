@@ -1,7 +1,7 @@
 <div class="g-row">
   <app-card [title]="title" (popUp)="OpenModalPopUp()">
     <div class="card-body">
-      <table class=" table-hover table-bordered border-dark">
+      <table class="table-bordered table-hover table-responsive text-center">
         <thead>
           <tr>
             <th>ID</th>
@@ -15,26 +15,27 @@
             <th> EMPLOYEE PAYMENT TYPE</th>
             <th> IS ACTIVE</th>
             <th> DATE OF BIRTH</th>
-            <th> DETAIL</th>
+            <th> ACTION</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let e of emp">
-            <td>1</td>
-            <td>{{e.FirstName}}</td>
-            <td>{{e}}</td>
-            <td>{{e}}</td>
-            <td>{{e}}</td>
-            <td>{{e}}</td>
-            <td>on</td>
-            <td>{{e}}</td>
-            <td>{{e}}</td>
-            <td>{{e}}</td>
-            <td>12</td>
+          <tr *ngFor ="let e of empList">
+            
+            <td>{{e.id}}</td>
+            <td>{{e.FirstName +" "+ e.MiddleName+" " + e. LastName}}</td>
+            <td>{{e.State + " "+ e.District +" "+e.Muncipality}}</td>
+            <td>{{e.Email}}</td>
+            <td>{{e.ContactNo}}</td>
+            <td>{{e.IdentityType}}</td>
+            <td>{{e.IdentityNo}}</td>
+            <td>{{e.EmployeeType}}</td>
+            <td>{{e.EmployeePaymentType}}</td>
+            <td>{{e.IsActive}}</td>
+            <td>{{e.DateofBirth}}</td>
             <td>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.id)">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenEditPopUp(e.id)">Edit</app-detail-button>
+              <app-detail-button (click)="onDeleteEmployee(e.id)">Delete</app-detail-button>
             </td>
           </tr>
         </tbody>

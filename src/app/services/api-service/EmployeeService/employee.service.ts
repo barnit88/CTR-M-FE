@@ -7,54 +7,57 @@ import { Employee } from 'src/app/entity/models/Employees/employee';
   providedIn: 'root'
 })
 export class EmployeeService {
-employees: Employee[]=[
-  {
-       'FirstName': 'Nischal',
-       'MiddleName': 'string',
-       'LastName': 'string',
-       'State': 'string',
-       'District': 'string',
-       'Muncipality': 'string',
-       'ContactNo': 'string',
-       'Email': 'nischalshrestha81@gmail.com',
-       'IdentityType': 'string',
-       'IdentityNo': 'string',
-       'EmployeeType': 'string',
-       'EmployeePaymentType': 'string',
-       'isActive': true,
-       'DateofBirth': new Date(),
-       'UDF1': 'string',
-       'UDF2': 'string',
-    },
-    {
-      'FirstName': 'Baburam',
-      'MiddleName': 'string',
-      'LastName': 'string',
-      'State': 'string',
-      'District': 'string',
-      'Muncipality': 'string',
-      'ContactNo': 'string',
-      'Email': 'babufuckinggoat@gmail.com',
-      'IdentityType': 'string',
-      'IdentityNo': 'string',
-      'EmployeeType': 'string',
-      'EmployeePaymentType': 'string',
-      'isActive': true,
-      'DateofBirth': new Date(),
-      'UDF1': 'string',
-      'UDF2': 'string',
-   }]
+employees: Employee[]=[];
+employee : Employee;
+listChanged : Subject<Employee[]>;
 
-    public getEmployee(): any {
-      const employeeObservable = new Observable<Employee[]>(observer => {
-             setTimeout(() => {
-                 observer.next(this.employees);
-             }, 1000);
-      });
- 
-      return employeeObservable;
+  public getEmployees(): Observable<Employee[]> {
+      return this.http.get<Employee[]>('http://localhost:3000/employees')
+  }
+  public  addEmployees(entity: Employee): Observable<Employee> {
+      return this.http.post<Employee>('http://localhost:3000/employees', entity);
+    }
+
+  public updateEmployeeRecords(id: number, entity: Employee): Observable<any> {
+    // entity.Id = id;
+    // entity.DateModified=new Date();
+    // entity.LastModifiedBy=this.auth.getUserId;
+    return this.http.put('http://localhost:3000'+ 'Employee' + '/' + id, entity);
+  }
+  public deleteEmployeeRecord(id: number): Observable<Employee> {
+    return this.http.delete<Employee>(
+      'http://localhost:3000/employees/' + id
+    );
+  }
+
+  public getEmployeeById(id: number): Observable<Employee> {
+    return this.http.get<Employee>('http://localhost:3000/employees/' + id);
+  }
+
+
+  public setEmployeeRecordById(id: number) {
+    this.getEmployeeById(id).subscribe(
+      (response) => {
+        this.employee = response;
+      },
+      (error:any) => {
+        console.log(error);
+      }
+    );
+  }
+
+  setAllEmployeeRecords() {
+    this.getEmployees().subscribe(
+      (response: any) => {
+        this.employees = response;
+        this.listChanged.next(this.employees.slice());
+      },
+      (error) => {
+        this.employees = [];
+      }
+    );
   }
     
-  constructor(){}
+  constructor(private http:HttpClient){}
 }
 

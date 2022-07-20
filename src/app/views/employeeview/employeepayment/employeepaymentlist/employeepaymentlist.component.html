@@ -12,24 +12,23 @@
             <th> PAYMENT RATE</th>
             <th>PERIOD </th>
             <th> PAYMENT</th>
-            <th> DETAIL</th>
+            <th> ACTION</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>NIX HOUSE SITE</td>
-            <td>3</td>
-            <td>BAgmati</td>
-            <td>Construction</td>
-            <td> MAnagemt</td>
-            <td> Work on progress</td>
-            <td>3</td>
-
+          <tr *ngFor="let epay of empPayment">
+            <td>{{epay.id}}</td>
+            <td>{{epay.EmployeeId}}</td>
+            <td>{{epay.Employee}}</td>
+            <td>{{epay.FromDate}}</td>
+            <td>{{epay.ToDate}}</td>
+            <td> {{epay.PaymentRate}}</td>
+            <td> {{epay.Period}}</td>
+            <td>{{epay.Payment}}</td>
             <td>
               <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
               <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button>
+              <app-detail-button  [routerLink]="['']" (click)="onDeleteEmployee(this.epay.id)">Delete</app-detail-button>
             </td>
           </tr>
         </tbody>

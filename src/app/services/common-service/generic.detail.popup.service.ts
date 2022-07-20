@@ -11,9 +11,7 @@ export class GenericDetailPopUpService {
     this.modalService.show(component, {
       initialState: {
         title: obj.title,
-        data: {
-          id: 'dummy',
-        },
+        id: obj.id,
       },
       class: 'modal-lg',
       backdrop: true,

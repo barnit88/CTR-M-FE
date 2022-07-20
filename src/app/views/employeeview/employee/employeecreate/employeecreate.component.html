@@ -7,92 +7,75 @@
                         <div class="col-sm-4">
                             <label for="usr">
                                 First Name:</label>
-                            <input [(ngModel)]="employee.FirstName" name="firstName" type="text" class="form-control" id="usr">
-                        </div>
-                        <div class="col-sm-4">
-                            <label for="usr">
-                                Midddle Name:</label>
-                            <input type="text" [(ngModel)]="employee.MiddleName" name="middleName" class="form-control" id="usr">
-                        </div>
-                        <div class="col-sm-4">
-                            <label for="usr">
-                                Last Name:</label>
-                            <input [(ngModel)]="employee.LastName" type="text" name="lastName" class="form-control" id="usr">
-                        </div>
-                    </div>
-                    <div class="row mt-3 md-3">
-                        <div class="col-sm-4">
-                            <label for="usr">State:</label>
-                            <input [(ngModel)]="employee.State" name="state" type="text" class="form-control" id="usr">
-                        </div>
-                        <div class="col-sm-4">
-                            <label for="usr">District:</label>
-                            <input [(ngModel)]="employee.District" name="district" type="text" class="form-control" id="usr">
-                        </div>
-                        <div class="col-sm-4">
-                            <label for="usr">VDC/Municipality:</label>
-                            <input [(ngModel)]="employee.Muncipality" name="muncipality" type="text" class="form-control" id="usr">
-                        </div>
-                    </div>
-                    <div class="row mt-3 md-3">
-                        <div class="col-sm-4">
-                            <label for="usr">Contact Number:</label>
-                            <input [(ngModel)]="employee.ContactNo" name="contactNo" type="text" class="form-control" id="usr">
-                        </div>
-                        <div class="col-sm-4">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input [(ngModel)]="employee.Email" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        </div>
-                    </div>
-                    <div class="row mt-3 md-3">
-                        <div class="col-sm-6">
-                            <label for="usr">Identity Number:</label>
-                            <input [(ngModel)]="employee.IdentityNo" name="IdentityNo" type="text" class="form-control" id="usr">
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="usr">Identity Type:</label>
-                            <input [(ngModel)]="employee.IdentityType" name="identityType" class="form-control" id="usr">
-                        </div>
-                    </div>
-                    <div class="row mt-3 md-3">
-                        <div class="col-sm-6">
-                            <label for="usr">EMPLOYEE TYPE:</label>
-                            <input [(ngModel)]="employee.EmployeeType" name="employeeType" class="form-control" id="usr">
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="usr">EMPLOYMENT PAYMENT Type:</label>
-                            <input [(ngModel)]="employee.EmployeePaymentType" name="employeePayment" type="text" class="form-control" id="usr">
-                        </div>
-                    </div>
-                    <div class="row mt-3 md-3">
-                        <div class="col-sm-6">
-                            <label for="usr">IS ACTIVE:</label>
-                            <input [(ngModel)]="employee.isActive" name="isActive" type="text" class="form-control" id="usr">
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="usr">Date of Birth:</label>
-                            <input [(ngModel)]="employee.DateofBirth" name="dateOfBirth" type="text" class="form-control" id="usr">
-                        </div>
-                    </div>
-                    <div class="row mt-3 md-3">
-                        <div class="col-sm-6">
-                            <label for="usr">UDF 1:</label>
-                            <input [(ngModel)]="employee.UDF1" name="udf1" type="text" class="form-control" id="usr">
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="usr">UDF 2:</label>
-                            <input [(ngModel)]="employee.UDF2" type="text" class="form-control" id="usr" name="udf2">
-                        </div>
-                    </div>
-                    <div class="row mt-3 md-3">
-                        <div class="col-sm-6">
-                            <button class="btn btn-outline-primary btn-lg mx-2" type="submit" [disabled]="!myform.valid">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-
-        </div>
-    </div>
-</app-card-create>
+                            <input [(ngModel)]="employee.FirstName" name="FirstName" type="text" class="form-control" id="usr"></div>
+                            <div class="col-sm-4">
+                                <label for="usr">
+                                    Midddle Name:</label>
+                                <input type="text" [(ngModel)]="employee.MiddleName" name="MiddleName" class="form-control" id="usr"></div>
+                                <div class="col-sm-4">
+                                    <label for="usr">
+                                        Last Name:</label>
+                                    <input [(ngModel)]="employee.LastName" type="text" name="LastName" class="form-control" id="usr"></div>
+                                </div>
+                                <div class="row mt-3 md-3">
+                                    <div class="col-sm-4">
+                                        <label for="usr">State:</label>
+                                        <input [(ngModel)]="employee.State" name="State" type="text" class="form-control" id="usr"></div>
+                                        <div class="col-sm-4">
+                                            <label for="usr">District:</label>
+                                            <input [(ngModel)]="employee.District" name="District" type="text" class="form-control" id="usr"></div>
+                                            <div class="col-sm-4">
+                                                <label for="usr">VDC/Municipality:</label>
+                                                <input [(ngModel)]="employee.Muncipality" name="Muncipality" type="text" class="form-control" id="usr"></div>
+                                            </div>
+                                 <div class="row mt-3 md-3">
+                                        <div class="col-sm-4">
+                                                <label for="usr">Contact Number:</label>
+                                                <input [(ngModel)]="employee.ContactNo" name="ContactNo" type="text" class="form-control" id="usr"></div>
+                                                <div class="col-sm-4">
+                                                <label for="exampleInputEmail1">Email address</label>
+                                                <input [(ngModel)]="employee.Email" name="Email" type="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></div>
+                                                    </div>
+                                                    <div class="row mt-3 md-3">
+                                                        <div class="col-sm-6">
+                                                            <label for="usr">Identity Number:</label>
+                                                            <input [(ngModel)]="employee.IdentityNo" name="IdentityNo" type="text" class="form-control" id="usr"></div>
+                                                            <div class="col-sm-6">
+                                                                <label for="usr">Identity Type:</label>
+                                                                <input [(ngModel)]="employee.IdentityType" name="IdentityType" class="form-control" id="usr"></div>
+                                                            </div>
+                                                            <div class="row mt-3 md-3">
+                                                                <div class="col-sm-6">
+                                                                    <label for="usr">EMPLOYEE TYPE:</label>
+                                                                    <input [(ngModel)]="employee.EmployeeType" name="EmployeeType" class="form-control" id="usr"></div>
+                                                                    <div class="col-sm-6">
+                                                                        <label for="usr">EMPLOYMENT PAYMENT Type:</label>
+                                                                        <input [(ngModel)]="employee.EmployeePaymentType" name="EmployeePaymentType" type="text" class="form-control" id="usr"></div>
+                                                                    </div>
+                                                                    <div class="row mt-3 md-3">
+                                                                        <div class="col-sm-6">
+                                                                            <label for="usr">IS ACTIVE:</label>
+                                                                            <input [(ngModel)]="employee.isActive" name="IsActive" type="text" class="form-control" id="usr"></div>
+                                                                            <div class="col-sm-6">
+                                                                                <label for="usr">Date of Birth:</label>
+                                                                                <input [(ngModel)]="employee.DateofBirth" name="DateofBirth" type="text" class="form-control" id="usr"></div>
+                                                                            </div>
+                                                                            <div class="row mt-3 md-3">
+                                                                                <div class="col-sm-6">
+                                                                                    <label for="usr">UDF 1:</label>
+                                                                                    <input [(ngModel)]="employee.UDF1" name="UDF1" type="text" class="form-control" id="usr"></div>
+                                                                                    <div class="col-sm-6">
+                                                                                        <label for="usr">UDF 2:</label>
+                                                                                        <input [(ngModel)]="employee.UDF2" type="text" class="form-control" id="usr" name="UDF2"></div>
+                                                                                    </div>
+                                                                                    <div class="row mt-3 md-3">
+                                                                                        <div class="col-sm-6">
+                                                                                            <button class="btn btn-outline-primary btn-lg mx-2" type="submit" [disabled]="!myform.valid">Submit</button>
+                                                                                        </div>
+                                                                                </div>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </app-card-create>
 
