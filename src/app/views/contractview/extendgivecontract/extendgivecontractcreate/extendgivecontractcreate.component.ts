@@ -16,9 +16,9 @@ export class ExtendgivecontractcreateComponent implements OnInit {
   }
   title:string="Extend Give Contract List"
   OpenModalPopUp() {
-    this.genericModalPopUpService.openDetailModal(ExtendgivecontractcreateComponent, {
-      title: 'Create Extend Give Contract',
-    });
+    // this.genericModalPopUpService.openModalPopUpService(ExtendgivecontractcreateComponent, {
+    //   title: 'Create Extend Give Contract',
+    // });
   }
 
   onExtendGivecontractSubmit(form:NgForm){

@@ -4,25 +4,35 @@ import { GenericModalPopUpService } from 'src/app/services/common-service/generi
 import { ClientdetailComponent } from '../../clientview/clientdetail/clientdetail.component';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 import { SitedetailComponent } from './../sitedetail/sitedetail.component';
+import { Site } from 'src/app/entity/models/Site/site';
 @Component({
   selector: 'app-sitelist',
   templateUrl: './sitelist.component.html',
   styleUrls: ['./sitelist.component.css']
 })
 export class SitelistComponent implements OnInit {
+  siteData: Site[]=[];
   constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService:GenericDetailPopUpService) {}
-
-  ngOnInit(): void {}
-  title: string = 'Site List';
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   OpenModalPopUp() {
-    this.genericModalPopUpService.openDetailModal(SitecreateComponent, {
-      title: 'Create New Site',
-    });
+    this.genericModalPopUpService.openModalPopUpService<Site>(SitecreateComponent, 
+      new Site(),
+      'Create Site List',
+    );
   }
-  OpenDetailPopUp() {
-    this.genericDetailPopUpService.openDetailModal(SitedetailComponent,{
-      title:"Site details"
-    });
+  //function for details popup
+  OpenDetailPopUp(id: number) {
+    this.genericModalPopUpService.openModalPopUpService<Site>(SitedetailComponent,
+      this.siteData.find(each => each.Id == id),
+      "Site Details");
+  }
+
+  OpenEditPopUp(id: number) {
+    this.genericModalPopUpService.openModalPopUpService<Site>(SitecreateComponent,
+      this.siteData.find(each => each.Id == id),
+      "Site Edit");
   }
 }

@@ -17,14 +17,14 @@ export class GivecontractlistComponent implements OnInit {
   title: string = 'Give Contract Lists';
 
   OpenModalPopUp() {
-    this.genericModalPopUpService.openDetailModal(GivecontractcreateComponent, {
-      title: 'Create Give Contract',
-    });
+    // this.genericModalPopUpService.openModalPopUpService(GivecontractcreateComponent, {
+    //   title: 'Create Give Contract',
+    // });
   }
   OpenDetailPopUp() {
-    this.genericModalPopUpService.openDetailModal(GivecontractdetailComponent,{
-      title:"Give Contract Details"
-    });
+    // this.genericModalPopUpService.openModalPopUpService(GivecontractdetailComponent,{
+    //   title:"Give Contract Details"
+    // });
   }
 
 }

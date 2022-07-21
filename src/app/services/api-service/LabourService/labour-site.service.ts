@@ -7,11 +7,20 @@ import { LabourSite } from 'src/app/entity/models/Labour/labour-site';
   providedIn: 'root'
 })
 export class LabourSiteService {
-  employees: LabourSite[]=[];
+  labourSite : LabourSite[] = [];
 
-  public getEmployees(): Observable<LabourSite[]> {
-    return this.http.get<LabourSite[]>('http://localhost:3000/employees')
-}
-  
+  public getEmployeesPayment(): Observable < LabourSite[] > {
+      return this.http.get<LabourSite[]>('http://localhost:3000/employee-payment')
+  }
+  public getLabourSiteById(id : number): Observable < LabourSite > {
+      return this.http.get<LabourSite>('http://localhost:3000/employee-payment/' + id)
+  }
+  public deleteLabourSiteById(id : number): Observable < LabourSite > {
+      return this.http.delete<LabourSite>('http://localhost:3000/employee-payment/' + id)
+  }
+  public addLabourSite(entity : LabourSite): Observable < LabourSite > {
+      return this.http.post<LabourSite>('http://localhost:3000/employee-payment/', entity);
+  }
+
 constructor(private http:HttpClient){}
 }

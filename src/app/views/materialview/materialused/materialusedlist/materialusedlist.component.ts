@@ -3,6 +3,7 @@ import { GenericModalPopUpService } from 'src/app/services/common-service/generi
 import { MaterialusedcreateComponent } from './../materialusedcreate/materialusedcreate.component';
 import { MaterialuseddetailComponent } from './../materialuseddetail/materialuseddetail.component';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
+import { MaterialUsed } from 'src/app/entity/models/Material/material-used';
 
 @Component({
   selector: 'app-materialusedlist',
@@ -10,21 +11,29 @@ import { GenericDetailPopUpService } from 'src/app/services/common-service/gener
   styleUrls: ['./materialusedlist.component.css']
 })
 export class MaterialusedlistComponent implements OnInit {
+  materialUsedData : MaterialUsed[]=[];
     title:string="create New Material Used"
 
   constructor(private genericModalPopUpService:GenericModalPopUpService, private genericDetailPopUpService: GenericDetailPopUpService) { }
   ngOnInit(): void {
   }
   OpenModalPopUp() {
-    this.genericModalPopUpService.openDetailModal(MaterialusedcreateComponent, {
-      title: 'Create New Material Used  ',
-    });
+    this.genericModalPopUpService.openModalPopUpService<MaterialUsed>(MaterialusedcreateComponent, 
+      new MaterialUsed(),
+      'Create Material Used List',
+    );
   }
-  OpenDetailPopUp() {
-    this.genericDetailPopUpService.openDetailModal(MaterialuseddetailComponent,{
-      title:" Material Used Details"
-    });
+  //function for details popup
+  OpenDetailPopUp(id: number) {
+    this.genericModalPopUpService.openModalPopUpService<MaterialUsed>(MaterialuseddetailComponent,
+      this.materialUsedData.find(each => each.Id == id),
+      "Material Used Details");
   }
 
+  OpenEditPopUp(id: number) {
+    this.genericModalPopUpService.openModalPopUpService<MaterialUsed>(MaterialusedcreateComponent,
+      this.materialUsedData.find(each => each.Id == id),
+      "Material Used Edit");
+  }
 }
 

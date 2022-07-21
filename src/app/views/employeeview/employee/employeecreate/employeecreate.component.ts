@@ -9,8 +9,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
   styleUrls: ['./employeecreate.component.css']
 })
 export class EmployeecreateComponent implements OnInit {
-  employee : Employee=new Employee();
-  disabled: false;
+  data : Employee;
     constructor(private formBuilder:FormBuilder, private employeeService:EmployeeService,public modalRef: BsModalRef, private changeDetectorRef:ChangeDetectorRef) { }
  
     employeeForm = this.formBuilder.nonNullable.group({
@@ -37,8 +36,8 @@ export class EmployeecreateComponent implements OnInit {
   // js varibale 
   title:string="Create New Employee"
   onSubmitTemplateBased(form:any){
-  this.employee = form
-    this.employeeService.addEmployees(this.employee).subscribe((data)=>
+  this.data = form
+    this.employeeService.addEmployees(this.data).subscribe((data)=>
     console.log('done creating new employee'),
     (error: any)=> console.log(error)
     );

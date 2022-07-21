@@ -19,9 +19,9 @@ export class ExtendgivecontractlistComponent implements OnInit {
   title: string = 'EGC List';
 
   OpenModalPopUp() {
-    this.genericModalPopUpService.openDetailModal(ExtendgivecontractcreateComponent, {
-      title: 'Create EGC',
-    });
+    // this.genericModalPopUpService.openModalPopUpService(ExtendgivecontractcreateComponent, {
+    //   title: 'Create EGC',
+    // });
   }
   OpenDetailPopUp() {
     this.genericDetailPopUpService.openDetailModal(ExtendgivecontractdetailComponent,{

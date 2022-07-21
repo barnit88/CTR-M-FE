@@ -26,9 +26,9 @@
             <td> {{epay.Period}}</td>
             <td>{{epay.Payment}}</td>
             <td>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
-              <app-detail-button  [routerLink]="['']" (click)="onDeleteEmployee(this.epay.id)">Delete</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(epay.Id)">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenEditPopUp(epay.Id)">Edit</app-detail-button>
+              <app-detail-button  [routerLink]="['admin/employee-payment']" (click)="onDeleteEmployee(this.epay.id)">Delete</app-detail-button>
             </td>
           </tr>
         </tbody>

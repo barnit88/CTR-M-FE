@@ -7,13 +7,11 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 export class GenericModalPopUpService {
   constructor(private modalService: BsModalService) {}
 
-  openDetailModal(component: any, obj: any) {
+  openModalPopUpService<T>(component: any, data: T,title:string) {
     this.modalService.show(component, {
       initialState: {
-        title: obj.title,
-        data: {
-          id: 'dummy',
-        },
+        title: title,
+        data: data,
       },
       class: 'modal-lg',
       backdrop: true,

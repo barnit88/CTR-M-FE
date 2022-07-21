@@ -14,8 +14,8 @@ export class RvrenteditComponent implements OnInit {
   title: string = 'Rented Vehicle Rent List';
 
   OpenModalPopUp() {
-    this.genericModalPopUpService.openDetailModal(RvrentcreateComponent, {
-      title: 'Create New RV Bought',
-    });
+    // this.genericModalPopUpService.openModalPopUpService(RvrentcreateComponent, {
+    //   title: 'Create New RV Bought',
+    // });
   }
 }

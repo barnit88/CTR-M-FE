@@ -1,6 +1,7 @@
 import { MaterialBought } from "./material-bought";
+import { AuditModel } from './../audit-model';
 
-export class MBPaymentTransaction {
+export class MBPaymentTransaction extends AuditModel {
   public MaterialBoughtId: number;
   public MaterialBought: MaterialBought;
   public Payment: number;

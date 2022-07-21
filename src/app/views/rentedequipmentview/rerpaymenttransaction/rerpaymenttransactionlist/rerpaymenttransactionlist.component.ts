@@ -16,9 +16,9 @@ export class RerpaymenttransactionlistComponent implements OnInit {
   title: string = 'Rented Equipment Rent Payment Transaction List';
 
   OpenModalPopUp() {
-    this.genericModalPopUpService.openDetailModal(RerpaymenttransactioncreateComponent, {
-      title: 'Create New RER Payment',
-    });
+    // this.genericModalPopUpService.openModalPopUpService(RerpaymenttransactioncreateComponent, {
+    //   title: 'Create New RER Payment',
+    // });
   }
   OpenDetailPopUp() {
     this.genericDetailPopUpService.openDetailModal(RerpaymenttransactiondetailComponent,{

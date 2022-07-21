@@ -16,14 +16,14 @@ export class GcppaymenttransactionlistComponent implements OnInit {
   title: string = 'Give Contract Transactions Payments';
 
   OpenModalPopUp() {
-    this.genericModalPopUpService.openDetailModal(GcppaymenttransactioncreateComponent, {
-      title: 'Create Client',
-    });
+    // this.genericModalPopUpService.openModalPopUpService(GcppaymenttransactioncreateComponent, {
+    //   title: 'Create Client',
+    // });
   }
   OpenDetailPopUp() {
-    this.genericModalPopUpService.openDetailModal(GcppaymenttransactiondetailComponent,{
-      title:" Give Contract Payment Details"
-    });
+    // this.genericModalPopUpService.openModalPopUpService(GcppaymenttransactiondetailComponent,{
+    //   title:" Give Contract Payment Details"
+    // });
   }
 
 }

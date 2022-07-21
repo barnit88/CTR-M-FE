@@ -22,8 +22,8 @@ export class ClientlistComponent implements OnInit {
   }
   
   OpenModalPopUp() {
-    this.genericModalPopUpService.openDetailModal(ClientcreateComponent, {
-      title: 'Client Create',
-    });
+    // this.genericModalPopUpService.openModalPopUpService(ClientcreateComponent, {
+    //   title: 'Client Create',
+    // });
   }
 }

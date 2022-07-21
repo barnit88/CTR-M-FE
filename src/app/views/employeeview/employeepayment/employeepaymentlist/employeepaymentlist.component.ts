@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { EmployeepaymentcreateComponent } from './../employeepaymentcreate/employeepaymentcreate.component';
 import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 import { EmployeepaymentdetailComponent } from './../employeepaymentdetail/employeepaymentdetail.component';
@@ -9,33 +9,36 @@ import { Observable, Subject } from 'rxjs';
 @Component({
   selector: 'app-employeepaymentlist',
   templateUrl: './employeepaymentlist.component.html',
-  styleUrls: ['./employeepaymentlist.component.css']
+  styleUrls: ['./employeepaymentlist.component.css'],
 })
 export class EmployeepaymentlistComponent implements OnInit {
   title: string = 'Employee Payment Lists';
   empPayment: EmployeePayment[]=[];
-  constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService: GenericDetailPopUpService, private employeePaymentService:EmployeePaymentService) {}
+  constructor(private genericModalPopUpService: GenericModalPopUpService,
+     private genericDetailPopUpService: GenericDetailPopUpService,
+     private employeePaymentService:EmployeePaymentService,
+     private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    this.onGetEmployeePayment();
+    this.onGetEmployeesPayment();
     // this.onGetSingleEmployee(1);
     // this.onDeleteEmployee(2);
   }
 
   //function to get list of employees
-  onGetEmployeePayment(): any{
+  onGetEmployeesPayment(): any{
     this.employeePaymentService.getEmployeesPayment().subscribe(
       (response)=> response.map(response=>{
         return this.empPayment.push(response)
       }),
-      (error)=> console.log(error),
+      (error:any)=> console.log(error),
       ()=> console.log("Done with fetching employee payment list") 
     );
   }
 
   //function to get single employee by id
   onGetSingleEmployee(id:number): any{
-    this.employeePaymentService.getEmployeeById(id).subscribe(
+    this.employeePaymentService.getEmployeePaymentById(id).subscribe(
       (response)=> console.log(response),
       (error:any)=> console.log(error),
       ()=> console.log('done with geeting single employee payment by id ')
@@ -46,24 +49,32 @@ export class EmployeepaymentlistComponent implements OnInit {
   onDeleteEmployee(id:number): any {  
     var ans = confirm("Do you want to delete customer with Id: " + id);  
     if (ans) {  
-        this.employeePaymentService.deleteEmployeeById(id).subscribe((data) => {  
-            this.onGetEmployeePayment();  
-        }, error => console.error(error))  
-    }  
+        this.employeePaymentService.deleteEmployeePaymentById(id).subscribe((data: any) => { 
+          console.log('Sucess on deleting employee payment')
+        }, (error: any) => console.error(error))  
+    } else return
+    this.ngOnInit();
+    this.cdr.detectChanges();
 }  
 
 //function for form popup
   OpenModalPopUp() {
-    this.genericModalPopUpService.openDetailModal(EmployeepaymentcreateComponent, {
-      title: 'Create Employee payment List',
-    });
+    this.genericModalPopUpService.openModalPopUpService<EmployeePayment>(EmployeepaymentcreateComponent, 
+      new EmployeePayment(),
+      'Create Employee payment List',
+    );
   }
   //function for details popup
-  OpenDetailPopUp(eid: number) {
-    this.genericDetailPopUpService.openDetailModal(EmployeepaymentdetailComponent,{
-      title:" Employee Payment  Details",
-      id: eid
-    });
+  OpenDetailPopUp(id: number) {
+    this.genericModalPopUpService.openModalPopUpService<EmployeePayment>(EmployeepaymentdetailComponent,
+      this.empPayment.find(x => x.Id == id),
+      "Employee Payment Details");
+  }
+
+  OpenEditPopUp(id: number) {
+    this.genericModalPopUpService.openModalPopUpService<EmployeePayment>(EmployeepaymentcreateComponent,
+      this.empPayment.find(x => x.Id == id),
+      "Employee Payment Edit");
   }
   //function for edit popup
 

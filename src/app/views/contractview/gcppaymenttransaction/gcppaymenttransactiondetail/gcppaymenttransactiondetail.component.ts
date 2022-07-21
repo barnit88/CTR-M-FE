@@ -21,9 +21,9 @@ export class GcppaymenttransactiondetailComponent implements OnInit {
   }
   
   OpenModalPopUp() {
-    this.genericModalPopUpService.openDetailModal(GcppaymenttransactioneditComponent, {
-      title: 'Clent Create',
-    });
+    // this.genericModalPopUpService.openModalPopUpService(GcppaymenttransactioneditComponent, {
+    //   title: 'Clent Create',
+    // });
   }
 
 }

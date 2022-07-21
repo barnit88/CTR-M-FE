@@ -3,13 +3,14 @@ import { PvepaymenttransactioncreateComponent } from './../pvepaymenttransaction
 import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 import { PvepaymenttransactiondetailComponent } from './../pvepaymenttransactiondetail/pvepaymenttransactiondetail.component';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
+import { PVEPaymentTransaction } from 'src/app/entity/models/PersonalVehicle/pvepayment-transaction';
 @Component({
   selector: 'app-pvepaymenttransactionlist',
   templateUrl: './pvepaymenttransactionlist.component.html',
   styleUrls: ['./pvepaymenttransactionlist.component.css']
 })
 export class PvepaymenttransactionlistComponent implements OnInit {
-
+  pvePaymentData: PVEPaymentTransaction[]=[];
 
   constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService:GenericDetailPopUpService) {}
 
@@ -17,14 +18,21 @@ export class PvepaymenttransactionlistComponent implements OnInit {
   title: string = 'Personal Vehicle Equipment Payment  Transaction';
 
   OpenModalPopUp() {
-    this.genericModalPopUpService.openDetailModal(PvepaymenttransactioncreateComponent, {
-      title: 'Create New Personal Vehicle',
-    });
-
+    this.genericModalPopUpService.openModalPopUpService<PVEPaymentTransaction>(PvepaymenttransactioncreateComponent, 
+      new PVEPaymentTransaction(),
+      'Create PVE Payment List',
+    );
   }
-  OpenDetailPopUp() {
-    this.genericDetailPopUpService.openDetailModal(PvepaymenttransactiondetailComponent,{
-      title:"Personal Vehichle Expense Payment details"
-    });
+  //function for details popup
+  OpenDetailPopUp(id: number) {
+    this.genericModalPopUpService.openModalPopUpService<PVEPaymentTransaction>(PvepaymenttransactiondetailComponent,
+      this.pvePaymentData.find(each => each.Id == id),
+      "PVE Payment Details");
+  }
+
+  OpenEditPopUp(id: number) {
+    this.genericModalPopUpService.openModalPopUpService<PVEPaymentTransaction>(PvepaymenttransactioncreateComponent,
+      this.pvePaymentData.find(each => each.Id == id),
+      "PVE Payment Edit");
   }
 }

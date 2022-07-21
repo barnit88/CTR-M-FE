@@ -15,14 +15,14 @@ export class ExtendtakecontractlistComponent implements OnInit {
   title: string = 'ExtendTake Contract List';
 
   OpenModalPopUp() {
-    this.genericModalPopUpService.openDetailModal(ExtendtakecontractcreateComponent, {
-      title: 'Create Extend Take Contract',
-    });
+    // this.genericModalPopUpService.openModalPopUpService(ExtendtakecontractcreateComponent, {
+    //   title: 'Create Extend Take Contract',
+    // });
   }
   OpenDetailPopUp() {
-    this.genericModalPopUpService.openDetailModal(ExtendtakecontractdetailComponent,{
-      title:"Extend Take Contract Details"
-    });
+    // this.genericModalPopUpService.openModalPopUpService(ExtendtakecontractdetailComponent,{
+    //   title:"Extend Take Contract Details"
+    // });
   }
 
 }

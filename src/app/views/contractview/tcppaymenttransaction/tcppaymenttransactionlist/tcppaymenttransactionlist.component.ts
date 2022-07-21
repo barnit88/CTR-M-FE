@@ -16,14 +16,14 @@ export class TcppaymenttransactionlistComponent implements OnInit {
   title: string = 'Take Contract Payments';
 
   OpenModalPopUp() {
-    this.genericModalPopUpService.openDetailModal(TcppaymenttransactioncreateComponent, {
-      title: 'Create TCP Payment',
-    });
+    // this.genericModalPopUpService.openModalPopUpService(TcppaymenttransactioncreateComponent, {
+    //   title: 'Create TCP Payment',
+    // });
   }
   OpenDetailPopUp() {
-    this.genericModalPopUpService.openDetailModal(TcppaymenttransactiondetailComponent,{
-      title:"Take Contract Payment Details"
-    });
+    // this.genericModalPopUpService.openModalPopUpService(TcppaymenttransactiondetailComponent,{
+    //   title:"Take Contract Payment Details"
+    // });
   }
 
 }

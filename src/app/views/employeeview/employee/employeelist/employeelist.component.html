@@ -1,10 +1,10 @@
 <div class="g-row">
-  <app-card [title]="title" (popUp)="OpenModalPopUp()">
+  <app-card [title]="title" (popUp)="OpenCreatePopUp()">
     <div class="card-body">
       <table class="table-bordered table-hover table-responsive text-center">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>S/N</th>
             <th> FULL NAME</th>
             <th> ADDRESS</th>
             <th> EMAIL</th>
@@ -19,9 +19,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor ="let e of empList">
+          <tr *ngFor ="let e of empList;let i = index">
             
-            <td>{{e.id}}</td>
+            <td>{{i+1}}</td>
             <td>{{e.FirstName +" "+ e.MiddleName+" " + e. LastName}}</td>
             <td>{{e.State + " "+ e.District +" "+e.Muncipality}}</td>
             <td>{{e.Email}}</td>

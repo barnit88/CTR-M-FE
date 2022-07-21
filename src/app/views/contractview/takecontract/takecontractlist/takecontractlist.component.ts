@@ -16,14 +16,14 @@ export class TakecontractlistComponent implements OnInit {
   title: string = 'Take Contract List';
 
   OpenModalPopUp() {
-    this.genericModalPopUpService.openDetailModal(TakecontractcreateComponent, {
-      title: 'Create Take Contract',
-    });
+    // this.genericModalPopUpService.openModalPopUpService(TakecontractcreateComponent, {
+    //   title: 'Create Take Contract',
+    // });
   }
   OpenDetailPopUp() {
-    this.genericModalPopUpService.openDetailModal(TakecontractdetailComponent,{
-      title:"Take Contract Details"
-    });
+    // this.genericModalPopUpService.openModalPopUpService(TakecontractdetailComponent,{
+    //   title:"Take Contract Details"
+    // });
   }
 
 }
