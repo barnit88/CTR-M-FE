@@ -10,7 +10,7 @@ import { PEBPaymentTransaction } from './../../../../entity/models/PersonalEquip
   styleUrls: ['./pebpaymenttransctionlist.component.css']
 })
 export class PebpaymenttransctionlistComponent implements OnInit {
-  pebpaymentData: PEBPaymentTransaction[]=[];
+  pebPaymentData: PEBPaymentTransaction[]=[];
   constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService: GenericDetailPopUpService) {}
 
   ngOnInit(): void {}
@@ -24,13 +24,13 @@ export class PebpaymenttransctionlistComponent implements OnInit {
   //function for details popup
   OpenDetailPopUp(id: number) {
     this.genericModalPopUpService.openModalPopUpService<PEBPaymentTransaction>(PebpaymenttransctiondetailComponent,
-      this.pebpaymentData.find(each => each.Id == id),
+      this.pebPaymentData.find(each => each.Id == id),
       "Employee Payment Details");
   }
 
   OpenEditPopUp(id: number) {
     this.genericModalPopUpService.openModalPopUpService<PEBPaymentTransaction>(PebpaymenttransctioncreateComponent,
-      this.pebpaymentData.find(each => each.Id == id),
+      this.pebPaymentData.find(each => each.Id == id),
       "Employee Payment Edit");
   }
 }

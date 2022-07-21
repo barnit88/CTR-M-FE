@@ -4,21 +4,21 @@
       <table class="table table-hover table-responsive table-bordered bg-white">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>S/N</th>
             <th>MATERIAL NAME</th>
             <th> MEASUREMENT TYPE</th>
-            <th>DETAIL</th>
+            <th>ACTION</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>NIX HOUSE SITE</td>
-            <td>3</td>
+          <tr *ngFor="let e of materialData; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{e.MaterialName}}</td>
+            <td>{{e.MeasurementType}}</td>
             <td>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Edit</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Delete</app-detail-button>
             </td>
           </tr>
         </tbody>

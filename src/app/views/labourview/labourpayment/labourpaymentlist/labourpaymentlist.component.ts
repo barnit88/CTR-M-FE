@@ -18,7 +18,8 @@ export class LabourpaymentlistComponent implements OnInit {
   title: string='Labour Payment'
   constructor(private genericModalPopUpService: GenericModalPopUpService,
      private genericDetailPopUpService: GenericDetailPopUpService,
-      private labourPaymentService:LabourPaymentService ){ }
+     private labourPaymentService:LabourPaymentService ){ }
+
   ngOnInit(): void {
   }
   onGetLabourPayment(): any{
@@ -29,12 +30,14 @@ export class LabourpaymentlistComponent implements OnInit {
     );
     return true;
   } 
+
   OpenModalPopUp() {
     this.genericModalPopUpService.openModalPopUpService<LabourPayment>(LabourpaymentcreateComponent, 
       new LabourPayment(),
       'Create Labour payment List',
     );
   }
+
   OpenDetailPopUp(id: number) {
     this.genericModalPopUpService.openModalPopUpService<LabourPayment>(LabourpaymentdetailComponent,
       this.labourPaymentData.find(each => each.Id == id),

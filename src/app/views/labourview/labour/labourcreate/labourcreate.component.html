@@ -1,7 +1,7 @@
 <app-card-create [title]="title">
     <div class="container-fluid">
         <div class="card-body">
-            <form action="" #labourDataForm="ngForm" (ngSubmit)="labourDataSubmit(labourDataForm.value)">
+            <form action="" #labourDataForm="ngForm" (ngSubmit)="onLabourSubmit(labourDataForm.value)">
             <div class="form-group">
                 <div class="row mt-3 md-3">
                     <div class="col-sm-4">
@@ -75,7 +75,7 @@
                 </div>
                 <div class="row mt-3 md-3">
                     <div class="col-sm-6">
-                        <button type="submit" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+                        <button type="submit" class="btn btn-outline-success btn-lg mx-2" [disabled]="labourDataForm.form.valid">Submit</button>
                     </div>
                 </div>
             </div>

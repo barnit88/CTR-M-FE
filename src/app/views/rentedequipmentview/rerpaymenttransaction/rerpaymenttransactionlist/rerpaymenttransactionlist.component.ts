@@ -3,13 +3,14 @@ import { RerpaymenttransactioncreateComponent } from './../rerpaymenttransaction
 import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 import { RerpaymenttransactiondetailComponent } from './../rerpaymenttransactiondetail/rerpaymenttransactiondetail.component';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
+import { RERPaymentTransaction } from 'src/app/entity/models/RentedEquipment/rerpayment-transaction';
 @Component({
   selector: 'app-rerpaymenttransactionlist',
   templateUrl: './rerpaymenttransactionlist.component.html',
   styleUrls: ['./rerpaymenttransactionlist.component.css']
 })
 export class RerpaymenttransactionlistComponent implements OnInit {
-
+  rerPaymentData: RERPaymentTransaction[]=[];
   constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService:GenericDetailPopUpService) {}
 
   ngOnInit(): void {}

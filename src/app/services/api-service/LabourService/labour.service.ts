@@ -8,7 +8,7 @@ import {Labour} from 'src/app/entity/models/Labour/labour';
 export class LabourService {
   labour : Labour[] = [];
 
-  public getEmployeesPayment(): Observable < Labour[] > {
+  public getLabourPayments(): Observable < Labour[] > {
       return this.http.get<Labour[]>('http://localhost:3000/employee-payment')
   }
   public getLabourById(id : number): Observable < Labour > {

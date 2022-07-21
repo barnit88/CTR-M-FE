@@ -12,6 +12,7 @@ import { Site } from 'src/app/entity/models/Site/site';
 })
 export class SitelistComponent implements OnInit {
   siteData: Site[]=[];
+  title:string="Site"
   constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService:GenericDetailPopUpService) {}
   ngOnInit(): void {
     throw new Error('Method not implemented.');

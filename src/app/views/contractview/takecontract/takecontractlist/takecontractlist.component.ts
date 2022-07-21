@@ -10,20 +10,29 @@ import { GenericDetailPopUpService } from 'src/app/services/common-service/gener
   styleUrls: ['./takecontractlist.component.css']
 })
 export class TakecontractlistComponent implements OnInit {
+    tcData: TakeContract[]=[];
   constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService:GenericDetailPopUpService) {}
 
   ngOnInit(): void {}
   title: string = 'Take Contract List';
 
   OpenModalPopUp() {
-    // this.genericModalPopUpService.openModalPopUpService(TakecontractcreateComponent, {
-    //   title: 'Create Take Contract',
-    // });
+    this.genericModalPopUpService.openModalPopUpService<TakeContract>(TakecontractcreateComponent, 
+      new TakeContract(),
+      'Create TakeContract List',
+    );
   }
-  OpenDetailPopUp() {
-    // this.genericModalPopUpService.openModalPopUpService(TakecontractdetailComponent,{
-    //   title:"Take Contract Details"
-    // });
+  //function for details popup
+  OpenDetailPopUp(id: number) {
+    this.genericModalPopUpService.openModalPopUpService<TakeContract>(TakecontractdetailComponent,
+      this.tcData.find(each => each.Id == id),
+      "TakeContract Details");
+  }
+
+  OpenEditPopUp(id: number) {
+    this.genericModalPopUpService.openModalPopUpService<TakeContract>(TakecontractcreateComponent,
+      this.tcData.find(each => each.Id == id),
+      "TakeContract Edit");
   }
 
 }

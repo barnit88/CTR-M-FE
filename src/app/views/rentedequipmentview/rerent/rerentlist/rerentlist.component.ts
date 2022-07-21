@@ -13,7 +13,7 @@ import { RerpaymenttransactiondetailComponent } from './../../rerpaymenttransact
   styleUrls: ['./rerentlist.component.css']
 })
 export class RerentlistComponent implements OnInit {
-  rerPaymentData: RERPaymentTransaction[]=[];
+  rerData: RERPaymentTransaction[]=[];
   constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService:GenericDetailPopUpService) {}
 
   ngOnInit(): void {}
@@ -28,13 +28,13 @@ export class RerentlistComponent implements OnInit {
   //function for details popup
   OpenDetailPopUp(id: number) {
     this.genericModalPopUpService.openModalPopUpService<RERPaymentTransaction>(RerpaymenttransactiondetailComponent,
-      this.rerPaymentData.find(each => each.Id == id),
+      this.rerData.find(each => each.Id == id),
       "RER Payment Details");
   }
 
   OpenEditPopUp(id: number) {
     this.genericModalPopUpService.openModalPopUpService<RERPaymentTransaction>(RerpaymenttransactioncreateComponent,
-      this.rerPaymentData.find(each => each.Id == id),
+      this.rerData.find(each => each.Id == id),
       "RER Payment Edit");
   }
 

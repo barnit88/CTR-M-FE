@@ -3,6 +3,7 @@ import { GenericModalPopUpService } from 'src/app/services/common-service/generi
 import { GivecontractcreateComponent } from './../givecontractcreate/givecontractcreate.component';
 import { GivecontractdetailComponent } from './../givecontractdetail/givecontractdetail.component';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
+import { GiveContract } from './../../../../entity/models/Contract/give-contract';
 
 @Component({
   selector: 'app-givecontractlist',
@@ -10,21 +11,29 @@ import { GenericDetailPopUpService } from 'src/app/services/common-service/gener
   styleUrls: ['./givecontractlist.component.css']
 })
 export class GivecontractlistComponent implements OnInit {
-
+  gcData: GiveContract[]=[];
   constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService: GenericDetailPopUpService) {}
 
   ngOnInit(): void {}
   title: string = 'Give Contract Lists';
 
   OpenModalPopUp() {
-    // this.genericModalPopUpService.openModalPopUpService(GivecontractcreateComponent, {
-    //   title: 'Create Give Contract',
-    // });
+    this.genericModalPopUpService.openModalPopUpService<GiveContract>(GivecontractcreateComponent, 
+      new GiveContract(),
+      'Create GiveContract List',
+    );
   }
-  OpenDetailPopUp() {
-    // this.genericModalPopUpService.openModalPopUpService(GivecontractdetailComponent,{
-    //   title:"Give Contract Details"
-    // });
+  //function for details popup
+  OpenDetailPopUp(id: number) {
+    this.genericModalPopUpService.openModalPopUpService<GiveContract>(GivecontractdetailComponent,
+      this.gcData.find(each => each.Id == id),
+      "GiveContract Details");
+  }
+
+  OpenEditPopUp(id: number) {
+    this.genericModalPopUpService.openModalPopUpService<GiveContract>(GivecontractcreateComponent,
+      this.gcData.find(each => each.Id == id),
+      "GiveContract Edit");
   }
 
 }

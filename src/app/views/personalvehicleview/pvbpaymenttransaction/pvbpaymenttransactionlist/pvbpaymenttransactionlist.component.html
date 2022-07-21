@@ -4,27 +4,29 @@
       <table class="table table-hover table-responsive table-bordered bg-white">
         <thead>
           <tr>
+            <th>S/N</th>
             <th>PV Bought Id</th>
             <th>PV Bought</th>
             <th>Payment Method</th>
             <th>Payment Type</th>
             <th>Payment</th>
             <th>Payment Date</th>
-            <th>Details</th>
+            <th>ACTIONS</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>NIX HOUSE SITE</td>
-            <td>3</td>
-            <td>BAgmati</td>
-            <td>Construction</td>
-            <td>Construction</td>
+          <tr *ngFor="let e of pvbPaymentData; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{e.PersonalVehicleBoughtId}}</td>
+            <td>{{e.PersonalVehicleBought}}</td>
+            <td>{{e.PaymentMethod}}</td>
+            <td>{{e.PaymentType}}</td>
+            <td>{{e.Payment}}</td>
+            <td>{{e.PaymentDate}}</td>
             <td>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Edit</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Delete</app-detail-button>
             </td>
           </tr>
         </tbody>

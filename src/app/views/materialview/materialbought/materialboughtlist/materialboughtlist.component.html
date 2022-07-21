@@ -1,10 +1,10 @@
 <div class="g-row">
   <app-card [title]="title" (popUp)="OpenModalPopUp()">
     <div class="card-body">
-      <table class="table table-hover table-responsive table-bordered bg-white">
+      <table class="table table-hover table-responsive table-bordered bg-light">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>S/N</th>
             <th> MATERIAL ID</th>
             <th> MATERIAL</th>
             <TH>VENDOR ID</TH>
@@ -13,24 +13,24 @@
             <th>RATE</th>
             <th>TOTAL PRICE</th>
             <TH>BOUGHT PRICE</TH>
-            <TH>DETAIL</TH>
+            <TH>ACTION</TH>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>NIX HOUSE SITE</td>
-            <td>3</td>
-            <td>BAgmati</td>
-            <td>Construction</td>
-            <td> MAnagemt</td>
-            <td> Work on progress</td>
-            <td>3</td>
-            <td>3</td>
+          <tr *ngFor="let e of materialBoughtData; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{e.MaterialId}}</td>
+            <td>{{e.MAterial}}</td>
+            <td>{{e.VendorId}}</td>
+            <td>{{e.SiteId}}</td>
+            <td> {{e.Quantity}}</td>
+            <td> {{e.Rate}}</td>
+            <td>{{e.TotalPrice}}</td>
+            <td>{{e.BoughtPrice}}</td>
             <td>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Edit</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Delete</app-detail-button>
             </td>
           </tr>
         </tbody>

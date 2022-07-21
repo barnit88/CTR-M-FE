@@ -1,25 +1,27 @@
 <div class="g-row">
 <app-card [title]="title" (popUp)="OpenModalPopUp()">
   <div class="card-body">
-  <table class="table table-hover table-responsive table-bordered bg-white">
+  <table class="table table-hover table-responsive table-bordered bg-light">
     <thead>
         <tr>
+          <th>S/N</th>
           <th>Equipment Name</th>
           <th>Brand Name</th> 
           <th>Model Name</th>
           <th>Type</th>
-          <th>Details</th>
+          <th>ACTIONS</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>NIX  HOUSE SITE</td>
-          <td>3</td>
-          <td>BAgmati</td>
-          <td> <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
-            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
-            <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button></td>
+        <tr *ngFor="let e of reData; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{e.EquipmentName}}</td>
+          <td>{{e.BrandName}}</td>
+          <td>{{e.ModelName}}</td>
+          <td>{{e.Type}}</td>
+          <td> <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Detail</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Edit</app-detail-button>
+            <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Delete</app-detail-button></td>
         </tr>
       </tbody>
     </table>

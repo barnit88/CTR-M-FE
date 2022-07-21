@@ -4,7 +4,7 @@
       <table class="table table-hover table-responsive table-bordered bg-white">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>S/N</th>
             <th> EMPLOYEE ID</th>
             <th> EMPLOYEE</th>
             <th> FORM DATE</th>
@@ -16,8 +16,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let epay of empPayment">
-            <td>{{epay.id}}</td>
+          <tr *ngFor="let epay of empPayment; let i = index">
+            <td>{{i+1}}</td>
             <td>{{epay.EmployeeId}}</td>
             <td>{{epay.Employee}}</td>
             <td>{{epay.FromDate}}</td>

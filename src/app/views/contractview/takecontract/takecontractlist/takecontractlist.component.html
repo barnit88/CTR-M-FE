@@ -4,7 +4,7 @@
       <table class="table table-hover table-responsive table-bordered bg-white">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>S/N</th>
             <th> CLIENT ID</th>
             <th> CLIENT</th>
             <th> SITE</th>
@@ -12,25 +12,23 @@
             <th> CONTRACT START DATE</th>
             <th>CONTRACT FINISHED DATE</th>
             <th> CONTRACT AMOUNT</th>
-            <th> DETAIL </th>
-
+            <th>ACTION</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>NIX HOUSE SITE</td>
-            <td>3</td>
-            <td>BAgmati</td>
-            <td>Construction</td>
-            <td> MAnagemt</td>
-            <td> Work on progress</td>
-            <td>3</td>
-
+          <tr *ngFor="let e of tcData; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{e.ClientId}}</td>
+            <td>{{e.Client}}</td>
+            <td>{{e.Site}}</td>
+            <td>{{e.ContractFinishedPeriod}}</td>
+            <td> {{e.ContractStartDate}}</td>
+            <td> {{e.ContractFinishedDate}}</td>
+            <td>{{e.ContractAmount}}</td>
             <td>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Edit</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Delete</app-detail-button>
             </td>
           </tr>
         </tbody>
