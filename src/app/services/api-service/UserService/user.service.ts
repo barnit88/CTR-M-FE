@@ -9,7 +9,7 @@ import { User } from 'src/app/entity/models/User/user';
 export class UserService {
   user : User[] = [];
 
-  public getEmployeesPayment(): Observable < User[] > {
+  public getUserList(): Observable < User[] > {
       return this.http.get<User[]>('http://localhost:3000/employee-payment')
   }
   public getUserById(id : number): Observable < User > {

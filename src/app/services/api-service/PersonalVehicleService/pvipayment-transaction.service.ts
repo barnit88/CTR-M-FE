@@ -10,7 +10,7 @@ export class PVIPaymentTransactionService {
 
   pviPayment : PVIPaymentTransaction[] = [];
 
-  public getEmployeesPayment(): Observable < PVIPaymentTransaction[] > {
+  public getPVIncomePaymentList(): Observable < PVIPaymentTransaction[] > {
       return this.http.get<PVIPaymentTransaction[]>('http://localhost:3000/employee-payment')
   }
   public getPVIPaymentTransactionById(id : number): Observable < PVIPaymentTransaction > {

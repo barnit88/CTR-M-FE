@@ -7,7 +7,7 @@ import {PEExpenses} from './../../../entity/models/PersonalEquipment/peexpenses'
 export class PEExpensesService {
     peeExpense : PEExpenses[] = [];
 
-    public getEmployeesPayment(): Observable < PEExpenses[] > {
+    public getPEExpenseList(): Observable < PEExpenses[] > {
         return this.http.get<PEExpenses[]>('http://localhost:3000/employee-payment')
     }
     public getPEExpensesById(id : number): Observable < PEExpenses > {

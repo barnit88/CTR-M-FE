@@ -4,6 +4,7 @@ import { GenericModalPopUpService } from 'src/app/services/common-service/generi
 import { PeincomedetailComponent } from './../peincomedetail/peincomedetail.component';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 import { PEIncome } from './../../../../entity/models/PersonalEquipment/peincome';
+import { PEIncomeService } from './../../../../services/api-service/PersonalEquipmentService/peincome.service';
 @Component({
   selector: 'app-peincomelist',
   templateUrl: './peincomelist.component.html',
@@ -11,10 +12,39 @@ import { PEIncome } from './../../../../entity/models/PersonalEquipment/peincome
 })
 export class PeincomelistComponent implements OnInit {
   peIncomeData: PEIncome[]=[];
-  constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService: GenericDetailPopUpService) {}
+  constructor(private genericModalPopUpService: GenericModalPopUpService,
+     private genericDetailPopUpService: GenericDetailPopUpService,
+     private peIncomeService:PEIncomeService) {}
 
   ngOnInit(): void {}
   title: string = 'PE Income List';
+
+
+  onGetPEIncomeList(): any{
+    this.peIncomeService.getPEIncomeList().subscribe(
+      (response)=> response.map(response=>{
+        return this.peIncomeData.push(response)
+      }),
+      (error:any)=> console.log(error),
+      ()=> console.log("Done with fetching PE Income list") 
+    );
+    console.log(this.peIncomeData)
+  }
+  onGetSinglePEIncome(id:number): any{
+    this.peIncomeService.getPEIncomeById(id).subscribe(
+      (response)=> console.log(response),
+      (error:any)=> console.log(error),
+      ()=> console.log('done with geeting single PE Income by id ')
+    );
+  }
+  onDeletePEIncome(id:number): any {  
+    var ans = confirm("Do you want to delete PE Income with Id: " + id);  
+    if (ans) {  
+        this.peIncomeService.deletePEIncomeById(id).subscribe((data: any) => { 
+          console.log('Sucess on deleting PE Income')
+        }, (error: any) => console.error(error))  
+    } else return this.ngOnInit();
+}
 
   OpenModalPopUp() {
     this.genericModalPopUpService.openModalPopUpService<PEIncome>(PeincomecreateComponent, 
@@ -22,7 +52,6 @@ export class PeincomelistComponent implements OnInit {
       'Create PE Income List',
     );
   }
-  //function for details popup
   OpenDetailPopUp(id: number) {
     this.genericModalPopUpService.openModalPopUpService<PEIncome>(PeincomedetailComponent,
       this.peIncomeData.find(each => each.Id == id),

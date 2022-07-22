@@ -4,6 +4,7 @@ import { GenericModalPopUpService } from 'src/app/services/common-service/generi
 import { RvincomedetailComponent } from './../rvincomedetail/rvincomedetail.component';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 import { RVIncome } from './../../../../entity/models/RentedVehicle/rvincome';
+import { RVIncomeService } from './../../../../services/api-service/RentedVehicleService/rvincome.service';
 @Component({
   selector: 'app-rvincomelist',
   templateUrl: './rvincomelist.component.html',
@@ -11,10 +12,39 @@ import { RVIncome } from './../../../../entity/models/RentedVehicle/rvincome';
 })
 export class RvincomelistComponent implements OnInit {
   rviData: RVIncome[]=[];
-  constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService:GenericDetailPopUpService) {}
+  constructor(private genericModalPopUpService: GenericModalPopUpService,
+     private genericDetailPopUpService:GenericDetailPopUpService,
+     private rvIncomeService:RVIncomeService) {}
 
   ngOnInit(): void {}
   title: string = 'Rented vehicle Income List';
+
+  onGetRVIList(): any{
+    this.rvIncomeService.getRVIncomeList().subscribe(
+      (response)=> response.map(response=>{
+        return this.rviData.push(response)
+      }),
+      (error:any)=> console.log(error),
+      ()=> console.log("Done with fetching  RVI  list") 
+    );
+    console.log(this.rviData)
+  }
+  onGetSingleRVI(id:number): any{
+    this.rvIncomeService.getRVIncomeById(id).subscribe(
+      (response)=> console.log(response),
+      (error:any)=> console.log(error),
+      ()=> console.log('done with geeting single  RVI  by id '));
+    
+  }
+  getRVIById(id:number): any {  
+    var ans = confirm("Do you want to delete  REE  with Id: " + id);  
+    if (ans) {  
+        this.rvIncomeService.deleteRVIncomeById(id).subscribe((data: any) => { 
+          console.log('Sucess on deleting  RVI ')
+        }, (error: any) => console.error(error))  
+    } else return this.ngOnInit();
+}
+
   OpenModalPopUp() {
     this.genericModalPopUpService.openModalPopUpService<RVIncome>(RvincomecreateComponent, 
       new RVIncome(),

@@ -15,25 +15,50 @@ export class LabourlistComponent implements OnInit {
     ngOnInit(): void { // this.onGetLabour();
     }
 
- 
+    onGetLabourList(): any{
+      this.labourService.getLabourList().subscribe(
+        (response)=> response.map(response=>{
+          return this.labour.push(response)
+        }),
+        (error:any)=> console.log(error),
+        ()=> console.log("Done with fetching Labour  list") 
+      );
+      console.log(this.labour)
+    }
+    onGetSingleLabour(id:number): any{
+      this.labourService.getLabourById(id).subscribe(
+        (response)=> console.log(response),
+        (error:any)=> console.log(error),
+        ()=> console.log('done with geeting single Labour  by id ')
+      );
+    }
+    
+    onDeleteLabour(id:number): any {  
+      var ans = confirm("Do you want to delete customer with Id: " + id);  
+      if (ans) {  
+          this.labourService.deleteLabourById(id).subscribe((data: any) => { 
+            console.log('Sucess on deleting Labour ')
+          }, (error: any) => console.error(error))  
+      } else return this.ngOnInit();
+  }  
 
     OpenModalPopUp() {
       this.genericModalPopUpService.openModalPopUpService<Labour>(LabourcreateComponent, 
         new Labour(),
-        'Create Employee payment List',
+        'Create Labour  List',
       );
     }
     //function for details popup
     OpenDetailPopUp(id: number) {
       this.genericModalPopUpService.openModalPopUpService<Labour>(LabourdetailComponent,
         this.labour.find(each => each.Id == id),
-        "Employee Payment Details");
+        "Labour  Details");
     }
   
     OpenEditPopUp(id: number) {
       this.genericModalPopUpService.openModalPopUpService<Labour>(LabourcreateComponent,
         this.labour.find(each => each.Id == id),
-        "Employee Payment Edit");
+        "Labour  Edit");
     }
 }
 

@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { HttpClient } from '@angular/common/http';
+import { MSPaymentTransaction } from './../../../entity/models/Material/mspayment-transaction';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MSPaymentTransactionService {
-  msPayment : MSPaymentTransactionService[] = [];
+  msPayment : MSPaymentTransaction[] = [];
 
-  public getEmployeesPayment(): Observable < MSPaymentTransactionService[] > {
-      return this.http.get<MSPaymentTransactionService[]>('http://localhost:3000/employee-payment')
+  public getMSpaymentList(): Observable < MSPaymentTransaction[] > {
+      return this.http.get<MSPaymentTransaction[]>('http://localhost:3000/employee-payment')
   }
-  public getMSPaymentTransactionServiceById(id : number): Observable < MSPaymentTransactionService > {
-      return this.http.get<MSPaymentTransactionService>('http://localhost:3000/employee-payment/' + id)
+  public getMSPaymentTransactionServiceById(id : number): Observable < MSPaymentTransaction > {
+      return this.http.get<MSPaymentTransaction>('http://localhost:3000/employee-payment/' + id)
   }
-  public deleteMSPaymentTransactionServiceById(id : number): Observable < MSPaymentTransactionService > {
-      return this.http.delete<MSPaymentTransactionService>('http://localhost:3000/employee-payment/' + id)
+  public deleteMSPaymentTransactionServiceById(id : number): Observable < MSPaymentTransaction > {
+      return this.http.delete<MSPaymentTransaction>('http://localhost:3000/employee-payment/' + id)
   }
-  public addMSPaymentTransactionService(entity : MSPaymentTransactionService): Observable < MSPaymentTransactionService > {
-      return this.http.post<MSPaymentTransactionService>('http://localhost:3000/employee-payment/', entity);
+  public addMSPaymentTransactionService(entity : MSPaymentTransaction): Observable < MSPaymentTransaction > {
+      return this.http.post<MSPaymentTransaction>('http://localhost:3000/employee-payment/', entity);
   }
 
   constructor(private http: HttpClient) { }

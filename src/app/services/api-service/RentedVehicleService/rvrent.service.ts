@@ -10,7 +10,7 @@ export class RVRentService {
 
   rvRent : RVRent[] = [];
 
-  public getEmployeesPayment(): Observable < RVRent[] > {
+  public getRVRentList(): Observable < RVRent[] > {
       return this.http.get<RVRent[]>('http://localhost:3000/employee-payment')
   }
   public getRVRentById(id : number): Observable < RVRent > {

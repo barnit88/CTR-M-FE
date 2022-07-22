@@ -1,7 +1,7 @@
 <div class="g-row">
   <app-card [title]="title" (popUp)="OpenModalPopUp()">
     <div class="card-body">
-      <table class="table table-hover table-responsive table-bordered bg-white">
+      <table class="table table-bodered table-responsive bg-light">
         <thead>
           <tr>
             <th>S/N</th>
@@ -26,9 +26,9 @@
             <td> {{epay.Period}}</td>
             <td>{{epay.Payment}}</td>
             <td>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp(epay.Id)">Detail</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenEditPopUp(epay.Id)">Edit</app-detail-button>
-              <app-detail-button  [routerLink]="['admin/employee-payment']" (click)="onDeleteEmployee(this.epay.id)">Delete</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(epay.id)">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenEditPopUp(epay.id)">Edit</app-detail-button>
+              <app-detail-button (click)="onDeleteEmployee(epay.id)">Delete</app-detail-button>
             </td>
           </tr>
         </tbody>

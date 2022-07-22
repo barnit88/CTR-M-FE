@@ -6,23 +6,22 @@
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4"><label for="usr"> Employee ID:</label>
                             <input type="text" class="form-control"  [(ngModel)]="data.EmployeeId" name="EmployeeId" id="usr" required>
-                            todo:{{data.EmployeeId}}
                         </div>
                         <div class="col-sm-4"><label for="usr"> Employee :</label>
                             <input type="text" class="form-control"  [(ngModel)]="data.Employee" name="Employee"  id="usr" required>
                         </div>
-                        <div class="col-sm-4"><label for="usr"> From Date:</label>
-                            <input type="text" class="form-control"  [(ngModel)]="data.FromDate" name="FromDate"  id="usr" required>
+                        <div class="col-sm-4 "><label for="usr"> From Date:</label>
+                            <input type="date" class="form-control datepicker"  [(ngModel)]="data.FromDate" name="FromDate"  id="usr" required>
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
-                        <div class="col-sm-4"><label for="usr">To Date:</label>
-                            <input type="text" class="form-control"  [(ngModel)]="data.ToDate" name="ToDate"  id="usr" required>
+                        <div class="col-sm-4 "><label for="usr">To Date:</label>
+                            <input type="date" class="form-control datepicker"  [(ngModel)]="data.ToDate" name="ToDate"  id="usr" required>
                         </div>
                         <div class="col-sm-4"><label for="usr">Payment Rate:</label>
                             <input type="text" class="form-control"  [(ngModel)]="data.PaymentRate" name="PaymentRate"  id="usr" required>
                         </div>
-                        <div class="col-sm-4"><label for="usr">Perid:</label>
+                        <div class="col-sm-4 "><label for="usr">Perid:</label>
                             <input type="text" class="form-control"  [(ngModel)]="data.Period" name="Period"  id="usr" required>
                         </div>
                     </div>

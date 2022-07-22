@@ -4,6 +4,7 @@ import { GenericModalPopUpService } from 'src/app/services/common-service/generi
 import { PeboughtdetailComponent } from './../peboughtdetail/peboughtdetail.component';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 import { PEBought } from './../../../../entity/models/PersonalEquipment/pebought';
+import { PEBoughtService } from './../../../../services/api-service/PersonalEquipmentService/pebought.service';
 @Component({
   selector: 'app-peboughtlist',
   templateUrl: './peboughtlist.component.html',
@@ -11,10 +12,38 @@ import { PEBought } from './../../../../entity/models/PersonalEquipment/pebought
 })
 export class PeboughtlistComponent implements OnInit {
   peBoughtData : PEBought[]=[];
-  constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService: GenericDetailPopUpService) {}
+  title: string = 'PE Bought List';
+  constructor(private genericModalPopUpService: GenericModalPopUpService,
+     private genericDetailPopUpService: GenericDetailPopUpService,
+     private pEBoughtService: PEBoughtService) {}
+
+  onGetPEBoughtList(): any{
+    this.pEBoughtService.getPEBoughtList().subscribe(
+      (response)=> response.map(response=>{
+        return this.peBoughtData.push(response)
+      }),
+      (error:any)=> console.log(error),
+      ()=> console.log("Done with fetching PEBought list") 
+    );
+    console.log(this.peBoughtData)
+  }
+  onGetSinglePEBought(id:number): any{
+    this.pEBoughtService.getPEBoughtById(id).subscribe(
+      (response)=> console.log(response),
+      (error:any)=> console.log(error),
+      ()=> console.log('done with geeting single PEBought by id ')
+    );
+  }
+  onDeletePEBought(id:number): any {  
+    var ans = confirm("Do you want to delete PEBought with Id: " + id);  
+    if (ans) {  
+        this.pEBoughtService.deletePEBoughtById(id).subscribe((data: any) => { 
+          console.log('Sucess on deleting MaSPayment')
+        }, (error: any) => console.error(error))  
+    } else return this.ngOnInit();
+}
 
   ngOnInit(): void {}
-  title: string = 'PE Bought List';
   OpenModalPopUp() {
     this.genericModalPopUpService.openModalPopUpService<PEBought>(PeboughtcreateComponent, 
       new PEBought(),

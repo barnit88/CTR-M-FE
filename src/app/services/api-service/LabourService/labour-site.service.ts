@@ -9,7 +9,7 @@ import { LabourSite } from 'src/app/entity/models/Labour/labour-site';
 export class LabourSiteService {
   labourSite : LabourSite[] = [];
 
-  public getEmployeesPayment(): Observable < LabourSite[] > {
+  public getLabourSiteList(): Observable < LabourSite[] > {
       return this.http.get<LabourSite[]>('http://localhost:3000/employee-payment')
   }
   public getLabourSiteById(id : number): Observable < LabourSite > {

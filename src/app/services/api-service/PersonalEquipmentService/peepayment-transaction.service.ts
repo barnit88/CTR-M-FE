@@ -9,7 +9,7 @@ import { PEEPaymentTransaction } from './../../../entity/models/PersonalEquipmen
 export class PEEPaymentTransactionService {
   peePayment : PEEPaymentTransaction[] = [];
 
-  public getEmployeesPayment(): Observable < PEEPaymentTransaction[] > {
+  public getPEExpensePaymentList(): Observable < PEEPaymentTransaction[] > {
       return this.http.get<PEEPaymentTransaction[]>('http://localhost:3000/employee-payment')
   }
   public getPEEPaymentTransactionById(id : number): Observable < PEEPaymentTransaction > {

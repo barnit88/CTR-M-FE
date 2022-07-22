@@ -1,24 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+import { PEIncome } from 'src/app/entity/models/PersonalEquipment/peincome';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PEIncomeService {
-  peIncome : PEIncomeService[] = [];
+  peIncome : PEIncome[] = [];
 
-  public getEmployeesPayment(): Observable < PEIncomeService[] > {
-      return this.http.get<PEIncomeService[]>('http://localhost:3000/employee-payment')
+  public getPEIncomeList(): Observable < PEIncome[] > {
+      return this.http.get<PEIncome[]>('http://localhost:3000/employee-payment')
   }
-  public getPEIncomeServiceById(id : number): Observable < PEIncomeService > {
-      return this.http.get<PEIncomeService>('http://localhost:3000/employee-payment/' + id)
+  public getPEIncomeById(id : number): Observable < PEIncome > {
+      return this.http.get<PEIncome>('http://localhost:3000/employee-payment/' + id)
   }
-  public deletePEIncomeServiceById(id : number): Observable < PEIncomeService > {
-      return this.http.delete<PEIncomeService>('http://localhost:3000/employee-payment/' + id)
+  public deletePEIncomeById(id : number): Observable < PEIncome > {
+      return this.http.delete<any>('http://localhost:3000/employee-payment/' + id)
   }
-  public addPEIncomeService(entity : PEIncomeService): Observable < PEIncomeService > {
-      return this.http.post<PEIncomeService>('http://localhost:3000/employee-payment/', entity);
+  public addPEIncome(entity : PEIncome): Observable < PEIncome > {
+      return this.http.post<PEIncome>('http://localhost:3000/employee-payment/', entity);
   }
 
   constructor(private http: HttpClient) { }

@@ -10,7 +10,7 @@ export class RVIPaymentTranactionService {
 
   rviPayment : RVIPaymentTransaction[] = [];
 
-  public getEmployeesPayment(): Observable < RVIPaymentTransaction[] > {
+  public getRVIncomePaymentList(): Observable < RVIPaymentTransaction[] > {
       return this.http.get<RVIPaymentTransaction[]>('http://localhost:3000/employee-payment')
   }
   public getRVIPaymentTransactionById(id : number): Observable < RVIPaymentTransaction > {

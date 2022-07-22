@@ -10,7 +10,7 @@ export class REEPaymentTransactionService {
 
   reePayment : REEPaymentTransaction[] = [];
 
-  public getEmployeesPayment(): Observable < REEPaymentTransaction[] > {
+  public getREExpensePaymentList(): Observable < REEPaymentTransaction[] > {
       return this.http.get<REEPaymentTransaction[]>('http://localhost:3000/employee-payment')
   }
   public getREEPaymentTransactionById(id : number): Observable < REEPaymentTransaction > {

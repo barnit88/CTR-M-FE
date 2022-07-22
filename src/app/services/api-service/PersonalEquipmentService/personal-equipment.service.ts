@@ -10,7 +10,7 @@ export class PersonalEquipmentService {
 
   personalEquipment : PersonalEquipment[] = [];
 
-  public getEmployeesPayment(): Observable < PersonalEquipment[] > {
+  public getPersonalEquipmentList(): Observable < PersonalEquipment[] > {
       return this.http.get<PersonalEquipment[]>('http://localhost:3000/employee-payment')
   }
   public getPersonalEquipmentById(id : number): Observable < PersonalEquipment > {

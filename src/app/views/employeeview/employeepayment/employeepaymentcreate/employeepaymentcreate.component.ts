@@ -16,7 +16,11 @@ export class EmployeepaymentcreateComponent implements OnInit {
   title:string="Create New EC"
   employeepaymentvalid: FormGroup;
 
-  constructor(private formBuilder:FormBuilder,private activatedRoute:ActivatedRoute, private employeePaymentService: EmployeePaymentService, private router:Router, private modelRef: BsModalRef, private changeDetectorRef: ChangeDetectorRef ) {}
+  constructor(private formBuilder:FormBuilder,private activatedRoute:ActivatedRoute,
+     private employeePaymentService: EmployeePaymentService,
+      private router:Router,
+       private modelRef: BsModalRef,
+        private changeDetectorRef: ChangeDetectorRef ) {}
 
   ngOnInit(): void {
 
@@ -44,7 +48,7 @@ export class EmployeepaymentcreateComponent implements OnInit {
     console.log(response),
     (error:any)=> console.log(error)
     );
-    this.employeePaymentService.getEmployeesPayment(),
+    this.employeePaymentService.getEmployeePaymentList(),
     this.changeDetectorRef.markForCheck()
     this.modelRef.hide();
   }

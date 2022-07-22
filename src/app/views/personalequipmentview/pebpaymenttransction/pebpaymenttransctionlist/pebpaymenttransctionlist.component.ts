@@ -4,6 +4,7 @@ import { GenericModalPopUpService } from 'src/app/services/common-service/generi
 import { PebpaymenttransctiondetailComponent } from './../pebpaymenttransctiondetail/pebpaymenttransctiondetail.component';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 import { PEBPaymentTransaction } from './../../../../entity/models/PersonalEquipment/pebpayment-transaction';
+import { PEBPaymentTransactionService } from './../../../../services/api-service/PersonalEquipmentService/pebpayment-transaction.service';
 @Component({
   selector: 'app-pebpaymenttransctionlist',
   templateUrl: './pebpaymenttransctionlist.component.html',
@@ -11,10 +12,39 @@ import { PEBPaymentTransaction } from './../../../../entity/models/PersonalEquip
 })
 export class PebpaymenttransctionlistComponent implements OnInit {
   pebPaymentData: PEBPaymentTransaction[]=[];
-  constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService: GenericDetailPopUpService) {}
+  title: string = 'Material List';
+  constructor(private genericModalPopUpService: GenericModalPopUpService,
+     private genericDetailPopUpService: GenericDetailPopUpService,
+     private pebPaymentTransactionService: PEBPaymentTransactionService) {}
 
   ngOnInit(): void {}
-  title: string = 'Material List';
+
+  onGetPaymentList(): any{
+    this.pebPaymentTransactionService.getPEBoughtPaymentList().subscribe(
+      (response)=> response.map(response=>{
+        return this.pebPaymentData.push(response)
+      }),
+      (error:any)=> console.log(error),
+      ()=> console.log("Done with fetching Payment list") 
+    );
+    console.log(this.pebPaymentData)
+  }
+  onGetSinglePayment(id:number): any{
+    this.pebPaymentTransactionService.getPEBPaymentTransactionById(id).subscribe(
+      (response)=> console.log(response),
+      (error:any)=> console.log(error),
+      ()=> console.log('done with geeting single Payment by id ')
+    );
+  }
+  onDeletePayment(id:number): any {  
+    var ans = confirm("Do you want to delete Payment with Id: " + id);  
+    if (ans) {  
+        this.pebPaymentTransactionService.deletePEBPaymentTransactionById(id).subscribe((data: any) => { 
+          console.log('Sucess on deleting MaSPayment')
+        }, (error: any) => console.error(error))  
+    } else return this.ngOnInit();
+}
+
   OpenModalPopUp() {
     this.genericModalPopUpService.openModalPopUpService<PEBPaymentTransaction>(PebpaymenttransctioncreateComponent, 
       new PEBPaymentTransaction(),

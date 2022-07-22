@@ -4,6 +4,7 @@ import { MaterialsoldcreateComponent } from './../materialsoldcreate/materialsol
 import { MaterialsolddetailComponent } from './../materialsolddetail/materialsolddetail.component';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 import { MaterialSold } from './../../../../entity/models/Material/material-sold';
+import { MaterialSoldService } from './../../../../services/api-service/MaterialService/material-sold.service';
 
 @Component({
   selector: 'app-materialsoldlist',
@@ -12,10 +13,38 @@ import { MaterialSold } from './../../../../entity/models/Material/material-sold
 })
 export class MaterialsoldlistComponent implements OnInit {
   materialSoldData: MaterialSold[]=[];
-  constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService: GenericDetailPopUpService) {}
+  constructor(private genericModalPopUpService: GenericModalPopUpService,
+     private genericDetailPopUpService: GenericDetailPopUpService,
+     private materialSoldService: MaterialSoldService) {}
 
   ngOnInit(): void {}
   title: string = 'Material Sold List';
+
+  onGetMaterialSoldList(): any{
+    this.materialSoldService.getMaterialSoldList().subscribe(
+      (response)=> response.map(response=>{
+        return this.materialSoldData.push(response)
+      }),
+      (error:any)=> console.log(error),
+      ()=> console.log("Done with fetching Material Sold list") 
+    );
+    console.log(this.materialSoldData)
+  }
+  onGetSingleMaterialSold(id:number): any{
+    this.materialSoldService.getMaterialSoldById(id).subscribe(
+      (response)=> console.log(response),
+      (error:any)=> console.log(error),
+      ()=> console.log('done with geeting single Material Sold by id ')
+    );
+  }
+  onDeleteMaterialSold(id:number): any {  
+    var ans = confirm("Do you want to delete Material Sold with Id: " + id);  
+    if (ans) {  
+        this.materialSoldService.deleteMaterialSoldById(id).subscribe((data: any) => { 
+          console.log('Sucess on deleting Material Sold')
+        }, (error: any) => console.error(error))  
+    } else return this.ngOnInit();
+}
 
   OpenModalPopUp() {
     this.genericModalPopUpService.openModalPopUpService<MaterialSold>(MaterialsoldcreateComponent, 

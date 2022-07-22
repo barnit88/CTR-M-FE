@@ -9,7 +9,7 @@ import { RVIncome } from './../../../entity/models/RentedVehicle/rvincome';
 export class RVIncomeService {
   rvIncome : RVIncome[] = [];
 
-  public getEmployeesPayment(): Observable < RVIncome[] > {
+  public getRVIncomeList(): Observable < RVIncome[] > {
       return this.http.get<RVIncome[]>('http://localhost:3000/employee-payment')
   }
   public getRVIncomeById(id : number): Observable < RVIncome > {

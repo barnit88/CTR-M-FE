@@ -9,7 +9,7 @@ import { Site } from 'src/app/entity/models/Site/site';
 export class SiteService {
   site : Site[] = [];
 
-  public getEmployeesPayment(): Observable < Site[] > {
+  public getSiteList(): Observable < Site[] > {
       return this.http.get<Site[]>('http://localhost:3000/employee-payment')
   }
   public getSiteById(id : number): Observable < Site > {

@@ -10,7 +10,7 @@ export class PVExpensesService {
 
   pveExpense : PVExpenses[] = [];
 
-  public getEmployeesPayment(): Observable < PVExpenses[] > {
+  public getPVExpenseList(): Observable < PVExpenses[] > {
       return this.http.get<PVExpenses[]>('http://localhost:3000/employee-payment')
   }
   public getPVExpensesById(id : number): Observable < PVExpenses > {

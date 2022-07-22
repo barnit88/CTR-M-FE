@@ -217,6 +217,7 @@ import { CardComponent } from './components/card/card.component';
 import { CardCreateComponent } from './components/card-create/card-create.component';
 import { ListDetailCardComponent } from './components/list-detail-card/list-detail-card.component';
 import { DetailButtonComponent } from './components/detail-button/detail-button.component';
+import { Buttons } from './entity/Enum/Enums';
 
 @NgModule({
   declarations: [

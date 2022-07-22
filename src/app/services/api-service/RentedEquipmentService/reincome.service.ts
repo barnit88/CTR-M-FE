@@ -9,7 +9,7 @@ import { REIncome } from 'src/app/entity/models/RentedEquipment/reincome';
 export class REIncomeService {
 reIncome : REIncome[] = [];
 
-  public getEmployeesPayment(): Observable < REIncome[] > {
+  public getREIncomeList(): Observable < REIncome[] > {
       return this.http.get<REIncome[]>('http://localhost:3000/employee-payment')
   }
   public getREIncomeById(id : number): Observable < REIncome > {

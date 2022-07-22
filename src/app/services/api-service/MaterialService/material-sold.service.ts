@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class MaterialSoldService {
   materialSold : MaterialSold[] = [];
 
-  public getEmployeesPayment(): Observable < MaterialSold[] > {
+  public getMaterialSoldList(): Observable < MaterialSold[] > {
       return this.http.get<MaterialSold[]>('http://localhost:3000/employee-payment')
   }
   public getMaterialSoldById(id : number): Observable < MaterialSold > {

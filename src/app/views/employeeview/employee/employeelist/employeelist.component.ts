@@ -21,7 +21,7 @@ export class EmployeelistComponent implements OnInit {
 
     // function to get lists of employees
     onGetEmployees(): any {
-        this.employeeService.getEmployees().subscribe((response) => response.map(res => {
+        this.employeeService.getEmployeeList().subscribe((response) => response.map(res => {
             this.empList.push(res);
             this.changeDetectorRef.detectChanges();
             return true;

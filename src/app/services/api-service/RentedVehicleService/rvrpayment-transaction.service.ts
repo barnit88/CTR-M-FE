@@ -9,7 +9,7 @@ import { RVRPaymentTransaction } from './../../../entity/models/RentedVehicle/rv
 export class RVRPaymentTransactionService {
   rvrPayment : RVRPaymentTransaction[] = [];
 
-  public getEmployeesPayment(): Observable < RVRPaymentTransaction[] > {
+  public getRVRentPaymentList(): Observable < RVRPaymentTransaction[] > {
       return this.http.get<RVRPaymentTransaction[]>('http://localhost:3000/employee-payment')
   }
   public getRVRPaymentTransactionById(id : number): Observable < RVRPaymentTransaction > {

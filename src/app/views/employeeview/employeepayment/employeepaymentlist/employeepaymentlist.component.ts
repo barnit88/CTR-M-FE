@@ -22,21 +22,19 @@ export class EmployeepaymentlistComponent implements OnInit {
   ngOnInit(): void {
     this.onGetEmployeesPayment();
     // this.onGetSingleEmployee(1);
-    // this.onDeleteEmployee(2);
+    
   }
 
-  //function to get list of employees
   onGetEmployeesPayment(): any{
-    this.employeePaymentService.getEmployeesPayment().subscribe(
+    this.employeePaymentService.getEmployeePaymentList().subscribe(
       (response)=> response.map(response=>{
         return this.empPayment.push(response)
       }),
       (error:any)=> console.log(error),
       ()=> console.log("Done with fetching employee payment list") 
     );
+    console.log(this.empPayment)
   }
-
-  //function to get single employee by id
   onGetSingleEmployee(id:number): any{
     this.employeePaymentService.getEmployeePaymentById(id).subscribe(
       (response)=> console.log(response),
@@ -45,7 +43,6 @@ export class EmployeepaymentlistComponent implements OnInit {
     );
   }
   
-  // function to delete employee
   onDeleteEmployee(id:number): any {  
     var ans = confirm("Do you want to delete customer with Id: " + id);  
     if (ans) {  

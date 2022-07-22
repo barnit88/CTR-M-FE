@@ -1,5 +1,5 @@
 export class AppSettings {
-  public static API_ROOT = 'http://localhost:55491/api/';
+  public static API_ROOT = 'http://localhost:3000/';
   //public static API_ROOT = 'http://pmsdeploy.azurewebsites.net/api/';
 
   public static APP_NAME: string;

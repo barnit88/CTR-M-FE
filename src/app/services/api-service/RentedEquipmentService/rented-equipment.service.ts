@@ -9,7 +9,7 @@ import { RentedEquipment } from 'src/app/entity/models/RentedEquipment/rented-eq
 export class RentedEquipmentService {
   rentedEquipment : RentedEquipment[] = [];
 
-  public getEmployeesPayment(): Observable < RentedEquipment[] > {
+  public getREList(): Observable < RentedEquipment[] > {
       return this.http.get<RentedEquipment[]>('http://localhost:3000/employee-payment')
   }
   public getRentedEquipmentById(id : number): Observable < RentedEquipment > {

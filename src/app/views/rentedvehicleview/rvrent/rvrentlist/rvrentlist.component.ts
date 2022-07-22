@@ -4,6 +4,7 @@ import { GenericModalPopUpService } from 'src/app/services/common-service/generi
 import { RvrentdetailComponent } from './../rvrentdetail/rvrentdetail.component';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 import { RVRent } from './../../../../entity/models/RentedVehicle/rvrent';
+import { RVRentService } from './../../../../services/api-service/RentedVehicleService/rvrent.service';
 @Component({
   selector: 'app-rvrentlist',
   templateUrl: './rvrentlist.component.html',
@@ -11,10 +12,39 @@ import { RVRent } from './../../../../entity/models/RentedVehicle/rvrent';
 })
 export class RvrentlistComponent implements OnInit {
   rvrData: RVRent[]=[];
-  constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService:GenericDetailPopUpService) {}
+  constructor(private genericModalPopUpService: GenericModalPopUpService,
+     private genericDetailPopUpService:GenericDetailPopUpService,
+     private rvRentService:RVRentService) {}
 
   ngOnInit(): void {}
   title: string = 'Rent Vehicle Rent List';
+
+  onGetRVRList(): any{
+    this.rvRentService.getRVRentList().subscribe(
+      (response)=> response.map(response=>{
+        return this.rvrData.push(response)
+      }),
+      (error:any)=> console.log(error),
+      ()=> console.log("Done with fetching  RVR  list") 
+    );
+    console.log(this.rvrData)
+  }
+  onGetSingleRVR(id:number): any{
+    this.rvRentService.getRVRentById(id).subscribe(
+      (response)=> console.log(response),
+      (error:any)=> console.log(error),
+      ()=> console.log('done with geeting single  RVR  by id '));
+    
+  }
+  getRVRById(id:number): any {  
+    var ans = confirm("Do you want to delete  REE  with Id: " + id);  
+    if (ans) {  
+        this.rvRentService.deleteRVRentById(id).subscribe((data: any) => { 
+          console.log('Sucess on deleting  RVR ')
+        }, (error: any) => console.error(error))  
+    } else return this.ngOnInit();
+}
+
   OpenModalPopUp() {
     this.genericModalPopUpService.openModalPopUpService<RVRent>(RvrentcreateComponent, 
       new RVRent(),

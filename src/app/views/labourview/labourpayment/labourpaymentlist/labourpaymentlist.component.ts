@@ -23,13 +23,41 @@ export class LabourpaymentlistComponent implements OnInit {
   ngOnInit(): void {
   }
   onGetLabourPayment(): any{
-    this.labourPaymentService.getLabourPayments().subscribe(
+    this.labourPaymentService.getLabourPaymentList().subscribe(
       (data: any)=> console.log(data),
       (error:any)=> console.log(error),
       ()=> console.log('Done with getting labour payment list')
     );
     return true;
   } 
+
+  onGetLabourList(): any{
+    this.labourPaymentService.getLabourPaymentList().subscribe(
+      (response)=> response.map(response=>{
+        return this.labourPaymentData.push(response)
+      }),
+      (error:any)=> console.log(error),
+      ()=> console.log("Done with fetching Labour payment list") 
+    );
+    console.log(this.labourPaymentData)
+  }
+  onGetSingleLabour(id:number): any{
+    this.labourPaymentService.getLabourPaymentById(id).subscribe(
+      (response)=> console.log(response),
+      (error:any)=> console.log(error),
+      ()=> console.log('done with geeting single Labour payment by id ')
+    );
+  }
+  
+  onDeleteLabour(id:number): any {  
+    var ans = confirm("Do you want to delete customer with Id: " + id);  
+    if (ans) {  
+        this.labourPaymentService.deleteLabourPaymentById(id).subscribe((data: any) => { 
+          console.log('Sucess on deleting employee payment')
+        }, (error: any) => console.error(error))  
+    } else return
+    this.ngOnInit();
+}  
 
   OpenModalPopUp() {
     this.genericModalPopUpService.openModalPopUpService<LabourPayment>(LabourpaymentcreateComponent, 

@@ -5,7 +5,7 @@
       <table class="table table-hover table-responsive table-bordered bg-white">
         <thead>
           <tr class="">
-            <th>ID</th>
+            <th>S/N</th>
             <th>Full Name</th>
             <th>Address</th>
             <th>Contract No</th>
@@ -17,30 +17,30 @@
             <th>Client Company Contact Number</th>
             <th>Client Company Identity Type</th>
             <th>Client Company Identity Number</th>
-            <th>Details</th>
+            <th>ACTIONS</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="p-2">
-            <td>1</td>
-            <td>NIX  HOUSE SITE</td>
-            <td>3</td>
-            <td>BAgmati</td>
-            <td>Construction</td>
-            <td> MAnagemt</td>
-            <td> Work on progress</td>
-            <td>working</td>
-            <td>working</td>
-            <td>working</td>
-            <td>working</td>
-            <td> work</td>
-            <td> <app-detail-button (detailPopUp)="OpenDetailPopUp()">Detail</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Edit</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp()">Delete</app-detail-button></td>
+          <tr class="p-2" *ngFor="let e of clientData;let i = index">
+            <td>{{i+1}}</td>
+            <td>{{e.FirstName+" "+ e.MiddleName+" "+e.LastName}}</td>
+            <td>{{e.State+" "+e.District+" "+e.Muncipality }}</td>
+            <td>{{e.ContactNo}}</td>
+            <td>{{e.Email}}</td>
+            <td> {{e.IdentityType}}</td>
+            <td>{{e.IdentityNo}}</td>
+            <td>{{e.ClientType}}</td>
+            <td>{{e.ClientCompanyName}}</td>
+            <td>{{e.ClientCompanyContactNo}}</td>
+            <td>{{e.ClientCompanyIdentityType}}</td>
+            <td>{{e.ClientCompanyIdentityNumber}}</td>
+            <td> 
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.id)">{{buttonTitle.Detail}}</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenEditPopUp(e.id)">{{buttonTitle.Edit}}</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDeletePopUp(e.id)">{{buttonTitle.Delete}}</app-detail-button></td>
             </tr>
           </tbody>
         </table>
     </div>
-    
 </app-card>
 </div>

@@ -10,13 +10,13 @@
                     <div class="col-sm-4"><label for="usr"> Labour Site :</label>
                         <input type="text" class="form-control" (ngModel)="labourPayment.Payment" name="name"  id="usr">
                     </div>
-                    <div class="col-sm-4"><label for="usr"> Form Date:</label>
-                        <input type="text" class="form-control" (ngModel)="labourPayment.Payment" name="name"  id="usr">
+                    <div class="col-sm-4 datepicker"><label for="usr"> Form Date:</label>
+                        <input type="date" class="form-control" (ngModel)="labourPayment.Payment" name="name"  id="usr">
                     </div>
                 </div>
-                <div class="row mt-3 md-3">
+                <div class="row mt-3 md-3 datepicker">
                     <div class="col-sm-4"><label for="usr">To Date:</label>
-                        <input type="text" class="form-control" (ngModel)="labourPayment.Payment" name="name"  id="usr">
+                        <input type="date" class="form-control" (ngModel)="labourPayment.Payment" name="name"  id="usr">
                     </div>
                     <div class="col-sm-4"><label for="usr">Payment Rate:</label>
                         <input type="text" class="form-control" (ngModel)="labourPayment.Payment" name="name"  id="usr">
@@ -39,7 +39,7 @@
                 </div>
                 <div class="row mt-3 md-3">
                     <div class="col-sm-6">
-                        <button type="submit" class="btn btn-outline-success btn-lg mx-2" [disabled]="labourPaymentForm.form.valid">Submit</button>
+                        <button type="submit" class="btn btn-outline-success btn-lg mx-2 btncss" [disabled]="labourPaymentForm.form.valid">Submit</button>
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@ export class PEIPaymentTransctionService {
 
   peiPayment : PEIPaymentTransaction[] = [];
 
-  public getEmployeesPayment(): Observable < PEIPaymentTransaction[] > {
+  public getPEIncomePaymentList(): Observable < PEIPaymentTransaction[] > {
       return this.http.get<PEIPaymentTransaction[]>('http://localhost:3000/employee-payment')
   }
   public getPEIPaymentTransactionById(id : number): Observable < PEIPaymentTransaction > {

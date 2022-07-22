@@ -15,33 +15,28 @@ export class ClientService {
   Client: Client;
 
   constructor(private http: HttpClient) {}
-  add(entity: Client): Observable<Client> {
-    // entity.DateCreated=new Date();
-    // entity.DateModified=new Date();
-    // entity.CreatedBy=this.auth.getUserId;
-    // entity.LastModifiedBy=this.auth.getUserId;
-    return this.http.post<Client>(AppSettings.API_ROOT + 'Client', entity);
+  add(entity: Client): Observable<any> {
+    return this.http.post<Client>(AppSettings.API_ROOT + 'client', entity);
   }
 
   update(id: number, entity: Client): Observable<any> {
     // entity.Id = id;
     // entity.DateModified=new Date();
     // entity.LastModifiedBy=this.auth.getUserId;
-    return this.http.put(AppSettings.API_ROOT + 'Client' + '/' + id, entity);
+    return this.http.put(AppSettings.API_ROOT + 'client' + '/' + id, entity);
   }
   delete(id: number): Observable<Client> {
     return this.http.delete<Client>(
-      AppSettings.API_ROOT + 'Employees' + '/' + id
+      AppSettings.API_ROOT + 'client' + '/' + id
     );
   }
 
   getById(id: number): Observable<Client> {
-    return this.http.get<Client>(AppSettings.API_ROOT + 'Client' + '/' + id);
+    return this.http.get<Client>(AppSettings.API_ROOT + 'client' + '/' + id);
   }
 
   getAll(): Observable<Client[]> {
-    //return this.http.get<Employee[]>(AppSettings.API_ROOT + "Employees");
-    return this.http.get<Client[]>(AppSettings.API_ROOT + 'Client');
+    return this.http.get<Client[]>(AppSettings.API_ROOT + 'client');
   }
 
   setById(id: number) {

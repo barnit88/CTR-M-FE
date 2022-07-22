@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/internal/Observable';
 export class MaterialBoughtService {
   materialBought : MaterialBought[] = [];
 
-  public getEmployeesPayment(): Observable < MaterialBought[] > {
+  public getMaterialBoughtList(): Observable < MaterialBought[] > {
       return this.http.get<MaterialBought[]>('http://localhost:3000/employee-payment')
   }
   public getMaterialBoughtById(id : number): Observable < MaterialBought > {

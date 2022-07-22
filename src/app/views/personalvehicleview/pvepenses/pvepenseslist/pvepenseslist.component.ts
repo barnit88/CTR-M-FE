@@ -4,6 +4,7 @@ import { GenericModalPopUpService } from 'src/app/services/common-service/generi
 import { PvepensesdetailComponent } from './../pvepensesdetail/pvepensesdetail.component';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 import { PVExpenses } from './../../../../entity/models/PersonalVehicle/pvexpenses';
+import { PVExpensesService } from './../../../../services/api-service/PersonalVehicleService/pvexpenses.service';
 @Component({
   selector: 'app-pvepenseslist',
   templateUrl: './pvepenseslist.component.html',
@@ -11,11 +12,39 @@ import { PVExpenses } from './../../../../entity/models/PersonalVehicle/pvexpens
 })
 export class PvepenseslistComponent implements OnInit {
   pvExpenseData: PVExpenses[]=[];
-  constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService:GenericDetailPopUpService) {}
+  constructor(private genericModalPopUpService: GenericModalPopUpService,
+     private genericDetailPopUpService:GenericDetailPopUpService,
+     private pvExpensesService:PVExpensesService) {}
 
   ngOnInit(): void {}
   title: string = 'Persoanl Vehicle Expense List';
 
+  onGetPVExpenseList(): any{
+    this.pvExpensesService.getPVExpenseList().subscribe(
+      (response)=> response.map(response=>{
+        return this.pvExpenseData.push(response)
+      }),
+      (error:any)=> console.log(error),
+      ()=> console.log("Done with fetching  PVExpense list") 
+    );
+    console.log(this.pvExpenseData)
+  }
+  onGetSinglePVExpense(id:number): any{
+    this.pvExpensesService.getPVExpensesById(id).subscribe(
+      (response)=> console.log(response),
+      (error:any)=> console.log(error),
+      ()=> console.log('done with geeting single  PVExpense by id '));
+    
+  }
+  getPVExpenseTransactionById(id:number): any {  
+    var ans = confirm("Do you want to delete  PVExpense with Id: " + id);  
+    if (ans) {  
+        this.pvExpensesService.deletePVExpensesById(id).subscribe((data: any) => { 
+          console.log('Sucess on deleting  PVExpense')
+        }, (error: any) => console.error(error))  
+    } else return this.ngOnInit();
+}
+    
   OpenModalPopUp() {
     this.genericModalPopUpService.openModalPopUpService<PVExpenses>(PvepensescreateComponent, 
       new PVExpenses(),

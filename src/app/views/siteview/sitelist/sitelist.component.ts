@@ -5,6 +5,7 @@ import { ClientdetailComponent } from '../../clientview/clientdetail/clientdetai
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 import { SitedetailComponent } from './../sitedetail/sitedetail.component';
 import { Site } from 'src/app/entity/models/Site/site';
+import { SiteService } from './../../../services/api-service/SiteService/site.service';
 @Component({
   selector: 'app-sitelist',
   templateUrl: './sitelist.component.html',
@@ -13,10 +14,38 @@ import { Site } from 'src/app/entity/models/Site/site';
 export class SitelistComponent implements OnInit {
   siteData: Site[]=[];
   title:string="Site"
-  constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService:GenericDetailPopUpService) {}
+  constructor(private genericModalPopUpService: GenericModalPopUpService,
+     private genericDetailPopUpService:GenericDetailPopUpService,
+     private siteService:SiteService) {}
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
+
+  onGetSiteList(): any{
+    this.siteService.getSiteList().subscribe(
+      (response)=> response.map(response=>{
+        return this.siteData.push(response)
+      }),
+      (error:any)=> console.log(error),
+      ()=> console.log("Done with fetching  Site  list") 
+    );
+    console.log(this.siteData)
+  }
+  onGetSingleSite(id:number): any{
+    this.siteService.getSiteById(id).subscribe(
+      (response)=> console.log(response),
+      (error:any)=> console.log(error),
+      ()=> console.log('done with geeting single  Site  by id '));
+    
+  }
+  getSiteById(id:number): any {  
+    var ans = confirm("Do you want to delete  REE  with Id: " + id);  
+    if (ans) {  
+        this.siteService.deleteSiteById(id).subscribe((data: any) => { 
+          console.log('Sucess on deleting  Site ')
+        }, (error: any) => console.error(error))  
+    } else return this.ngOnInit();
+}
 
   OpenModalPopUp() {
     this.genericModalPopUpService.openModalPopUpService<Site>(SitecreateComponent, 

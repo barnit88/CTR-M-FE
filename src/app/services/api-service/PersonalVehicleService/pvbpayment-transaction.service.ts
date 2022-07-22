@@ -9,7 +9,7 @@ import { PVBPaymentTransaction } from './../../../entity/models/PersonalVehicle/
 export class PVBPaymentTransactionService {
   pvbPayment : PVBPaymentTransaction[] = [];
 
-  public getEmployeesPayment(): Observable < PVBPaymentTransaction[] > {
+  public getPVBoughtPaymentList(): Observable < PVBPaymentTransaction[] > {
       return this.http.get<PVBPaymentTransaction[]>('http://localhost:3000/employee-payment')
   }
   public getPVBPaymentTransactionById(id : number): Observable < PVBPaymentTransaction > {

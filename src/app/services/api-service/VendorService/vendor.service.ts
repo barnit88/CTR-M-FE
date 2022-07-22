@@ -9,7 +9,7 @@ import { Vendor } from 'src/app/entity/models/Vendor/vendor';
 export class VendorService {
   vendor : Vendor[] = [];
 
-  public getEmployeesPayment(): Observable < Vendor[] > {
+  public getVendorList(): Observable < Vendor[] > {
       return this.http.get<Vendor[]>('http://localhost:3000/employee-payment')
   }
   public getVendorById(id : number): Observable < Vendor > {

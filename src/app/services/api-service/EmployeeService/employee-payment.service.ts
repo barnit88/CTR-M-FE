@@ -8,7 +8,7 @@ export class EmployeePaymentService {
 
     employees : EmployeePayment[] = [];
 
-    public getEmployeesPayment(): Observable < EmployeePayment[] > {
+    public getEmployeePaymentList(): Observable < EmployeePayment[] > {
         return this.http.get<EmployeePayment[]>('http://localhost:3000/employee-payment')
     }
     public getEmployeePaymentById(id : number): Observable < EmployeePayment > {

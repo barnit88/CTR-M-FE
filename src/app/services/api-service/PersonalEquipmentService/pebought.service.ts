@@ -9,7 +9,7 @@ import { PEBought } from './../../../entity/models/PersonalEquipment/pebought';
 export class PEBoughtService {
   peBought : PEBought[] = [];
 
-  public getEmployeesPayment(): Observable < PEBought[] > {
+  public getPEBoughtList(): Observable < PEBought[] > {
       return this.http.get<PEBought[]>('http://localhost:3000/employee-payment')
   }
   public getPEBoughtById(id : number): Observable < PEBought > {

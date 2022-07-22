@@ -1,0 +1,44 @@
+{
+  "client": [
+    {
+      "FirstName": "baburam",
+      "MiddleName": "babu",
+      "LastName": "Shrestha",
+      "State": "sunsari",
+      "District": "district",
+      "Muncipality": "onetyo",
+      "ClientCompanyContactNumber": "a",
+      "IdentityNo": "babu",
+      "IdentityType": "slit",
+      "Email": "nischal@gmail.com",
+      "ContactNo": "a",
+      "ClientCompanyName": "aaaaa",
+      "ClientCompanyType": "aaaaaaaa",
+      "ClientCompanyIdentityNumber": "1111",
+      "ClientType": "aaasasa",
+      "Udf1": "111",
+      "Udf2": "22222",
+      "id": 3
+    },
+    {
+      "FirstName": "baburam",
+      "MiddleName": "babu",
+      "LastName": "babu",
+      "State": "babu",
+      "District": "babu",
+      "Muncipality": "babu",
+      "ClientCompanyContactNumber": "a",
+      "IdentityNo": "babu",
+      "IdentityType": "slit",
+      "Email": "nischal@gmail.com",
+      "ContactNo": "a",
+      "ClientCompanyName": "aaaaa",
+      "ClientCompanyType": "aaaaaaaa",
+      "ClientCompanyIdentityNumber": "111",
+      "ClientType": "aaasasa",
+      "Udf1": "111",
+      "Udf2": "22222",
+      "id": 7
+    }
+  ]
+}

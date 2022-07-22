@@ -1,123 +1,158 @@
 <app-list-detail-card [title]="title">
+    <ng-content></ng-content>
+    <div class="row">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label>First Name:</label>
+                    </div>
+                    <div class="col">{{data.FirstName}}</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label>Middle Name:</label>
+                    </div>
+                    <div class="col">{{data.MiddleName}}</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label>Last Name:</label>
+                    </div>
+                    <div class="col">{{data.LastName}}</div>
+                </div>
+            </div>
 
-  <ng-content>
-  </ng-content>
-  <div class="row">
-    <div class="row">
-        <div class="col">
-            <div class="row">
-                <div class="col"><label>First Name:</label></div>
-                <div class="col">1</div>
-            </div>
         </div>
-        <div class="col">
-            <div class="row">
-                <div class="col"><label>Middle Name:</label></div>
-                <div class="col">Give Contract Name</div>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label>State:</label>
+                    </div>
+                    <div class="col">{{data.State}}</div>
+                </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="row">
-                <div class="col"><label>Last Name:</label></div>
-                <div class="col">2</div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label>District:</label>
+                    </div>
+                    <div class="col">{{data.District}}</div>
+                </div>
             </div>
-        </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label>Muncipility:</label>
+                    </div>
+                    <div class="col">{{data.Muncipality}}</div>
+                </div>
+            </div>
 
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label>Contact Number:</label>
+                    </div>
+                    <div class="col">{{data.ContactNo}}</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label>Email:</label>
+                    </div>
+                    <div class="col">{{data.Email}}</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label>Identity Type:</label>
+                    </div>
+                    <div class="col">{{data.IdentityType}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label>Identity Number:</label>
+                    </div>
+                    <div class="col">{{data.IdentityNo}}</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label>Client Type:</label>
+                    </div>
+                    <div class="col">{{data.ClientType}}</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label>Client Company Name:</label>
+                    </div>
+                    <div class="col">{{data.ClientCompanyName}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label>Client Company Contact Number:</label>
+                    </div>
+                    <div class="col">{{data.ClientCompanyContactNumber}}</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label>Client Company Identity Type:</label>
+                    </div>
+                    <div class="col">{{data.ClientCompanyIdentityType}}/div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <label>Client Company Identity Number:</label>
+                        </div>
+                        <div class="col">{{data.ClientCompanyIdentityNumber}}div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <label>UDF1:</label>
+                            </div>
+                            <div class="col">{{data.UDF1}}</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <label>UDF2:</label>
+                            </div>
+                            <div class="col">{{data.UDF2}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <div class="row">
-                <div class="col"><label>State:</label></div>
-                <div class="col">2020-01-01</div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="row">
-                <div class="col"><label>District:</label></div>
-                <div class="col">2020-02-02</div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="row">
-                <div class="col"><label>Muncipility:</label></div>
-                <div class="col">2,00,00</div>
-            </div>
-        </div>
-
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="row">
-                <div class="col"><label>Contact Number:</label></div>
-                <div class="col">Some Unknown Values</div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="row">
-                <div class="col"><label>Email:</label></div>
-                <div class="col">Some Unknown Values</div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="row">
-                <div class="col"><label>Identity Type:</label></div>
-                <div class="col">Some Unknown Values</div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="row">
-                <div class="col"><label>Identity Number:</label></div>
-                <div class="col">Some Unknown Values</div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="row">
-                <div class="col"><label>Client Type:</label></div>
-                <div class="col">Some Unknown Values</div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="row">
-                <div class="col"><label>Client Company Name:</label></div>
-                <div class="col">Some Unknown Values</div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="row">
-                <div class="col"><label>Client Company Contact Number:</label></div>
-                <div class="col">Some Unknown Values</div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="row">
-                <div class="col"><label>Client Company Identity Type:</label></div>
-                <div class="col">Some Unknown Values</div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="row">
-                <div class="col"><label>Client Company Identity Number:</label></div>
-                <div class="col">Some Unknown Values</div>
-            </div>
-        </div>
-      </div>
-      <div class="row">
-      <div class="col">
-          <div class="row">
-              <div class="col"><label>UDF1:</label></div>
-              <div class="col">Some Unknown Values</div>
-          </div>
-      </div>
-      <div class="col">
-          <div class="row">
-              <div class="col"><label>UDF2:</label></div>
-              <div class="col">Some Unknown Values</div>
-          </div>
-      </div>      
-    </div>
-</div>
 </app-list-detail-card>
+

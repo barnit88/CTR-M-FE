@@ -4,6 +4,7 @@ import { GenericModalPopUpService } from 'src/app/services/common-service/generi
 import { PvincomedetailComponent } from './../pvincomedetail/pvincomedetail.component';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 import { PVIncome } from 'src/app/entity/models/PersonalVehicle/pvincome';
+import { PVIncomeService } from './../../../../services/api-service/PersonalVehicleService/pvincome.service';
 @Component({
   selector: 'app-pvincomelist',
   templateUrl: './pvincomelist.component.html',
@@ -11,10 +12,38 @@ import { PVIncome } from 'src/app/entity/models/PersonalVehicle/pvincome';
 })
 export class PvincomelistComponent implements OnInit {
   pvIncomeData: PVIncome[]=[];
-  constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService:GenericDetailPopUpService) {}
+  constructor(private genericModalPopUpService: GenericModalPopUpService,
+     private genericDetailPopUpService:GenericDetailPopUpService,
+     private pvIncomeService:PVIncomeService) {}
 
   ngOnInit(): void {}
   title: string = 'Persoanl Vehicle Income List';
+
+  onGetPVIncomeList(): any{
+    this.pvIncomeService.getPVIncomeList().subscribe(
+      (response)=> response.map(response=>{
+        return this.pvIncomeData.push(response)
+      }),
+      (error:any)=> console.log(error),
+      ()=> console.log("Done with fetching  PVIncome list") 
+    );
+    console.log(this.pvIncomeData)
+  }
+  onGetSinglePVIncome(id:number): any{
+    this.pvIncomeService.getPVIncomeById(id).subscribe(
+      (response)=> console.log(response),
+      (error:any)=> console.log(error),
+      ()=> console.log('done with geeting single  PVIncome by id '));
+    
+  }
+  getPVIncomeTransactionById(id:number): any {  
+    var ans = confirm("Do you want to delete  PVBPayment with Id: " + id);  
+    if (ans) {  
+        this.pvIncomeService.deletePVIncomeById(id).subscribe((data: any) => { 
+          console.log('Sucess on deleting  PVIncome')
+        }, (error: any) => console.error(error))  
+    } else return this.ngOnInit();
+}
 
   OpenModalPopUp() {
     this.genericModalPopUpService.openModalPopUpService<PVIncome>(PvincomecreateComponent, 
