@@ -13,14 +13,27 @@ import { Buttons } from 'src/app/entity/Enum/Enums';
   styleUrls: ['./clientlist.component.css'],
 })
 export class ClientlistComponent implements OnInit {
-    clientData: Client[]=[];
-  constructor(private genericDetailPopUpService: GenericDetailPopUpService,
-     private genericModalPopUpService: GenericModalPopUpService,
-     private clientService:ClientService,
-     public buttonTitle :Buttons
-     ) {
+  constructor(
+    private genericDetailPopUpService: GenericDetailPopUpService,
+    private genericModalPopUpService: GenericModalPopUpService,
+    private clientHttpService: ClientService
+  ) {}
 
-     }
+  listChangedSubscribe: Subscription;
+  ngOnInit(): void {
+    this.listChangedSubscribe = this.clientHttpService.listChanged.subscribe(
+      (data) => {
+        this.ClientList = data;
+        console.log(this.ClientList);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+    console.log(this.listChangedSubscribe);
+    this.clientHttpService.getAll();
+  }
+  title: string = 'Client Details';
 
   ngOnInit(): void {
     this.onGetClientList();

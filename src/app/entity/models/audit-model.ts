@@ -1,4 +1,4 @@
-import { IEntity } from "../iModel/iEntity";
+import { IEntity } from '../iModel/iEntity';
 export class AuditModel implements IEntity {
   Id: number;
   LastModifiedBy: string;
