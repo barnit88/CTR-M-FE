@@ -218,11 +218,6 @@ import { CardCreateComponent } from './components/card-create/card-create.compon
 import { ListDetailCardComponent } from './components/list-detail-card/list-detail-card.component';
 import { DetailButtonComponent } from './components/detail-button/detail-button.component';
 import { Buttons } from './entity/Enum/Enums';
-import { AppadminComponent } from './training/appadmin/appadmin.component';
-import { TrainfooterComponent } from './training/trainfooter/trainfooter.component';
-import { TrainheaderComponent } from './training/trainheader/trainheader.component';
-import { TrainsidenavComponent } from './training/trainsidenav/trainsidenav.component';
-import { SidebarComponent } from './training/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -435,11 +430,6 @@ import { SidebarComponent } from './training/sidebar/sidebar.component';
     CardCreateComponent,
     ListDetailCardComponent,
     DetailButtonComponent,
-    AppadminComponent,
-    TrainfooterComponent,
-    TrainheaderComponent,
-    TrainsidenavComponent,
-    SidebarComponent,
   ],
   imports: [
     BrowserModule,
