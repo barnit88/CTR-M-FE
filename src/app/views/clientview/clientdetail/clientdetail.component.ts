@@ -8,12 +8,13 @@ import { Client } from 'src/app/entity/models/Client/client';
   styleUrls: ['./clientdetail.component.css']
 })
 export class ClientdetailComponent implements OnInit {
-  data: Client;
-  title:'Client'
+  data: any;
+  title: string;
 
-  constructor(public modalRef: BsModalRef) {}
+  constructor() {}
 
   ngOnInit(): void {
+    console.log(this.title, this.data)
   }
 
 }

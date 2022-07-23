@@ -1,44 +1,28 @@
 {
-  "client": [
+  "employee-payment": [
     {
-      "FirstName": "baburam",
-      "MiddleName": "babu",
-      "LastName": "Shrestha",
-      "State": "sunsari",
-      "District": "district",
-      "Muncipality": "onetyo",
-      "ClientCompanyContactNumber": "a",
-      "IdentityNo": "babu",
-      "IdentityType": "slit",
-      "Email": "nischal@gmail.com",
-      "ContactNo": "a",
-      "ClientCompanyName": "aaaaa",
-      "ClientCompanyType": "aaaaaaaa",
-      "ClientCompanyIdentityNumber": "1111",
-      "ClientType": "aaasasa",
-      "Udf1": "111",
-      "Udf2": "22222",
-      "id": 3
+      "EmployeeId": "111",
+      "Employee": "acdads",
+      "FromDate": "2022-06-27",
+      "ToDate": "2022-07-13",
+      "PaymentRate": "1",
+      "Period": "1",
+      "Payment": "aas",
+      "UDF1": "11",
+      "UDF2": "12",
+      "Id": 1
     },
     {
-      "FirstName": "baburam",
-      "MiddleName": "babu",
-      "LastName": "babu",
-      "State": "babu",
-      "District": "babu",
-      "Muncipality": "babu",
-      "ClientCompanyContactNumber": "a",
-      "IdentityNo": "babu",
-      "IdentityType": "slit",
-      "Email": "nischal@gmail.com",
-      "ContactNo": "a",
-      "ClientCompanyName": "aaaaa",
-      "ClientCompanyType": "aaaaaaaa",
-      "ClientCompanyIdentityNumber": "111",
-      "ClientType": "aaasasa",
-      "Udf1": "111",
-      "Udf2": "22222",
-      "id": 7
+      "EmployeeId": "111",
+      "Employee": "aa",
+      "FromDate": "2022-07-13",
+      "ToDate": "2022-07-28",
+      "PaymentRate": "1",
+      "Period": "1",
+      "Payment": "aas",
+      "UDF1": "aa",
+      "UDF2": "asas",
+      "Id": 2
     }
   ]
 }

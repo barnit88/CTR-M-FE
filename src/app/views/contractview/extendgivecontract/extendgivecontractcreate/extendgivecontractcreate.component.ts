@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GenericModalPopUpService } from 'src/app/services/common-service/generic.modal.popup.service';
 import { ExtendGiveContract } from './../../../../entity/models/Contract/extend-give-contract';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-extendgivecontractcreate',
@@ -10,16 +10,14 @@ import { NgForm } from '@angular/forms';
 })
 export class ExtendgivecontractcreateComponent implements OnInit {
   extendGiveContract:ExtendGiveContract= new ExtendGiveContract();
-  constructor(private genericModalPopUpService:GenericModalPopUpService) { }
+  egcForm: FormGroup;
+  title:string="Extend Give Contract List";
+  constructor(private genericModalPopUpService:GenericModalPopUpService,
+    private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }
-  title:string="Extend Give Contract List"
-  OpenModalPopUp() {
-    // this.genericModalPopUpService.openModalPopUpService(ExtendgivecontractcreateComponent, {
-    //   title: 'Create Extend Give Contract',
-    // });
-  }
+
 
   onExtendGivecontractSubmit(form:NgForm){
     console.log(form);

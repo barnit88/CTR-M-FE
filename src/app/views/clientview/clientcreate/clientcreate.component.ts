@@ -22,7 +22,7 @@ export class ClientcreateComponent implements OnInit {
   ngOnInit(): void {
     this.clientformvalid = this.formBuilder.nonNullable.group({
       "id": 0,
-    "firstName": ["", Validators.required],
+    "FirstName": ["", Validators.required],
     "MiddleName": ["", Validators.required],
     "LastName": ["", Validators.required],
     "State": ["", Validators.required],

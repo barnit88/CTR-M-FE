@@ -25,7 +25,7 @@ export class EmployeepaymentcreateComponent implements OnInit {
   ngOnInit(): void {
 
     this.employeepaymentvalid = this.formBuilder.nonNullable.group({
-      "id": 0,
+      "id":0,
       "EmployeeId": ["", Validators.required],
       "Employee": ["", Validators.required],
       "FromDate": ["", Validators.required],
@@ -44,12 +44,13 @@ export class EmployeepaymentcreateComponent implements OnInit {
     console.log("Employeepayment Submit Works");
     console.log(form);
     this.data = form;
+    console.log(this.data)
     this.employeePaymentService.addEmployeePayment(this.data).subscribe((response)=>
     console.log(response),
-    (error:any)=> console.log(error)
+    (error:any)=> console.log(error),
+    ()=> console.log('Done with creating new employee payment')
     );
-    this.employeePaymentService.getEmployeePaymentList(),
-    this.changeDetectorRef.markForCheck()
+    this.employeePaymentService.getEmployeePaymentList();
     this.modelRef.hide();
   }
   

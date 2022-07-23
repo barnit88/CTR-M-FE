@@ -21,7 +21,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="p-2" *ngFor="let e of clientData;let i = index">
+          <tr class="p-2" *ngFor="let e of data;let i = index">
             <td>{{i+1}}</td>
             <td>{{e.FirstName+" "+ e.MiddleName+" "+e.LastName}}</td>
             <td>{{e.State+" "+e.District+" "+e.Muncipality }}</td>
@@ -35,9 +35,9 @@
             <td>{{e.ClientCompanyIdentityType}}</td>
             <td>{{e.ClientCompanyIdentityNumber}}</td>
             <td> 
-              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.id)">{{buttonTitle.Detail}}</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenEditPopUp(e.id)">{{buttonTitle.Edit}}</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenDeletePopUp(e.id)">{{buttonTitle.Delete}}</app-detail-button></td>
+              <app-detail-button (click)="OpenDetailPopUp(e.id)">{{buttonTitle.Detail}}</app-detail-button>
+              <app-detail-button (click)="OpenEditPopUp(e.id)">{{buttonTitle.Edit}}</app-detail-button>
+              <app-detail-button (click)="deleteClientById(e.id)">{{buttonTitle.Delete}}</app-detail-button></td>
             </tr>
           </tbody>
         </table>

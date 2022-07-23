@@ -35,6 +35,7 @@ export class EmployeepaymentlistComponent implements OnInit {
     );
     console.log(this.empPayment)
   }
+
   onGetSingleEmployee(id:number): any{
     this.employeePaymentService.getEmployeePaymentById(id).subscribe(
       (response)=> console.log(response),
@@ -52,27 +53,33 @@ export class EmployeepaymentlistComponent implements OnInit {
     } else return
     this.ngOnInit();
     this.cdr.detectChanges();
-}  
+  }  
 
-//function for form popup
-  OpenModalPopUp() {
+
+OpenModalPopUp() {
     this.genericModalPopUpService.openModalPopUpService<EmployeePayment>(EmployeepaymentcreateComponent, 
       new EmployeePayment(),
       'Create Employee payment List',
     );
   }
-  //function for details popup
-  OpenDetailPopUp(id: number) {
-    this.genericModalPopUpService.openModalPopUpService<EmployeePayment>(EmployeepaymentdetailComponent,
-      this.empPayment.find(x => x.Id == id),
-      "Employee Payment Details");
-  }
 
+  OpenDetailPopUp(id: number) {
+    console.log(this.empPayment);
+    let emp = this.empPayment.find(each=> each.Id == id)
+    let data = this.empPayment.find(x => x.Id == id);
+    console.log(data);
+    console.log(emp);
+    this.genericModalPopUpService.openModalPopUpService<EmployeePayment>(EmployeepaymentdetailComponent,
+      data,
+      "Employee Payment Details",
+      id);
+  }
+   
   OpenEditPopUp(id: number) {
     this.genericModalPopUpService.openModalPopUpService<EmployeePayment>(EmployeepaymentcreateComponent,
-      this.empPayment.find(x => x.Id == id),
-      "Employee Payment Edit");
+      this.empPayment.find(x => x.Id == id)  ,
+      "Employee Payment Edit",
+      id);
   }
-  //function for edit popup
 
 }

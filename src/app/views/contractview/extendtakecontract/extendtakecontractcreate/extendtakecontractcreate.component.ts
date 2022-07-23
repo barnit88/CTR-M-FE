@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ExtendTakeContract } from './../../../../entity/models/Contract/extend-take-contract';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-extendtakecontractcreate',
@@ -9,7 +10,7 @@ import { ExtendTakeContract } from './../../../../entity/models/Contract/extend-
 export class ExtendtakecontractcreateComponent implements OnInit {
   entendTakeContract: ExtendTakeContract=new ExtendTakeContract();
   title: any = 'Extend Take Contract Create';
-  data: any;
+  etcForm: FormGroup;
   constructor() { }
 
   ngOnInit(): void {

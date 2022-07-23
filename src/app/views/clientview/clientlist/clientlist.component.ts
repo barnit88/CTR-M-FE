@@ -13,6 +13,7 @@ import { Buttons } from 'src/app/entity/Enum/Enums';
   styleUrls: ['./clientlist.component.css'],
 })
 export class ClientlistComponent implements OnInit {
+<<<<<<< Updated upstream
   constructor(
     private genericDetailPopUpService: GenericDetailPopUpService,
     private genericModalPopUpService: GenericModalPopUpService,
@@ -34,52 +35,66 @@ export class ClientlistComponent implements OnInit {
     this.clientHttpService.getAll();
   }
   title: string = 'Client Details';
+=======
+    data: Client[]=[];
+    title: string = 'Client Details';
+  constructor(private genericDetailPopUpService: GenericDetailPopUpService,
+     private genericModalPopUpService: GenericModalPopUpService,
+     private clientService:ClientService,
+     public buttonTitle :Buttons
+     ) {  }
+>>>>>>> Stashed changes
 
   ngOnInit(): void {
     this.onGetClientList();
   }
-  title: string = 'Client Details';
+  
   onGetClientList(): any{
     this.clientService.getAll().subscribe(
       (response)=> response.map(response=>{
-        return this.clientData.push(response)
+        return this.data.push(response)
       }),
       (error:any)=> console.log(error),
       ()=> console.log("Done with fetching  Client  list") 
     );
-    console.log(this.clientData)
+    console.log(this.data)
   }
+
   onGetSingleClient(id:number): any{
     this.clientService.getById(id).subscribe(
       (response)=> console.log(response),
       (error:any)=> console.log(error),
       ()=> console.log('done with geeting single  Client  by id '));
-    
   }
-  getClientById(id:number): any {  
+
+  deleteClientById(id:number): any {  
     var ans = confirm("Do you want to delete  Client  with Id: " + id);  
     if (ans) {  
         this.clientService.delete(id).subscribe((data: any) => { 
           console.log('Sucess on deleting  Client ')
         }, (error: any) => console.error(error))  
-    } else return this.ngOnInit();
+    } 
+    this.ngOnInit();
   }
+
+
     OpenModalPopUp() {
       this.genericModalPopUpService.openModalPopUpService<Client>(ClientcreateComponent, 
         new Client(),
-        'Create Employee payment List',
+        'Create Employee payment List'
       );
     }
-    //function for details popup
+   
     OpenDetailPopUp(id: number) {
       this.genericModalPopUpService.openModalPopUpService<Client>(ClientdetailComponent,
-        this.clientData.find(x => x.Id == id),
+        this.data.find(x => x.Id == id),
         "Employee Payment Details");
+
     }
   
     OpenEditPopUp(id: number) {
       this.genericModalPopUpService.openModalPopUpService<Client>(ClientcreateComponent,
-        this.clientData.find(x => x.Id == id),
+        this.data.find(x => x.Id == id),
         "Employee Payment Edit");
     }
 }
