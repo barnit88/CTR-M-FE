@@ -8,9 +8,9 @@ import { Client } from 'src/app/entity/models/Client/client';
 import { filter } from 'rxjs';
 import { Buttons } from 'src/app/entity/Enum/Enums';
 @Component({
-  selector: 'app-clientlist',
-  templateUrl: './clientlist.component.html',
-  styleUrls: ['./clientlist.component.css'],
+  selector: "app-clientlist",
+  templateUrl: "./clientlist.component.html",
+  styleUrls: ["./clientlist.component.css"],
 })
 export class ClientlistComponent implements OnInit {
     data: Client[]=[];
@@ -20,27 +20,27 @@ export class ClientlistComponent implements OnInit {
      private clientService:ClientService,
      public buttonTitle :Buttons
      ) {  }
+  ) {}
 
   ngOnInit(): void {
     this.onGetClientList();
-  }
   
   onGetClientList(): any{
-    this.clientService.getAll().subscribe(
+  onGetClientList(): any {
       (response)=> this.data = response,
       (error:any)=> console.log(error),
       ()=> console.log("Done with fetching  Client  list") 
-    );
+      () => console.log('Done with fetching  Client  list')
     console.log(this.data)
+    console.log(this.data);
   }
 
   onGetSingleClient(id:number): any{
-    this.clientService.getById(id).subscribe(
       (response)=> console.log(response),
       (error:any)=> console.log(error),
       ()=> console.log('done with geeting single  Client  by id '));
+    );
   }
-
   deleteClientById(id:number): any {  
     var ans = confirm("Do you want to delete  Client  with Id: " + id);  
     if (ans) {  
@@ -48,9 +48,9 @@ export class ClientlistComponent implements OnInit {
           console.log('Sucess on deleting  Client ')
         }, (error: any) => console.error(error))  
     } 
+    }
     this.ngOnInit();
   }
-
 
     OpenModalPopUp() {
       this.genericModalPopUpService.openModalPopUpService<Client>(ClientcreateComponent, 
@@ -74,4 +74,4 @@ export class ClientlistComponent implements OnInit {
         "Employee Payment Edit",
         id);
     }
-}
+}}

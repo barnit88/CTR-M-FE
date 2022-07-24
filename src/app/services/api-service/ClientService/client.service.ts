@@ -15,6 +15,7 @@ export class ClientService {
   Client: Client;
 
   constructor(private http: HttpClient) {}
+
   add(entity: Client): Observable<any> {
     return this.http.post<Client>(AppSettings.API_ROOT + 'client', entity);
   }
@@ -26,9 +27,7 @@ export class ClientService {
     return this.http.put(AppSettings.API_ROOT + 'client' + '/' + id, entity);
   }
   delete(id: number): Observable<Client> {
-    return this.http.delete<Client>(
-      AppSettings.API_ROOT + 'client' + '/' + id
-    );
+    return this.http.delete<Client>(AppSettings.API_ROOT + 'client' + '/' + id);
   }
 
   getById(id: number): Observable<Client> {

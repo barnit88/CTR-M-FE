@@ -2,8 +2,8 @@
 <div class="g-row">
   <app-card [title]="title" (popUp)="OpenModalPopUp()">  
     <div class="card-body">
-      <table class="table table-hover table-responsive table-bordered bg-white">
-        <thead>{{data | json}}
+      <table class="table table-bordered">
+        <thead>
           <tr class="">
             <th>S/N</th>
             <th>Full Name</th>
@@ -22,12 +22,13 @@
         </thead>
         <tbody>
           <tr class="p-2" *ngFor="let e of data;let i = index">
+            {{e | json }} 
             <td>{{i+1}}</td>
-            <td>{{e.FirstName+" "+ e.MiddleName+" "+e.LastName}}</td>
+            <td>{{e.firstName}} {{e.middleName}} {{e.lastName}}</td>
             <td>{{e.State+" "+e.District+" "+e.Muncipality }}</td>
             <td>{{e.ContactNo}}</td>
             <td>{{e.Email}}</td>
-            <td> {{e.IdentityType}}</td>
+            <td>{{e.IdentityType}}</td>
             <td>{{e.IdentityNo}}</td>
             <td>{{e.ClientType}}</td>
             <td>{{e.ClientCompanyName}}</td>
