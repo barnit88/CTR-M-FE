@@ -21,12 +21,13 @@
           </tr>
         </thead>
         <tbody>
+          {{vendorData| json}}
           <tr *ngFor="let e of vendorData; let i = index">
             <td>{{i+1}}</td>
             <td>{{e.FirstName+" "+ e.MiddleName+" "+ e.LastName}}</td>
             <td>{{e.State}}</td>
             <td>{{e.District}}</td>
-            <td>{{e.Municipality}}/td>
+            <td>{{e.Municipality}}</td>
             <td>{{e.ContactNo}}</td>
             <td>{{e.Email}}</td>
             <td>{{e.IdenityNo}}</td>

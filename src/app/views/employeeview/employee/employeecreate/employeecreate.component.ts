@@ -13,7 +13,7 @@ export class EmployeecreateComponent implements OnInit {
     constructor(private formBuilder:FormBuilder, private employeeService:EmployeeService,public modalRef: BsModalRef, private changeDetectorRef:ChangeDetectorRef) { }
  
     employeeForm = this.formBuilder.nonNullable.group({
-      "id":0,
+      "Id":0,
     "FirstName": ["", Validators.required],
     "Middlename": ["", Validators.required],
     "Lastname": ["", Validators.required],
@@ -37,6 +37,7 @@ export class EmployeecreateComponent implements OnInit {
   title:string="Create New Employee"
   onSubmitTemplateBased(form:any){
   this.data = form
+  console.log(this.data);
     this.employeeService.addEmployees(this.data).subscribe((data)=>
     console.log('done creating new employee'),
     (error: any)=> console.log(error)

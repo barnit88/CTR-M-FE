@@ -3,7 +3,7 @@
   <app-card [title]="title" (popUp)="OpenModalPopUp()">  
     <div class="card-body">
       <table class="table table-hover table-responsive table-bordered bg-white">
-        <thead>
+        <thead>{{data | json}}
           <tr class="">
             <th>S/N</th>
             <th>Full Name</th>

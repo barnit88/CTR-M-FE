@@ -5,7 +5,6 @@ import { EmployeepaymentdetailComponent } from './../employeepaymentdetail/emplo
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 import { EmployeePayment } from './../../../../entity/models/Employees/employee-payment';
 import { EmployeePaymentService } from './../../../../services/api-service/EmployeeService/employee-payment.service';
-import { Observable, Subject } from 'rxjs';
 @Component({
   selector: 'app-employeepaymentlist',
   templateUrl: './employeepaymentlist.component.html',
@@ -21,7 +20,6 @@ export class EmployeepaymentlistComponent implements OnInit {
 
   ngOnInit(): void {
     this.onGetEmployeesPayment();
-    // this.onGetSingleEmployee(1);
     
   }
 
@@ -31,9 +29,8 @@ export class EmployeepaymentlistComponent implements OnInit {
         return this.empPayment.push(response)
       }),
       (error:any)=> console.log(error),
-      ()=> console.log("Done with fetching employee payment list") 
+      ()=> console.log(this.empPayment) 
     );
-    console.log(this.empPayment)
   }
 
   onGetSingleEmployee(id:number): any{

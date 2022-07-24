@@ -9,76 +9,67 @@ import { VendorService } from './../../../services/api-service/VendorService/ven
 @Component({
   selector: 'app-vendorlist',
   templateUrl: './vendorlist.component.html',
-  styleUrls: ['./vendorlist.component.css'],
+  styleUrls: ['./vendorlist.component.css']
 })
 export class VendorlistComponent implements OnInit {
-  vendorData: Vendor[] = [];
+  vendorData: Vendor[]=[];
   width: 0;
-  constructor(
-    private genericModalPopUpService: GenericModalPopUpService,
-    private genericDetailPopUpService: GenericDetailPopUpService,
-    private vendorService: VendorService
-  ) {}
+  constructor( private genericModalPopUpService: GenericModalPopUpService,
+     private genericDetailPopUpService: GenericDetailPopUpService,
+     private vendorService:VendorService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.onGetRVEPaymentList();
+  }
   title: string = 'Vendors List';
 
-  onGetRVEPaymentList(): any {
+  onGetRVEPaymentList(): any{
     this.vendorService.getVendorList().subscribe(
-      (response) =>
-        response.map((response) => {
-          return this.vendorData.push(response);
-        }),
-      (error: any) => console.log(error),
-      () => console.log('Done with fetching  RVEPayment  list')
+      (response)=> response.map(response=>{
+        return this.vendorData.push(response)
+      }),
+      (error:any)=> console.log(error),
+      ()=> console.log("Done with fetching  RVEPayment  list") 
     );
-    console.log(this.vendorData);
+    console.log(this.vendorData)
   }
-  onGetSingleRVEPayment(id: number): any {
+  onGetSingleRVEPayment(id:number): any{
     this.vendorService.getVendorById(id).subscribe(
-      (response) => console.log(response),
-      (error: any) => console.log(error),
-      () => console.log('done with geeting single  RVEPayment  by id ')
-    );
+      (response)=> console.log(response),
+      (error:any)=> console.log(error),
+      ()=> console.log('done with geeting single  RVEPayment  by id '));
+    
   }
-  getRVEPaymentById(id: number): any {
-    var ans = confirm('Do you want to delete  REE  with Id: ' + id);
-    if (ans) {
-      this.vendorService.deleteVendorById(id).subscribe(
-        (data: any) => {
-          console.log('Sucess on deleting  RVEPayment ');
-        },
-        (error: any) => console.error(error)
-      );
+  getRVEPaymentById(id:number): any {  
+    var ans = confirm("Do you want to delete  REE  with Id: " + id);  
+    if (ans) {  
+        this.vendorService.deleteVendorById(id).subscribe((data: any) => { 
+          console.log('Sucess on deleting  RVEPayment ')
+        }, (error: any) => console.error(error))  
     } else return this.ngOnInit();
-  }
+}
 
   OpenModalPopUp() {
-    this.genericModalPopUpService.openModalPopUpService<Vendor>(
-      VendorcreateComponent,
+    this.genericModalPopUpService.openModalPopUpService<Vendor>(VendorcreateComponent, 
       new Vendor(),
-      'Create Vendor List'
+      'Create Vendor List',
     );
   }
 
-  //function for details popup
   OpenDetailPopUp(id: number) {
-    this.genericModalPopUpService.openModalPopUpService<Vendor>(
-      VendordetailComponent,
-      this.vendorData.find((each) => each.Id == id),
-      'Vendor Details'
-    );
+    this.genericModalPopUpService.openModalPopUpService<Vendor>(VendordetailComponent,
+      this.vendorData.find(each => each.Id == id),
+      "Vendor Details");
   }
 
   OpenEditPopUp(id: number) {
-    this.genericModalPopUpService.openModalPopUpService<Vendor>(
-      VendorcreateComponent,
-      this.vendorData.find((each) => each.Id == id),
-      'Vendor Edit'
-    );
+    this.genericModalPopUpService.openModalPopUpService<Vendor>(VendorcreateComponent,
+      this.vendorData.find(each => each.Id == id),
+      "Vendor Edit");
   }
 
-  getWindowEvent(event: any) {
-    return console.log(event);
+  getWindowEvent(event:any){
+    return console.log(event)
   }
+
 }

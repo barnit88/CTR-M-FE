@@ -10,13 +10,13 @@ export class EmployeePaymentService {
     employees : EmployeePayment[] = [];
 
     public getEmployeePaymentList(): Observable <EmployeePayment[]> {
-        return this.http.get<EmployeePayment[]>('http://localhost:3000/employee-payment')
+        return this.http.get<EmployeePayment[]>(AppSettings.API_ROOT+'employee-payment')
     }
     public getEmployeePaymentById(id : number): Observable <EmployeePayment> {
-        return this.http.get<EmployeePayment>('http://localhost:3000/employee-payment/' + id)
+        return this.http.get<EmployeePayment>(AppSettings.API_ROOT+'employee-payment/' + id)
     }
     public deleteEmployeePaymentById(id : number): Observable <any> {
-        return this.http.delete<EmployeePayment>('http://localhost:3000/employee-payment' + id)
+        return this.http.delete<EmployeePayment>(AppSettings.API_ROOT+'employee-payment/' + id)
     }
     public addEmployeePayment(entity : EmployeePayment): Observable <any> {
         return this.http.post<EmployeePayment>(AppSettings.API_ROOT+'employee-payment', entity);

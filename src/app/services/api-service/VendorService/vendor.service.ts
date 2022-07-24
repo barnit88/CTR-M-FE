@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Vendor } from 'src/app/entity/models/Vendor/vendor';
+import { AppSettings } from 'src/app/app.setting';
 
 @Injectable({
   providedIn: 'root'
@@ -10,16 +11,16 @@ export class VendorService {
   vendor : Vendor[] = [];
 
   public getVendorList(): Observable < Vendor[] > {
-      return this.http.get<Vendor[]>('http://localhost:3000/employee-payment')
+      return this.http.get<Vendor[]>(AppSettings.API_ROOT+'vendor')
   }
   public getVendorById(id : number): Observable < Vendor > {
-      return this.http.get<Vendor>('http://localhost:3000/employee-payment/' + id)
+      return this.http.get<Vendor>(AppSettings.API_ROOT+'vendor/' + id)
   }
   public deleteVendorById(id : number): Observable < Vendor > {
-      return this.http.delete<Vendor>('http://localhost:3000/employee-payment/' + id)
+      return this.http.delete<Vendor>(AppSettings.API_ROOT+'vendor/' + id)
   }
   public addVendor(entity : Vendor): Observable < Vendor > {
-      return this.http.post<Vendor>('http://localhost:3000/employee-payment/', entity);
+      return this.http.post<Vendor>(AppSettings.API_ROOT+'vendor', entity);
   }
 
   constructor(private http: HttpClient) { }

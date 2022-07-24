@@ -43,8 +43,8 @@ export class ClientcreateComponent implements OnInit {
   }
 
   onSubmitTemplateBased(form:any): any{
-    console.log("reactive form submitted");
     this.clientData = form;
+    console.log(form);
     this.clientService.add(this.clientData).subscribe((response)=> console.log('Done Creating new client'),
     (error: any)=> console.log(error),
     );

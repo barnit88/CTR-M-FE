@@ -10,24 +10,24 @@ export class EmployeeService {
     listChanged : Subject < Employee[] >;
 
     public getEmployeeList(): Observable < Employee[] > {
-        return this.http.get<Employee[]>('http://localhost:3000/employees')
+        return this.http.get<Employee[]>(AppSettings.API_ROOT+'employee')
     }
 
     public addEmployees(entity : Employee): Observable < Employee > {
-        return this.http.post<Employee>('http://localhost:3000/employees', entity);
+        return this.http.post<Employee>(AppSettings.API_ROOT+'employee', entity);
     }
 
     public updateEmployeeRecords(id : number, entity : Employee): Observable < any > {
 
-        return this.http.put('http://localhost:3000' + 'Employee' + '/' + id, entity);
+        return this.http.put(AppSettings.API_ROOT + 'employee' + '/' + id, entity);
     }
     
     public deleteEmployeeRecord(id : number): Observable < Employee > {
-        return this.http.delete<Employee>('http://localhost:3000/employees/' + id);
+        return this.http.delete<Employee>(AppSettings.API_ROOT+'employee/' + id);
     }
 
     public getEmployeeById(id : number): Observable < Employee > {
-        return this.http.get<Employee>('http://localhost:3000/employees/' + id);
+        return this.http.get<Employee>(AppSettings.API_ROOT+'employee/' + id);
     }
 
 
