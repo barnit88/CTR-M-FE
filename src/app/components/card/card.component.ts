@@ -14,14 +14,17 @@ import { BsModalService } from 'ngx-bootstrap/modal';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
-  @Input() title = 'Add title Here';
+  
+  constructor(public modalService: BsModalService) {}
+
+  @Input() title: string="";
   @Output() popUp = new EventEmitter();
 
-  constructor(public modalService: BsModalService) {}
+  PlaceHolder : string = `Search`;
+
 
   ngOnInit(): void {}
 
-  link: string = 'vendor';
 
   emitEventForModalPopUp(event: any) {
     this.popUp.emit(event);

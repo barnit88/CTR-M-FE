@@ -1,6 +1,6 @@
 
 <div class="g-row">
-  <app-card [title]="title" (popUp)="OpenModalPopUp()">  
+  <app-card [title]="title" (popUp)="OpenCreate()">  
     <div class="card-body">
       <table class="table table-bordered">
         <thead>
@@ -36,9 +36,9 @@
             <td>{{e.ClientCompanyIdentityType}}</td>
             <td>{{e.ClientCompanyIdentityNumber}}</td>
             <td> 
-              <app-detail-button (click)="OpenDetailPopUp(e.id)">{{buttonTitle.Detail}}</app-detail-button>
-              <app-detail-button (click)="OpenEditPopUp(e.id)">{{buttonTitle.Edit}}</app-detail-button>
-              <app-detail-button (click)="deleteClientById(e.id)">{{buttonTitle.Delete}}</app-detail-button></td>
+              <app-detail-button (click)="OpenDetail(e.id)">{{buttonTitle.Detail}}</app-detail-button>
+              <app-detail-button (click)="OpenEdit(e.id)">{{buttonTitle.Edit}}</app-detail-button>
+              <app-detail-button (click)="OpenDelete(e.id)">{{buttonTitle.Delete}}</app-detail-button></td>
             </tr>
           </tbody>
         </table>

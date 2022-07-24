@@ -68,15 +68,13 @@ OpenModalPopUp() {
     console.log(emp);
     this.genericModalPopUpService.openModalPopUpService<EmployeePayment>(EmployeepaymentdetailComponent,
       data,
-      "Employee Payment Details",
-      id);
+      "Employee Payment Details");
   }
    
   OpenEditPopUp(id: number) {
     this.genericModalPopUpService.openModalPopUpService<EmployeePayment>(EmployeepaymentcreateComponent,
       this.empPayment.find(x => x.Id == id)  ,
-      "Employee Payment Edit",
-      id);
+      "Employee Payment Edit");
   }
 
 }

@@ -12,8 +12,8 @@ import { IComponent } from '../../IComponent';
   styleUrls: ['./clientcreate.component.css'],
 })
 export class ClientcreateComponent implements OnInit, IComponent<Client> {
-  public title: any = 'Client Create';
-  public data: Client = new Client();
+  public title :string;
+  public data : Client;
   // clientformvalid: FormGroup;
 
   constructor(

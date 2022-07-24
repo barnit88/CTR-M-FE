@@ -4,35 +4,65 @@ import { GenericModalPopUpService } from 'src/app/services/common-service/generi
 import { ExtendtakecontractdetailComponent } from './../extendtakecontractdetail/extendtakecontractdetail.component';
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 import { ExtendTakeContract } from './../../../../entity/models/Contract/extend-take-contract';
+import { ExtendTakeContractTitle } from 'src/app/entity/Enum/Enums';
+import { ExtendtakecontracteditComponent } from '../extendtakecontractedit/extendtakecontractedit.component';
+import { IComponent } from 'src/app/views/IComponent';
 @Component({
   selector: 'app-extendtakecontractlist',
   templateUrl: './extendtakecontractlist.component.html',
   styleUrls: ['./extendtakecontractlist.component.css']
 })
-export class ExtendtakecontractlistComponent implements OnInit {
-  etcData: ExtendTakeContract[]=[];
+export class ExtendtakecontractlistComponent implements OnInit,IComponent<ExtendTakeContract> {
+  title:string;
+  data: ExtendTakeContract[]=[];
   constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService:GenericDetailPopUpService) {}
 
   ngOnInit(): void {}
-  title: string = 'ExtendTake Contract List';
+  // title: string = 'ExtendTake Contract List';
 
-  OpenModalPopUp() {
-    this.genericModalPopUpService.openModalPopUpService<ExtendTakeContract>(ExtendtakecontractcreateComponent, 
+  // OpenModalPopUp() {
+  //   this.genericModalPopUpService.openModalPopUpService<ExtendTakeContract>(ExtendtakecontractcreateComponent, 
+  //     new ExtendTakeContract(),
+  //     'Create ExtendTakeContract List',
+  //   );
+  // }
+  // //function for details popup
+  // OpenDetailPopUp(id: number) {
+  //   this.genericModalPopUpService.openModalPopUpService<ExtendTakeContract>(ExtendtakecontractdetailComponent,
+  //     this.etcData.find(each => each.Id == id),
+  //     "ExtendTakeContract Details");
+  // }
+
+  // OpenEditPopUp(id: number) {
+  //   this.genericModalPopUpService.openModalPopUpService<ExtendTakeContract>(ExtendtakecontractcreateComponent,
+  //     this.etcData.find(each => each.Id == id),
+  //     "ExtendTakeContract Edit");
+  // }
+
+  OpenCreate(): void {
+    this.genericModalPopUpService.openModalPopUpService<ExtendTakeContract>(ExtendtakecontractcreateComponent,
       new ExtendTakeContract(),
-      'Create ExtendTakeContract List',
+      ExtendTakeContractTitle.Create
     );
   }
-  //function for details popup
-  OpenDetailPopUp(id: number) {
-    this.genericModalPopUpService.openModalPopUpService<ExtendTakeContract>(ExtendtakecontractdetailComponent,
-      this.etcData.find(each => each.Id == id),
-      "ExtendTakeContract Details");
+
+  OpenEdit(id: number): void {
+    this.genericModalPopUpService.openModalPopUpService<ExtendTakeContract>(ExtendtakecontracteditComponent,
+      new ExtendTakeContract(),
+      ExtendTakeContractTitle.Edit
+    );
   }
 
-  OpenEditPopUp(id: number) {
-    this.genericModalPopUpService.openModalPopUpService<ExtendTakeContract>(ExtendtakecontractcreateComponent,
-      this.etcData.find(each => each.Id == id),
-      "ExtendTakeContract Edit");
+  OpenDetail(id: number): void {
+    this.genericModalPopUpService.openModalPopUpService<ExtendTakeContract>(ExtendtakecontractdetailComponent,
+      new ExtendTakeContract(),
+      ExtendTakeContractTitle.Detail
+    );
   }
+
+  OpenDelete(id: number): void {
+
+  }
+
 
 }

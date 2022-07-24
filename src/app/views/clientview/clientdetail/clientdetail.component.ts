@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { Client } from 'src/app/entity/models/Client/client';
-import { ClientTitle } from 'src/app/entity/Enum/Enums';
+import { IComponent } from '../../IComponent';
 
 @Component({
   selector: 'app-clientdetail',
   templateUrl: './clientdetail.component.html',
   styleUrls: ['./clientdetail.component.css']
 })
-export class ClientdetailComponent implements OnInit {
-  data: any;
-  title: any = ClientTitle.Detail;
+export class ClientdetailComponent implements OnInit,IComponent<Client> {
+  title: string;
+  data: Client;
   constructor() {}
 
   ngOnInit(): void {
