@@ -22,16 +22,38 @@ export class ClientcreateComponent implements OnInit, IComponent<Client> {
     private modelRef: BsModalRef
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
-  onSubmit(): void {
+  public onSubmit(): void {
+    console.log(this.data);
+    if(this.data.Id === undefined || this.data.Id === null || this.data.Id === 0){
+      this.AddClient();
+    }
+    else{
+      this.UpdateClient();
+    }
+    this.modelRef.hide();
+  }
+
+  private AddClient():void{
     var result = this.clientService.add(this.data).subscribe(
       (data) => {
-        console.log(data);
+        console.log("done with creating client "+data);
       },
       (error) => {
         console.log(error);
       }
     );
+  }
+  private UpdateClient():void{
+    var result = this.clientService.update(this.data.Id,this.data).subscribe(
+      response => {
+        console.log('Update Sucessfully');
+      },
+      error =>{
+        console.log('error');
+      }
+    )
   }
 }

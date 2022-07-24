@@ -2,13 +2,13 @@
 <div class="g-row">
   <app-card [title]="title" (popUp)="OpenCreate()">  
     <div class="card-body">
-      <table class="table table-bordered">
+      <table class="table table-bordered table-responsive">
         <thead>
           <tr class="">
             <th>S/N</th>
             <th>Full Name</th>
             <th>Address</th>
-            <th>Contract No</th>
+            <th>Contact No</th>
             <th>Email</th>
             <th>Identity Type</th>
             <th>Identity Number</th>
@@ -22,9 +22,8 @@
         </thead>
         <tbody>
           <tr class="p-2" *ngFor="let e of data;let i = index">
-            {{e | json }} 
             <td>{{i+1}}</td>
-            <td>{{e.firstName}} {{e.middleName}} {{e.lastName}}</td>
+            <td>{{e.FirstName}} {{e.MiddleName}} {{e.LastName}}</td>
             <td>{{e.State+" "+e.District+" "+e.Muncipality }}</td>
             <td>{{e.ContactNo}}</td>
             <td>{{e.Email}}</td>
@@ -32,13 +31,13 @@
             <td>{{e.IdentityNo}}</td>
             <td>{{e.ClientType}}</td>
             <td>{{e.ClientCompanyName}}</td>
-            <td>{{e.ClientCompanyContactNo}}</td>
+            <td>{{e.ClientCompanyContactNumber}}</td>
             <td>{{e.ClientCompanyIdentityType}}</td>
             <td>{{e.ClientCompanyIdentityNumber}}</td>
             <td> 
-              <app-detail-button (click)="OpenDetail(e.id)">{{buttonTitle.Detail}}</app-detail-button>
-              <app-detail-button (click)="OpenEdit(e.id)">{{buttonTitle.Edit}}</app-detail-button>
-              <app-detail-button (click)="OpenDelete(e.id)">{{buttonTitle.Delete}}</app-detail-button></td>
+              <app-detail-button (click)="OpenDetailPopUp(e.Id)">{{buttonTitle.Detail}}</app-detail-button>
+              <app-detail-button (click)="OpenEditPopUp(e.Id)">{{buttonTitle.Edit}}</app-detail-button>
+              <app-detail-button (click)="deleteClientById(e.Id)">{{buttonTitle.Delete}}</app-detail-button></td>
             </tr>
           </tbody>
         </table>

@@ -11,6 +11,9 @@ import { IComponent } from '../../IComponent';
 export class ClientdetailComponent implements OnInit,IComponent<Client> {
   title: string;
   data: Client;
+export class ClientdetailComponent implements OnInit {
+  data: Client;
+  title: any = ClientTitle.Detail;
   constructor() {}
 
   ngOnInit(): void {

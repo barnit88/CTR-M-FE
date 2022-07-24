@@ -19,7 +19,6 @@ export class EmployeelistComponent implements OnInit {
         this.onGetEmployees();
     }
 
-    // function to get lists of employees
     onGetEmployees(): any {
         this.employeeService.getEmployeeList().subscribe((response) => response.map(res => {
             this.empList.push(res);
@@ -29,13 +28,10 @@ export class EmployeelistComponent implements OnInit {
         console.log(this.empList);
     }
 
-
-    // function to get single employee by id
     onGetSingleEmployee(id : number): any {
         this.employeeService.getEmployeeById(id).subscribe((response) => console.log(response), (error : any) => console.log(error), () => console.log('Done with getting single employee by Id '));
     }
 
-    // function to delete employee
     onDeleteEmployee(id : number): any {
         var ans = confirm("Do you want to delete employee with Id: " + id);
         if (ans) {
@@ -47,17 +43,11 @@ export class EmployeelistComponent implements OnInit {
         }
         return true
     }
-    // function delete employee using async function
 
-    // function for form model popup
-
-
-    // function for detail model popup
     OpenDetailPopUp(id : number) {
         this.genericModalPopUpService.openModalPopUpService<Employee>(EmployeedetailComponent, this.empList.find(x => x.Id == id), "Employee Detail");
     }
 
-    // function for edit model popup
     OpenEditPopUp(id : number) {
         this.genericModalPopUpService.openModalPopUpService<Employee>(EmployeecreateComponent, this.empList.find(x => x.Id == id), "Employee Edit");
     }

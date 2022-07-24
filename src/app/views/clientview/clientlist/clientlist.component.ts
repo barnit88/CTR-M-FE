@@ -5,9 +5,7 @@ import { GenericDetailPopUpService } from 'src/app/services/common-service/gener
 import { ClientcreateComponent } from '../clientcreate/clientcreate.component';
 import { ClientService } from './../../../services/api-service/ClientService/client.service';
 import { Client } from 'src/app/entity/models/Client/client';
-import { filter } from 'rxjs';
 import { Buttons, ClientTitle } from 'src/app/entity/Enum/Enums';
-import { ThisReceiver } from '@angular/compiler';
 @Component({
   selector: "app-clientlist",
   templateUrl: "./clientlist.component.html",
@@ -25,6 +23,8 @@ export class ClientlistComponent implements OnInit {
     this.onGetClientList();
   }
   
+
+
   onGetClientList(): any {
     this.clientService.getAll().subscribe((response)=> this.data = response,
       (error:any)=> console.log(error),
@@ -47,6 +47,7 @@ export class ClientlistComponent implements OnInit {
         }, (error: any) => console.error(error))  
     } 
     }
+  
 
     OpenModalPopUp() {
       this.genericModalPopUpService.openModalPopUpService<Client>(ClientcreateComponent, 
@@ -58,7 +59,8 @@ export class ClientlistComponent implements OnInit {
     OpenDetailPopUp(id: number) {
       this.genericModalPopUpService.openModalPopUpService<Client>(ClientdetailComponent,
         this.data.find(x => x.Id == id),
-        ClientTitle.Detail);
+        ClientTitle.Detail)
+
     }
     
     OpenEditPopUp(id: number) {
