@@ -5,6 +5,7 @@ import { ExtendgivecontractcreateComponent } from './../extendgivecontractcreate
 import { GenericDetailPopUpService } from 'src/app/services/common-service/generic.detail.popup.service';
 import { ExtendgivecontractdetailComponent } from './../extendgivecontractdetail/extendgivecontractdetail.component';
 import { ExtendGiveContract } from './../../../../entity/models/Contract/extend-give-contract';
+import { ExtendGiveContractTitle } from 'src/app/entity/Enum/Enums';
 
 
 @Component({
@@ -13,11 +14,11 @@ import { ExtendGiveContract } from './../../../../entity/models/Contract/extend-
   styleUrls: ['./extendgivecontractlist.component.css']
 })
 export class ExtendgivecontractlistComponent implements OnInit {
+  title:string = ExtendGiveContractTitle.Create; 
   egcData: ExtendGiveContract[]=[];
   constructor(private genericModalPopUpService: GenericModalPopUpService, private genericDetailPopUpService: GenericDetailPopUpService) {}
 
   ngOnInit(): void {}
-  title: string = 'EGC List';
 
   OpenModalPopUp() {
     this.genericModalPopUpService.openModalPopUpService<ExtendGiveContract>(ExtendgivecontractcreateComponent, 

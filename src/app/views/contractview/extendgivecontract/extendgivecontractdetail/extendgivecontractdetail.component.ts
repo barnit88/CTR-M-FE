@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ExtendGiveContractTitle } from 'src/app/entity/Enum/Enums';
 
 @Component({
   selector: 'app-extendgivecontractdetail',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./extendgivecontractdetail.component.css']
 })
 export class ExtendgivecontractdetailComponent implements OnInit {
-  title="Extend Give Contact Detail"
+  title: any = ExtendGiveContractTitle.Detail;
+
   constructor() { }
 
   ngOnInit(): void {
