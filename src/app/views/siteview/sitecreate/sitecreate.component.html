@@ -1,37 +1,37 @@
 <app-card-create [title]="title">
     <div class="container-fluid">
         <div class="card-body">
-            <form action="" #siteForm="ngForm" (ngSubmit)="siteSubmit(siteForm.value)" >
+            <form action="" #siteForm="ngForm" (ngSubmit)="onSiteSubmit()" >
 
             <div class="form-group">
                 <div class="row mt-3 md-3">
                     <div class="col-sm-4"><label for="usr"> Site Name:</label>
-                        <input type="text"[(ngModel)]="site.SiteName" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="data.SiteName" name="name" class="form-control mb-2" id="usr">
                     </div>
                     <div class="col-sm-4"><label for="usr"> State:</label>
-                        <input type="text"[(ngModel)]="site.State" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="data.State" name="name" class="form-control mb-2" id="usr">
                     </div>
                     <div class="col-sm-4"><label for="usr"> District</label>
-                        <input type="text"[(ngModel)]="site.District" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="data.District" name="name" class="form-control mb-2" id="usr">
                     </div>
                 </div>
                 <div class="row mt-3 md-3">
                     <div class="col-sm-4"><label for="usr">VDC/Muncipality:</label>
-                        <input type="text"[(ngModel)]="site.Muncipality" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="data.Muncipality" name="name" class="form-control mb-2" id="usr">
                     </div>
                     <div class="col-sm-4"><label for="usr">Site Work Type:</label>
-                        <input type="text"[(ngModel)]="site.SiteWorkType" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="data.SiteWorkType" name="name" class="form-control mb-2" id="usr">
                     </div>
                     <div class="col-sm-4"><label for="usr">Site Work Detail:</label>
-                        <input type="text"[(ngModel)]="site.SiteWorkDetail" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="data.SiteWorkDetail" name="name" class="form-control mb-2" id="usr">
                     </div>
                 </div>
                 <div class="row mt-3 md-3">
                     <div class="col-sm-6"><label for="usr">UDT 1:</label>
-                        <input type="text"[(ngModel)]="site.UDF1" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="data.UDF1" name="name" class="form-control mb-2" id="usr">
                     </div>
                     <div class="col-sm-6"><label for="usr">UDT 2:</label>
-                        <input type="text"[(ngModel)]="site.UDF2" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="data.UDF2" name="name" class="form-control mb-2" id="usr">
                     </div>
                 </div>
                 <div class="row mt-3 md-3">

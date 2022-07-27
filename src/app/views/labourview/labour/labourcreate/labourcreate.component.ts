@@ -1,69 +1,40 @@
 import {Component, OnInit} from '@angular/core';
 import {Labour} from './../../../../entity/models/Labour/labour';
 import {NgForm, FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { BsModalRef } from 'ngx-bootstrap/modal';
+import { LabourService } from './../../../../services/api-service/LabourService/labour.service';
+import { LabourTitle } from 'src/app/entity/Enum/Enums';
 
 @Component({selector: 'app-labourcreate', templateUrl: './labourcreate.component.html', styleUrls: ['./labourcreate.component.css']})
 export class LabourcreateComponent implements OnInit {
-    labourData : Labour = new Labour();
-    labourformvalid : FormGroup;
-    title : string = "Create New Labour";
-    constructor(private formBuilder : FormBuilder) {}
-    ngOnInit(): void {
-        this.labourformvalid = this.formBuilder.nonNullable.group({
-            "id": 0,
-            "FirstName": [
-                "", Validators.required
-            ],
-            "Middlename": [
-                "", Validators.required
-            ],
-            "Lastname": [
-                "", Validators.required
-            ],
-            "State": [
-                "", Validators.required
-            ],
-            "District": [
-                "", Validators.required
-            ],
-            "Munipality": [
-                "", Validators.required
-            ],
-            "ContactNo": [
-                "", Validators.required
-            ],
-            "Email": [
-                "", Validators.required
-            ],
-            "IdentityNo": [
-                "", Validators.required
-            ],
-            "IdentityType": [
-                "", Validators.required
-            ],
-            "EmployeeType": [
-                "", Validators.required
-            ],
-            "EmployeePayment": [
-                "", Validators.required
-            ],
-            "IsActive": [
-                "", Validators.required
-            ],
-            "DateOfBirth": [
-                "", Validators.required
-            ],
-            "UDF1": [
-                "", Validators.required
-            ],
-            "UDF2": ["", Validators.required]
+    data:Labour;
+    title:LabourTitle.Create;
+    constructor(private modelRef: BsModalRef,
+        private labourService: LabourService,
+    ) {}
+    ngOnInit(): void {  }
 
-        })
-        console.log(this.labourData);
-     }
+    public onLabourSubmit(): void {
+        if (this.data.Id === undefined || this.data.Id === null || this.data.Id === 0){
+            this.AddLabour();
+        } else {
+            this.UpdateLabour();
+        }
+        this.modelRef.hide();
+    }
 
-    onLabourSubmit(form : NgForm) {
-        console.log(form);
+    private AddLabour(): void {
+        this.labourService.addLabour(this.data). subscribe(
+            (resposne)=> console.log('done with response'+ resposne),
+            (error)=> console.log(error)
+        )
+    }
+
+    private UpdateLabour(): void{
+        this.labourService.labourUpdate(this.data.Id, this.data).subscribe(
+            (response)=> console.log('done with update'+ response),
+        (error)=> console.log(error)
+        )
     }
 
 }

@@ -11,16 +11,19 @@ export class RVIncomeService {
   rvIncome : RVIncome[] = [];
 
   public getRVIncomeList(): Observable < RVIncome[] > {
-      return this.http.get<RVIncome[]>(AppSettings.API_ROOT+'rv-income')
+      return this.http.get<RVIncome[]>(AppSettings.API_ROOT+'RVIncome')
   }
   public getRVIncomeById(id : number): Observable < RVIncome > {
-      return this.http.get<RVIncome>(AppSettings.API_ROOT+'rv-income/' + id)
+      return this.http.get<RVIncome>(AppSettings.API_ROOT+'RVIncome/' + id)
   }
   public deleteRVIncomeById(id : number): Observable < RVIncome > {
-      return this.http.delete<RVIncome>(AppSettings.API_ROOT+'rv-income/' + id)
+      return this.http.delete<RVIncome>(AppSettings.API_ROOT+'RVIncome/' + id)
   }
   public addRVIncome(entity : RVIncome): Observable < RVIncome > {
-      return this.http.post<RVIncome>(AppSettings.API_ROOT+'rv-income', entity);
+      return this.http.post<RVIncome>(AppSettings.API_ROOT+'RVIncome', entity);
+  }
+  public rviUpdate(id:number, entity: RVIncome): any {
+    return this.http.post(AppSettings.API_ROOT+'RVIncome/'+id, entity)
   }
 
   constructor(private http: HttpClient) { }

@@ -11,16 +11,19 @@ export class PEIncomeService {
   peIncome : PEIncome[] = [];
 
   public getPEIncomeList(): Observable < PEIncome[] > {
-      return this.http.get<PEIncome[]>(AppSettings.API_ROOT+'pe-income')
+      return this.http.get<PEIncome[]>(AppSettings.API_ROOT+'PEIncome');
   }
   public getPEIncomeById(id : number): Observable < PEIncome > {
-      return this.http.get<PEIncome>(AppSettings.API_ROOT+'pe-income/' + id)
+      return this.http.get<PEIncome>(AppSettings.API_ROOT+'PEIncome/' + id);
   }
   public deletePEIncomeById(id : number): Observable < PEIncome > {
-      return this.http.delete<any>(AppSettings.API_ROOT+'pe-income/' + id)
+      return this.http.delete<any>(AppSettings.API_ROOT+'PEIncome/' + id);
   }
   public addPEIncome(entity : PEIncome): Observable < PEIncome > {
-      return this.http.post<PEIncome>(AppSettings.API_ROOT+'pe-income', entity);
+      return this.http.post<PEIncome>(AppSettings.API_ROOT+'PEIncome', entity);
+  }
+  public peiUpdate(id: number, entity:PEIncome): any{
+    return this.http.post(AppSettings.API_ROOT+'PEIncome/'+id, entity);
   }
 
   constructor(private http: HttpClient) { }

@@ -12,16 +12,19 @@ export class PVExpensesService {
   pveExpense : PVExpenses[] = [];
 
   public getPVExpenseList(): Observable < PVExpenses[] > {
-      return this.http.get<PVExpenses[]>(AppSettings.API_ROOT+'pe-expense')
+      return this.http.get<PVExpenses[]>(AppSettings.API_ROOT+'PVExpense')
   }
   public getPVExpensesById(id : number): Observable < PVExpenses > {
-      return this.http.get<PVExpenses>(AppSettings.API_ROOT+'pe-expense/' + id)
+      return this.http.get<PVExpenses>(AppSettings.API_ROOT+'PVExpense/' + id)
   }
   public deletePVExpensesById(id : number): Observable < PVExpenses > {
-      return this.http.delete<PVExpenses>(AppSettings.API_ROOT+'pe-expense/' + id)
+      return this.http.delete<PVExpenses>(AppSettings.API_ROOT+'PVExpense/' + id)
   }
   public addPVExpenses(entity : PVExpenses): Observable < PVExpenses > {
-      return this.http.post<PVExpenses>(AppSettings.API_ROOT+'pe-expense', entity);
+      return this.http.post<PVExpenses>(AppSettings.API_ROOT+'PVExpense', entity);
+  }
+  public pveUpdate(id:number, entity: PVExpenses){
+    return this.http.post(AppSettings.API_ROOT+'PVExpense/'+id, entity);
   }
 
   constructor(private http: HttpClient) { }

@@ -11,16 +11,19 @@ export class PVBPaymentTransactionService {
   pvbPayment : PVBPaymentTransaction[] = [];
 
   public getPVBoughtPaymentList(): Observable < PVBPaymentTransaction[] > {
-      return this.http.get<PVBPaymentTransaction[]>(AppSettings.API_ROOT+'pvb-payment-transaction')
+      return this.http.get<PVBPaymentTransaction[]>(AppSettings.API_ROOT+'PVBPaymentTransaction')
   }
   public getPVBPaymentTransactionById(id : number): Observable < PVBPaymentTransaction > {
-      return this.http.get<PVBPaymentTransaction>(AppSettings.API_ROOT+'pvb-payment-transaction/' + id)
+      return this.http.get<PVBPaymentTransaction>(AppSettings.API_ROOT+'PVBPaymentTransaction/' + id)
   }
   public deletePVBPaymentTransactionById(id : number): Observable < PVBPaymentTransaction > {
-      return this.http.delete<PVBPaymentTransaction>(AppSettings.API_ROOT+'pvb-payment-transaction/' + id)
+      return this.http.delete<PVBPaymentTransaction>(AppSettings.API_ROOT+'PVBPaymentTransaction/' + id)
   }
   public addPVBPaymentTransaction(entity : PVBPaymentTransaction): Observable < PVBPaymentTransaction > {
-      return this.http.post<PVBPaymentTransaction>(AppSettings.API_ROOT+'pvb-payment-transaction', entity);
+      return this.http.post<PVBPaymentTransaction>(AppSettings.API_ROOT+'PVBPaymentTransaction', entity);
+  }
+  public pvbPaymentUpdate(id: number, entity: PVBPaymentTransaction){
+    return this.http.post(AppSettings.API_ROOT+'PVBPaymentTransaction/'+id, entity);
   }
 
   constructor(private http: HttpClient) { }

@@ -1,47 +1,47 @@
 <app-card-create [title]="title">
   <div class="container-fluid">
     <div class="card-body">
-      <form action="" #rvIncomeForm="ngForm" (ngSubmit)="rvIncomeSubmit(rvIncomeForm.value)" >
+      <form action="" #rvIncomeForm="ngForm" (ngSubmit)="rvIncomeSubmit()" >
 
       <div class="form-group">
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr"> Rented Vehicle Id:</label>
-            <input type="text"[(ngModel)]="rvIncome.RentedVehicleId" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.RentedVehicleId" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> Rented Vehicle:</label>
-            <input type="text"[(ngModel)]="rvIncome.RentedVehicle" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.RentedVehicle" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> Client Id:</label>
-            <input type="text"[(ngModel)]="rvIncome.ClientId" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.ClientId" name="name" class="form-control mb-2" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr">Client:</label>
-            <input type="text"[(ngModel)]="rvIncome.Client" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.Client" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">Rate Type:</label>
-            <input type="text"[(ngModel)]="rvIncome.RateType" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.RateType" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">From Date:</label>
-            <input type="text"[(ngModel)]="rvIncome.FromDate" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.FromDate" name="name" class="form-control mb-2" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
 
           <div class="col-sm-4"><label for="usr">To Date:</label>
-            <input type="text"[(ngModel)]="rvIncome.ToDate" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.ToDate" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">Rate:</label>
-            <input type="text"[(ngModel)]="rvIncome.Rate" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.Rate" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">Period:</label>
-            <input type="text"[(ngModel)]="rvIncome.Period" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.Period" name="name" class="form-control mb-2" id="usr">
           </div>
 
         </div>
         <div class="row mt-3 md-3">
           <div class="col-sm-6"><label for="usr">Income:</label>
-            <input type="text"[(ngModel)]="rvIncome.Income" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.Income" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="row mt-3 md-3">
 

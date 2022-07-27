@@ -1,44 +1,44 @@
 <app-card-create [title]="title">
   <div class="container-fluid">
     <div class="card-body">
-      <form action="" #reExpensesForm="ngForm" (ngSubmit)="reExpenseSubmit(reExpensesForm.value)">
+      <form action="" #reExpensesForm="ngForm" (ngSubmit)="reExpenseSubmit()">
       <div class="form-group">
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr">Rented Equipment Id:</label>
-            <input type="text"[(ngModel)]="reeExpenses.RentedEquipmentId" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.RentedEquipmentId" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> Rented Equipment:</label>
-            <input type="text"[(ngModel)]="reeExpenses.RentedEquipment" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.RentedEquipment" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> Vendor Id:</label>
-            <input type="text"[(ngModel)]="reeExpenses.VendorId" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.VendorId" name="name" class="form-control mb-2" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr">Vendor:</label>
-            <input type="text"[(ngModel)]="reeExpenses.Vendor" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.Vendor" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">Expenses Type:</label>
-            <input type="text"[(ngModel)]="reeExpenses.ExpensesType" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.ExpensesType" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">From Date:</label>
-            <input type="text"[(ngModel)]="reeExpenses.FromDate" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.FromDate" name="name" class="form-control mb-2" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr">To Date:</label>
-            <input type="text"[(ngModel)]="reeExpenses.ToDate" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.ToDate" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">Expenses:</label>
-            <input type="text"[(ngModel)]="reeExpenses.Expenses" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.Expenses" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">UDF1:</label>
-            <input type="text"[(ngModel)]="reeExpenses.UDF1" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.UDF1" name="name" class="form-control mb-2" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
           <div class="col-sm-6"><label for="usr">UDF2:</label>
-            <input type="text"[(ngModel)]="reeExpenses.UDF2" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.UDF2" name="name" class="form-control mb-2" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">

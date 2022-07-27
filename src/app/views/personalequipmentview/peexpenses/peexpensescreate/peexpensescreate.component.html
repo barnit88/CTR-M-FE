@@ -1,45 +1,45 @@
 <app-card-create [title]="title">
     <div class="container-fluid">
         <div class="card-body">
-            <form action="" #peExpensesForm="ngForm" (ngSubmit)="peExpensesSubmit(peExpensesForm.value)" >
+            <form action="" #peExpensesForm="ngForm" (ngSubmit)="peExpenseSubmit()" >
             <div class="form-group">
                 <div class="row mt-3 md-3">
                     <div class="col-sm-4"><label for="usr"> Personal Equipment ID:</label>
-                        <input type="text"[(ngModel)]="peExpenses.PersonalEquipmentId" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="data.PersonalEquipmentId" name="name" class="form-control mb-2" id="usr">
                     </div>
                     <div class="col-sm-4"><label for="usr"> Personal Equipment:</label>
-                        <input type="text"[(ngModel)]="peExpenses.PersonalEquipment" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="data.PersonalEquipment" name="name" class="form-control mb-2" id="usr">
                     </div>
                     <div class="col-sm-4"><label for="usr"> Vendor ID:</label>
-                        <input type="text"[(ngModel)]="peExpenses.VendorId" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="data.VendorId" name="name" class="form-control mb-2" id="usr">
                     </div>
                 </div>
                 <div class="row mt-3 md-3">
                     <div class="col-sm-4"><label for="usr"> Vendor:</label>
-                        <input type="text"[(ngModel)]="peExpenses.Vendor" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="data.Vendor" name="name" class="form-control mb-2" id="usr">
                     </div>
                     <div class="col-sm-4"><label for="usr"> Expenses Type:</label>
-                        <input type="text"[(ngModel)]="peExpenses.ExpensesType" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="data.ExpensesType" name="name" class="form-control mb-2" id="usr">
                     </div>
                     <div class="col-sm-4"><label for="usr"> From Date:</label>
-                        <input type="text"[(ngModel)]="peExpenses.FromDate" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="data.FromDate" name="name" class="form-control mb-2" id="usr">
                     </div>
                 </div>
                 <div class="row mt-3 md-3">
                     <div class="col-sm-4"><label for="usr"> To Date:</label>
-                        <input type="text"[(ngModel)]="peExpenses.ToDate" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="data.ToDate" name="name" class="form-control mb-2" id="usr">
                     </div>
                     <div class="col-sm-4"><label for="usr"> Expenses:</label>
-                        <input type="text"[(ngModel)]="peExpenses.Expenses" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="data.Expenses" name="name" class="form-control mb-2" id="usr">
                     </div>
                     <div class="col-sm-4"><label for="usr"> UDF1:</label>
-                        <input type="text"[(ngModel)]="peExpenses.UDF1" name="name" class="form-control" id="usr">
+                        <input type="text"[(ngModel)]="data.UDF1" name="name" class="form-control mb-2" id="usr">
                     </div>
                 </div>
         </div>
         <div class="row mt-3 md-3">
             <div class="col-sm-6"><label for="usr"> UDF2:</label>
-                <input type="text"[(ngModel)]="peExpenses.UDF2" name="name" class="form-control" id="usr">
+                <input type="text"[(ngModel)]="data.UDF2" name="name" class="form-control mb-2" id="usr">
             </div>
         </div>
         <div class="row mt-3 mb-3">

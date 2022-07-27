@@ -9,16 +9,19 @@ export class LabourPaymentService {
   labourpayment : LabourPayment[] = [];
 
   public getLabourPaymentList(): Observable < LabourPayment[] > {
-      return this.http.get<LabourPayment[]>(AppSettings.API_ROOT+'labour-payment')
+      return this.http.get<LabourPayment[]>(AppSettings.API_ROOT+'LabourPayment');
   }
   public getLabourPaymentById(id : number): Observable < LabourPayment > {
-      return this.http.get<LabourPayment>(AppSettings.API_ROOT+'labour-payment/' + id)
+      return this.http.get<LabourPayment>(AppSettings.API_ROOT+'LabourPayment/' + id);
   }
   public deleteLabourPaymentById(id : number): Observable < LabourPayment > {
-      return this.http.delete<LabourPayment>(AppSettings.API_ROOT+'labour-payment/' + id)
+      return this.http.delete<LabourPayment>(AppSettings.API_ROOT+'LabourPayment/' + id);
   }
   public addLabourPayment(entity : LabourPayment): Observable < LabourPayment > {
-      return this.http.post<LabourPayment>(AppSettings.API_ROOT+'labour-payment', entity);
+      return this.http.post<LabourPayment>(AppSettings.API_ROOT+'LabourPayment', entity);
+  }
+  public labourPaymentUpdate(id: number, entity: LabourPayment): any{
+    return this.http.post(AppSettings.API_ROOT+'LabourPaymentTransaction/'+id, entity);
   }
 
     constructor(private http : HttpClient) {}

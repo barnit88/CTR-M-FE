@@ -1,75 +1,75 @@
 <app-card-create [title]="title">
     <div class="container-fluid">
         <div class="card-body">
-            <form action="" #materialboughtform="ngForm" (ngSubmit)="materialBoughtSubmit(materialboughtform.value)">
+            <form action="" #materialboughtform="ngForm" (ngSubmit)="materialBoughtSubmit()">
 
                 <div class="form-group">
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4">
                             <label for="usr">
                                 Material ID:</label>
-                            <input type="text" [(ngModel)]="materialBought.MaterialId" name="MaterialId" class="form-control" id="usr">
+                            <input type="text" [(ngModel)]="data.MaterialId" name="MaterialId" class="form-control mb-2" id="usr">
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Material:</label>
-                            <input type="text" [(ngModel)]="materialBought.Material" name="Material" class="form-control" id="usr">
+                            <input type="text" [(ngModel)]="data.Material" name="Material" class="form-control mb-2" id="usr">
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Vendor ID:</label>
-                            <input type="text" [(ngModel)]="materialBought.VendorId" name="VendorId" class="form-control" id="usr">
+                            <input type="text" [(ngModel)]="data.VendorId" name="VendorId" class="form-control mb-2" id="usr">
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4">
                             <label for="usr">
                                 Vendor:</label>
-                            <input type="text" [(ngModel)]="materialBought.Vendor" name="Vendor" class="form-control" id="usr">
+                            <input type="text" [(ngModel)]="data.Vendor" name="Vendor" class="form-control mb-2" id="usr">
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Site ID:</label>
-                            <input type="text" [(ngModel)]="materialBought.SiteId" name="SiteId" class="form-control" id="usr">
+                            <input type="text" [(ngModel)]="data.SiteId" name="SiteId" class="form-control mb-2" id="usr">
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Site:</label>
-                            <input type="text" [(ngModel)]="materialBought.Site" name="Site" class="form-control" id="usr">
+                            <input type="text" [(ngModel)]="data.Site" name="Site" class="form-control mb-2" id="usr">
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4">
                             <label for="usr">
                                 Quantity:</label>
-                            <input type="text" [(ngModel)]="materialBought.Quantity" name="Quantity" class="form-control" id="usr">
+                            <input type="text" [(ngModel)]="data.Quantity" name="Quantity" class="form-control mb-2" id="usr">
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Rate:</label>
-                            <input type="text" [(ngModel)]="materialBought.Rate" name="Rate" class="form-control" id="usr">
+                            <input type="text" [(ngModel)]="data.Rate" name="Rate" class="form-control mb-2" id="usr">
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Total Price:</label>
-                            <input type="text" [(ngModel)]="materialBought.TotalPrice" name="TotalPrice" class="form-control" id="usr">
+                            <input type="text" [(ngModel)]="data.TotalPrice" name="TotalPrice" class="form-control mb-2" id="usr">
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4">
                             <label for="usr">
                                 Bought Date:</label>
-                            <input type="text" [(ngModel)]="materialBought.BoughtDate" name="BoughtDate" class="form-control" id="usr">
+                            <input type="text" [(ngModel)]="data.BoughtDate" name="BoughtDate" class="form-control mb-2" id="usr">
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 UDF1:</label>
-                            <input type="text" [(ngModel)]="materialBought.UDF1" name="UDF1" class="form-control" id="usr">
+                            <input type="text" [(ngModel)]="data.UDF1" name="UDF1" class="form-control mb-2" id="usr">
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 UDF2:</label>
-                            <input type="text" [(ngModel)]="materialBought.UDF2" name="UDF2" class="form-control" id="usr">
+                            <input type="text" [(ngModel)]="data.UDF2" name="UDF2" class="form-control mb-2" id="usr">
                         </div>
                     </div>
                     <div class="row mt-3 md-3">

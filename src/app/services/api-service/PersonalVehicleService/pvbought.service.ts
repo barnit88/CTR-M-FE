@@ -12,16 +12,19 @@ export class PVBoughtService {
   pvBought : PVBought[] = [];
 
   public getPVBoughtList(): Observable < PVBought[] > {
-      return this.http.get<PVBought[]>(AppSettings.API_ROOT+'pv-bought')
+      return this.http.get<PVBought[]>(AppSettings.API_ROOT+'PVBought')
   }
   public getPVBoughtById(id : number): Observable < PVBought > {
-      return this.http.get<PVBought>(AppSettings.API_ROOT+'pv-bought/' + id)
+      return this.http.get<PVBought>(AppSettings.API_ROOT+'PVBought/' + id)
   }
   public deletePVBoughtById(id : number): Observable < PVBought > {
-      return this.http.delete<PVBought>(AppSettings.API_ROOT+'pv-bought/' + id)
+      return this.http.delete<PVBought>(AppSettings.API_ROOT+'PVBought/' + id)
   }
   public addPVBought(entity : PVBought): Observable < PVBought > {
-      return this.http.post<PVBought>(AppSettings.API_ROOT+'pv-bought', entity);
+      return this.http.post<PVBought>(AppSettings.API_ROOT+'PVBought', entity);
+  }
+  public pvbUpdate(id: number, entity: PVBought){
+    return this.http.post(AppSettings.API_ROOT+'PVBought/'+id, entity);
   }
 
   constructor(private http: HttpClient) { }

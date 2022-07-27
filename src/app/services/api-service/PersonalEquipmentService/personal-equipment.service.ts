@@ -12,16 +12,19 @@ export class PersonalEquipmentService {
   personalEquipment : PersonalEquipment[] = [];
 
   public getPersonalEquipmentList(): Observable < PersonalEquipment[] > {
-      return this.http.get<PersonalEquipment[]>(AppSettings.API_ROOT+'personal-equipment')
+      return this.http.get<PersonalEquipment[]>(AppSettings.API_ROOT+'PersonalEquipment');
   }
   public getPersonalEquipmentById(id : number): Observable < PersonalEquipment > {
-      return this.http.get<PersonalEquipment>(AppSettings.API_ROOT+'personal-equipment/' + id)
+      return this.http.get<PersonalEquipment>(AppSettings.API_ROOT+'PersonalEquipment/' + id);
   }
   public deletePersonalEquipmentById(id : number): Observable < PersonalEquipment > {
-      return this.http.delete<PersonalEquipment>(AppSettings.API_ROOT+'personal-equipment/' + id)
+      return this.http.delete<PersonalEquipment>(AppSettings.API_ROOT+'PersonalEquipment/' + id);
   }
   public addPersonalEquipment(entity : PersonalEquipment): Observable < PersonalEquipment > {
-      return this.http.post<PersonalEquipment>(AppSettings.API_ROOT+'personal-equipment', entity);
+      return this.http.post<PersonalEquipment>(AppSettings.API_ROOT+'PersonalEquipment', entity);
+  }
+  public peUpdate(id: number, entity: PersonalEquipment): any{
+    return this.http.post(AppSettings.API_ROOT+'PersonalEquipment/'+id, entity);
   }
 
   constructor(private http: HttpClient) { }

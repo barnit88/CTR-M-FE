@@ -11,16 +11,19 @@ export class MSPaymentTransactionService {
   msPayment : MSPaymentTransaction[] = [];
 
   public getMSpaymentList(): Observable < MSPaymentTransaction[] > {
-      return this.http.get<MSPaymentTransaction[]>(AppSettings.API_ROOT+'ms-payment-transaction')
+      return this.http.get<MSPaymentTransaction[]>(AppSettings.API_ROOT+'MSPaymentTransaction')
   }
   public getMSPaymentTransactionServiceById(id : number): Observable < MSPaymentTransaction > {
-      return this.http.get<MSPaymentTransaction>(AppSettings.API_ROOT+'ms-payment-transaction/' + id)
+      return this.http.get<MSPaymentTransaction>(AppSettings.API_ROOT+'MSPaymentTransaction/' + id)
   }
   public deleteMSPaymentTransactionServiceById(id : number): Observable < MSPaymentTransaction > {
-      return this.http.delete<MSPaymentTransaction>(AppSettings.API_ROOT+'ms-payment-transaction/' + id)
+      return this.http.delete<MSPaymentTransaction>(AppSettings.API_ROOT+'MSPaymentTransaction/' + id)
   }
   public addMSPaymentTransactionService(entity : MSPaymentTransaction): Observable < MSPaymentTransaction > {
-      return this.http.post<MSPaymentTransaction>(AppSettings.API_ROOT+'ms-payment-transaction', entity);
+      return this.http.post<MSPaymentTransaction>(AppSettings.API_ROOT+'MSPaymentTransaction', entity);
+  }
+  public msPaymentUpdate(id: number, entity: MSPaymentTransaction): any{
+    return this.http.post(AppSettings.API_ROOT+'MSPaymentTransaction/'+id, entity);
   }
 
   constructor(private http: HttpClient) { }

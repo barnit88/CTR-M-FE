@@ -12,16 +12,19 @@ export class REIPaymentTransactionService {
   reiPayment : REIPaymentTransaction[] = [];
 
   public getREIncomePaymentList(): Observable < REIPaymentTransaction[] > {
-      return this.http.get<REIPaymentTransaction[]>(AppSettings.API_ROOT+'rei-payment-transaction')
+      return this.http.get<REIPaymentTransaction[]>(AppSettings.API_ROOT+'REIPaymentTransaction')
   }
   public getREIPaymentTransactionById(id : number): Observable < REIPaymentTransaction > {
-      return this.http.get<REIPaymentTransaction>(AppSettings.API_ROOT+'rei-payment-transaction/' + id)
+      return this.http.get<REIPaymentTransaction>(AppSettings.API_ROOT+'REIPaymentTransaction/' + id)
   }
   public deleteREIPaymentTransactionById(id : number): Observable < REIPaymentTransaction > {
-      return this.http.delete<REIPaymentTransaction>(AppSettings.API_ROOT+'rei-payment-transaction/' + id)
+      return this.http.delete<REIPaymentTransaction>(AppSettings.API_ROOT+'REIPaymentTransaction/' + id)
   }
   public addREIPaymentTransaction(entity : REIPaymentTransaction): Observable < REIPaymentTransaction > {
-      return this.http.post<REIPaymentTransaction>(AppSettings.API_ROOT+'rei-payment-transaction', entity);
+      return this.http.post<REIPaymentTransaction>(AppSettings.API_ROOT+'REIPaymentTransaction', entity);
+  }
+  public reiPaymentUpdate(id: number, entity: REIPaymentTransaction): any{
+    return this.http.post<REIPaymentTransaction>(AppSettings.API_ROOT+'REIPaymentTransaction/'+id, entity);
   }
 
   constructor(private http: HttpClient) { }

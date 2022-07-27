@@ -1,40 +1,40 @@
 
 <div class="g-row">
-  <app-card [title]="title" (popUp)="OpenCreate()">  
-    <div class="card-body">
-      <table class="table table-bordered table-responsive">
-        <thead>
-          <tr class="">
-            <th>S/N</th>
-            <th>Full Name</th>
-            <th>Address</th>
-            <th>Contact No</th>
-            <th>Email</th>
-            <th>Identity Type</th>
-            <th>Identity Number</th>
-            <th>Client Type</th>
-            <th>Client Company Name</th>
-            <th>Client Company Contact Number</th>
-            <th>Client Company Identity Type</th>
-            <th>Client Company Identity Number</th>
-            <th>ACTIONS</th>
+  <app-card [title]="title" (popUp)="OpenModalPopUp()">  
+    <div class="card-body p-0">
+      <table class="table table-bordered table-responsive table-hover w-auto " style="text-align:center;">
+        <thead scope="table-head">
+          <tr scope="row">
+            <th scope="col-sm">S/N</th>
+            <th scope="col-sm">Full Name</th>
+            <th scope="col-sm">Address</th>
+            <th scope="col-sm">Contact No</th>
+            <th scope="col-sm">Email</th>
+            <th scope="col-sm">Identity Type</th>
+            <th scope="col-sm">Identity Number</th>
+            <th scope="col-sm">Client Type</th>
+            <th scope="col-sm">Client Company Name</th>
+            <th scope="col-sm">Client Company Contact Number</th>
+            <th scope="col-sm">Client Company Identity Type</th>
+            <th scope="col-sm">Client Company Identity Number</th>
+            <th scope="col-sm">ACTIONS</th>
           </tr>
         </thead>
-        <tbody>
-          <tr class="p-2" *ngFor="let e of data;let i = index">
-            <td>{{i+1}}</td>
-            <td>{{e.FirstName}} {{e.MiddleName}} {{e.LastName}}</td>
-            <td>{{e.State+" "+e.District+" "+e.Muncipality }}</td>
-            <td>{{e.ContactNo}}</td>
-            <td>{{e.Email}}</td>
-            <td>{{e.IdentityType}}</td>
-            <td>{{e.IdentityNo}}</td>
-            <td>{{e.ClientType}}</td>
-            <td>{{e.ClientCompanyName}}</td>
-            <td>{{e.ClientCompanyContactNumber}}</td>
-            <td>{{e.ClientCompanyIdentityType}}</td>
-            <td>{{e.ClientCompanyIdentityNumber}}</td>
-            <td> 
+        <tbody scope="table-body" style="border-top:0;" >
+          <tr scope="row" *ngFor="let e of data;let i = index">
+            <td scope="col-sm">{{i+1}}</td>
+            <td scope="col-sm">{{e.FirstName}} {{e.MiddleName}} {{e.LastName}}</td>
+            <td scope="col-sm">{{e.State+" "+e.District+" "+e.Muncipality }}</td>
+            <td scope="col-sm">{{e.ContactNo}}</td>
+            <td scope="col-sm">{{e.Email}}</td>
+            <td scope="col-sm">{{e.IdentityType}}</td>
+            <td scope="col-sm">{{e.IdentityNo}}</td>
+            <td scope="col-sm">{{e.ClientType}}</td>
+            <td scope="col-sm">{{e.ClientCompanyName}}</td>
+            <td scope="col-sm">{{e.ClientCompanyContactNumber}}</td>
+            <td scope="col-sm">{{e.ClientCompanyIdentityType}}</td>
+            <td scope="col-sm">{{e.ClientCompanyIdentityNumber}}</td>
+            <td scope="col-sm"> 
               <app-detail-button (click)="OpenDetailPopUp(e.Id)">{{buttonTitle.Detail}}</app-detail-button>
               <app-detail-button (click)="OpenEditPopUp(e.Id)">{{buttonTitle.Edit}}</app-detail-button>
               <app-detail-button (click)="deleteClientById(e.Id)">{{buttonTitle.Delete}}</app-detail-button></td>

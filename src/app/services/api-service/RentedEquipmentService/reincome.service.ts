@@ -11,16 +11,19 @@ export class REIncomeService {
 reIncome : REIncome[] = [];
 
   public getREIncomeList(): Observable < REIncome[] > {
-      return this.http.get<REIncome[]>(AppSettings.API_ROOT+'re-income')
+      return this.http.get<REIncome[]>(AppSettings.API_ROOT+'REIncome')
   }
   public getREIncomeById(id : number): Observable < REIncome > {
-      return this.http.get<REIncome>(AppSettings.API_ROOT+'re-income/' + id)
+      return this.http.get<REIncome>(AppSettings.API_ROOT+'REIncome/' + id)
   }
   public deleteREIncomeById(id : number): Observable < REIncome > {
-      return this.http.delete<REIncome>(AppSettings.API_ROOT+'re-income/' + id)
+      return this.http.delete<REIncome>(AppSettings.API_ROOT+'REIncome/' + id)
   }
   public addREIncome(entity : REIncome): Observable < REIncome > {
-      return this.http.post<REIncome>(AppSettings.API_ROOT+'re-income', entity);
+      return this.http.post<REIncome>(AppSettings.API_ROOT+'REIncome', entity);
+  }
+  public reiUpdate(id: number, entity: REIncome): any{
+    return this.http.post<REIncome>(AppSettings.API_ROOT+'REIncome/'+id, entity);
   }
 
   constructor(private http: HttpClient) { }

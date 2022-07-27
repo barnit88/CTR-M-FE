@@ -1,39 +1,39 @@
 <app-card-create [title]="title">
     <div class="container-fluid">
         <div class="card-body">
-            <form #employeepaymentForm="ngForm" (ngSubmit)="submitEmployeePaymentForm(employeepaymentForm.value)" novalidate>
+            <form #employeepaymentForm="ngForm" (ngSubmit)="onSubmitEmployeePayment()" novalidate>
                 <div class="form-group">
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4"><label for="usr"> Employee ID:</label>
-                            <input type="text" class="form-control"  [(ngModel)]="data.EmployeeId" name="EmployeeId" id="usr" required>
+                            <input type="text" class="form-control mb-2"  [(ngModel)]="data.EmployeeId" name="EmployeeId" id="usr" required>
                         </div>
                         <div class="col-sm-4"><label for="usr"> Employee :</label>
-                            <input type="text" class="form-control"  [(ngModel)]="data.Employee" name="Employee"  id="usr" required>
+                            <input type="text" class="form-control mb-2"  [(ngModel)]="data.Employee" name="Employee"  id="usr" required>
                         </div>
                         <div class="col-sm-4 "><label for="usr"> From Date:</label>
-                            <input type="date" class="form-control datepicker"  [(ngModel)]="data.FromDate" name="FromDate"  id="usr" required>
+                            <input type="date" class="form-control mb-2 datepicker"  [(ngModel)]="data.FromDate" name="FromDate"  id="usr" required>
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4 "><label for="usr">To Date:</label>
-                            <input type="date" class="form-control datepicker"  [(ngModel)]="data.ToDate" name="ToDate"  id="usr" required>
+                            <input type="date" class="form-control mb-2 datepicker"  [(ngModel)]="data.ToDate" name="ToDate"  id="usr" required>
                         </div>
                         <div class="col-sm-4"><label for="usr">Payment Rate:</label>
-                            <input type="text" class="form-control"  [(ngModel)]="data.PaymentRate" name="PaymentRate"  id="usr" required>
+                            <input type="text" class="form-control mb-2"  [(ngModel)]="data.PaymentRate" name="PaymentRate"  id="usr" required>
                         </div>
                         <div class="col-sm-4 "><label for="usr">Perid:</label>
-                            <input type="text" class="form-control"  [(ngModel)]="data.Period" name="Period"  id="usr" required>
+                            <input type="text" class="form-control mb-2"  [(ngModel)]="data.Period" name="Period"  id="usr" required>
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4"><label for="usr">Payment:</label>
-                            <input type="text" class="form-control"  [(ngModel)]="data.Payment" name="Payment"  id="usr" required>
+                            <input type="text" class="form-control mb-2"  [(ngModel)]="data.Payment" name="Payment"  id="usr" required>
                         </div>
                         <div class="col-sm-4"><label for="usr">UDF 1:</label>
-                            <input type="text" class="form-control"  [(ngModel)]="data.UDF1" name="UDF1"  id="usr" required>
+                            <input type="text" class="form-control mb-2"  [(ngModel)]="data.UDF1" name="UDF1"  id="usr" required>
                         </div>
                         <div class="col-sm-4"><label for="usr">UDF 2:</label>
-                            <input type="text" class="form-control"  [(ngModel)]="data.UDF2" name="UDF2"  id="usr" required>
+                            <input type="text" class="form-control mb-2"  [(ngModel)]="data.UDF2" name="UDF2"  id="usr" required>
                         </div>
                     </div>
                     <div class="row mt-3 md-3">

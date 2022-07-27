@@ -12,16 +12,19 @@ export class PEIPaymentTransctionService {
   peiPayment : PEIPaymentTransaction[] = [];
 
   public getPEIncomePaymentList(): Observable < PEIPaymentTransaction[] > {
-      return this.http.get<PEIPaymentTransaction[]>(AppSettings.API_ROOT+'pei-payment-transaction')
+      return this.http.get<PEIPaymentTransaction[]>(AppSettings.API_ROOT+'PEIpaymentTransaction');
   }
   public getPEIPaymentTransactionById(id : number): Observable < PEIPaymentTransaction > {
-      return this.http.get<PEIPaymentTransaction>(AppSettings.API_ROOT+'pei-payment-transaction/' + id)
+      return this.http.get<PEIPaymentTransaction>(AppSettings.API_ROOT+'PEIpaymentTransaction/' + id);
   }
   public deletePEIPaymentTransactionById(id : number): Observable < PEIPaymentTransaction > {
-      return this.http.delete<PEIPaymentTransaction>(AppSettings.API_ROOT+'pei-payment-transaction/' + id)
+      return this.http.delete<PEIPaymentTransaction>(AppSettings.API_ROOT+'PEIpaymentTransaction/' + id);
   }
   public addPEIPaymentTransaction(entity : PEIPaymentTransaction): Observable < PEIPaymentTransaction > {
-      return this.http.post<PEIPaymentTransaction>(AppSettings.API_ROOT+'pei-payment-transaction', entity);
+      return this.http.post<PEIPaymentTransaction>(AppSettings.API_ROOT+'PEIpaymentTransaction', entity);
+  }
+  public peiPaymentUpdate(id: number, entity: PEIPaymentTransaction): any{
+    return this.http.post(AppSettings.API_ROOT+'PEIpaymentTransaction/'+id, entity);
   }
 
   constructor(private http: HttpClient) { }

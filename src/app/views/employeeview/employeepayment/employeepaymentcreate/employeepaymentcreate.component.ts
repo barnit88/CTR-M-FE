@@ -5,6 +5,7 @@ import { EmployeePayment } from './../../../../entity/models/Employees/employee-
 import { EmployeePaymentService } from './../../../../services/api-service/EmployeeService/employee-payment.service';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { Observable, Observer } from 'rxjs';
+import { EmployeePaymentTitle } from 'src/app/entity/Enum/Enums';
 
 @Component({
   selector: 'app-employeepaymentcreate',
@@ -12,46 +13,38 @@ import { Observable, Observer } from 'rxjs';
   styleUrls: ['./employeepaymentcreate.component.css'],
 })
 export class EmployeepaymentcreateComponent implements OnInit {
-  data: EmployeePayment = new EmployeePayment();
-  title:string="Create New EC"
-  employeepaymentvalid: FormGroup;
+  data: EmployeePayment;
+  title:EmployeePaymentTitle.Create;
+  
 
-  constructor(private formBuilder:FormBuilder,private activatedRoute:ActivatedRoute,
+  constructor(
      private employeePaymentService: EmployeePaymentService,
-      private router:Router,
        private modelRef: BsModalRef,
         private changeDetectorRef: ChangeDetectorRef ) {}
 
-  ngOnInit(): void {
-
-    this.employeepaymentvalid = this.formBuilder.nonNullable.group({
-      "id":0,
-      "EmployeeId": ["", Validators.required],
-      "Employee": ["", Validators.required],
-      "FromDate": ["", Validators.required],
-      "ToDate": ["", Validators.required],
-      "PaymentRate": ["", Validators.required],
-      "Period": ["", Validators.required],
-      "Payment": ["", Validators.required],
-      "UDF1":["", Validators.required],
-      "UDF2":["", Validators.required]
-    });
-    console.log(this.data)
+  ngOnInit(): void {}
+  
+  
+  public onSubmitEmployeePayment(): void{
+  if(this.data.Id === undefined || this.data.Id === null || this.data.Id === 0){
+    this.AddEmployee();
+  }else{
+    this.UpdateEmployee();
   }
-  
-  
-  submitEmployeePaymentForm(form:any): any{
-    console.log("Employeepayment Submit Works");
-    console.log(form);
-    this.data = form;
-    console.log(this.data)
-    this.employeePaymentService.addEmployeePayment(this.data).subscribe((response)=>
-    console.log(response),
-    (error:any)=> console.log(error),
-    ()=> console.log('Done with creating new employee payment')
+  }
+
+  private AddEmployee(): void{
+    this.employeePaymentService.addEmployeePayment(this.data).subscribe(
+      (response)=> console.log('done with add'+ response),
+      (error) => console.log(error)
     );
-    this.employeePaymentService.getEmployeePaymentList();
-    this.modelRef.hide();
+  }
+
+  private UpdateEmployee(): void{
+    this.employeePaymentService.updateEmployeePayment(this.data.Id, this.data).subscribe(
+      (response: any)=> console.log('done with update'+ response),
+      (error: any)=> console.log(error)
+    )
   }
   
 }

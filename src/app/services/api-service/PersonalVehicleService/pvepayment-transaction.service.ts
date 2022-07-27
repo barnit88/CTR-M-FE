@@ -11,16 +11,19 @@ export class PVEPaymentTransactionService {
   pvePayment : PVEPaymentTransaction[] = [];
 
   public getPVExpensePaymentList(): Observable < PVEPaymentTransaction[] > {
-      return this.http.get<PVEPaymentTransaction[]>(AppSettings.API_ROOT+'pve-payment-transaction')
+      return this.http.get<PVEPaymentTransaction[]>(AppSettings.API_ROOT+'PVEPaymenttRansaction')
   }
   public getPVEPaymentTransactionById(id : number): Observable < PVEPaymentTransaction > {
-      return this.http.get<PVEPaymentTransaction>(AppSettings.API_ROOT+'pve-payment-transaction/' + id)
+      return this.http.get<PVEPaymentTransaction>(AppSettings.API_ROOT+'PVEPaymenttRansaction/' + id)
   }
   public deletePVEPaymentTransactionById(id : number): Observable < PVEPaymentTransaction > {
-      return this.http.delete<PVEPaymentTransaction>(AppSettings.API_ROOT+'pve-payment-transaction/' + id)
+      return this.http.delete<PVEPaymentTransaction>(AppSettings.API_ROOT+'PVEPaymenttRansaction/' + id)
   }
-  public addPVEPaymentTransaction(entity : PVEPaymentTransaction): Observable < PVEPaymentTransaction > {
-      return this.http.post<PVEPaymentTransaction>(AppSettings.API_ROOT+'pve-payment-transaction', entity);
+  public addPVEPayment(entity : PVEPaymentTransaction): Observable < PVEPaymentTransaction > {
+      return this.http.post<PVEPaymentTransaction>(AppSettings.API_ROOT+'PVEPaymenttRansaction', entity);
+  }
+  public pveUpdatePayment(id: number, entity: PVEPaymentTransaction){
+    return this.http.post(AppSettings.API_ROOT+'PVEPaymentTransaction/'+id, entity)
   }
 
   constructor(private http: HttpClient) { }

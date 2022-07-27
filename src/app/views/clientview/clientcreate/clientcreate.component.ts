@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Client } from 'src/app/entity/models/Client/client';
-import { HttpClient } from '@angular/common/http';
 import { ClientService } from './../../../services/api-service/ClientService/client.service';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { IComponent } from '../../IComponent';
@@ -14,10 +12,8 @@ import { IComponent } from '../../IComponent';
 export class ClientcreateComponent implements OnInit, IComponent<Client> {
   public title :string;
   public data : Client;
-  // clientformvalid: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder,
     private clientService: ClientService,
     private modelRef: BsModalRef
   ) {}

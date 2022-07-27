@@ -1,59 +1,59 @@
 <app-card-create [title]="title">
     <div class="container-fluid">
         <div class="card-body">
-            <form action="" #peePaymentForm="ngForm" (ngSubmit)="peePaymentSubmit(peePaymentForm.value)">
+            <form action="" #peepaymentform="ngForm" (ngSubmit)="peePaymentSubmit()">
                 <div class="form-group">
                     <div class="row mt-3 md-3">
                         <div class="col-sm-6">
                             <label for="usr">
                                 PE EXPENSE ID:</label>
-                            <input type="text" class="form-control" [(ngModel)]="peePayment" name="name" id="usr">
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.Payment" name="name" id="usr">
                         </div>
                         <div class="col-sm-6">
                             <label for="usr">
                                 PE EXPENSE</label>
-                            <input type="text" class="form-control" [(ngModel)]="peePayment.Payment" name="name" id="usr">
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.Payment" name="name" id="usr">
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
                         <div class="col-sm-6">
                             <label for="usr">
                                 PAYMENT METHOD:</label>
-                            <input type="text" class="form-control" [(ngModel)]="peePayment.Payment" name="name" id="usr">
-                            <div class="col-sm-6">
-                                <label for="usr">
-                                    PAYMENT TYPE:</label>
-                                <input type="text" class="form-control" [(ngModel)]="peePayment.Payment" name="name" id="usr">
-                            </div>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.Payment" name="name" id="usr">
                         </div>
-                        <div class="row mt-3 md-3">
-                            <div class="col-sm-6">
-                                <label for="usr">
-                                    PAYMENT:</label>
-                                <input type="text" class="form-control" [(ngModel)]="peePayment.Payment" name="name" id="usr">
-                            </div>
-                            <div class="col-sm-6">
-                                <label for="usr">
-                                    PAYMENT DATE:</label>
-                                <input type="text" class="form-control" [(ngModel)]="peePayment.Payment" name="name" id="usr">
-                            </div>
+                        <div class="col-sm-6">
+                            <label for="usr">
+                                PAYMENT TYPE:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.Payment" name="name" id="usr">
                         </div>
-                        <div class="row mt-3 md-3">
-                            <div class="col-sm-6">
-                                <label for="usr">
-                                    UDF1:</label>
-                                <input type="text" class="form-control" [(ngModel)]="peePayment.Payment" name="name" id="usr">
-                            </div>
-                            <div class="col-sm-6">
-                                <label for="usr">
-                                    UDF2:</label>
-                                <input type="text" class="form-control" [(ngModel)]="peePayment.Payment" name="name" id="usr">
-                            </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <label for="usr">
+                                PAYMENT:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.Payment" name="name" id="usr">
                         </div>
-                        <div class="row mt-3 mb-3">
-                            <div class="col-sm-6">
-                                <button type="button" class="btn btn-primary btn-lg mx-2">Submit</button>
-                            </div>
+                        <div class="col-sm-6">
+                            <label for="usr">
+                                PAYMENT DATE:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.Payment" name="name" id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <label for="usr">
+                                UDF1:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.Payment" name="name" id="usr">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="usr">
+                                UDF2:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.Payment" name="name" id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 mb-3">
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-primary btn-lg mx-2">Submit</button>
                         </div>
                     </div>
                 </div>

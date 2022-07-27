@@ -12,16 +12,19 @@ export class PVIPaymentTransactionService {
   pviPayment : PVIPaymentTransaction[] = [];
 
   public getPVIncomePaymentList(): Observable < PVIPaymentTransaction[] > {
-      return this.http.get<PVIPaymentTransaction[]>(AppSettings.API_ROOT+'pvi-payment-transaction')
+      return this.http.get<PVIPaymentTransaction[]>(AppSettings.API_ROOT+'PVIPaymenttransaction')
   }
   public getPVIPaymentTransactionById(id : number): Observable < PVIPaymentTransaction > {
-      return this.http.get<PVIPaymentTransaction>(AppSettings.API_ROOT+'pvi-payment-transaction/' + id)
+      return this.http.get<PVIPaymentTransaction>(AppSettings.API_ROOT+'PVIPaymenttransaction/' + id)
   }
   public deletePVIPaymentTransactionById(id : number): Observable < PVIPaymentTransaction > {
-      return this.http.delete<PVIPaymentTransaction>(AppSettings.API_ROOT+'pvi-payment-transaction/' + id)
+      return this.http.delete<PVIPaymentTransaction>(AppSettings.API_ROOT+'PVIPaymenttransaction/' + id)
   }
   public addPVIPaymentTransaction(entity : PVIPaymentTransaction): Observable < PVIPaymentTransaction > {
-      return this.http.post<PVIPaymentTransaction>(AppSettings.API_ROOT+'pvi-payment-transaction', entity);
+      return this.http.post<PVIPaymentTransaction>(AppSettings.API_ROOT+'PVIPaymenttransaction', entity);
+  }
+  public pviUpdatePayment(id: number, entity: PVIPaymentTransaction): any{
+    return this.http.post(AppSettings.API_ROOT+'PVIPaymentTransaction/'+id, entity);
   }
 
   constructor(private http: HttpClient) { }

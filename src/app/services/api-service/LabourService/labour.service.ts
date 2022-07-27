@@ -10,16 +10,19 @@ export class LabourService {
   labour : Labour[] = [];
 
   public getLabourList(): Observable < Labour[] > {
-      return this.http.get<Labour[]>(AppSettings.API_ROOT+'labour')
+      return this.http.get<Labour[]>(AppSettings.API_ROOT+'Labour')
   }
   public getLabourById(id : number): Observable < Labour > {
-      return this.http.get<Labour>(AppSettings.API_ROOT+'labour/' + id)
+      return this.http.get<Labour>(AppSettings.API_ROOT+'Labour/' + id)
   }
   public deleteLabourById(id : number): Observable < Labour > {
-      return this.http.delete<Labour>(AppSettings.API_ROOT+'labour/' + id)
+      return this.http.delete<Labour>(AppSettings.API_ROOT+'Labour/' + id)
   }
   public addLabour(entity : Labour): Observable < Labour > {
-      return this.http.post<Labour>(AppSettings.API_ROOT+'labour', entity);
+      return this.http.post<Labour>(AppSettings.API_ROOT+'Labour', entity);
+  }
+  public labourUpdate(id: number, entity: Labour): any{
+    return this.http.post(AppSettings.API_ROOT+'Labour/'+id, entity);
   }
   constructor(private http:HttpClient){}
 

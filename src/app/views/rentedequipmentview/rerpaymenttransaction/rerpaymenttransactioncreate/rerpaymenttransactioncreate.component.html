@@ -1,38 +1,38 @@
 <app-card-create [title]="title">
   <div class="container-fluid">
     <div class="card-body">
-      <form action="" #rerPaymentTransactioForm="ngForm" (ngSubmit)="rerPaymentTransactioSubmit(rerPaymentTransactioForm.value)" >
+      <form action="" #rerPaymentTransactioForm="ngForm" (ngSubmit)="rerPaymentSubmit()" >
 
       <div class="form-group">
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr">RE Rent Id:</label>
-            <input type="text"[(ngModel)]="rerPaymentTransaction.RERentId" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.RERentId" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> RE Rent:</label>
-            <input type="text"[(ngModel)]="rerPaymentTransaction.RERent" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.RERent" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> Payment Type:</label>
-            <input type="text"[(ngModel)]="rerPaymentTransaction.PaymentType" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.PaymentType" name="name" class="form-control mb-2" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
           <div class="col-sm-4"><label for="usr">Payment Method:</label>
-            <input type="text"[(ngModel)]="rerPaymentTransaction.PaymentMethod" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.PaymentMethod" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> Payment:</label>
-            <input type="text"[(ngModel)]="rerPaymentTransaction.Payment" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.Payment" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr"> Payment Date:</label>
-            <input type="text"[(ngModel)]="rerPaymentTransaction.PaymentDate" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.PaymentDate" name="name" class="form-control mb-2" id="usr">
           </div>
         </div>
 
         <div class="row mt-3 md-3">
           <div class="col-sm-6"><label for="usr">UDF1:</label>
-            <input type="text"[(ngModel)]="rerPaymentTransaction.UDF1" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.UDF1" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-6"><label for="usr">UDF2:</label>
-            <input type="text"[(ngModel)]="rerPaymentTransaction.UDF2" name="name" class="form-control" id="usr">
+            <input type="text"[(ngModel)]="data.UDF2" name="name" class="form-control mb-2" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">

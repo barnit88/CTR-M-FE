@@ -10,26 +10,24 @@ export class EmployeeService {
     listChanged : Subject < Employee[] >;
 
     public getEmployeeList(): Observable < Employee[] > {
-        return this.http.get<Employee[]>(AppSettings.API_ROOT+'employee')
+        return this.http.get<Employee[]>(AppSettings.API_ROOT+'Employee')
     }
 
-    public addEmployees(entity : Employee): Observable < Employee > {
-        return this.http.post<Employee>(AppSettings.API_ROOT+'employee', entity);
+    public addEmployee(entity : Employee): Observable < Employee > {
+        return this.http.post<Employee>(AppSettings.API_ROOT+'Employee', entity);
     }
 
-    public updateEmployeeRecords(id : number, entity : Employee): Observable < any > {
-
-        return this.http.put(AppSettings.API_ROOT + 'employee' + '/' + id, entity);
+    public updateEmployeeRecord(id : number, entity : Employee): Observable < any > {
+        return this.http.put(AppSettings.API_ROOT + 'Employee/'+ id, entity);
     }
     
     public deleteEmployeeRecord(id : number): Observable < Employee > {
-        return this.http.delete<Employee>(AppSettings.API_ROOT+'employee/' + id);
+        return this.http.delete<Employee>(AppSettings.API_ROOT+'Employee/' + id);
     }
 
     public getEmployeeById(id : number): Observable < Employee > {
-        return this.http.get<Employee>(AppSettings.API_ROOT+'employee/' + id);
+        return this.http.get<Employee>(AppSettings.API_ROOT+'Employee/' + id);
     }
-
 
     public setEmployeeRecordById(id : number) {
         this.getEmployeeById(id).subscribe((response) => {

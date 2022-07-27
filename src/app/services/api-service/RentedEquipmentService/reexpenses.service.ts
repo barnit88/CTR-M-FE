@@ -12,16 +12,19 @@ export class REExpensesService {
   reeExpense : REExpenses[] = [];
 
   public getREExpenseList(): Observable < REExpenses[] > {
-      return this.http.get<REExpenses[]>(AppSettings.API_ROOT+'re-expense')
+      return this.http.get<REExpenses[]>(AppSettings.API_ROOT+'REExpense')
   }
   public getREExpensesById(id : number): Observable < REExpenses > {
-      return this.http.get<REExpenses>(AppSettings.API_ROOT+'re-expense/' + id)
+      return this.http.get<REExpenses>(AppSettings.API_ROOT+'REExpense/' + id)
   }
   public deleteREExpensesById(id : number): Observable < REExpenses > {
-      return this.http.delete<REExpenses>(AppSettings.API_ROOT+'re-expense/' + id)
+      return this.http.delete<REExpenses>(AppSettings.API_ROOT+'REExpense/' + id)
   }
   public addREExpenses(entity : REExpenses): Observable < REExpenses > {
-      return this.http.post<REExpenses>(AppSettings.API_ROOT+'re-expense', entity);
+      return this.http.post<REExpenses>(AppSettings.API_ROOT+'REExpense', entity);
+  }
+  public reExpenseUpdate(id: number, entity: REExpenses): any {
+    return this.http.post<REExpenses>(AppSettings.API_ROOT+'REExpense/'+id, entity)
   }
 
   constructor(private http: HttpClient) { }

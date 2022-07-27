@@ -11,16 +11,19 @@ export class MaterialStockService {
   materialStock : MaterialStock[] = [];
 
   public getMaterialStockList(): Observable < MaterialStock[] > {
-      return this.http.get<MaterialStock[]>(AppSettings.API_ROOT+'material-stock')
+      return this.http.get<MaterialStock[]>(AppSettings.API_ROOT+'MaterialStock');
   }
   public getMaterialStockById(id : number): Observable < MaterialStock > {
-      return this.http.get<MaterialStock>(AppSettings.API_ROOT+'material-stock/' + id)
+      return this.http.get<MaterialStock>(AppSettings.API_ROOT+'MaterialStock/' + id);
   }
   public deleteMaterialStockById(id : number): Observable < MaterialStock > {
-      return this.http.delete<MaterialStock>(AppSettings.API_ROOT+'material-stock/' + id)
+      return this.http.delete<MaterialStock>(AppSettings.API_ROOT+'MaterialStock/' + id);
   }
   public addMaterialStock(entity : MaterialStock): Observable < MaterialStock > {
-      return this.http.post<MaterialStock>(AppSettings.API_ROOT+'material-stock/', entity);
+      return this.http.post<MaterialStock>(AppSettings.API_ROOT+'MaterialStock/', entity);
+  }
+  public mstockUpdate(id: number, entity: MaterialStock): any{
+    return this.http.post(AppSettings.API_ROOT+'MaterialStock/'+id, entity);
   }
 
   constructor(private http: HttpClient) { }

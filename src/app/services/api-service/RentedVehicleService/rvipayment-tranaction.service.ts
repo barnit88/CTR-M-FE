@@ -12,16 +12,19 @@ export class RVIPaymentTranactionService {
   rviPayment : RVIPaymentTransaction[] = [];
 
   public getRVIncomePaymentList(): Observable < RVIPaymentTransaction[] > {
-      return this.http.get<RVIPaymentTransaction[]>(AppSettings.API_ROOT+'rvi-payment-transaction')
+      return this.http.get<RVIPaymentTransaction[]>(AppSettings.API_ROOT+'RVIPaymentTransaction')
   }
   public getRVIPaymentTransactionById(id : number): Observable < RVIPaymentTransaction > {
-      return this.http.get<RVIPaymentTransaction>(AppSettings.API_ROOT+'rvi-payment-transaction/' + id)
+      return this.http.get<RVIPaymentTransaction>(AppSettings.API_ROOT+'RVIPaymentTransaction/' + id)
   }
   public deleteRVIPaymentTransactionById(id : number): Observable < RVIPaymentTransaction > {
-      return this.http.delete<RVIPaymentTransaction>(AppSettings.API_ROOT+'rvi-payment-transaction/' + id)
+      return this.http.delete<RVIPaymentTransaction>(AppSettings.API_ROOT+'RVIPaymentTransaction/' + id)
   }
   public addRVIPaymentTransaction(entity : RVIPaymentTransaction): Observable < RVIPaymentTransaction > {
-      return this.http.post<RVIPaymentTransaction>(AppSettings.API_ROOT+'rvi-payment-transaction', entity);
+      return this.http.post<RVIPaymentTransaction>(AppSettings.API_ROOT+'RVIPaymentTransaction', entity);
+  }
+  public rviPaymentUpdate(id: number, entity:RVIPaymentTransaction): any{
+    return this.http.post(AppSettings.API_ROOT+'RVIPaymentTransaction/'+id, entity);
   }
 
   constructor(private http: HttpClient) { }

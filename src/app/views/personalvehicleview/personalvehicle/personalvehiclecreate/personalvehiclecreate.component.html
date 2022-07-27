@@ -1,38 +1,38 @@
 <app-card-create [title]="title">
     <div class="container-fluid">
         <div class="card-body">
-            <form action="" #personalvehicleform="ngForm" (ngSubmit)="personalVehicleSubmit(personalvehicleform.value)">
+            <form action="" #personalvehicleform="ngForm" (ngSubmit)="personalVehicleSubmit()">
                 <div class="form-group">
                     <div class="row mt-3 md-3">
                         <div class="col-sm-6">
                             <label for="usr">
                                 Vehicle Name</label>
-                            <input type="text" class="form-control" [(ngModel)]="personalVehicle.VehicleName"  name="name" id="usr"></div>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.VehicleName"  name="name" id="usr"></div>
                         <div class="col-sm-6">
                             <label for="usr">
                                 Brand Name:</label>
-                            <input type="text" class="form-control" [(ngModel)]="personalVehicle.BrandName"  name="name" id="usr"></div>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.BrandName"  name="name" id="usr"></div>
                     </div>
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4">
                             <label for="usr">Model Name:</label>
-                            <input type="text" class="form-control" [(ngModel)]="personalVehicle.ModelName"  name="name" id="usr"></div>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.ModelName"  name="name" id="usr"></div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Number Plate:</label>
-                            <input type="text" class="form-control" [(ngModel)]="personalVehicle.NumberPlate"  name="name" id="usr"></div>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.NumberPlate"  name="name" id="usr"></div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Vehicle Type:</label>
-                            <input type="text" class="form-control" [(ngModel)]="personalVehicle.VehicleType"  name="name" id="usr"></div>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.VehicleType"  name="name" id="usr"></div>
                     </div>
                     <div class="row mt-3 md-3">
                         <div class="col-sm-6">
                             <label for="usr">UDF1:</label>
-                            <input type="text" class="form-control" [(ngModel)]="personalVehicle.UDF1"  name="name" id="usr"></div>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.UDF1"  name="name" id="usr"></div>
                         <div class="col-sm-6">
                             <label for="usr">UDF2:</label>
-                            <input type="text" class="form-control" [(ngModel)]="personalVehicle.UDF2"  name="name" id="usr"></div>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.UDF2"  name="name" id="usr"></div>
                     </div>
                     <div class="row mt-3 md-3">
                         <div class="col-sm-6">

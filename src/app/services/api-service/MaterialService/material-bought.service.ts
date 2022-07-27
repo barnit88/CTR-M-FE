@@ -11,16 +11,19 @@ export class MaterialBoughtService {
   materialBought : MaterialBought[] = [];
 
   public getMaterialBoughtList(): Observable < MaterialBought[] > {
-      return this.http.get<MaterialBought[]>(AppSettings.API_ROOT+'material-bought')
+      return this.http.get<MaterialBought[]>(AppSettings.API_ROOT+'MaterialBought');
   }
   public getMaterialBoughtById(id : number): Observable < MaterialBought > {
-      return this.http.get<MaterialBought>(AppSettings.API_ROOT+'material-bought/' + id)
+      return this.http.get<MaterialBought>(AppSettings.API_ROOT+'MaterialBought/' + id);
   }
   public deleteMaterialBoughtById(id : number): Observable < MaterialBought > {
-      return this.http.delete<MaterialBought>(AppSettings.API_ROOT+'material-bought/' + id)
+      return this.http.delete<MaterialBought>(AppSettings.API_ROOT+'MaterialBought/' + id);
   }
   public addMaterialBought(entity : MaterialBought): Observable < MaterialBought > {
-      return this.http.post<MaterialBought>(AppSettings.API_ROOT+'material-bought', entity);
+      return this.http.post<MaterialBought>(AppSettings.API_ROOT+'MaterialBought', entity);
+  }
+  public mbUpdate(id:number, entity: MaterialBought): any{
+    return this.http.post(AppSettings.API_ROOT+'MaterialBought/'+id,entity);
   }
 
   constructor(private http:HttpClient) { }

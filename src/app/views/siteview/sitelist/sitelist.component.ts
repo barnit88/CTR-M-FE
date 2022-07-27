@@ -18,7 +18,7 @@ export class SitelistComponent implements OnInit {
      private genericDetailPopUpService:GenericDetailPopUpService,
      private siteService:SiteService) {}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.onGetSiteList();
   }
 
   onGetSiteList(): any{

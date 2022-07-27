@@ -1,5 +1,5 @@
 <app-card-create [title]="title">
-    <div class="container-fluid">
+    <div class="container-fluid flex-row">
         <div class="card-body">
             <form #myform="ngForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
@@ -7,64 +7,64 @@
                         <div class="col-sm-4">
                             <label for="firstname">
                                 First Name:</label>
-                            <input type="text" class="form-control" [(ngModel)]="data.FirstName" name="FirstName"
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.FirstName" name="FirstName"
                                 id="FirtName" required>
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Midddle Name:</label>
-                            <input type="text" class="form-control" [(ngModel)]="data.MiddleName" name="MiddleName"
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.MiddleName" name="MiddleName"
                                 id="middleName">
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Last Name:</label>
-                            <input type="text" class="form-control" [(ngModel)]="data.LastName" name="LastName"
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.LastName" name="LastName"
                                 id="lastName" required>
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4">
                             <label for="usr">State:</label>
-                            <input type="text" class="form-control" [(ngModel)]="data.State" id="state" name="State"
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.State" id="state" name="State"
                                 required>
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">District:</label>
-                            <input type="text" class="form-control" [(ngModel)]="data.District" id="district"
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.District" id="district"
                                 name="District" required>
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">VDC/Municipality:</label>
-                            <input type="text" class="form-control" [(ngModel)]="data.Muncipality" id="muncipality"
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.Muncipality" id="muncipality"
                                 name="Muncipality" required>
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
-                        <div class="col-sm-4">
+                        <div class="col-sm-6">
                             <label for="usr"> Contact Number:</label>
-                            <input type="text" class="form-control" [(ngModel)]="data.ContactNo"
+                            <input type="tnext" class="form-control mb-2" [(ngModel)]="data.ClientCompanyContactNumber"
                                 id="contactNumber" name="ClientCompanyContactNumber" required>
                         </div>
                         <div class="col-sm-6">
                             <label for="exampleInputEmail1">
                                 Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
+                            <input type="email" class="form-control mb-2" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="data.Email"
                                 name="Email">
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
-                        <div class="col-sm-4">
+                        <div class="col-sm-6">
                             <label for="usr">
                                 Identity Type:</label>
-                            <input type="text" class="form-control" [(ngModel)]="data.IdentityType" id="identityType"
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.IdentityType" id="identityType"
                                 name="IdentityType" required>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-6">
                             <label for="usr">
                                 Identity Number:</label>
-                            <input type="text" class="form-control" [(ngModel)]="data.IdentityNo" id="identityNumber"
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.IdentityNo" id="identityNumber"
                                 name="IdentityNo" required>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                         <div class="col-sm-6">
                             <label for="usr">
                                 Company Name:</label>
-                            <input type="text" class="form-control" [(ngModel)]="data.ClientCompanyName" id="usr"
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.ClientCompanyName" id="usr"
                                 name="ClientCompanyName" required>
                         </div>
                     </div>
@@ -80,19 +80,19 @@
                         <div class="col-sm-4">
                             <label for="usr">
                                 Company Type:</label>
-                            <input type="text" class="form-control" [(ngModel)]="data.ClientType" id="usr"
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.ClientType" id="usr"
                                 name="ClientCompanyType" required>
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Company Idenity Number:</label>
-                            <input type="text" class="form-control" [(ngModel)]="data.ClientCompanyIdentityNumber"
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.ClientCompanyIdentityNumber"
                                 id="usr" name="ClientCompanyIdentityNumber" required>
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Company Identity Type:</label>
-                            <input type="text" class="form-control" [(ngModel)]="data.ClientCompanyIdentityType"
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.ClientCompanyIdentityType"
                                 id="usr" name="ClientType" required>
                         </div>
                     </div>
@@ -100,13 +100,13 @@
                         <div class="col-sm-6">
                             <label for="usr">
                                 UDT 1:</label>
-                            <input type="text" class="form-control" [(ngModel)]="data.UDF1" id="usr" name="Udf1"
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.UDF1" id="usr" name="Udf1"
                                 required>
                         </div>
                         <div class="col-sm-6">
                             <label for="usr">
                                 UDT 2:</label>
-                            <input type="text" class="form-control" [(ngModel)]="data.UDF2" id="usr" name="Udf2"
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.UDF2" id="usr" name="Udf2"
                                 required>
                         </div>
                     </div>

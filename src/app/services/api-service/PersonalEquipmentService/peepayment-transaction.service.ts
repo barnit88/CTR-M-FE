@@ -11,16 +11,19 @@ export class PEEPaymentTransactionService {
   peePayment : PEEPaymentTransaction[] = [];
 
   public getPEExpensePaymentList(): Observable < PEEPaymentTransaction[] > {
-      return this.http.get<PEEPaymentTransaction[]>(AppSettings.API_ROOT+'pee-payment-transaction')
+      return this.http.get<PEEPaymentTransaction[]>(AppSettings.API_ROOT+'PEEPaymentTransaction');
   }
   public getPEEPaymentTransactionById(id : number): Observable < PEEPaymentTransaction > {
-      return this.http.get<PEEPaymentTransaction>(AppSettings.API_ROOT+'pee-payment-transaction/' + id)
+      return this.http.get<PEEPaymentTransaction>(AppSettings.API_ROOT+'PEEPaymentTransaction/' + id);
   }
   public deletePEEPaymentTransactionById(id : number): Observable < PEEPaymentTransaction > {
-      return this.http.delete<PEEPaymentTransaction>(AppSettings.API_ROOT+'pee-payment-transaction/' + id)
+      return this.http.delete<PEEPaymentTransaction>(AppSettings.API_ROOT+'PEEPaymentTransaction/' + id);
   }
   public addPEEPaymentTransaction(entity : PEEPaymentTransaction): Observable < PEEPaymentTransaction > {
-      return this.http.post<PEEPaymentTransaction>(AppSettings.API_ROOT+'pee-payment-transaction', entity);
+      return this.http.post<PEEPaymentTransaction>(AppSettings.API_ROOT+'PEEPaymentTransaction', entity);
+  }
+  public peePaymentUpdate(id: number, entity: PEEPaymentTransaction): any{
+    return this.http.post(AppSettings.API_ROOT+'PEEPaymentTransaction/'+id, entity);
   }
 
   constructor(private http: HttpClient) { }

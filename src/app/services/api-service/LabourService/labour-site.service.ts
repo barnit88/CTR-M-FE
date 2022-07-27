@@ -11,16 +11,19 @@ export class LabourSiteService {
   labourSite : LabourSite[] = [];
 
   public getLabourSiteList(): Observable < LabourSite[] > {
-      return this.http.get<LabourSite[]>(AppSettings.API_ROOT+'labour-site')
+      return this.http.get<LabourSite[]>(AppSettings.API_ROOT+'LabourSite')
   }
   public getLabourSiteById(id : number): Observable < LabourSite > {
-      return this.http.get<LabourSite>(AppSettings.API_ROOT+'labour-site/' + id)
+      return this.http.get<LabourSite>(AppSettings.API_ROOT+'LabourSite/' + id)
   }
   public deleteLabourSiteById(id : number): Observable < LabourSite > {
-      return this.http.delete<LabourSite>(AppSettings.API_ROOT+'labour-site/' + id)
+      return this.http.delete<LabourSite>(AppSettings.API_ROOT+'LabourSite/' + id)
   }
   public addLabourSite(entity : LabourSite): Observable < LabourSite > {
-      return this.http.post<LabourSite>(AppSettings.API_ROOT+'labour-site', entity);
+      return this.http.post<LabourSite>(AppSettings.API_ROOT+'LabourSite', entity);
+  }
+  public lsUpdate(id: number, entity: LabourSite): any{
+    return this.http.post(AppSettings.API_ROOT+'LabouSite/'+id, entity);
   }
 
 constructor(private http:HttpClient){}
