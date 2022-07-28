@@ -31,6 +31,7 @@ export class EmployeepaymentcreateComponent implements OnInit {
   }else{
     this.UpdateEmployee();
   }
+  this.modelRef.hide();
   }
 
   private AddEmployee(): void{

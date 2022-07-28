@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Material } from './../../../../entity/models/Material/material';
-import { NgForm } from '@angular/forms';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { MaterialService } from './../../../../services/api-service/MaterialService/material.service';
 import { MaterialTitle } from 'src/app/entity/Enum/Enums';
@@ -22,6 +21,7 @@ export class MaterialcreateComponent implements OnInit {
   }
 
   public materialSubmit(){
+    console.log(this.data);
     if(this.data.Id === undefined || this.data.Id === null || this.data.Id === 0){
       this.AddMaterial();
     }else{

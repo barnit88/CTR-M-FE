@@ -24,7 +24,6 @@ export class ClientlistComponent implements OnInit {
   }
   
 
-
   onGetClientList(): any {
     this.clientService.getAll().subscribe((response)=> this.data = response,
       (error:any)=> console.log(error),

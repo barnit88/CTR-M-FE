@@ -1,33 +1,47 @@
 <app-card-create [title]="title">
     <div class="container-fluid">
-        <form #extendGiveContractForm="ngForm" (submit)="extendGiveContractSubmit()">
+        <form #extendgivecontractform="ngForm" (submit)="extendGiveContractSubmit()">
             <div class="card-body">
                 <div class="form-group">
                     <div class="row mt-3 md-3">
-                        <div class="col-sm-4"><label for="usr"> Give Contract:</label>
-                            <input type="text" class="form-control mb-2"  (ngModel)="data.GiveContract" name="GiveContract" id="giveContract" required>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Give Contract:</label>
+                            <input type="text" class="form-control mb-2"
+                             (ngModel)="data.GiveContract"
+                              name="GiveContract"
+                               id="giveContract"
+                                #givecontract='ngModel'
+                                [class.is-invalid]="givecontract.dirty && givecontract.invalid"
+                                 required="true">
                         </div>
-                        <div class="col-sm-4"><label for="usr">Additional Period:</label>
-                            <input type="text" class="form-control mb-2"  (ngModel)="data.AdditionalPeriod" name="AdditionalPeriod" id="additionalPeriod" required>
+                        <div class="col-sm-4">
+                            <label for="usr">Additional Period:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.AdditionalPeriod" name="AdditionalPeriod" id="additionalPeriod" min="" max="" required="true">
                         </div>
-                        <div class="col-sm-4"><label for="usr">Additional Budget:</label>
-                            <input type="text" class="form-control mb-2"  (ngModel)="data.AdditionalBudget" name="AdditionalBudget"  id="additionalBudget" required>
+                        <div class="col-sm-4">
+                            <label for="usr">Additional Budget:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.AdditionalBudget" name="AdditionalBudget" id="additionalBudget" required="true">
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
-                        <div class="col-sm-6"><label for="date">From Date:</label>
-                            <input class="form-control mb-2" id="date"(ngModel)="data.DateFrom" name="DateFrom" placeholder="MM/DD/YYY" type="date" required/>
+                        <div class="col-sm-6">
+                            <label for="date">From Date:</label>
+                            <input class="form-control mb-2" id="date" (ngModel)="data.DateFrom" name="DateFrom" placeholder="MM/DD/YYY" type="date" required="true"/>
                         </div>
-                        <div class="col-sm-6"><label for="usr">To Date:</label>
-                            <input class="form-control mb-2" id="date" name="ToDate" (ngModel)="data.ToDate" placeholder="MM/DD/YYY" type="date" required/>
+                        <div class="col-sm-6">
+                            <label for="usr">To Date:</label>
+                            <input class="form-control mb-2" id="date" name="ToDate" (ngModel)="data.ToDate" placeholder="MM/DD/YYY" type="date" required="true"/>
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
-                        <div class="col-sm-6"><label for="usr">UDF1 1:</label>
-                            <input type="text" class="form-control mb-2"  (ngModel)="data.UDF1" name="UDF1" id="udf1">
+                        <div class="col-sm-6">
+                            <label for="usr">UDF1 1:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.UDF1" name="UDF1" id="udf1" required="false">
                         </div>
-                        <div class="col-sm-6"><label for="usr">UDF 2:</label>
-                            <input type="text" class="form-control mb-2"  (ngModel)="data.UDF2" name="UDF2" id="udf2">
+                        <div class="col-sm-6">
+                            <label for="usr">UDF 2:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.UDF2" name="UDF2" id="udf2" required="false">
                         </div>
                     </div>
                     <div class="row mt-3 md-3">

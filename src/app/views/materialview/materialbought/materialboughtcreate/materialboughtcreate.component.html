@@ -8,73 +8,180 @@
                         <div class="col-sm-4">
                             <label for="usr">
                                 Material ID:</label>
-                            <input type="text" [(ngModel)]="data.MaterialId" name="MaterialId" class="form-control mb-2" id="usr">
+                            <input type="number"
+                            [(ngModel)]="data.MaterialId"
+                            name="MaterialId"
+                            class="form-control mb-2"
+                             id="usr"
+                             #MaterialId ="ngModel"
+                             minlength="3"
+                             maxlength="10"
+                             [class.is-invalid]="MaterialId.dirty && MaterialId.invalid"
+                             required="true"
+                             >
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Material:</label>
-                            <input type="text" [(ngModel)]="data.Material" name="Material" class="form-control mb-2" id="usr">
+                            <select type="text"
+                            [(ngModel)]="data.Material"
+                            name="Material"
+                            class="form-control mb-2"
+                            id="usr"
+                            minlength="3"
+                            maxlength="30"
+                            #Material="ngModel"
+                            [class.is-invalid]="Material.dirty && Material.invalid"
+                            required>
+                          <option *ngFor="let a of materialList; let i =index" value="a">{{a}}</option>
+                        </select>
+
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Vendor ID:</label>
-                            <input type="text" [(ngModel)]="data.VendorId" name="VendorId" class="form-control mb-2" id="usr">
+                            <input type="number"
+                             [(ngModel)]="data.VendorId"
+                              name="VendorId"
+                               class="form-control mb-2"
+                                id="usr"
+                                #VendorId="ngModel"
+                                [class.is-invalid]="VendorId.dirty && VendorId.invalid"
+                                minlength="3"
+                                maxlength="10"
+                                required="true">
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4">
                             <label for="usr">
                                 Vendor:</label>
-                            <input type="text" [(ngModel)]="data.Vendor" name="Vendor" class="form-control mb-2" id="usr">
+                            <input type="text"
+                             [(ngModel)]="data.Vendor"
+                              name="Vendor"
+                               class="form-control mb-2"
+                                id="usr"
+                                #Vendor = "ngModel"
+                                [class.is-invalid]="Vendor.dirty && Vendor.invalid"
+                                pattern="[a-zA-Z]*"
+                                minlength="2"
+                                maxlength="30"
+                                required="true">
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Site ID:</label>
-                            <input type="text" [(ngModel)]="data.SiteId" name="SiteId" class="form-control mb-2" id="usr">
+                            <input type="number"
+                             [(ngModel)]="data.SiteId"
+                              name="SiteId"
+                               class="form-control mb-2"
+                                id="usr"
+                                #SiteId="ngModel"
+                                [class.is-invalid]="SiteId.dirty && SiteId.invalid"
+                                >
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Site:</label>
-                            <input type="text" [(ngModel)]="data.Site" name="Site" class="form-control mb-2" id="usr">
+                            <input type="text"
+                             [(ngModel)]="data.Site"
+                              name="Site"
+                               class="form-control mb-2"
+                                id="usr"
+                                #Site="ngModel"
+                                [class.is-invalid]="Site.dirty && Site.invalid"
+                                pattern="[a-zA-Z]*"
+                                minlength="3"
+                                maxlength="30"
+                                required="true">
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4">
                             <label for="usr">
                                 Quantity:</label>
-                            <input type="text" [(ngModel)]="data.Quantity" name="Quantity" class="form-control mb-2" id="usr">
+                            <input type="number"
+                             [(ngModel)]="data.Quantity"
+                              name="Quantity"
+                               class="form-control mb-2"
+                                id="usr"
+                                #Quantity="ngModel"
+                                [class.is-invalid]="Quantity.dirty && Quantity.invalid">
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Rate:</label>
-                            <input type="text" [(ngModel)]="data.Rate" name="Rate" class="form-control mb-2" id="usr">
+                            <input type="number"
+                             [(ngModel)]="data.Rate"
+                              name="Rate"
+                               class="form-control mb-2"
+                                id="usr"
+                                #Rate="ngModel"
+                                [class.is-invalid]="Rate.dirty && Rate.invalid"
+                                minlength="1"
+                                maxlength="10"
+                                required="true">
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Total Price:</label>
-                            <input type="text" [(ngModel)]="data.TotalPrice" name="TotalPrice" class="form-control mb-2" id="usr">
+                            <input type="number" 
+                            [(ngModel)]="data.TotalPrice"
+                             name="TotalPrice"
+                              class="form-control mb-2"
+                              #TotalPrice="ngModel" 
+                              id="usr"
+                              [class.is-invalid]="TotalPrice.dirty && TotalPrice.invalid"
+                              minlength="1"
+                              required="true">
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4">
                             <label for="usr">
                                 Bought Date:</label>
-                            <input type="text" [(ngModel)]="data.BoughtDate" name="BoughtDate" class="form-control mb-2" id="usr">
+                            <input type="date"
+                            
+                            [(ngModel)]="data.BoughtDate"
+                            name="BoughtDate"
+                            class="form-control mb-2"
+                            id="usr"
+                            #BoughtDate="ngModel"
+                            [class.is-invalid]="BoughtDate.dirty && BoughtDate.invalid"
+                            >
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 UDF1:</label>
-                            <input type="text" [(ngModel)]="data.UDF1" name="UDF1" class="form-control mb-2" id="usr">
+                            <input type="text"
+                             [(ngModel)]="data.UDF1"
+                              name="UDF1"
+                               class="form-control mb-2"
+                                id="usr"
+                                #UDF1="ngModel"
+                                [class.is-valid]="UDF1.dirty && UDF1.invalid"
+                                minlength="3"
+                                maxlength="30"
+                                required="false">
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 UDF2:</label>
-                            <input type="text" [(ngModel)]="data.UDF2" name="UDF2" class="form-control mb-2" id="usr">
+                            <input type="text"
+                             [(ngModel)]="data.UDF2"
+                              name="UDF2"
+                               class="form-control mb-2"
+                                id="usr"
+                                #UDF2="ngModel"
+                                [class.is-valid]="UDF2.dirty && UDF2.invalid"
+                                minlength="3"
+                                maxlength="30"
+                                required="false">
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
                         <div class="col-sm-6">
-                            <button type="submit" [disabled]="!materialboughtform.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+                            <button type="submit" [disabled]="!materialboughtform.valid" class="btn btn-outline-success btn-lg ml-0 mx-2">Submit</button>
                         </div>
                     </div>
                 </div>

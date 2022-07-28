@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { VendorService } from './../../../services/api-service/VendorService/vendor.service';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { VendorTitle } from 'src/app/entity/Enum/Enums';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-vendorcreate',
@@ -30,7 +31,7 @@ public onVendorSubmit() : void {
     this.modelRef.hide();
 }
 
-private AddVendor() : void {
+private AddVendor() : any {
     this.vendorService.addVendor(this.data).subscribe(
       (response) => console.log('done with adding' + response),
        (error) => console.log(error));

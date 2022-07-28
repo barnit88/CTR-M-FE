@@ -5,64 +5,67 @@
                 <div class="form-group">
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4"><label for="usr"> First Name:</label>
-                            <input type="text"[(ngModel)]="data.FirstName" name="name" class="form-control mb-2" id="usr">
+                            <input type="text"[(ngModel)]="data.FirstName" name="FirstName"class="form-control mb-2" id="usr">
                         </div>
                         <div class="col-sm-4"><label for="usr"> Midddle Name:</label>
-                            <input type="text"[(ngModel)]="data.MiddleName" name="name" class="form-control mb-2" id="usr">
+                            <input type="text"[(ngModel)]="data.MiddleName" name="MiddleName" class="form-control mb-2" id="usr">
                         </div>
                         <div class="col-sm-4"><label for="usr"> Last Name:</label>
-                            <input type="text"[(ngModel)]="data.LastName" name="name" class="form-control mb-2" id="usr">
+                            <input type="text"[(ngModel)]="data.LastName" name="LastName" class="form-control mb-2" id="usr">
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4"><label for="usr">State:</label>
-                            <input type="text"[(ngModel)]="data.State" name="name" class="form-control mb-2" id="usr">
+                            <input type="text"[(ngModel)]="data.State" name="State" class="form-control mb-2" id="usr">
                         </div>
                         <div class="col-sm-4"><label for="usr">District:</label>
-                            <input type="text"[(ngModel)]="data.District" name="name" class="form-control mb-2" id="usr">
+                            <input type="text"[(ngModel)]="data.District" name="District" class="form-control mb-2" id="usr">
                         </div>
                         <div class="col-sm-4"><label for="usr">VDC/Municipality:</label>
-                            <input type="text"[(ngModel)]="data.Muncipality" name="name" class="form-control mb-2" id="usr">
+                            <input type="text"[(ngModel)]="data.Muncipality" name="Municipality" class="form-control mb-2" id="usr">
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4"><label for="usr">Contact Number:</label>
-                            <input type="text"[(ngModel)]="data.ContactNumber" name="name" class="form-control mb-2" id="usr">
+                            <input type="text"[(ngModel)]="data.ContactNumber" name="ContactNo"class="form-control mb-2" id="usr">
                         </div>
                         <div class="col-sm-4">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            <input type="email" name="Email" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp"
                                 placeholder="Enter email" [(ngModel)]="data.Email" >
                             </div>
                             <div class="col-sm-4"><label for="usr">Identity Type:</label>
-                                <input type="text"[(ngModel)]="data.IdentityType" name="name" class="form-control mb-2" id="usr">
+                                <input type="text"[(ngModel)]="data.IdentityType" name="IdentityType" class="form-control mb-2" id="usr">
                             </div>
                         </div>
                         <div class="row mt-3 md-3">
                             <div class="col-sm-4"><label for="usr">Vendor Type:</label>
-                                <input type="text"[(ngModel)]="data.VendorType" name="name" class="form-control mb-2" id="usr">
+                                <input type="text"[(ngModel)]="data.VendorType" name="VendorType" class="form-control mb-2" id="usr">
                             </div>
                             <div class="col-sm-4"><label for="usr">Company Name :</label>
-                                <input type="text"[(ngModel)]="data.CompanyName" name="name" class="form-control mb-2" id="usr">
+                                <input type="text"[(ngModel)]="data.CompanyName" name="CompanyName" class="form-control mb-2" id="usr">
                             </div>
                             <div class="col-sm-4"><label for="usr">Company Contact No :</label>
-                                <input type="text"[(ngModel)]="data.CompanyContactNo" name="name" class="form-control mb-2" id="usr">
+                                <input type="text"[(ngModel)]="data.CompanyContactNo" name="CompanyContactNo" class="form-control mb-2" id="usr">
                             </div>
                         </div>
                         <div class="row mt-3 md-3">
                             <div class="col-sm-4"><label for="usr">Company Identity Type :</label>
-                                <input type="text"[(ngModel)]="data.CompanyIdentityType" name="name" class="form-control mb-2" id="usr">
+                                <input type="text"[(ngModel)]="data.CompanyIdentityType" name="CompanyIdentityType" class="form-control mb-2" id="usr">
                             </div>
                             <div class="col-sm-4"><label for="usr">Company Identity Number :</label>
-                                <input type="text"[(ngModel)]="data.CompanyIdentityNumber" name="name" class="form-control mb-2" id="usr">
+                                <input type="text"[(ngModel)]="data.CompanyIdentityNumber" name="CompanyIdentityNumber" class="form-control mb-2" id="usr">
                             </div>
-                            <div class="col-sm-4"><label for="usr">UDF 1:</label>
-                                <input type="text"[(ngModel)]="data.UDF1" name="name" class="form-control mb-2" id="usr">
+                            <div class="col-sm-4"><label for="usr">:</label>
+                                <input type="text"[(ngModel)]="data.IdentityNo" name="UDF1" class="form-control mb-2" id="usr">
                             </div>
                         </div>
                         <div class="row mt-3 md-3">
+                            <div class="col-sm-6"><label for="usr">UDF 1:</label>
+                                <input type="text"[(ngModel)]="data.UDF1" name="UDF1" class="form-control mb-2" id="usr">
+                            </div>
                             <div class="col-sm-6"><label for="usr">UDF 2:</label>
-                                <input type="text"[(ngModel)]="data.UDF2" name="name" class="form-control mb-2" id="usr">
+                                <input type="text"[(ngModel)]="data.UDF2" name="UDF2" class="form-control mb-2" id="usr">
                             </div>
                         </div>
                         <div class="row mt-3 md-3">

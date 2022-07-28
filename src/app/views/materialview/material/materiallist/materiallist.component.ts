@@ -18,7 +18,9 @@ export class MateriallistComponent implements OnInit {
      private genericDetailPopUpService: GenericDetailPopUpService,
      private materialService:MaterialService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.onGetMaterialList();
+  }
   onGetMaterialList(): any{
     this.materialService.getMaterialList().subscribe(
       (response)=> response.map(response=>{
