@@ -2,34 +2,20 @@
     <div class="container-fluid">
         <div class="card-body">
             <form action="" #materialsoldform="ngForm" (ngSubmit)="materialSoldSubmit()">
-                <div class="form-group">
+                <div class="form-group text-uppercase">
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4">
-                            <label for="usr">
-                                Material ID:</label>
-                            <input type="text" [(ngModel)]="data.MaterialId" name="MaterialId" class="form-control mb-2" id="usr">
-                        </div>
-                        <div class="col-sm-4">
-                            <label for="usr">
+                            <label for="material">
                                 Material:</label>
-                            <input type="text" [(ngModel)]="data.Material" name="Material" class="form-control mb-2" id="usr">
+                            <select type="text" [(ngModel)]="data.Material" name="Material" class="form-control mb-2" id="material" #material="ngModel" [class.is-invalid]="material.dirty && material.invalid">
+                                <option value="0">please select material</option>
+                                <option *ngFor="let m of materials;" value="{{m.Id}}">{{m.MaterialName}}</option>
+                            </select>
                         </div>
                         <div class="col-sm-4">
-                            <label for="usr">
-                                Client ID:</label>
-                            <input type="text" [(ngModel)]="data.ClientId" name="CLientId" class="form-control mb-2" id="usr">
-                        </div>
-                    </div>
-                    <div class="row mt-3 md-3">
-                        <div class="col-sm-4">
-                            <label for="usr">
+                            <label for="client">
                                 Client:</label>
-                            <input type="text" [(ngModel)]="data.Client" name="Client" class="form-control mb-2" id="usr">
-                        </div>
-                        <div class="col-sm-4">
-                            <label for="usr">
-                                Site ID:</label>
-                            <input type="text" [(ngModel)]="data.SiteId" name="SiteId" class="form-control mb-2" id="usr">
+                            <input type="text" [(ngModel)]="data.Client" name="Client" class="form-control mb-2" id="client">
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
@@ -71,11 +57,14 @@
                             <input type="text" [(ngModel)]="data.UDF2" name="UDF2" class="form-control mb-2" id="usr">
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <button type="submit" [disabled]="!materialsoldform.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+                    <div class="row mt-3 md-3" >
+                        <div class="col-sm-4">
+                            <button type="submit" [disabled]="!materialsoldform.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+                        </div>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </app-card-create>
+

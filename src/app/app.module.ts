@@ -442,7 +442,8 @@ import { Buttons } from './entity/Enum/Enums';
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

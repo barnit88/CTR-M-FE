@@ -20,7 +20,7 @@ export class MaterialcreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public materialSubmit(){
+  public submit(){
     console.log(this.data);
     if(this.data.Id === undefined || this.data.Id === null || this.data.Id === 0){
       this.AddMaterial();

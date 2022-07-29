@@ -4,14 +4,8 @@
             <form action="" #peExpensesForm="ngForm" (ngSubmit)="peExpenseSubmit()" >
             <div class="form-group">
                 <div class="row mt-3 md-3">
-                    <div class="col-sm-4"><label for="usr"> Personal Equipment ID:</label>
-                        <input type="text"[(ngModel)]="data.PersonalEquipmentId" name="name" class="form-control mb-2" id="usr">
-                    </div>
                     <div class="col-sm-4"><label for="usr"> Personal Equipment:</label>
                         <input type="text"[(ngModel)]="data.PersonalEquipment" name="name" class="form-control mb-2" id="usr">
-                    </div>
-                    <div class="col-sm-4"><label for="usr"> Vendor ID:</label>
-                        <input type="text"[(ngModel)]="data.VendorId" name="name" class="form-control mb-2" id="usr">
                     </div>
                 </div>
                 <div class="row mt-3 md-3">

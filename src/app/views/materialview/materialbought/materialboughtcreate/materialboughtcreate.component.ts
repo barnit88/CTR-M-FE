@@ -5,6 +5,7 @@ import { MaterialBoughtService } from './../../../../services/api-service/Materi
 import { MaterialBoughtTitle } from 'src/app/entity/Enum/Enums';
 import { MaterialService } from './../../../../services/api-service/MaterialService/material.service';
 import { pipe } from 'rxjs';
+import { Material } from 'src/app/entity/models/Material/material';
 
 
 @Component({
@@ -15,22 +16,25 @@ import { pipe } from 'rxjs';
 export class MaterialboughtcreateComponent implements OnInit {
   data:MaterialBought;
   title:MaterialBoughtTitle.Create;
-  materialList=[];
+  materials:Material[]=[];
 
   constructor(private modelRef: BsModalRef,
     private materialBoughtService: MaterialBoughtService,
     private materialService:MaterialService) { }
 
   ngOnInit(): void {
-    this.MaterialList();
-    console.log(this.materialList);
-        
+    this.MaterialList();        
+  }
+
+  check(Material){
+    console.log(Material);
   }
   public MaterialList(): any{
     this.materialService.getMaterialList().subscribe(
-      (data)=>data.map((res)=> {
-        return this.materialList.push(res.MaterialName)
-      }),
+      (data)=>{
+        this.materials = data;
+      }
+      ,
       (error)=> console.log(error));
   }
   

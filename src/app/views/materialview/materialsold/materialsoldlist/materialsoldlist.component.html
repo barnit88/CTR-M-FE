@@ -5,10 +5,7 @@
         <thead>
           <tr>
             <th>S/N</th>
-            <th> MATERIAL ID</th>
-            <th> MATERIAL</th>
-            <TH>CLIENT ID</TH>
-            <th> SITE ID</th>
+            <th>MATERIAL</th>
             <th>QUANTITY</th>
             <th>RATE</th>
             <th>TOTAL PRICE</th>
@@ -19,10 +16,7 @@
         <tbody>
           <tr *ngFor="let e of materialSoldData; let i = index">
             <td>{{i+1}}</td>
-            <td>{{e.MaterialId}}</td>
             <td>{{e.MAterial}}</td>
-            <td>{{e.ClientId}}</td>
-            <td>{{e.SiteId}}</td>
             <td>{{e.Quantity}}</td>
             <td>{{e.Rate}}</td>
             <td>{{e.TotalPrice}}</td>
