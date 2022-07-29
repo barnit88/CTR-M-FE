@@ -4,11 +4,15 @@
             <form action="" #takecontractform="ngForm" (ngSubmit)="takeContractSubmit()">
                 <div class="row mt-3 md-3">
                     <div class="col-sm-4">
-                        <label for="usr">
+                        <label for="client">
                             Client:
                         </label>
-                        <select type="text" class="form-control mb-2" [(ngModel)]="data.Client" name="Client" id="usr"
-                            #client="ngModel">
+                        <select 
+                            type="text" class="form-control mb-2" id="client" name="Client" 
+                            (change)="assignClientId($event)">
+                            <option selected>
+                                Please Select Client
+                            </option>
                             <option *ngFor="let client of clients;" value="{{client.Id}}">
                                 {{client.FirstName}} {{client.MiddleName}} {{client.LastName}} {{client.ClientCompanyName}}
                             </option>

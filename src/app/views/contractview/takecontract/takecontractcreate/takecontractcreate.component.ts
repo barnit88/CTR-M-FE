@@ -1,6 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { TakeContract } from './../../../../entity/models/Contract/take-contract';
-import { NgForm } from '@angular/forms';
 import { TakeContractTitle } from 'src/app/entity/Enum/Enums';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { TakeContractService } from './../../../../services/api-service/ContractService/take-contract.service';
@@ -19,13 +18,23 @@ export class TakecontractcreateComponent implements OnInit, OnChanges{
   title:TakeContractTitle.Create;
   clients: Client[]=[];
   sites:Site[]=[];
-  
+  client:string[]=["a","a","a"];
   constructor(private modelRef: BsModalRef,
     private takeContractService: TakeContractService,
     private clientService:ClientService,
     private siteService:SiteService) { }
   ngOnChanges(changes: SimpleChanges): void {
     throw new Error('Method not implemented.');
+  }
+
+  invalidClientId :boolean = false;
+  assignClientId(event){
+    if(Number.parseInt(event.target.value)){
+      this.invalidClientId = false;
+      this.data.ClientId=event.target.value;
+    }else{
+      this.invalidClientId = true;
+    }
   }
 
   ngOnInit(): void {
