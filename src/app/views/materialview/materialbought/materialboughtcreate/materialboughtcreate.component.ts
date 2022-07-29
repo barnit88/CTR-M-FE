@@ -6,6 +6,10 @@ import { MaterialBoughtTitle } from 'src/app/entity/Enum/Enums';
 import { MaterialService } from './../../../../services/api-service/MaterialService/material.service';
 import { pipe } from 'rxjs';
 import { Material } from 'src/app/entity/models/Material/material';
+import { SiteService } from './../../../../services/api-service/SiteService/site.service';
+import { Site } from 'src/app/entity/models/Site/site';
+import { Vendor } from 'src/app/entity/models/Vendor/vendor';
+import { VendorService } from './../../../../services/api-service/VendorService/vendor.service';
 
 
 @Component({
@@ -17,13 +21,18 @@ export class MaterialboughtcreateComponent implements OnInit {
   data:MaterialBought;
   title:MaterialBoughtTitle.Create;
   materials:Material[]=[];
-
+  sites: Site[]=[];
+  vendors: Vendor[]=[];
   constructor(private modelRef: BsModalRef,
     private materialBoughtService: MaterialBoughtService,
-    private materialService:MaterialService) { }
+    private materialService:MaterialService,
+    private siteService: SiteService,
+    private vendorService:VendorService) { }
 
   ngOnInit(): void {
-    this.MaterialList();        
+    this.MaterialList();   
+    this.SiteList();  
+    this.VenodrList();   
   }
 
   check(Material){
@@ -33,15 +42,21 @@ export class MaterialboughtcreateComponent implements OnInit {
   onSelect(): any{
     console.log('chnage')
   }
-
-
+  public SiteList(): void{
+    this.siteService.getSiteList().subscribe(
+      (data)=> this.sites = data,
+      (error)=> console.log(error));
+  }
 
   public MaterialList(): any{
     this.materialService.getMaterialList().subscribe(
-      (data)=>{
-        this.materials = data;
-      }
-      ,
+      (data)=>this.materials = data,
+      (error)=> console.log(error));
+  }
+
+  public VenodrList(): void{
+    this.vendorService.getVendorList().subscribe(
+      (data)=> this.vendors = data,
       (error)=> console.log(error));
   }
   

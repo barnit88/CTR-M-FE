@@ -12,9 +12,12 @@ export class LabourcreateComponent implements OnInit {
     constructor(private modelRef: BsModalRef,
         private labourService: LabourService,
     ) {}
+    
     ngOnInit(): void {  }
 
     public onLabourSubmit(): void {
+        console.log(this.data);
+        
         if (this.data.Id === undefined || this.data.Id === null || this.data.Id === 0){
             this.AddLabour();
         } else {
@@ -24,7 +27,7 @@ export class LabourcreateComponent implements OnInit {
     }
 
     private AddLabour(): void {
-        this.labourService.addLabour(this.data). subscribe(
+        this.labourService.addLabour(this.data).subscribe(
             (resposne)=> console.log('done with response'+ resposne),
             (error)=> console.log(error)
         )

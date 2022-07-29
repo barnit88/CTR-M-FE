@@ -20,9 +20,14 @@
                     </div>
                     <div class="col-sm-4">
                         <label for="usr">Site:</label>
-                        <select type="text" class="form-control mb-2" [(ngModel)]="data.Site" name="Site" id="usr"
-                            #site="ngModel">
-                            <option *ngFor="let site of sites;" value="{{site.Id}}">{{site.SiteName}}</option>
+                        <select type="text"
+                         class="form-control mb-2"
+                          (ngModel)="data.Site"
+                           name="Site"
+                            id="usr"
+                            #site="ngModel"
+                            >
+                            <option *ngFor="let s of sites;" value="{{s.Id}}">{{s.SiteName}}</option>
                         </select>
                     </div>
                     <div class="col-sm-4">

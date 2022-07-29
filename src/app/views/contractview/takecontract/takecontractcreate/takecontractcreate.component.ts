@@ -42,8 +42,8 @@ export class TakecontractcreateComponent implements OnInit, OnChanges{
     this.getSiteList();
   }
 
-  addClient(_$event: any): any{
-    console.log('the option selected chnage detection'+_$event);
+  addClient(event: Event): any{
+    console.log('the option selected chnage detection'+event.target);
     
   }
   //get clients function
@@ -64,22 +64,20 @@ export class TakecontractcreateComponent implements OnInit, OnChanges{
   //submit function
   public takeContractSubmit(): void{
     if (this.data.Id === undefined || this.data.Id === null || this.data.Id === 0) {
-      try {
         this.AddTC();
-      } catch (error) {
-        console.log('error: While data add');        
-      }
     } else {
       this.UpdateTC();
     }
     this.modelRef.hide();
     console.log(this.data);
   }
+
   private AddTC(): void {
     this.takeContractService.addTakeContract(this.data).subscribe(
       (response)=> console.log('done with adding '+ response),
       (error)=> console.log(error));
   }
+
   private UpdateTC(): void {
     this.takeContractService.updateTakeContract(this.data.Id, this.data).subscribe(
       (response)=> console.log('done with update '+ response),

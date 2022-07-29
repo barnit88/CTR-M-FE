@@ -7,75 +7,75 @@
                     <div class="col-sm-4">
                         <label for="usr">
                             First Name:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.FirstName" name="FirstName" id="usr" required>
+                        <input type="text" class="form-control mb-2" (ngModel)="data.FirstName" name="FirstName" id="usr">
                     </div>
                     <div class="col-sm-4">
                         <label for="usr">
                             Midddle Name:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.MiddleName" name="MiddleName" id="usr" required>
+                        <input type="text" class="form-control mb-2" (ngModel)="data.MiddleName" name="MiddleName" id="usr">
                     </div>
                     <div class="col-sm-4">
                         <label for="usr">
                             Last Name:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.LastName" name="LastName" id="usr" required>
+                        <input type="text" class="form-control mb-2" (ngModel)="data.LastName" name="LastName" id="usr">
                     </div>
                 </div>
                 <div class="row mt-3 md-3">
                     <div class="col-sm-4">
                         <label for="usr">State:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.State" name="State" id="usr" required>
+                        <input type="text" class="form-control mb-2" (ngModel)="data.State" name="State" id="usr">
                     </div>
                     <div class="col-sm-4">
                         <label for="usr">District:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.District" name="District" id="usr" required>
+                        <input type="text" class="form-control mb-2" (ngModel)="data.District" name="District" id="usr">
                     </div>
                     <div class="col-sm-4">
                         <label for="usr">VDC/Municipality:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.Muncipality" name="Municipality"  id="usr" required>
+                        <input type="text" class="form-control mb-2" (ngModel)="data.Muncipality" name="Municipality"  id="usr">
                     </div>
                 </div>
                 <div class="row mt-3 md-3">
                     <div class="col-sm-4">
                         <label for="usr">Contact Number:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.State" name="ContactNo" id="usr" required>
+                        <input type="text" class="form-control mb-2" (ngModel)="data.ContactNo" name="ContactNo" id="usr">
                     </div>
                     <div class="col-sm-4">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp"(ngModel)="data.Email" name="Email" required>
+                        <input type="email" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp"(ngModel)="data.Email" name="Email">
                     </div>
                     <div class="col-sm-4">
                         <label for="usr">Identity Number:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.IdentityNo" name="IdentityNumber" id="usr" required>
+                        <input type="text" class="form-control mb-2" (ngModel)="data.IdentityNo" name="IdentityNumber" id="usr">
                     </div>
                 </div>
                 <div class="row mt-3 md-3">
                     <div class="col-sm-4">
                         <label for="usr">Identity Type:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.IdentityType" name="IdentityType" id="usr" required>
+                        <input type="text" class="form-control mb-2" (ngModel)="data.IdentityType" name="IdentityType" id="usr">
                     </div>
                     <div class="col-sm-4">
                         <label for="usr">
                             LabourData Type:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.LabourType" name="LabourType" id="usr" required>
+                        <input type="text" class="form-control mb-2" (ngModel)="data.LabourType" name="LabourType" id="usr">
                     </div>
                     <div class="col-sm-4">
                         <label for="usr">DOB:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.DateOfBirth" name="DateOfBirth" id="usr" required>
+                        <input type="text" class="form-control mb-2" (ngModel)="data.DateOfBirth" name="DateOfBirth" id="usr">
                     </div>
                 </div>
                 <div class="row mt-3 md-3">
                     <div class="col-sm-6">
                         <label for="usr">UDT 1:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.UDF1" name="UDF1" id="usr" required>
+                        <input type="text" class="form-control mb-2" (ngModel)="data.UDF1" name="UDF1" id="usr">
                     </div>
                     <div class="col-sm-6">
                         <label for="usr">UDT 2:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.UDF2" name="UDF2" id="usr" required>
+                        <input type="text" class="form-control mb-2" (ngModel)="data.UDF2" name="UDF2" id="usr">
                     </div>
                 </div>
                 <div class="row mt-3 md-3">
                     <div class="col-sm-6">
-                        <button type="submit" class="btn btn-outline-success btn-lg mx-2" [disabled]="labourDataForm.form.valid">Submit</button>
+                        <button type="submit" class="btn btn-outline-success btn-lg mx-2" [disabled]="!labourDataForm.valid">Submit</button>
                     </div>
                 </div>
             </div>
