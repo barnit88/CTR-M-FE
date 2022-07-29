@@ -4,16 +4,12 @@
             <form action="" #gcPaymentForm="ngForm" (ngSubmit)="gcPaymentSubmit()">
                 <div class="form-group">
                     <div class="row mt-3 md-3">
-                        <div class="col-sm-4">
-                            <label for="usr">Give Contract ID:</label>
-                            <input type="text" class="form-control mb-2"  [(ngModel)]="data.GiveContractId" name="GiveContractId"  id="giveContractId" required>
-                        </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-6">
                             <label for="usr">
                                 Give Contract:</label>
                             <input type="text" class="form-control mb-2"  [(ngModel)]="data.GiveContract" name="GiveContract"  id="giveContract" required>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-6">
                             <label for="usr">
                                 Additional Budget:</label>
                             <input type="text" class="form-control mb-2"  [(ngModel)]="data.Payment" name="AdditionalBudget" id="additionalBudget" required>

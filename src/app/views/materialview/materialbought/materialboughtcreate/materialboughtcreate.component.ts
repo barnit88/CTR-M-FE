@@ -29,6 +29,13 @@ export class MaterialboughtcreateComponent implements OnInit {
   check(Material){
     console.log(Material);
   }
+
+  onSelect(): any{
+    console.log('chnage')
+  }
+
+
+
   public MaterialList(): any{
     this.materialService.getMaterialList().subscribe(
       (data)=>{

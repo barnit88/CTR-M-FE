@@ -11,8 +11,9 @@
                           (ngModel)="data.Client"
                            name="Client"
                             id="usr"
-                            #client="ngModel" 
-                            (onchange)="addClient()">
+                            #client="ngModel"
+                            (onselect)="addClient($event)"  
+                            >
                             <option  *ngFor="let c of clients;" value="{{c.Id}}">{{c.ClientCompanyName}}</option>
                             </select>
                     </div>

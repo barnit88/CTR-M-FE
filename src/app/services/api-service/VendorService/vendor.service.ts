@@ -20,7 +20,7 @@ export class VendorService {
   public deleteVendorById(id : number): Observable < Vendor > {
       return this.http.delete<Vendor>(AppSettings.API_ROOT+'Vendor/' + id)
   }
-  public addVendor(entity : Vendor): Observable < Vendor > {
+  public addVendor(entity : Vendor): Observable <Vendor> {
       return this.http.post<Vendor>(AppSettings.API_ROOT+'Vendor', entity);
   }
   public updateVendor(id: number, entity: Vendor): any{

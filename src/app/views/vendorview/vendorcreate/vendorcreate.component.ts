@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Vendor } from './../../../entity/models/Vendor/vendor';
-import { NgForm } from '@angular/forms';
 import { VendorService } from './../../../services/api-service/VendorService/vendor.service';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { VendorTitle } from 'src/app/entity/Enum/Enums';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-vendorcreate',
@@ -23,7 +21,7 @@ export class VendorcreateComponent implements OnInit {
 
 public onVendorSubmit() : void {
     console.log(this.data);
-    if (this.data.Id === undefined || this.data.Id === null, this.data.Id === 0) {
+    if (this.data.Id === undefined || this.data.Id === null || this.data.Id === 0) {
         this.AddVendor();
     } else {
         this.UpdateVendor();
@@ -42,6 +40,5 @@ private UpdateVendor() : void {
       (response: any) => console.log('done with update' + response),
        (error: any) => console.log(error));
 }
-
 
 }

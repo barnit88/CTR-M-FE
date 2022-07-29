@@ -1,48 +1,51 @@
 <app-card-create [title]="title">
-  <div class="container-fluid">
-    <div class="card-body">
-      <form action="" #rviPaymentTransactionForm="ngForm" (ngSubmit)="rviPaymentSubmit()" >
-
-      <div class="form-group">
-        <div class="row mt-3 md-3">
-          <div class="col-sm-4"><label for="usr"> RV IncomeId:</label>
-            <input type="text"[(ngModel)]="data.RVIncomeId" name="name" class="form-control mb-2" id="usr">
-          </div>
-          <div class="col-sm-4"><label for="usr"> RV Income:</label>
-            <input type="text"[(ngModel)]="data.RVIncome" name="name" class="form-control mb-2" id="usr"> 
-          </div>
-          <div class="col-sm-4"><label for="usr"> Payment Type:</label>
-            <input type="text"[(ngModel)]="data.PaymentType" name="name" class="form-control mb-2" id="usr">
-          </div>
+    <div class="container-fluid">
+        <div class="card-body">
+            <form action="" #rvipaymenttransactionform="ngForm" (ngSubmit)="rviPaymentSubmit()">
+                <div class="form-group">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <label for="usr">
+                                RV Income:</label>
+                            <input type="text" [(ngModel)]="data.RVIncome" name="name" class="form-control mb-2" id="usr">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="usr">
+                                Payment Type:</label>
+                            <input type="text" [(ngModel)]="data.PaymentType" name="name" class="form-control mb-2" id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">Payment Method:</label>
+                            <input type="text" [(ngModel)]="data.PaymentMethod" name="name" class="form-control mb-2" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Payment:</label>
+                            <input type="currency" [(ngModel)]="data.Payment" name="name" class="form-control mb-2" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Payment Date:</label>
+                            <input type="date" [(ngModel)]="data.PaymentDate" name="name" class="form-control mb-2" id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">UDF1:</label>
+                            <input type="text" [(ngModel)]="data.UDF1" name="name" class="form-control mb-2" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">UDF2:</label>
+                            <input type="text" [(ngModel)]="data.UDF2" name="name" class="form-control mb-2" id="usr">
+                        </div>
+                        <div class="row mt-3 md-3">
+                            <div class="col-sm-6">
+                                <button type="submit" [disabled]="!rvipaymenttransactionform.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="row mt-3 md-3">
-          <div class="col-sm-4"><label for="usr">Payment Method:</label>
-            <input type="text"[(ngModel)]="data.PaymentMethod" name="name" class="form-control mb-2" id="usr">
-          </div>
-          <div class="col-sm-4"><label for="usr">Payment:</label>
-            <input type="text"[(ngModel)]="data.Payment" name="name" class="form-control mb-2" id="usr">
-          </div>
-          <div class="col-sm-4"><label for="usr">Payment Date:</label>
-            <input type="text"[(ngModel)]="data.PaymentDate" name="name" class="form-control mb-2" id="usr">
-          </div>
-        </div>
-        <div class="row mt-3 md-3">
-
-          <div class="col-sm-4"><label for="usr">UDF1:</label>
-            <input type="text"[(ngModel)]="data.UDF1" name="name" class="form-control mb-2" id="usr">
-          </div>
-          <div class="col-sm-4"><label for="usr">UDF2:</label>
-            <input type="text"[(ngModel)]="data.UDF2" name="name" class="form-control mb-2" id="usr">
-          </div>
-          <div class="row mt-3 md-3">
-
-            <div class="col-sm-6">
-              <button type="submit" [disabled]="!rviPaymentTransactionForm.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      </form>
     </div>
-  </div>
 </app-card-create>

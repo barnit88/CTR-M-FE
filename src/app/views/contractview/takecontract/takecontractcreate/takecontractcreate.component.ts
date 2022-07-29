@@ -24,23 +24,19 @@ export class TakecontractcreateComponent implements OnInit, OnChanges{
     private takeContractService: TakeContractService,
     private clientService:ClientService,
     private siteService:SiteService) { }
+  ngOnChanges(changes: SimpleChanges): void {
+    throw new Error('Method not implemented.');
+  }
 
   ngOnInit(): void {
     this.getClientList();
     this.getSiteList();
-    
-  }
-  ngOnChanges(changes: SimpleChanges) {
-    console.log('chnage detected');
-    
-  }
-  //client select function
-
-  public addClient(): any{
-    console.log('okay');
-    
   }
 
+  addClient(_$event: any): any{
+    console.log('the option selected chnage detection'+_$event);
+    
+  }
   //get clients function
   private getClientList(): any{
     this.clientService.getAll().subscribe(

@@ -1,41 +1,40 @@
 
-
+<div class="g-row">
   <app-card [title]="title" (popUp)="OpenModalPopUp()">  
-    <div class="card-body p-0 flex-row">
-      <div class="table-responsive">
-        <table class="table table-bordered table-hover text-center">
-          <thead class="flex-row">
+      <div class="table-wrap">
+        <table class="table table-bordered table-responsive table-hover align-text-top text-lowercase w-auto">
+          <thead class="align-text-top">
             <tr scope="row">
-              <th class="align-text-top" scope ="col">S/N</th>
-              <th class="align-text-top" scope ="col">Full Name</th>
-              <th class="align-text-top" scope ="col">Address</th>
-              <th class="align-text-top" scope ="col">Contact No</th>
-              <th class="align-text-top" scope ="col">Email</th>
-              <th class="align-text-top" scope ="col">Identity Type</th>
-              <th class="align-text-top" scope ="col">Identity Number</th>
-              <th class="align-text-top" scope ="col">Client Type</th>
-              <th class="align-text-top" scope ="col">Client Company Name</th>
-              <th class="align-text-top" scope ="col">Client Company Contact Number</th>
-              <th class="align-text-top" scope ="col">Client Company Identity Type</th>
-              <th class="align-text-top" scope ="col">Client Company Identity Number</th>
-              <th class="align-text-top" scope ="col">ACTIONS</th>
+              <th scope ="col">S/N</th>
+              <th scope ="col">Full Name</th>
+              <th scope ="col">Address</th>
+              <th scope ="col">Contact No</th>
+              <th scope ="col">Email</th>
+              <th scope ="col">Identity Type</th>
+              <th scope ="col">Identity Number</th>
+              <th scope ="col">Client Type</th>
+              <th scope ="col">Client Company Name</th>
+              <th scope ="col">Client Company Contact Number</th>
+              <th scope ="col">Client Company Identity Type</th>
+              <th scope ="col">Client Company Identity Number</th>
+              <th scope ="col">ACTIONS</th>
             </tr>
           </thead>
-          <tbody class="flex-row" style="border-top:0;" >
+          <tbody>
             <tr scope="row" *ngFor="let e of data;let i = index">
-              <td class="align-text-top" scope ="col">{{i+1}}</td>
-              <td class="align-text-top" scope ="col">{{e.FirstName}} {{e.MiddleName}} {{e.LastName}}</td>
-              <td class="align-text-top" scope ="col">{{e.State+" "+e.District+" "+e.Muncipality }}</td>
-              <td class="align-text-top" scope ="col">{{e.ContactNo}}</td>
-              <td class="align-text-top" scope ="col">{{e.Email}}</td>
-              <td class="align-text-top" scope ="col">{{e.IdentityType}}</td>
-              <td class="align-text-top" scope ="col">{{e.IdentityNo}}</td>
-              <td class="align-text-top" scope ="col">{{e.ClientType}}</td>
-              <td class="align-text-top" scope ="col">{{e.ClientCompanyName}}</td>
-              <td class="align-text-top" scope ="col">{{e.ClientCompanyContactNumber}}</td>
-              <td class="align-text-top" scope ="col">{{e.ClientCompanyIdentityType}}</td>
-              <td class="align-text-top" scope ="col">{{e.ClientCompanyIdentityNumber}}</td>
-              <td class="align-text-top" scope ="col"> 
+              <td scope ="col">{{i+1}}</td>
+              <td scope ="col">{{e.FirstName}} {{e.MiddleName}} {{e.LastName}}</td>
+              <td scope ="col">{{e.State+" "+e.District+" "+e.Muncipality }}</td>
+              <td scope ="col">{{e.ContactNo}}</td>
+              <td scope ="col">{{e.Email}}</td>
+              <td scope ="col">{{e.IdentityType}}</td>
+              <td scope ="col">{{e.IdentityNo}}</td>
+              <td scope ="col">{{e.ClientType}}</td>
+              <td scope ="col">{{e.ClientCompanyName}}</td>
+              <td scope ="col">{{e.ClientCompanyContactNumber}}</td>
+              <td scope ="col">{{e.ClientCompanyIdentityType}}</td>
+              <td scope ="col">{{e.ClientCompanyIdentityNumber}}</td>
+              <td scope ="col"> 
                 <app-detail-button (click)="OpenDetailPopUp(e.Id)">{{buttonTitle.Detail}}</app-detail-button>
                 <app-detail-button (click)="OpenEditPopUp(e.Id)">{{buttonTitle.Edit}}</app-detail-button>
                 <app-detail-button (click)="deleteClientById(e.Id)">{{buttonTitle.Delete}}</app-detail-button></td>
@@ -43,6 +42,6 @@
             </tbody>
           </table>
       </div>
-    </div>
 </app-card>
+</div>
 

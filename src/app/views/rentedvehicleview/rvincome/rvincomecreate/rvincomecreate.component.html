@@ -2,17 +2,13 @@
   <div class="container-fluid">
     <div class="card-body">
       <form action="" #rvIncomeForm="ngForm" (ngSubmit)="rvIncomeSubmit()" >
-
       <div class="form-group">
         <div class="row mt-3 md-3">
-          <div class="col-sm-4"><label for="usr"> Rented Vehicle Id:</label>
-            <input type="text"[(ngModel)]="data.RentedVehicleId" name="name" class="form-control mb-2" id="usr">
-          </div>
-          <div class="col-sm-4"><label for="usr"> Rented Vehicle:</label>
+          <div class="col-sm-6"><label for="usr"> Rented Vehicle:</label>
             <input type="text"[(ngModel)]="data.RentedVehicle" name="name" class="form-control mb-2" id="usr">
           </div>
-          <div class="col-sm-4"><label for="usr"> Client Id:</label>
-            <input type="text"[(ngModel)]="data.ClientId" name="name" class="form-control mb-2" id="usr">
+          <div class="col-sm-6"><label for="usr">Income:</label>
+            <input type="text"[(ngModel)]="data.Income" name="name" class="form-control mb-2" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
@@ -23,32 +19,24 @@
             <input type="text"[(ngModel)]="data.RateType" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">From Date:</label>
-            <input type="text"[(ngModel)]="data.FromDate" name="name" class="form-control mb-2" id="usr">
+            <input type="date"[(ngModel)]="data.FromDate" name="name" class="form-control mb-2" id="usr">
           </div>
         </div>
         <div class="row mt-3 md-3">
-
           <div class="col-sm-4"><label for="usr">To Date:</label>
-            <input type="text"[(ngModel)]="data.ToDate" name="name" class="form-control mb-2" id="usr">
+            <input type="date"[(ngModel)]="data.ToDate" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">Rate:</label>
-            <input type="text"[(ngModel)]="data.Rate" name="name" class="form-control mb-2" id="usr">
+            <input type="number"[(ngModel)]="data.Rate" name="name" class="form-control mb-2" id="usr">
           </div>
           <div class="col-sm-4"><label for="usr">Period:</label>
-            <input type="text"[(ngModel)]="data.Period" name="name" class="form-control mb-2" id="usr">
+            <input type="number"[(ngModel)]="data.Period" name="name" class="form-control mb-2" id="usr">
           </div>
-
         </div>
         <div class="row mt-3 md-3">
-          <div class="col-sm-6"><label for="usr">Income:</label>
-            <input type="text"[(ngModel)]="data.Income" name="name" class="form-control mb-2" id="usr">
-          </div>
-          <div class="row mt-3 md-3">
-
             <div class="col-sm-6">
               <button type="submit" [disabled]="!rvIncomeForm.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
             </div>
-          </div>
         </div>
       </div>
       </form>

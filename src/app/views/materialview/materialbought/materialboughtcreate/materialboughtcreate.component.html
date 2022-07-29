@@ -2,14 +2,13 @@
     <div class="container-fluid">
         <div class="card-body">
             <form action="" #materialboughtform="ngForm" (ngSubmit)="materialBoughtSubmit()">
-                <div class="form-group">
+                <div class="form-group text-uppercase">
                     <div class="row mt-3 md-3">
                         <div class="col-sm-4">
                             <label for="material">
                                 Material:
                             </label>
-                            <select [(ngModel)]="data.MaterialId" name="Material" class="form-control mb-2" id="material" #material="ngModel" required="true">
-                                <option value="0" selected>Please Select Material</option>
+                            <select [(ngModel)]="data.Material" name="Material" class="form-control mb-2" id="material" #material="ngModel" (ngModelChange)="onSelect()" required="true">
                                 <option *ngFor="let a of materials;" value="{{a.Id}}">
                                     {{a.MaterialName}}
                                 </option>
@@ -18,12 +17,12 @@
                         <div class="col-sm-4">
                             <label for="vendor">
                                 Vendor:</label>
-                            <input type="text" [(ngModel)]="data.VendorId" name="Vendor" class="form-control mb-2" id="vendor" #vendor="ngModel" [class.is-invalid]="vendor.dirty && vendor.invalid" pattern="[a-zA-Z]*" minlength="2" maxlength="30" required="true">
+                            <input type="text" [(ngModel)]="data.Vendor" name="Vendor" class="form-control mb-2" id="vendor" #vendor="ngModel" [class.is-invalid]="vendor.dirty && vendor.invalid" pattern="[a-zA-Z]*" minlength="2" maxlength="30" required="true">
                         </div>
                         <div class="col-sm-4">
                             <label for="usr">
                                 Site:</label>
-                            <input type="text" [(ngModel)]="data.SiteId" name="Site" class="form-control mb-2" id="usr" #site="ngModel" [class.is-invalid]="site.dirty && site.invalid" pattern="[a-zA-Z]*" minlength="3" maxlength="30" required="true">
+                            <input type="text" [(ngModel)]="data.Site" name="Site" class="form-control mb-2" id="usr" #site="ngModel" [class.is-invalid]="site.dirty && site.invalid" pattern="[a-zA-Z]*" minlength="3" maxlength="30" required="true">
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
@@ -40,7 +39,7 @@
                         <div class="col-sm-4">
                             <label for="usr">
                                 Total Price:</label>
-                            <input type="number" [(ngModel)]="data.TotalPrice" name="TotalPrice" class="form-control mb-2" #totalprice="ngModel" id="usr" [class.is-invalid]="totalprice.dirty && totalprice.invalid" minlength="1" required="true">
+                            <input type="currency" [(ngModel)]="data.TotalPrice" name="TotalPrice" class="form-control mb-2" #totalprice="ngModel" id="usr" [class.is-invalid]="totalprice.dirty && totalprice.invalid" minlength="1" required="true">
                         </div>
                     </div>
                     <div class="row mt-3 md-3">
