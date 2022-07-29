@@ -1,38 +1,34 @@
-<div class="row">
-  <app-card [title]="title" (popUp)="OpenModalPopUp()">
-    <div class="table-wrap">
-      <table class="table table-bordered table-responsive table-hover align-text-top text-uppercase w-auto">
-        <thead class="row">
-          <tr class="row" >
-            <th class="col-sm">S/N</th>
-            <th class="col-sm"> EMPLOYEE ID</th>
-            <th class="col-sm"> EMPLOYEE</th>
-            <th class="col-sm"> FORM DATE</th>
-            <th class="col-sm">TO DATE</th>
-            <th class="col-sm"> PAYMENT RATE</th>
-            <th class="col-sm">PERIOD </th>
-            <th class="col-sm"> PAYMENT</th>
-            <th class="col-sm"> ACTION</th>
-          </tr>
-        </thead>
-        <tbody class="row">
-          <tr *ngFor="let epay of empPayment; let i = index" class="row">
-            <td class="col-sm">{{i+1}}</td>
-            <td class="col-sm">{{epay.EmployeeId}}</td>
-            <td class="col-sm">{{epay.Employee}}</td>
-            <td class="col-sm">{{epay.FromDate}}</td>
-            <td class="col-sm">{{epay.ToDate}}</td>
-            <td class="col-sm"> {{epay.PaymentRate}}</td>
-            <td class="col-sm"> {{epay.Period}}</td>
-            <td class="col-sm">{{epay.Payment}}</td>
-            <td class="col-sm">
-              <app-detail-button (detailPopUp)="OpenDetailPopUp(epay.Id)">Detail</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenEditPopUp(epay.Id)">Edit</app-detail-button>
-              <app-detail-button (click)="onDeleteEmployee(epay.Id)">Delete</app-detail-button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </app-card>
-</div>
+<app-card [title]="title" (popUp)="OpenModalPopUp()">
+  <table class="table table-bordered">
+    <thead class="row">
+      <tr class="row">
+        <th>S/N</th>
+        <th> EMPLOYEE ID</th>
+        <th> EMPLOYEE</th>
+        <th> FORM DATE</th>
+        <th>TO DATE</th>
+        <th> PAYMENT RATE</th>
+        <th>PERIOD </th>
+        <th> PAYMENT</th>
+        <th> ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let epay of empPayment; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{epay.EmployeeId}}</td>
+        <td>{{epay.Employee}}</td>
+        <td>{{epay.FromDate}}</td>
+        <td>{{epay.ToDate}}</td>
+        <td>{{epay.PaymentRate}}</td>
+        <td>{{epay.Period}}</td>
+        <td>{{epay.Payment}}</td>
+        <td>
+          <app-detail-button (detailPopUp)="OpenDetailPopUp(epay.Id)">Detail</app-detail-button>
+          <app-detail-button (detailPopUp)="OpenEditPopUp(epay.Id)">Edit</app-detail-button>
+          <app-detail-button (click)="onDeleteEmployee(epay.Id)">Delete</app-detail-button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</app-card>

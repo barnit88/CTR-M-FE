@@ -1,36 +1,32 @@
-<div class="g-row">
-  <app-card [title]="title" (popUp)="OpenModalPopUp()">
-    <div class="table-wrap">
-      <table class="table table-bordered table-responsive table-hover align-text-top text-uppercase w-auto">
-        <thead>
-          <tr>
-            <th>S/N</th>
-            <th>LABOUR ID</th>
-            <th> LABOUR TYPE</th>
-            <th>LABOUR PAYEMENT TYPE</th>
-            <th>SITE ID</th>
-            <th> SITE</th>
-            <th>IDENITYT NUMBER </th>
-            <th>ACTION</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let e of labourSiteData; let i = index">
-            <td>{{i+1}}</td>
-            <td>{{e.LabourId}}</td>
-            <td>{{e.labourType}}</td>
-            <td>{{e.LabourPaymentType}}</td>
-            <td>{{e.SiteId}}</td>
-            <td> {{e.Site}}</td>
-            <td> {{e.IdentityNo}}</td>
-            <td>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Detail</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Edit</app-detail-button>
-              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id) ">Delete</app-detail-button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </app-card>
-</div>
+<app-card [title]="title" (popUp)="OpenModalPopUp()">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>S/N</th>
+        <th>LABOUR ID</th>
+        <th>LABOUR TYPE</th>
+        <th>LABOUR PAYEMENT TYPE</th>
+        <th>SITE ID</th>
+        <th>SITE</th>
+        <th>IDENITYT NUMBER </th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of labourSiteData; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{e.LabourId}}</td>
+        <td>{{e.labourType}}</td>
+        <td>{{e.LabourPaymentType}}</td>
+        <td>{{e.SiteId}}</td>
+        <td>{{e.Site}}</td>
+        <td>{{e.IdentityNo}}</td>
+        <td>
+          <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Detail</app-detail-button>
+          <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Edit</app-detail-button>
+          <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id) ">Delete</app-detail-button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</app-card>

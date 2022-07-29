@@ -1,15 +1,12 @@
-<div class="g-row">
   <app-card [title]="title" (popUp)="OpenCreate()">
-    <div class="card-body">
-      <table class="table table-bordered table-responsive table-hover align-text-top text-uppercase w-auto">
+      <table class="table table-bordered">
         <thead>
           <tr>
             <th>S/N</th>
-            <th>TAKE CONTRACT ID</th>
             <th>TAKE CONTRACT</th>
             <th>ADDITIONAL PERIOD</th>
             <th>DATE FROM</th>
-            <th> TO DATE</th>
+            <th>TO DATE</th>
             <th>ADDITIONAL BUDGET</th>
             <th>ACTION</th>
           </tr>
@@ -17,12 +14,11 @@
         <tbody>
           <tr *ngFor="let e of data; let i= index">
             <td>1{{i+1}}</td>
-            <td>{{e.TakeContractId}}</td>
             <td>{{e.TakeContract}}</td>
             <td>{{e.AdditionalPeriod}}</td>
             <td>{{e.DateFrom}}</td>
-            <td> {{e.ToDate}}</td>
-            <td> {{e.AdditionalBudget}}</td>
+            <td>{{e.ToDate}}</td>
+            <td>{{e.AdditionalBudget}}</td>
             <td>
               <app-detail-button (detailPopUp)="OpenDetail(e.Id)">Detail</app-detail-button>
               <app-detail-button (detailPopUp)="OpenDetail(e.Id)">Edit</app-detail-button>
@@ -31,6 +27,4 @@
           </tr>
         </tbody>
       </table>
-    </div>
   </app-card>
-</div>
