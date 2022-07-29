@@ -6,12 +6,9 @@
             <th>FULL NAME</th>
             <th>ADDRESS</th>
             <th>EMAIL</th>
-            <th>CONTRACT NO</th>
-            <th>IDENTITY TYPE</th>
-            <th>IDENTITy NO</th>
+            <th>Contact No</th>
+            <th>IDENTITY</th>
             <th>EMPLOYEE TYPE</th>
-            <th>EMPLOYEE PAYMENT TYPE</th>
-            <th>DATE OF BIRTH</th>
             <th>ACTION</th>
           </tr>
         </thead>
@@ -22,11 +19,8 @@
             <td>{{e.State + " "+ e.District +" "+e.Muncipality}}</td>
             <td>{{e.Email}}</td>
             <td>{{e.ContactNo}}</td>
-            <td>{{e.IdentityType}}</td>
-            <td>{{e.IdentityNo}}</td>
+            <td>{{e.IdentityType}} {{e.IdentityNo}}</td>
             <td>{{e.EmployeeType}}</td>
-            <td>{{e.EmployeePaymentType}}</td>
-            <td>{{e.DateofBirth}}</td>
             <td>
               <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Detail</app-detail-button>
               <app-detail-button (detailPopUp)="OpenEditPopUp(e.Id)">Edit</app-detail-button>
