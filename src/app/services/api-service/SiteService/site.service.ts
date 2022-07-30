@@ -10,7 +10,7 @@ import { AppSettings } from 'src/app/app.setting';
 export class SiteService {
   site : Site[] = [];
 
-  public getSiteList(): Observable < Site[] > {
+  public getList(): Observable < Site[] > {
       return this.http.get<Site[]>(AppSettings.API_ROOT+'Site')
   }
   public getSiteById(id : number): Observable < Site > {

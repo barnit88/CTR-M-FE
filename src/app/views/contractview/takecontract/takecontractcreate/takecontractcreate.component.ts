@@ -58,21 +58,6 @@ export class TakecontractcreateComponent implements OnInit{
   }
 
   private getClientList(): any{
-<<<<<<< Updated upstream
-    this.clientService.getAll().subscribe({
-      next:(data) => this.clients = data,
-      error:(err) => null,
-      complete :() => null
-    });
-  }
-
-  //get sites function 
-  private getSiteList(): any{
-    this.siteService.getSiteList().subscribe({
-      next:(data) => this.sites = data,
-      error:(error)=>console.error(error),
-      complete:()=> console.log(this.sites)
-=======
     this.clientService.getAll().subscribe(
       (data)=> {this.clients = data;
         console.log(data);
@@ -82,13 +67,12 @@ export class TakecontractcreateComponent implements OnInit{
   }
 
   private getSiteList(): any{
-    this.siteService.getSiteList().subscribe({
+    this.siteService.getList().subscribe({
       next:(data)=> {
         console.log(data);
         this.sites = data},
       error:(error)=>console.log(error),
       complete:()=> console.log(this.sites)      
->>>>>>> Stashed changes
     });
   }
 

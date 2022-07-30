@@ -1,38 +1,103 @@
 <app-card-create [title]="title">
     <div class="container-fluid">
         <div class="card-body">
-            <form action="" #giveContractForm="ngForm" (ngSubmit)="giveContractSubmit()"></form>
-            <div class="form-group">
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-12"><label for="usr">Client:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.Client" name="Client" id="client" required>
+            <form action="submit" #givecontractform="ngForm" (ngSubmit)="giveContractSubmit()">
+                <div class="form-group">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4"><label for="usr">Client:</label>
+                            <select type="text"
+                             class="form-control mb-2" 
+                             name="Client" 
+                             id="Client" 
+                             (change)="addClientId($event)">
+                            <option 
+                            label="Please Select Client" 
+                            selected>
+                            </option>
+                            <option *ngFor="let client of clients;" 
+                            value="{{client.Id}}">
+                            {{client.FirstName}} 
+                            {{client.LastName}} 
+                            {{client.ClientCompanyName}}
+                            </option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4"><label for="usr">Contract Finished Period:</label>
+                            <input type="text" 
+                            class="form-control mb-2" 
+                            (ngModel)="data.ContractFinishDate" 
+                            name="ContractFinishedPeriod"  
+                            id="contractFinishedPeriod">
+                        </div>
+                        <div class="col-sm-4"><label for="usr">Contract Amount:</label>
+                            <input type="text" 
+                            class="form-control mb-2" 
+                            (ngModel)="data.ContractAmount" 
+                            name="ContractAmount" 
+                            id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4"><label for="usr">Site:</label>
+                            <select type="text"
+                             class="form-control mb-2" 
+                             name="Site" 
+                             id="Site" 
+                             (change)="assignSiteId($event)">
+                            <option 
+                            label="Please Select Client" 
+                            selected>
+                            </option>
+                            <option *ngFor="let site of sites;" 
+                            value="{{site.Id}}">
+                            {{site.FirstName}} 
+                            {{site.LastName}} 
+                            {{site.ClientCompanyName}}
+                            </option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4"><label for="usr">Contract Start Date:</label>
+                            <input type="date" 
+                            class="form-control mb-2" 
+                            (ngModel)="data.ContractStartDate" 
+                            name="ContractStartDate"  
+                            id="usr">
+                        </div>
+                        <div class="col-sm-4"><label for="usr">Contract Finish Date:</label>
+                            <input type="date" 
+                            class="form-control mb-2" 
+                            (ngModel)="data.ContractFinishDate" 
+                            name="ContractStartDate"  
+                            id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6"><label for="usr">UDF 1:</label>
+                            <input type="text" 
+                            class="form-control mb-2" 
+                            (ngModel)="data.UDF1" 
+                            name="UDF1" 
+                            id="usr">
+                        </div>
+                        <div class="col-sm-6"><label for="usr">UDF 2:</label>
+                            <input type="text" 
+                            class="form-control mb-2" 
+                            (ngModel)="data.UDF2" 
+                            name="UDF2"  
+                            id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <button type="submit"
+                            [disabled]="!givecontractform.valid" 
+                            class="btn btn-outline-success btn-lg mx-2">
+                            Submit
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-4"><label for="usr">Contract Finished Period:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.ContractFinishDate" name="ContractFinishedPeriod"  id="contractFinishedPeriod">
-                    </div>
-                    <div class="col-sm-4"><label for="usr">Contract Start Date:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.ContractStartDate" name="ContractStartDate"  id="usr">
-                    </div>
-                    <div class="col-sm-4"><label for="usr">Contract Amount:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.ContractAmount" name="ContractAmount" id="usr">
-                    </div>
-                </div>
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-6"><label for="usr">UDF 1:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.UDF1" name="UDF1" id="usr">
-                    </div>
-                    <div class="col-sm-6"><label for="usr">UDF 2:</label>
-                        <input type="text" class="form-control mb-2" (ngModel)="data.UDF2" name="UDF2"  id="usr">
-                    </div>
-                </div>
-                <div class="row mt-3 md-3">
-                    <div class="col-sm-6">
-                        <button type="submit" class="btn btn-outline-success btn-lg mx-2">Submit</button>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </app-card-create>

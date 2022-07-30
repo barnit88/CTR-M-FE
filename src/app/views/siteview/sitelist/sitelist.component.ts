@@ -22,7 +22,7 @@ export class SitelistComponent implements OnInit {
   }
 
   onGetSiteList(): any{
-    this.siteService.getSiteList().subscribe(
+    this.siteService.getList().subscribe(
       (response)=> response.map(response=>{
         return this.siteData.push(response)
       }),

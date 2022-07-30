@@ -43,7 +43,7 @@ export class MaterialboughtcreateComponent implements OnInit {
     console.log(event.target)
   }
   public SiteList(): void{
-    this.siteService.getSiteList().subscribe(
+    this.siteService.getList().subscribe(
       (data)=> this.sites = data,
       (error)=> console.log(error));
   }
