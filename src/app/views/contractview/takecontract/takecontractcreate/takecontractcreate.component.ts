@@ -48,17 +48,20 @@ export class TakecontractcreateComponent implements OnInit, OnChanges{
   }
   //get clients function
   private getClientList(): any{
-    this.clientService.getAll().subscribe(
-      (data)=> this.clients = data,
-      (error)=> console.log(error),
-      ()=>console.log(this.clients));
+    this.clientService.getAll().subscribe({
+      next:(data) => this.clients = data,
+      error:(err) => null,
+      complete :() => null
+    });
   }
+
   //get sites function 
   private getSiteList(): any{
-    this.siteService.getSiteList().subscribe(
-      (data)=> this.sites = data,
-      (error)=>console.log(error),
-      ()=> console.log(this.sites));
+    this.siteService.getSiteList().subscribe({
+      next:(data) => this.sites = data,
+      error:(error)=>console.error(error),
+      complete:()=> console.log(this.sites)
+    });
   }
 
   //submit function
