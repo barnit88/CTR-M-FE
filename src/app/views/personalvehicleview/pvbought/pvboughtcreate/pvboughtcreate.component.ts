@@ -19,7 +19,6 @@ export class PvboughtcreateComponent implements OnInit {
     private pvBoughtService: PVBoughtService,
     private modelRef: BsModalRef) {}
 
-
   ngOnInit(): void {
   }
 

@@ -39,8 +39,8 @@ export class MaterialboughtcreateComponent implements OnInit {
     console.log(Material);
   }
 
-  onSelect(): any{
-    console.log('chnage')
+  assignMaterialId(event:Event): any{
+    console.log(event.target)
   }
   public SiteList(): void{
     this.siteService.getSiteList().subscribe(

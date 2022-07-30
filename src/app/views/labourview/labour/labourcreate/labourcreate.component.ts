@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {Labour} from './../../../../entity/models/Labour/labour';
-import {NgForm, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { LabourService } from './../../../../services/api-service/LabourService/labour.service';
 import { LabourTitle } from 'src/app/entity/Enum/Enums';
@@ -13,9 +12,13 @@ export class LabourcreateComponent implements OnInit {
         private labourService: LabourService,
     ) {}
     
-    ngOnInit(): void {  }
+    ngOnInit(): void { 
+        console.log('at component initalization'+this.data);
+        
+     }
 
     public onLabourSubmit(): void {
+        console.log('submit works')
         console.log(this.data);
         
         if (this.data.Id === undefined || this.data.Id === null || this.data.Id === 0){
@@ -28,7 +31,7 @@ export class LabourcreateComponent implements OnInit {
 
     private AddLabour(): void {
         this.labourService.addLabour(this.data).subscribe(
-            (resposne)=> console.log('done with response'+ resposne),
+            (resposne)=> console.log('done with response'+ resposne.ContactNo),
             (error)=> console.log(error)
         )
     }

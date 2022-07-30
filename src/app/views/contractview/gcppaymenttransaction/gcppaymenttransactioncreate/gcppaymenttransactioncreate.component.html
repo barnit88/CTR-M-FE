@@ -7,7 +7,15 @@
                         <div class="col-sm-6">
                             <label for="usr">
                                 Give Contract:</label>
-                            <input type="text" class="form-control mb-2"  [(ngModel)]="data.GiveContract" name="GiveContract"  id="giveContract" required>
+                            <select type="text"
+                             class="form-control mb-2"  
+                             [(ngModel)]="data.GiveContract" 
+                             name="GiveContract"  
+                             id="giveContract" 
+                             required="true">
+                             <option label="Please Select Give Contract" selected></option>
+                             <option></option>
+                            </select>
                         </div>
                         <div class="col-sm-6">
                             <label for="usr">
@@ -45,7 +53,10 @@
                     </div>
                     <div class="row mt-3 md-3">
                         <div class="col-sm-6">
-                            <button type="submit" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+                            <button type="submit" 
+                            class="btn btn-outline-success btn-lg mx-2">
+                            Submit
+                            </button>
                         </div>
                     </div>
                 </div>

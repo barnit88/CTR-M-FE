@@ -8,23 +8,26 @@ import {Labour} from './../../../../entity/models/Labour/labour';
 
 @Component({selector: 'app-labourlist', templateUrl: './labourlist.component.html', styleUrls: ['./labourlist.component.css']})
 export class LabourlistComponent implements OnInit {
-    labour : Labour[] = [];
+    labours : Labour[] = [];
     title : string = 'Labour List';
+    deleted: boolean=false;
     constructor(private labourService : LabourService, private genericModalPopUpService : GenericModalPopUpService, private genericDetailPopUpService : GenericDetailPopUpService) {}
 
-    ngOnInit(): void { // this.onGetLabour();
+    ngOnInit(): void { this.onGetLabourList();
+    }
+    ngDoCheck() {
     }
 
+  
     onGetLabourList(): any{
       this.labourService.getLabourList().subscribe(
-        (response)=> response.map(response=>{
-          return this.labour.push(response)
-        }),
+        (response)=> this.labours= response,
         (error:any)=> console.log(error),
-        ()=> console.log("Done with fetching Labour  list") 
+        ()=> console.log("Done with fetching Labours  list"+this.labours[0].FirstName) 
       );
-      console.log(this.labour)
+      console.log(this.labours)
     }
+
     onGetSingleLabour(id:number): any{
       this.labourService.getLabourById(id).subscribe(
         (response)=> console.log(response),
@@ -39,7 +42,7 @@ export class LabourlistComponent implements OnInit {
           this.labourService.deleteLabourById(id).subscribe((data: any) => { 
             console.log('Sucess on deleting Labour ')
           }, (error: any) => console.error(error))  
-      } else return this.ngOnInit();
+      } else return;  
   }  
 
     OpenModalPopUp() {
@@ -48,16 +51,16 @@ export class LabourlistComponent implements OnInit {
         'Create Labour  List',
       );
     }
-    //function for details popup
+    
     OpenDetailPopUp(id: number) {
       this.genericModalPopUpService.openModalPopUpService<Labour>(LabourdetailComponent,
-        this.labour.find(each => each.Id == id),
+        this.labours.find(each => each.Id == id),
         "Labour  Details");
     }
   
     OpenEditPopUp(id: number) {
       this.genericModalPopUpService.openModalPopUpService<Labour>(LabourcreateComponent,
-        this.labour.find(each => each.Id == id),
+        this.labours.find(each => each.Id == id),
         "Labour  Edit");
     }
 }

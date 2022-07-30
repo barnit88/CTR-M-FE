@@ -13,6 +13,7 @@ import { PEBPaymentTransactionTitle } from 'src/app/entity/Enum/Enums';
 export class PebpaymenttransctioncreateComponent implements OnInit {
   data:PEBPaymentTransaction;
   title:PEBPaymentTransactionTitle.Create;
+  
   constructor(private modelRef: BsModalRef,
     private pebPaymentTransactionService: PEBPaymentTransactionService) { }
 

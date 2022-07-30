@@ -14,7 +14,7 @@
                                 Please Select Client
                             </option>
                             <option *ngFor="let client of clients;" value="{{client.Id}}">
-                                {{client.FirstName}} {{client.MiddleName}} {{client.LastName}} {{client.ClientCompanyName}}
+                                {{client.FirstName}} {{client.MiddleName}} {{client.LastName}}, {{client.ClientCompanyName}}
                             </option>
                         </select>
                     </div>
@@ -22,12 +22,12 @@
                         <label for="usr">Site:</label>
                         <select type="text"
                          class="form-control mb-2"
-                          (ngModel)="data.Site"
                            name="Site"
-                            id="usr"
-                            #site="ngModel"
+                            id="Site"
+                            (change)="assignSiteId($event)"
                             >
-                            <option *ngFor="let s of sites;" value="{{s.Id}}">{{s.SiteName}}</option>
+                            <option value="" label="Please Select Site" selected></option>
+                            <option *ngFor="let site of sites;" value="{{site.Id}}">{{site.SiteName}}</option>
                         </select>
                     </div>
                     <div class="col-sm-4">
@@ -39,7 +39,7 @@
                 <div class="row mt-3 md-3">
                     <div class="col-sm-4">
                         <label for="usr">Contract Finished Period:</label>
-                        <input type="number" class="form-control mb-2" [(ngModel)]="data.ContractFinishDate"
+                        <input type="number" class="form-control mb-2" [(ngModel)]="data.ContractFinishPeriod"
                             name="ContractFinishedPeriod" id="usr" minlength="1" maxlength="10">
                     </div>
                     <div class="col-sm-4">

@@ -8,17 +8,17 @@
                             <label for="material">
                                 Material:
                             </label>
-                            <select [(ngModel)]="data.Material"
+                            <select 
                              name="Material" 
+                             type="text"
                              class="form-control mb-2" 
-                             id="material" #material="ngModel" 
-                             (ngModelChange)="onSelect()" 
+                             id="material" 
+                             (change)="assignMaterialId($event)" 
                              required="true">
-                             <optgroup label="material list">
+                             <option label="Please Select Material" selected></option>
                                  <option *ngFor="let a of materials;" value="{{a.Id}}">
                                      {{a.MaterialName}}
                                  </option>
-                             </optgroup>
                             </select>
                         </div>
                         <div class="col-sm-4">

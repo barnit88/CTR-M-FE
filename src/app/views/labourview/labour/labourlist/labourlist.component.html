@@ -3,30 +3,32 @@
     <thead>
       <tr>
         <th>S/N</th>
-        <th>LABOUR SITE ID</th>
-        <th>FROM DATE</th>
-        <TH>TO DATE</TH>
-        <th>PAYMENT RATE </th>
-        <th>LABOUR SITE</th>
-        <th>PERIOD</th>
-        <th>PAYMENT </th>
+        <th>FULL NAME</th>
+        <TH>ADDRESS</TH>
+        <th>EMAIL</th>
+        <th>CONTACT NO</th>
+        <th>IDENTITY TYPE</th>
+        <th>IDENTITY NO</th>
+        <th>LABOUR TYPE</th>
+        <th>BIRTH DATE</th>
         <th>ACTION</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let e of labour; let i = index">
+      <tr *ngFor="let labour of labours; let i = index">
         <td>{{i+1}}</td>
-        <td>{{e.LabourSiteId}}</td>
-        <td>{{e.FromDate}}</td>
-        <td>{{e.ToDate}}</td>
-        <td>{{e.PaymentRate}}</td>
-        <td> {{e.LabourSite}}</td>
-        <td> {{e.Period}}</td>
-        <td>{{e.Payment}}</td>
+        <td>{{labour.FullName}} {{labour.MiddleName}} {{labour.LastName}}</td>
+        <td>{{labour.State}}, {{labour.District}} {{labour.Muncipality}}</td>
+        <td>{{labour.Email}}</td>
+        <td> {{labour.ContactNo}}</td>
+        <td> {{labour.IdentityType}}</td>
+        <td>{{labour.IdentityNo}}</td>
+        <td>{{labour.LabourType}}</td>
+        <td>{{labour.DateOfBirth}}</td>
         <td>
-          <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Detail</app-detail-button>
-          <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Edit</app-detail-button>
-          <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Delete</app-detail-button>
+          <app-detail-button (detailPopUp)="OpenDetailPopUp(labour.Id)">Detail</app-detail-button>
+          <app-detail-button (detailPopUp)="OpenDetailPopUp(labour.Id)">Edit</app-detail-button>
+          <app-detail-button (detailPopUp)="onDeleteLabour(labour.Id)">Delete</app-detail-button>
         </td>
       </tr>
     </tbody>

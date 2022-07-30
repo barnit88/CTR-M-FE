@@ -13,28 +13,39 @@ import { Site } from 'src/app/entity/models/Site/site';
   templateUrl: './takecontractcreate.component.html',
   styleUrls: ['./takecontractcreate.component.css']
 })
-export class TakecontractcreateComponent implements OnInit, OnChanges{
+export class TakecontractcreateComponent implements OnInit{
   data:TakeContract;
   title:TakeContractTitle.Create;
   clients: Client[]=[];
   sites:Site[]=[];
-  client:string[]=["a","a","a"];
+
   constructor(private modelRef: BsModalRef,
     private takeContractService: TakeContractService,
     private clientService:ClientService,
     private siteService:SiteService) { }
-  ngOnChanges(changes: SimpleChanges): void {
-    throw new Error('Method not implemented.');
-  }
+
 
   invalidClientId :boolean = false;
+  invalidSiteId: boolean = false;
+
   assignClientId(event){
+    console.log(event.target)
     if(Number.parseInt(event.target.value)){
       this.invalidClientId = false;
       this.data.ClientId=event.target.value;
     }else{
       this.invalidClientId = true;
     }
+    console.log(this.data);
+  }
+
+  assignSiteId(event):void{
+    if(Number.parseInt(event.target.value)){
+      this.invalidSiteId = false;
+      this.data.SiteId = event.target.value;
+    }else {
+      this.invalidSiteId = true;
+    }    
   }
 
   ngOnInit(): void {
@@ -44,10 +55,10 @@ export class TakecontractcreateComponent implements OnInit, OnChanges{
 
   addClient(event: Event): any{
     console.log('the option selected chnage detection'+event.target);
-    
   }
-  //get clients function
+
   private getClientList(): any{
+<<<<<<< Updated upstream
     this.clientService.getAll().subscribe({
       next:(data) => this.clients = data,
       error:(err) => null,
@@ -61,6 +72,23 @@ export class TakecontractcreateComponent implements OnInit, OnChanges{
       next:(data) => this.sites = data,
       error:(error)=>console.error(error),
       complete:()=> console.log(this.sites)
+=======
+    this.clientService.getAll().subscribe(
+      (data)=> {this.clients = data;
+        console.log(data);
+      },
+      (error)=> console.log(error),
+      ()=>console.log(this.clients));
+  }
+
+  private getSiteList(): any{
+    this.siteService.getSiteList().subscribe({
+      next:(data)=> {
+        console.log(data);
+        this.sites = data},
+      error:(error)=>console.log(error),
+      complete:()=> console.log(this.sites)      
+>>>>>>> Stashed changes
     });
   }
 
