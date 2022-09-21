@@ -218,6 +218,7 @@ import { CardCreateComponent } from './components/card-create/card-create.compon
 import { ListDetailCardComponent } from './components/list-detail-card/list-detail-card.component';
 import { DetailButtonComponent } from './components/detail-button/detail-button.component';
 import { Buttons } from './entity/Enum/Enums';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -430,6 +431,7 @@ import { Buttons } from './entity/Enum/Enums';
     CardCreateComponent,
     ListDetailCardComponent,
     DetailButtonComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
