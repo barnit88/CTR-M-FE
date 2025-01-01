@@ -1,1 +1,77 @@
-<p>takecontractcreate works!</p>
+<app-card-create [title]="title">
+    <div class="container-fluid">
+        <div class="card-body">
+            <form action="" #takecontractform="ngForm" (ngSubmit)="takeContractSubmit()">
+                <div class="row mt-3 md-3">
+                    <div class="col-sm-4">
+                        <label for="client">
+                            Client:
+                        </label>
+                        <select 
+                            type="text" class="form-control mb-2" id="client" name="Client" 
+                            (change)="assignClientId($event)">
+                            <option selected>
+                                Please Select Client
+                            </option>
+                            <option *ngFor="let client of clients;" value="{{client.Id}}">
+                                {{client.FirstName}} {{client.MiddleName}} {{client.LastName}}, {{client.ClientCompanyName}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="usr">Site:</label>
+                        <select type="text"
+                         class="form-control mb-2"
+                           name="Site"
+                            id="Site"
+                            (change)="assignSiteId($event)"
+                            >
+                            <option value="" label="Please Select Site" selected></option>
+                            <option *ngFor="let site of sites;" value="{{site.Id}}">{{site.SiteName}}</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="usr">Contract Start Date:</label>
+                        <input type="date" class="form-control mb-2" [(ngModel)]="data.ContractStartDate"
+                            name="ContractStartDate" id="usr" min="01-01-2015">
+                    </div>
+                </div>
+                <div class="row mt-3 md-3">
+                    <div class="col-sm-4">
+                        <label for="usr">Contract Finished Period:</label>
+                        <input type="number" class="form-control mb-2" [(ngModel)]="data.ContractFinishPeriod"
+                            name="ContractFinishedPeriod" id="usr" minlength="1" maxlength="10">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="usr">Contract Finished Date:</label>
+                        <input type="date" class="form-control mb-2" [(ngModel)]="data.ContractFinishDate"
+                            name="ContractFinishDate" id="usr" min="01/01/2015">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="usr">Contract Ammount:</label>
+                        <input type="number" class="form-control mb-2" [(ngModel)]="data.ContractAmount"
+                            name="ContractAmount" id="usr" #contractAmount="ngModel">
+                    </div>
+                </div>
+                <div class="row mt-3 md-3">
+                    <div class="col-sm-6">
+                        <label for="usr">UDF 1:</label>
+                        <input type="text" class="form-control mb-2" [(ngModel)]="data.UDF1" name="UDF1" id="usr"
+                            required="false">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="usr">UDF 2:</label>
+                        <input type="text" class="form-control mb-2" [(ngModel)]="data.UDF2" name="UDF2" id="usr"
+                            required="false">
+                    </div>
+                </div>
+                <div class="row mt-3 md-3">
+                    <div class="col-sm-4">
+                        <button type="submit" [disabled]="!takecontractform.form.valid"
+                            class="btn btn-outline-success btn-lg mx-2">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</app-card-create>

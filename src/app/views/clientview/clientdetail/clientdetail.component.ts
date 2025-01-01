@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BsModalRef } from 'ngx-bootstrap/modal';
+import { ClientTitle } from 'src/app/entity/Enum/Enums';
+import { Client } from 'src/app/entity/models/Client/client';
 
 @Component({
   selector: 'app-clientdetail',
@@ -6,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./clientdetail.component.css']
 })
 export class ClientdetailComponent implements OnInit {
-
-  constructor() { }
+  data: Client;
+  title: any = ClientTitle.Detail;
+  constructor() {}
 
   ngOnInit(): void {
   }

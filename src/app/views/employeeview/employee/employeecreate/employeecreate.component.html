@@ -1,1 +1,78 @@
-<p>employeecreate works!</p>
+<app-card-create [title]="title">
+    <div class="container-fluid">
+        <div class="card-body">
+            <form #myform="ngForm" (ngSubmit)="onSubmitTemplateBased()" >
+                <div class="form-group text-uppercase">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                First Name:</label>
+                            <input [(ngModel)]="data.FirstName" name="FirstName" type="text" class="form-control mb-2" id="usr"></div>
+                            <div class="col-sm-4">
+                                <label for="usr">
+                                    Midddle Name:</label>
+                            <input type="text" [(ngModel)]="data.MiddleName" name="MiddleName" class="form-control mb-2" id="usr"></div>
+                            <div class="col-sm-4">
+                                <label for="usr">
+                                    Last Name:</label>
+                            <input [(ngModel)]="data.LastName" type="text" name="LastName" class="form-control mb-2" id="usr"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="usr">State:</label>
+                            <input [(ngModel)]="data.State" name="State" type="text" class="form-control mb-2" id="usr"></div>
+                        <div class="col-sm-4">
+                            <label for="usr">District:</label>
+                            <input [(ngModel)]="data.District" name="District" type="text" class="form-control mb-2" id="usr"></div>
+                        <div class="col-sm-4">
+                            <label for="usr">VDC/Municipality:</label>
+                            <input [(ngModel)]="data.Muncipality" name="Muncipality" type="text" class="form-control mb-2" id="usr"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                             <label for="usr">Contact Number:</label>
+                              <input [(ngModel)]="data.ContactNo" name="ContactNo" type="text" class="form-control mb-2" id="usr"></div>
+                        <div class="col-sm-6">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input [(ngModel)]="data.Email" name="Email" type="Email" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                                <label for="usr">Identity Number:</label>
+                                <input [(ngModel)]="data.IdentityNo" name="IdentityNo" type="text" class="form-control mb-2" id="usr"></div>
+                        <div class="col-sm-6">
+                                <label for="usr">Identity Type:</label>
+                                <input [(ngModel)]="data.IdentityType" name="IdentityType" class="form-control mb-2" id="usr"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                                <label for="usr">data TYPE:</label>
+                                <input [(ngModel)]="data.EmployeeType" name="EmployeeType" class="form-control mb-2" id="usr"></div>
+                        <div class="col-sm-6">
+                                <label for="usr">EMPLOYMENT PAYMENT Type:</label>
+                                <input [(ngModel)]="data.EmployeePaymentType" name="EmployeePaymentType" type="text" class="form-control mb-2" id="usr"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 datepicker">
+                                <label for="usr">Date of Birth:</label>
+                                <input [(ngModel)]="data.DateofBirth" name="DateofBirth" type="date" class="form-control mb-2" id="usr"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                                <label for="usr">UDF 1:</label>
+                                <input [(ngModel)]="data.UDF1" name="UDF1" type="text" class="form-control mb-2" id="usr"></div>
+                        <div class="col-sm-6">
+                                <label for="usr">UDF 2:</label>
+                                <input [(ngModel)]="data.UDF2" type="text" class="form-control mb-2" id="usr" name="UDF2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <button class="btn btn-outline-primary btn-lg mx-2" type="submit" [disabled]="!myform.form.valid">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</app-card-create>
+

@@ -1,1 +1,39 @@
-<p>laboursitecreate works!</p>
+<app-card-create [title]="title">
+    <div class="container-fluid">
+        <div class="card-body">
+            <form action="" #laboursiteform="ngForm" (ngSubmit)="labourSiteSubmit()" >
+                <div class="form-group text-uppercase">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6"><label for="usr"> Labour :</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.Labour" name="Labour"  id="usr">
+                        </div>
+                        <div class="col-sm-6"><label for="usr"> Labour Type:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.LabourType" name="LabourType" id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6"><label for="usr"> Labour Payment Type:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.LabourPaymentType" name="LabourPaymentType"  id="usr">
+                        </div>
+                        <div class="col-sm-6"><label for="usr"> Site:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.Site" name="Site"  id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6"><label for="usr">UDF 1:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.UDF1" name="UDF1"  id="usr">
+                        </div>
+                        <div class="col-sm-6"><label for="usr">UDF 2:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.UDF2" name="UDF2"  id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <button type="submit" [disabled]="!laboursiteform.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</app-card-create>

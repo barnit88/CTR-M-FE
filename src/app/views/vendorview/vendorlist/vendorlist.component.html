@@ -1,1 +1,34 @@
-<p>vendorlist works!</p>
+  <app-card [title]="title" (popUp)="OpenModalPopUp()">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>Full Name</th>
+            <th>Address</th>
+            <th>Contact Number</th>
+            <th>Email address</th>
+            <th>Identity</th>
+            <th>Company Name </th>
+            <th>Company Contact No</th>
+            <th>ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of vendorData; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{e.FirstName+" "+ e.MiddleName+" "+ e.LastName}}</td>
+            <td>{{e.State}} {{e.District}} {{e.Muncipality}}</td>
+            <td>{{e.ContactNumber}}</td>
+            <td>{{e.Email}}</td>
+            <td>{{e.IdentityType}}</td>
+            <td>{{e.CompanyName}}</td>
+            <td>{{e.CompanyContactNo}}</td>
+            <td>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Edit</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Delete</app-detail-button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </app-card>

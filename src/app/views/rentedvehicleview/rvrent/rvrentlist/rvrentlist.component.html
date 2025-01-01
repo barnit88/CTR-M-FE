@@ -1,1 +1,42 @@
-<p>rvrentlist works!</p>
+<div class="g-row">
+  <app-card [title]="title" (popUp)="OpenModalPopUp()">
+    <div class="card-body">
+      <table class="table table-hover table-responsive table-bordered bg-light">
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>Rented Vehicle Id</th>
+            <th>Rented Vehicle</th>
+            <th>Vendor Id</th>
+            <th>Vendor</th>
+            <th>Site Id</th>
+            <th>Site</th>
+            <th>Rent Amount</th>
+            <th>From Date</th>
+            <th>To Date</th>
+            <th>ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of rvrData; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{e.RentedVehicleId}}</td>
+            <td>{{e.RentedVehicle}}</td>
+            <td>{{e.VendorId}}</td>
+            <td>{{e.Vendor}}</td>
+            <td>{{e.SiteId}}</td>
+            <td>{{e.Site}}</td>
+            <td>{{e.RentAmount}}</td>
+            <td>{{e.FromDate}}</td>
+            <td>{{e.ToDate}}</td>
+            <td>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Edit</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Delete</app-detail-button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </app-card>
+</div>

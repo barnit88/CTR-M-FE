@@ -1,1 +1,66 @@
-<p>gcppaymenttransactioncreate works!</p>
+<app-card-create [title]="title">
+    <div class="container-fluid">
+        <div class="card-body">
+            <form action="" #gcPaymentForm="ngForm" (ngSubmit)="gcPaymentSubmit()">
+                <div class="form-group">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <label for="usr">
+                                Give Contract:</label>
+                            <select type="text"
+                             class="form-control mb-2"  
+                             [(ngModel)]="data.GiveContract" 
+                             name="GiveContract"  
+                             id="giveContract" 
+                             required="true">
+                             <option label="Please Select Give Contract" selected></option>
+                             <option></option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="usr">
+                                Additional Budget:</label>
+                            <input type="text" class="form-control mb-2"  [(ngModel)]="data.Payment" name="AdditionalBudget" id="additionalBudget" required>
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">Payment Type:</label>
+                            <input type="text" class="form-control mb-2"  [(ngModel)]="data.PaymentType" name="PaymentType"  id="paymentType" required>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Payment Method:</label>
+                            <input type="text" class="form-control mb-2"  [(ngModel)]="data.PaymentMethod" name="PaymentMethod" id="paymentMenthod" required>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Payment:</label>
+                            <input type="text" class="form-control mb-2"  [(ngModel)]="data.Payment" name="Payment"  id="payment" required>
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">Payment date:</label>
+                            <input type="date" placeholder="mm/dd/yy" class="form-control mb-2"  [(ngModel)]="data.PaymentDate" name="PaymentDate" id="paymentDate" required>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">UDF 1:</label>
+                            <input type="text" class="form-control mb-2"  [(ngModel)]="data.UDF1" name="UDF1"  id="udf1" required>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">UDF 2:</label>
+                            <input type="text" class="form-control mb-2"  [(ngModel)]="data.UDF2" name="UDF2"  id="udf2" required>
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <button type="submit" 
+                            class="btn btn-outline-success btn-lg mx-2">
+                            Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</app-card-create>

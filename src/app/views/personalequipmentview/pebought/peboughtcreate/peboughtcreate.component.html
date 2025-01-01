@@ -1,1 +1,45 @@
-<p>peboughtcreate works!</p>
+<app-card-create [title]="title">
+    <div class="container-fluid">
+        <div class="card-body">
+            <form action="" #peBoughtForm="ngForm" (ngSubmit)="peBoughtSubmit()">
+                <div class="form-group">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">Personal Equipment</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.PersonalEquipment" name="PersonalEquipment" id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">Vendor:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.Vendor" name="Vendor" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Bought Price:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.BoughtPrice" name="BoughtPrice" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Bought Date:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.BoughtDate" name="BoughtDate" id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">UDF1:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.UDF1" name="UDF1" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">UDF2:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.UDF2" name="UDF2" id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <button type="submit" class="btn btn-outline-success btn-lg mx-2" [disabled]="!peBoughtForm.valid">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</app-card-create>

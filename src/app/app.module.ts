@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClientcreateComponent } from './views/clientview/clientcreate/clientcreate.component';
@@ -207,6 +210,15 @@ import { AdminComponent } from './views/admin/admin.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavComponent } from './components/nav/nav.component';
 import { AsideComponent } from './components/aside/aside.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { CardComponent } from './components/card/card.component';
+import { CardCreateComponent } from './components/card-create/card-create.component';
+import { ListDetailCardComponent } from './components/list-detail-card/list-detail-card.component';
+import { DetailButtonComponent } from './components/detail-button/detail-button.component';
+import { Buttons } from './entity/Enum/Enums';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -415,9 +427,25 @@ import { AsideComponent } from './components/aside/aside.component';
     FooterComponent,
     NavComponent,
     AsideComponent,
+    CardComponent,
+    CardCreateComponent,
+    ListDetailCardComponent,
+    DetailButtonComponent,
+    LoginComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    NgxSpinnerModule,
+    ModalModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+  ],
+  providers: [
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

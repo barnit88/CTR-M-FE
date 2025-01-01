@@ -1,1 +1,106 @@
-<p>materialboughtcreate works!</p>
+<app-card-create [title]="title">
+    <div class="container-fluid">
+        <div class="card-body">
+            <form action="" #materialboughtform="ngForm" (ngSubmit)="materialBoughtSubmit()">
+                <div class="form-group text-uppercase">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="material">
+                                Material:
+                            </label>
+                            <select 
+                             name="Material" 
+                             type="text"
+                             class="form-control mb-2" 
+                             id="material" 
+                             (change)="assignMaterialId($event)" 
+                             required="true">
+                             <option label="Please Select Material" selected></option>
+                                 <option *ngFor="let a of materials;" value="{{a.Id}}">
+                                     {{a.MaterialName}}
+                                 </option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="vendor">
+                                Vendor:</label>
+                            <select type="text"
+                            [(ngModel)]="data.Vendor"
+                            name="Vendor" 
+                            class="form-control mb-2" 
+                            id="vendor" 
+                            #vendor="ngModel" 
+                            [class.is-invalid]="vendor.dirty && vendor.invalid"  
+                            required="true">
+                             <optgroup label="vendor list">
+                                <option *ngFor="let vendor of vendors" value="{{vendor.Id}}">
+                                {{vendor.FirstName}}
+                                {{vendor.MiddleName}}
+                                {{vendor.LastName}}
+                                </option>
+                            </optgroup>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Site:</label>
+                            <select type="text"
+                            [(ngModel)]="data.Site"
+                            name="Site"
+                            class="form-control mb-2"
+                            id="usr" #site="ngModel"
+                            [class.is-invalid]="site.dirty && site.invalid"
+                            required="true">
+                            <optgroup label="site list">
+                                <option *ngFor="let site of sites;" value="{{site.Id}}">
+                                    {{site.SiteName}}
+                                </option>
+                            </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Quantity:</label>
+                            <input type="number" [(ngModel)]="data.Quantity" name="Quantity" class="form-control mb-2" id="usr" #quantity="ngModel" [class.is-invalid]="quantity.dirty && quantity.invalid" required="true">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Rate:</label>
+                            <input type="number" [(ngModel)]="data.Rate" name="Rate" class="form-control mb-2" id="usr" #rate="ngModel" [class.is-invalid]="rate.dirty && rate.invalid" minlength="1" maxlength="10" required="true">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Total Price:</label>
+                            <input type="currency" [(ngModel)]="data.TotalPrice" name="TotalPrice" class="form-control mb-2" #totalprice="ngModel" id="usr" [class.is-invalid]="totalprice.dirty && totalprice.invalid" minlength="1" required="true">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Bought Date:</label>
+                            <input type="date" [(ngModel)]="data.BoughtDate" name="BoughtDate" class="form-control mb-2" id="usr" #boughtdate="ngModel" [class.is-invalid]="boughtdate.dirty && boughtdate.invalid">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                UDF1:</label>
+                            <input type="text" [(ngModel)]="data.UDF1" name="UDF1" class="form-control mb-2" id="usr" #udf1="ngModel" [class.is-valid]="udf1.dirty && udf1.invalid" minlength="3" maxlength="30" required="false">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                UDF2:</label>
+                            <input type="text" [(ngModel)]="data.UDF2" name="UDF2" class="form-control mb-2" id="usr" #udf2="ngModel" [class.is-valid]="udf2.dirty && udf2.invalid" minlength="3" maxlength="30" required="false">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <button type="submit" [disabled]="!materialboughtform.valid" class="btn btn-outline-success btn-lg ml-0 mx-2">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</app-card-create>
+

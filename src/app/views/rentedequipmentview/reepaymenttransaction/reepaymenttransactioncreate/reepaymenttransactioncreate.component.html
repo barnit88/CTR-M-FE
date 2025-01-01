@@ -1,1 +1,43 @@
-<p>reepaymenttransactioncreate works!</p>
+<app-card-create [title]="title">
+  <div class="container-fluid">
+    <div class="card-body">
+      <form action="" #reePaymentForm="ngForm" (ngSubmit)="reePaymentSubmit()" >
+        <div class="form-group">
+          <div class="row mt-3 md-3">
+            <div class="col-sm-6"><label for="usr"> RE Expenses:</label>
+              <input type="text"[(ngModel)]="data.REExpenses" name="name" class="form-control mb-2" id="usr">
+            </div>
+            <div class="col-sm-6"><label for="usr"> Payment Type:</label>
+              <input type="text"[(ngModel)]="data.PaymentType" name="name" class="form-control mb-2" id="usr">
+            </div>
+          </div>
+          <div class="row mt-3 md-3">
+            <div class="col-sm-4"><label for="usr">Payment Method:</label>
+              <input type="text"[(ngModel)]="data.PaymentMethod" name="name" class="form-control mb-2" id="usr">
+            </div>
+            <div class="col-sm-4"><label for="usr">Payment:</label>
+              <input type="currency"[(ngModel)]="data.Payment" name="name" class="form-control mb-2" id="usr">
+            </div>
+            <div class="col-sm-4"><label for="usr">Payment Date:</label>
+              <input type="date"[(ngModel)]="data.PaymentDate" name="name" class="form-control mb-2" id="usr">
+            </div>
+          </div>
+          <div class="row mt-3 md-3">
+            <div class="col-sm-6"><label for="usr">UDF1:</label>
+              <input type="text"[(ngModel)]="data.UDF1" name="name" class="form-control mb-2" id="usr">
+            </div>
+            <div class="col-sm-6"><label for="usr">UDF2:</label>
+              <input type="text"[(ngModel)]="data.UDF2" name="name" class="form-control mb-2" id="usr">
+            </div>
+          </div>
+          <div class="row mt-3 md-3">
+  
+            <div class="col-sm-6">
+              <button type="submit" [disabled]="!reePaymentForm.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</app-card-create>

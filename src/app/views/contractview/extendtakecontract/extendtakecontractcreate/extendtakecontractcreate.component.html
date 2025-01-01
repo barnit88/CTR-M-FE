@@ -1,1 +1,56 @@
-<p>extendtakecontractcreate works!</p>
+<app-card-create [title]="title">
+    <div class="container-fluid ">
+        <div class="card-body">
+            <form action="" #extendtakecontractform="ngForm" (ngSubmit)="extendTakeContractSubmit()" >
+                <div class="form-group">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Take Contract:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.TakeContract" name="TakeContract" id="takeContract" required>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Additional Period:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.AdditionalPeriod" name="AdditionalPeriod" id="additionalPeriod" required>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Additional Budget:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.AdditionalBudget" name="AdditionalBudget" id="additionalBudget" required>
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <label for="usr">From Date:</label>
+                            <input type="date" placeholder="mm/dd/yy" class="form-control mb-2" (ngModel)="data.DateFrom" name="FromDate" id="fromDate" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="usr">To Date:</label>
+                            <input type="date" placeholder="mm/dd/yy" class="form-control mb-2" (ngModel)="data.ToDate" name="ToDate" id="toDate" required>
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <label for="usr">UDF 1:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.UDF1" name="UDF1" id="usr" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="usr">UDF 2:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.UDF2" name="UDF2" id="usr" required>
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <button type="submit" 
+                            [disabled]="!extendtakecontractform.valid" 
+                            class="btn btn-outline-success btn-lg mx-2">
+                            Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</app-card-create>

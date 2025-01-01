@@ -1,1 +1,36 @@
-<p>rerpaymenttransactionlist works!</p>
+<div class="g-row">
+  <app-card [title]="title" (popUp)="OpenModalPopUp()">
+    <div class="table-wrap">
+      <table class="table table-bordered table-responsive table-hover align-text-top text-uppercase w-auto">
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>RERent Id</th>
+            <th>RE Rent</th>
+            <th>Payment Type</th>
+            <th>Payment Method</th>
+            <th>Payment</th>
+            <th>Payment Date</th>
+            <th>ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of rerPaymentData; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{e.RentedEquipmentRentId}}</td>
+            <td>{{e.RERent}}</td>
+            <td>{{e.PaymentType}}</td>
+            <td>{{e.PaymentMethod}}</td>
+            <td>{{e.Payment}}</td>
+            <td>{{e.PaymentDate}}</td>
+            <td>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Edit</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Delete</app-detail-button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </app-card>
+</div>

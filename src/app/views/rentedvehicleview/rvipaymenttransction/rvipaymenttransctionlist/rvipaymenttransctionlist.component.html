@@ -1,1 +1,36 @@
-<p>rvipaymenttransctionlist works!</p>
+<div class="g-row">
+  <app-card [title]="title" (popUp)="OpenModalPopUp()">
+    <div class="card-body">
+      <table class="table table-hover table-responsive table-bordered bg-light">
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>RV IncomeId</th>
+            <th>RV Income</th>
+            <th>Payment Type</th>
+            <th>Payment Method</th>
+            <th>Payment</th>
+            <th>Payment Date</th>
+            <th>ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of rviPaymentData; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{e.RentedVehicleIncomeId}}</td>
+            <td>{{e.RentedVehicleIncome}}</td>
+            <td>{{e.PaymentType}}</td>
+            <td>{{e.PaymentMethod}}</td>
+            <td>{{e.Payment}}</td>
+            <td>{{e.PaymentDate}}</td>
+            <td>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Edit</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Delete</app-detail-button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </app-card>
+</div>

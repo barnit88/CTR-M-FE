@@ -1,1 +1,36 @@
-<p>pebpaymenttransctionlist works!</p>
+<div class="g-row">
+  <app-card [title]="title" (popUp)="OpenModalPopUp()">
+    <div class="table-wrap">
+      <table class="table table-bordered table-responsive table-hover align-text-top text-uppercase w-auto">
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th> PERSONAL EQUIPMENT ID</th>
+            <th>PERSONAL EQUPMENT</th>
+            <th>VENDOR ID</th>
+            <th>VENDOR</th>
+            <th>BOUGHT PRICE</th>
+            <th>BOUGHT DATE</th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of pebPaymentData; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{e.PersonalEquipmentId}}</td>
+            <td>{{e.PersonalEquipment}}</td>
+            <td>{{e.VendorId}}</td>
+            <td>{{e.Vendor}}</td>
+            <td>{{e.BoughtPrice}}</td>
+            <td>{{e.BoughtDate}}</td>
+            <td>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Edit</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Delete</app-detail-button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </app-card>
+</div>

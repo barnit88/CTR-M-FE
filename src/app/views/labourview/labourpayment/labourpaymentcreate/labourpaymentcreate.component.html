@@ -1,1 +1,55 @@
-<p>labourpaymentcreate works!</p>
+<app-card-create [title]="title">
+    <div class="container-fluid">
+        <div class="card-body">
+            <form action="" #labourpaymentform="ngForm" (ngSubmit)="labourPaymentSubmit()">
+                <div class="form-group text-uppercase">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <label for="usr">
+                                Labour Site :</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.LabourSite" name="LabourSite" id="usr">
+                        </div>
+                        <div class="col-sm-6 datepicker">
+                            <label for="usr">
+                                Form Date:</label>
+                            <input type="date" class="form-control mb-2" (ngModel)="data.FromDate" name="FromDate" id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3 datepicker">
+                        <div class="col-sm-4">
+                            <label for="usr">To Date:</label>
+                            <input type="date" class="form-control mb-2" (ngModel)="data.ToDate" name="ToDate" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Payment Rate:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.PaymentRate" name="PaymentRate" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">Period:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.Period" name="Period" id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">Payment:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.Payment" name="Payment" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">UDT 1:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.Payment" name="UDF1" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">UDT 2:</label>
+                            <input type="text" class="form-control mb-2" (ngModel)="data.Payment" name="UDF2" id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-6">
+                            <button type="submit" class="btn btn-outline-success btn-lg mx-2 btncss" [disabled]="labourpaymentform.valid">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</app-card-create>

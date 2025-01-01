@@ -1,1 +1,63 @@
-<p>pvincomecreate works!</p>
+<app-card-create [title]="title">
+    <div class="container-fluid">
+        <div class="card-body">
+            <form action="" #pvIncomeForm="ngForm" (ngSubmit)="pvIncomeSubmit()" >
+            <div class="form-group">
+                <div class="row mt-3 md-3">
+                    <div class="col-sm-4">
+                        <label for="usr">Personal Vehicle:</label>
+                        <input type="text"[(ngModel)]="data.PersonalVehicle" name="name" class="form-control mb-2" id="usr">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="usr">Client:</label>
+                        <input type="text"[(ngModel)]="data.Client" name="name" class="form-control mb-2" id="usr">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="usr">Rate Type:</label>
+                        <input type="text"[(ngModel)]="data.RateType" name="name" class="form-control mb-2" id="usr">
+                    </div>
+                </div>
+                <div class="row mt-3 md-3">
+                    <div class="col-sm-4">
+                        <label for="usr">From Date:</label>
+                        <input type="text"[(ngModel)]="data.FromDate" name="name" class="form-control mb-2" id="usr">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="usr">To Date:</label>
+                        <input type="text"[(ngModel)]="data.ToDate" name="name" class="form-control mb-2" id="usr">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="usr">Rate:</label>
+                        <input type="text"[(ngModel)]="data.Rate" name="name" class="form-control mb-2" id="usr">
+                    </div>
+                </div>
+                <div class="row mt-3 md-3">
+                    <div class="col-sm-4">
+                        <label for="usr">Period</label>
+                        <input type="text"[(ngModel)]="data.Period" name="name" class="form-control mb-2" id="usr">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="usr">Income:</label>
+                        <input type="text"[(ngModel)]="data.Income" name="name" class="form-control mb-2" id="usr">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="usr">UDF1:</label>
+                        <input type="text"[(ngModel)]="data.UDF1" name="name" class="form-control mb-2" id="usr">
+                    </div>
+                </div>
+                <div class="row mt-3 md-3">
+                    <div class="col-sm-6">
+                        <label for="usr">UDF2:</label>
+                        <input type="text"[(ngModel)]="data.UDF2" name="name" class="form-control mb-2" id="usr">
+                    </div>
+                </div>
+                <div class="row mt-3 md-3">
+                    <div class="col-sm-6">
+                        <button type="submit" [disabled]="!pvIncomeForm.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</app-card-create>

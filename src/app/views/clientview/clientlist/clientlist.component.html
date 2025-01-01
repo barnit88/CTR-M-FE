@@ -1,1 +1,37 @@
-<p>clientlist works!</p>
+
+  <app-card [title]="title" (popUp)="OpenModalPopUp()">  
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>S/N</th>
+              <th>Full Name</th>
+              <th>Address</th>
+              <th>Contact No</th>
+              <th>Email</th>
+              <th>Client Identity </th>
+              <th>Client Type</th>
+              <th>Client Company Name</th>
+              <th>Client Company Contact Number</th>
+              <th>ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let employee of data;let i = index">
+              <td>{{i+1}}</td>
+              <td>{{employee.FirstName}} {{employee.MiddleName}} {{employee.LastName}}</td>
+              <td>{{employee.State+" "+employee.District+" "+employee.Muncipality }}</td>
+              <td>{{employee.ContactNo}}</td>
+              <td>{{employee.Email}}</td>
+              <td>{{employee.IdentityType}} - {{employee.IdentityNo}}</td>
+              <td>{{employee.ClientType}}</td>
+              <td>{{employee.ClientCompanyName}}</td>
+              <td>{{employee.ClientCompanyContactNumber}}</td>
+              <td> 
+                <app-detail-button (click)="OpenDetailPopUp(employee.Id)">{{buttonTitle.Detail}}</app-detail-button>
+                <app-detail-button (click)="OpenEditPopUp(employee.Id)">{{buttonTitle.Edit}}</app-detail-button>
+                <!-- <app-detail-button (click)="deleteClientById(employee.Id)">{{buttonTitle.Delete}}</app-detail-button></td> -->
+              </tr>
+            </tbody>
+          </table>
+</app-card>
+

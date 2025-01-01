@@ -9,3 +9,4 @@ export class AuditModel implements IEntity {
   DeletedBy: string;
   DeletedDate: Date;
 }
+

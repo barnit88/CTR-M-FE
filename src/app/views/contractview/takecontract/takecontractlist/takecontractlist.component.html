@@ -1,1 +1,33 @@
-<p>takecontractlist works!</p>
+  <app-card [title]="title" (popUp)="OpenModalPopUp()">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>CLIENT</th>
+            <th>SITE</th>
+            <th>CONTRACT FINISHED PERIOD</th>
+            <th>CONTRACT START DATE</th>
+            <th>CONTRACT FINISHED DATE</th>
+            <th>CONTRACT AMOUNT</th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tc of data; let i = index">
+            {{tc|json}}
+            <td>{{i+1}}</td>
+            <td>{{tc.Client}} {{tc.Client.MiddleName}} {{tc.Client.LastName}}</td>
+            <td>{{tc.Site}}</td>
+            <td>{{tc.ContractFinishedPeriod}}</td>
+            <td>{{tc.ContractStartDate}}</td>
+            <td>{{tc.ContractFinishedDate}}</td>
+            <td>{{tc.ContractAmount}}</td>
+            <td>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(tc.Id)">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(tc.Id)">Edit</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(tc.Id)">Delete</app-detail-button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </app-card>

@@ -1,4 +1,6 @@
-export class Employee {
+import { AuditModel } from "../audit-model";
+
+export class Employee extends AuditModel{
   public FirstName: string;
   public MiddleName: string;
   public LastName: string;

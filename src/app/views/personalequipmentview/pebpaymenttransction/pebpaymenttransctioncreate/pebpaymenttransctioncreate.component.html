@@ -1,1 +1,61 @@
-<p>pebpaymenttransctioncreate works!</p>
+<app-card-create [title]="title">
+    <div class="container-fluid">
+        <div class="card-body">
+            <form action="" #pebpaymentform (ngSubmit)="pebPaymentSubmit()">
+                <div class="form-group">
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                PE Bought:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.PEBought" name="PEBought" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Payment Method:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.PaymentMethod" name="PaymentMethod" id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Payment Method:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.PaymentMethod" name="PaymentMethod" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Payment Type:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.PaymentType" name="PaymentType" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Payment:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.Payment" name="Payment" id="usr">
+                        </div>
+                    </div>
+                    <div class="row mt-3 md-3">
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                Payment Date:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.PaymentDate" name="PaymentDate" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                UDF1:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.UDF1" name="UDF1" id="usr">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="usr">
+                                UDF2:</label>
+                            <input type="text" class="form-control mb-2" [(ngModel)]="data.UDF2" name="UDF2" id="usr">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3 mb-3">
+                    <div class="col-sm-6">
+                        <button type="submit" [disabled]="!pebpaymentform.valid" class="btn btn-outline-success btn-lg mx-2">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</app-card-create>

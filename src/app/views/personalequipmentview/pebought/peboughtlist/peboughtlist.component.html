@@ -1,1 +1,36 @@
-<p>peboughtlist works!</p>
+<div class="g-row">
+  <app-card [title]="title" (popUp)="OpenModalPopUp()">
+    <div class="table-wrap">
+      <table class="table table-bordered table-responsive table-hover align-text-top text-uppercase w-auto">
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th> MATERIAL BOUGHT ID</th>
+            <th> MATERIAL BOUGHT</th>
+            <th>PAYMENT</th>
+            <th>PAYMENT METHOD</th>
+            <th> PAYMENT TYPE</th>
+            <th>PAYMENT DATE</th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of peBoughtData; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{e.MaterialBoughtId}}</td>
+            <td>{{e.MaterialBought}}</td>
+            <td>{{e.Payment}}</td>
+            <td>{{e.PaymentMethod}}</td>
+            <td>{{e.PaymentType}}</td>
+            <td>{{e.PaymentDate}}</td>
+            <td>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Detail</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Edit</app-detail-button>
+              <app-detail-button (detailPopUp)="OpenDetailPopUp(e.Id)">Delete</app-detail-button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </app-card>
+</div>
